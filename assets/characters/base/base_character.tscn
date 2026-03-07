@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://cwidido8h7iqc"]
+
+[ext_resource type="Script" uid="uid://4otmtv4dr2c4" path="res://assets/characters/base/base_character.gd" id="1_e73kw"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lr30v"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"down",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"down_miss",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"idle",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"left",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"left_miss",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"right",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"right_miss",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"up",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"up_miss",
+"speed": 24.0
+}]
+
+[node name="BaseCharacter" type="Node2D" unique_id=151574328]
+script = ExtResource("1_e73kw")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=63994655]
+sprite_frames = SubResource("SpriteFrames_lr30v")
+animation = &"down"
+
+[node name="IdleTimer" type="Timer" parent="." unique_id=2011351476]
+wait_time = 0.66
+one_shot = true
+
+[connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]

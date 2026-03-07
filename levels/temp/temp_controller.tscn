@@ -1,0 +1,113 @@
+[gd_scene format=3 uid="uid://bcwrtjx4nj3j3"]
+
+[ext_resource type="PackedScene" uid="uid://ny7r3d7vcv5" path="res://objects/strum_line/strum_line.tscn" id="1_eilx2"]
+[ext_resource type="Script" uid="uid://d3glooql74tni" path="res://levels/temp/temp_controller.gd" id="1_wy8op"]
+[ext_resource type="AudioStream" uid="uid://dt3c6r3jwcn0r" path="res://assets/songs/dadbattle/song/Inst.ogg" id="3_6wiuc"]
+[ext_resource type="PackedScene" uid="uid://cjln1e1icrq55" path="res://assets/characters/pico_google/pico_google.tscn" id="3_7xqjp"]
+[ext_resource type="PackedScene" uid="uid://3pwfho64pcex" path="res://assets/characters/sonic_google/sonic_google.tscn" id="4_7xqjp"]
+[ext_resource type="Script" uid="uid://bp5ad26rwtp3h" path="res://levels/temp/score_test.gd" id="6_2py05"]
+[ext_resource type="FontFile" uid="uid://bif3opoyxypl3" path="res://assets/fonts/Inconsolata-Regular.ttf" id="6_drhlo"]
+[ext_resource type="Script" uid="uid://f4h5sm4dos8t" path="res://levels/temp/accuracy_test.gd" id="7_7xqjp"]
+[ext_resource type="Script" uid="uid://cnonu42t8coa2" path="res://levels/temp/misses.gd" id="8_7xqjp"]
+[ext_resource type="Script" uid="uid://crxdb4lhorpsg" path="res://levels/temp/combo_test.gd" id="8_rl2lu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_6wiuc"]
+font = ExtResource("6_drhlo")
+font_size = 24
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="temp_controller" type="Control" unique_id=471623247]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wy8op")
+song_name = "sonic_kills_you_and_you_die"
+difficulty = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=949230589]
+zoom = Vector2(0.7, 0.7)
+
+[node name="StrumLines" type="Control" parent="." unique_id=1373482378]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="StrumLineBF" parent="StrumLines" unique_id=1754071637 instance=ExtResource("1_eilx2")]
+layout_mode = 0
+anchors_preset = 0
+anchor_bottom = 0.0
+offset_left = 512.0
+offset_top = -385.0
+offset_right = 512.0
+offset_bottom = -385.0
+grow_vertical = 1
+
+[node name="StrumLineDad" parent="StrumLines" unique_id=1166438541 instance=ExtResource("1_eilx2")]
+layout_mode = 0
+anchors_preset = 0
+anchor_bottom = 0.0
+offset_left = -1734.0
+offset_top = -401.0
+offset_right = -1734.0
+offset_bottom = -401.0
+grow_vertical = 1
+bot_play = true
+id = 1
+
+[node name="Characters" type="Node2D" parent="." unique_id=248992597]
+
+[node name="PicoGoogle" parent="Characters" unique_id=151574328 instance=ExtResource("3_7xqjp")]
+
+[node name="SonicGoogle" parent="Characters" unique_id=1756999766 instance=ExtResource("4_7xqjp")]
+position = Vector2(22, 142)
+
+[node name="AudioPlayers" type="Node" parent="." unique_id=1956025026]
+
+[node name="AudioStreamPlayerInst" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=771441420]
+stream = ExtResource("3_6wiuc")
+autoplay = true
+
+[node name="temp_ui" type="CanvasLayer" parent="." unique_id=1310591268]
+
+[node name="HBoxContainer" type="HBoxContainer" parent="temp_ui" unique_id=1345478102]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="score_test" type="Label" parent="temp_ui/HBoxContainer" unique_id=718628477]
+layout_mode = 2
+text = "Score: %d"
+label_settings = SubResource("LabelSettings_6wiuc")
+script = ExtResource("6_2py05")
+
+[node name="combo_test" type="Label" parent="temp_ui/HBoxContainer" unique_id=1478160075]
+layout_mode = 2
+text = "Combo: %d"
+label_settings = SubResource("LabelSettings_6wiuc")
+script = ExtResource("8_rl2lu")
+
+[node name="accuracy_test" type="Label" parent="temp_ui/HBoxContainer" unique_id=1951890750]
+layout_mode = 2
+text = "Accuracy: %d"
+label_settings = SubResource("LabelSettings_6wiuc")
+script = ExtResource("7_7xqjp")
+
+[node name="misses" type="Label" parent="temp_ui/HBoxContainer" unique_id=1766377402]
+layout_mode = 2
+text = "Misses: %d"
+label_settings = SubResource("LabelSettings_6wiuc")
+script = ExtResource("8_7xqjp")

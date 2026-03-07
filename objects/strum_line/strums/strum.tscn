@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dhkd50mpkitxa"]
+
+[ext_resource type="Script" uid="uid://b8mnjrqk8rugm" path="res://objects/strum_line/strums/strum.gd" id="1_pv4ev"]
+[ext_resource type="SpriteFrames" uid="uid://bet8wlntgt0ni" path="res://assets/base/strumline/notes/normal/res/left.tres" id="2_pv4ev"]
+[ext_resource type="SpriteFrames" uid="uid://dk7qnhqu3wrtj" path="res://assets/base/strumline/notes/normal/res/splash.tres" id="3_a4tlu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r4pgd"]
+size = Vector2(153, 226)
+
+[node name="Strum" type="Control" unique_id=1263375101]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_pv4ev")
+
+[node name="NoteAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=788136989]
+sprite_frames = ExtResource("2_pv4ev")
+
+[node name="SplashAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1341739533]
+visible = false
+sprite_frames = ExtResource("3_a4tlu")
+animation = &"down_1"
+speed_scale = 2.0
+
+[node name="Notes" type="Control" parent="." unique_id=2098452562]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1954240034]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1948741563]
+position = Vector2(0.5, 5)
+shape = SubResource("RectangleShape2D_r4pgd")
+debug_color = Color(0, 0.57410604, 0.8340995, 0.41960785)
+
+[connection signal="animation_finished" from="NoteAnimatedSprite2D" to="." method="_on_note_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="SplashAnimatedSprite2D" to="." method="_on_splash_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
