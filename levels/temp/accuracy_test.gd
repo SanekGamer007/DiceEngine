@@ -8,7 +8,8 @@ var notes_total: int = 0
 func _ready() -> void:
 	get_node("../../../StrumLines/StrumLineBF").note_pressed.connect(_on_note_pressed)
 	get_node("../../../StrumLines/StrumLineBF").note_missed.connect(_on_note_missed)
-	text = org_text % (accr * 100.0) + "%"
+	get_node("../../../StrumLines/StrumLineBF").note_ghosted.connect(_on_note_missed)
+	text = org_text % NAN
 
 func _on_note_pressed(id: int, accuracy: float) -> void:
 	notes_total += 1

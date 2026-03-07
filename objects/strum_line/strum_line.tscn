@@ -12,9 +12,6 @@
 [ext_resource type="SpriteFrames" uid="uid://c0vgcg8egqemm" path="res://assets/base/strumline/notes/normal/res/right.tres" id="5_n2arl"]
 [ext_resource type="SpriteFrames" uid="uid://dk7qnhqu3wrtj" path="res://assets/base/strumline/notes/normal/res/splash.tres" id="8_2mlt1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n2arl"]
-size = Vector2(700, 850)
-
 [node name="StrumLine" type="Control" unique_id=1166438541]
 z_index = 1000
 layout_mode = 3
@@ -23,14 +20,6 @@ anchor_bottom = 1.0
 grow_vertical = 2
 script = ExtResource("1_r4pgd")
 note_skins = Array[Texture2D]([ExtResource("2_r8ktc"), ExtResource("3_2mlt1"), ExtResource("4_6s4a0"), ExtResource("5_d6y58")])
-
-[node name="Cleaner" type="Area2D" parent="." unique_id=1700877625]
-collision_layer = 128
-collision_mask = 128
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Cleaner" unique_id=7246876]
-position = Vector2(-2.5, -802)
-shape = SubResource("RectangleShape2D_n2arl")
 
 [node name="Strums" type="HBoxContainer" parent="." unique_id=263310891]
 layout_mode = 1

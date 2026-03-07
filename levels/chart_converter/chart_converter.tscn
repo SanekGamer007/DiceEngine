@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://doeo2k26wptxy"]
+
+[ext_resource type="Script" uid="uid://c3240nnyd8w2e" path="res://levels/chart_converter/chart_converter.gd" id="1_oxr2b"]
+
+[node name="ChartConverter" type="Control" unique_id=1315796109]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oxr2b")
+chart = "res://assets/songs/sonic_kills_you_and_you_die/sonic_kills_you_and_you_die-chart.json"
+metadata = "res://assets/songs/sonic_kills_you_and_you_die/sonic_kills_you_and_you_die-metadata.json"

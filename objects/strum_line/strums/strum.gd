@@ -40,6 +40,8 @@ func _input(event: InputEvent) -> void:
 			if accr >= 0.9:
 				_show_splash()
 		else:
+			if not owner_strumline.ghost_tapping:
+				owner_strumline.note_ghosted.emit(id)
 			$NoteAnimatedSprite2D.play("nothin")
 	if event.is_action_released(action_name):
 		if $NoteAnimatedSprite2D.animation != "default" and $NoteAnimatedSprite2D.animation != "pressed":

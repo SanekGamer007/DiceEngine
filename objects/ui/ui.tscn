@@ -1,0 +1,61 @@
+[gd_scene format=3 uid="uid://bia2sobsa06sb"]
+
+[ext_resource type="Script" uid="uid://ds40fmoccsuqq" path="res://levels/temp/label.gd" id="1_3wryp"]
+[ext_resource type="FontFile" uid="uid://bif3opoyxypl3" path="res://assets/fonts/Inconsolata-Regular.ttf" id="2_6nkqw"]
+[ext_resource type="Script" uid="uid://bp5ad26rwtp3h" path="res://levels/temp/score_test.gd" id="3_4ct1o"]
+[ext_resource type="Script" uid="uid://crxdb4lhorpsg" path="res://levels/temp/combo_test.gd" id="4_j7ygr"]
+[ext_resource type="Script" uid="uid://f4h5sm4dos8t" path="res://levels/temp/accuracy_test.gd" id="5_mh07t"]
+[ext_resource type="Script" uid="uid://cnonu42t8coa2" path="res://levels/temp/misses.gd" id="6_3hlud"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_66yud"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_6wiuc"]
+font = ExtResource("2_6nkqw")
+font_size = 24
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="ui" type="CanvasLayer" unique_id=1119694987]
+
+[node name="Label" type="Label" parent="." unique_id=1102912252]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "FPS: %.2f"
+label_settings = SubResource("LabelSettings_66yud")
+script = ExtResource("1_3wryp")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=17722277]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -34.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="score_test" type="Label" parent="HBoxContainer" unique_id=617189301]
+layout_mode = 2
+text = "Score: %d"
+label_settings = SubResource("LabelSettings_6wiuc")
+script = ExtResource("3_4ct1o")
+
+[node name="combo_test" type="Label" parent="HBoxContainer" unique_id=691334805]
+layout_mode = 2
+text = "Combo: %d"
+label_settings = SubResource("LabelSettings_6wiuc")
+script = ExtResource("4_j7ygr")
+
+[node name="accuracy_test" type="Label" parent="HBoxContainer" unique_id=1025456095]
+layout_mode = 2
+text = "Accuracy: %d"
+label_settings = SubResource("LabelSettings_6wiuc")
+script = ExtResource("5_mh07t")
+
+[node name="misses" type="Label" parent="HBoxContainer" unique_id=374248092]
+layout_mode = 2
+text = "Misses: %d"
+label_settings = SubResource("LabelSettings_6wiuc")
+script = ExtResource("6_3hlud")

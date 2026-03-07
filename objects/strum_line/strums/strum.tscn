@@ -14,6 +14,7 @@ script = ExtResource("1_pv4ev")
 
 [node name="NoteAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=788136989]
 sprite_frames = ExtResource("2_pv4ev")
+frame_progress = 1.0
 
 [node name="SplashAnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1341739533]
 visible = false
@@ -29,7 +30,6 @@ offset_bottom = 40.0
 [node name="Area2D" type="Area2D" parent="." unique_id=1954240034]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1948741563]
-position = Vector2(0.5, 5)
 shape = SubResource("RectangleShape2D_r4pgd")
 debug_color = Color(0, 0.57410604, 0.8340995, 0.41960785)
 

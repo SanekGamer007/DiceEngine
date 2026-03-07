@@ -5,6 +5,7 @@ class_name Note
 @export var note_type: int = 0 ## placeholder
 @export var scroll_speed: float = 1.0
 @export var direction: Vector2 = Vector2.UP
+@export var clean_pos: float
 @export var sprite: Texture2D :
 	set(spr):
 		sprite = spr
@@ -17,8 +18,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	position += direction * (scroll_speed * Common.magic_scroll_speed_value) * delta
 
-func _on_area_entered(area: Area2D) -> void:
-	if area is Note:
-		return
-	if area.collision_layer & 0x01 << 0x07: # 8 is the layer for cleaning notes.
-		queue_free()
+func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	queue_free()
