@@ -19,10 +19,10 @@ var cleaner_pos: float
 var next_note_index: int = 0
 
 signal init_done
-signal note_pressed(id: int, accuracy: float)
-signal note_released(id: int)
-signal note_missed(id: int)
-signal note_ghosted(id: int)
+signal note_pressed(direction: Common.ARROW_DIR, accuracy: float)
+signal note_released(direction: Common.ARROW_DIR)
+signal note_missed(direction: Common.ARROW_DIR)
+signal note_ghosted(direction: Common.ARROW_DIR)
 
 func _ready() -> void:
 	Input.set_use_accumulated_input(false)
@@ -40,10 +40,10 @@ func _process(delta: float) -> void:
 		var strum: Strum = $Strums.get_child(current_note.i)
 		var spawn_location = strum.get_node("Notes")
 		var note: Note = note_preload.instantiate()
-		note.id = current_note.i
+		note.direction = int(current_note.i) as Common.ARROW_DIR
 		note.scroll_speed = scroll_speed
 		note.position.y = (current_note.t - mus_time) * (scroll_speed * Common.magic_scroll_speed_value)
-		note.sprite = note_skins[note.id]
+		note.sprite = note_skins[note.direction]
 		note.clean_pos = cleaner_pos
 		spawn_location.add_child(note)
 		next_note_index += 1

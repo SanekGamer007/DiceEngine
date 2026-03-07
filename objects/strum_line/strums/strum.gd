@@ -1,7 +1,8 @@
 extends Control
 class_name Strum
 
-@export var id: int = 0
+
+@export var direction: Common.ARROW_DIR = Common.ARROW_DIR.LEFT
 @export var sprite: SpriteFrames :
 	set(spr):
 		sprite = spr
@@ -22,7 +23,7 @@ var current_notes: Array[Note]
 var splash_nums: PackedInt32Array
 
 func _ready() -> void:
-	action_name = Common.id_to_input.get(id)
+	action_name = Common.id_to_input(direction)
 	$NoteAnimatedSprite2D.sprite_frames = sprite
 	$NoteAnimatedSprite2D.play("default")
 
@@ -36,18 +37,18 @@ func _input(event: InputEvent) -> void:
 			$NoteAnimatedSprite2D.play("pressed")
 			current_notes[0].queue_free()
 			current_notes.remove_at(0)
-			owner_strumline.note_pressed.emit(id, accr)
+			owner_strumline.note_pressed.emit(direction, accr)
 			if accr >= 0.9:
 				_show_splash()
 		else:
 			if not owner_strumline.ghost_tapping:
-				owner_strumline.note_ghosted.emit(id)
+				owner_strumline.note_ghosted.emit(direction)
 			$NoteAnimatedSprite2D.play("nothin")
 	if event.is_action_released(action_name):
 		if $NoteAnimatedSprite2D.animation != "default" and $NoteAnimatedSprite2D.animation != "pressed":
 			$NoteAnimatedSprite2D.play("default")
 		else:
-			owner_strumline.note_released.emit(id)
+			owner_strumline.note_released.emit(direction)
 
 func _process(delta: float) -> void:
 	if owner_strumline.bot_play:
@@ -57,7 +58,7 @@ func _process(delta: float) -> void:
 			$NoteAnimatedSprite2D.play("pressed")
 			current_notes[0].queue_free()
 			current_notes.remove_at(0)
-			owner_strumline.note_pressed.emit(id, 1.0)
+			owner_strumline.note_pressed.emit(direction, 1.0)
 		return
 
 func _on_note_animated_sprite_2d_animation_finished() -> void:
@@ -81,7 +82,7 @@ func _on_area_2d_area_exited(area: Area2D) -> void:
 		var remove_id = current_notes.find(area)
 		if remove_id != -1:
 			current_notes.remove_at(remove_id)
-			owner_strumline.note_missed.emit(id)
+			owner_strumline.note_missed.emit(direction)
 		else:
 			push_error("damn idk what to tell you.")
 
@@ -89,6 +90,6 @@ func _show_splash() -> void:
 	var max_rand = splash_nums[0]
 	var min_rand = splash_nums[splash_nums.size() - 1]
 	var rand = randi_range(min_rand, max_rand)
-	var anim_name: String = Common.id_to_input[id]
+	var anim_name: String = Common.id_to_input(direction)
 	$SplashAnimatedSprite2D.visible = true
 	$SplashAnimatedSprite2D.play(anim_name + "_" + str(rand))

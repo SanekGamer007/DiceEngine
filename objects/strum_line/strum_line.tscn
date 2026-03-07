@@ -37,18 +37,18 @@ sprite_splash = ExtResource("8_2mlt1")
 
 [node name="DownStrum" parent="Strums" unique_id=657846071 instance=ExtResource("2_5bl5q")]
 layout_mode = 2
-id = 1
+direction = 1
 sprite = ExtResource("3_r4pgd")
 sprite_splash = ExtResource("8_2mlt1")
 
 [node name="UpStrum" parent="Strums" unique_id=1582000348 instance=ExtResource("2_5bl5q")]
 layout_mode = 2
-id = 2
+direction = 2
 sprite = ExtResource("4_wddbx")
 sprite_splash = ExtResource("8_2mlt1")
 
 [node name="RightStrum" parent="Strums" unique_id=1207849191 instance=ExtResource("2_5bl5q")]
 layout_mode = 2
-id = 3
+direction = 3
 sprite = ExtResource("5_n2arl")
 sprite_splash = ExtResource("8_2mlt1")
