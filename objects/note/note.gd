@@ -68,6 +68,7 @@ func _set_note_skin(skin: NoteSkinResource) -> void:
 	$SustainsMid.region_rect = Rect2(0,0,skin.sust_body[0].get_width(), skin.sust_body[0].get_height())
 	$SustainsMid.position.x = ((skin.sust_body[0].get_width() / 2) * skin.note_scale.x) * -1
 	$SustainsMid/Sprite2D.texture = skin.sust_end[direction]
+	$SustainsMid/Sprite2D.region_rect = Rect2(0,0,skin.sust_end[0].get_width(), skin.sust_end[0].get_height())
 	$Sprite2D.scale = skin.note_scale
 	if skin.g_is_pixel:
 		$Sprite2D.texture_filter = TextureFilter.TEXTURE_FILTER_NEAREST

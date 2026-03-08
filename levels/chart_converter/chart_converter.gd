@@ -35,6 +35,26 @@ func _start() -> void:
 	var all_notes: Dictionary = chart_data.get("notes")
 	var all_scroll_speeds = chart_data.get("scrollSpeed")
 	var diffs: Dictionary
+	
+	var new_note_skin: String = "normal"
+	var new_strum_lines: Array[Dictionary] = [
+		{
+			"id": 0,
+			"bot_play": false,
+			# "ghost_tapping": false, # If these are not set they are set automatically
+			# "pos": [0, 0],
+			# "scale": [1.0, 1.0],
+			# "rotation": 0, # in degrees
+		},
+		{
+			"id": 1,
+			"bot_play": true,
+			# "ghost_tapping": false,
+			# "pos": [0, 0],
+			# "scale": [1.0, 1.0],
+			# "rotation": 0,
+		}
+	]
 	for i: String in all_notes:
 		var diff_chart = all_notes.get(i, [])
 		var diff_scroll = all_scroll_speeds.get(i, 0.0)
@@ -57,6 +77,8 @@ func _start() -> void:
 				"1": song_character_id1,
 			},
 			"girlfriend": song_gf,
+			"note_skin": new_note_skin,
+			"strum_lines": new_strum_lines
 		},
 		"chart": diffs,
 	}

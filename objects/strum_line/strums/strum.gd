@@ -59,7 +59,8 @@ func _input(event: InputEvent) -> void:
 			state = ANIM_STATES.NOTHIN
 			return
 	if event.is_action_released(action_name):
-		owner_strumline.note_released.emit(direction)
+		if not current_notes.is_empty() or ANIM_STATES.IDLE:
+			owner_strumline.note_released.emit(direction)
 
 
 func _process(delta: float) -> void:

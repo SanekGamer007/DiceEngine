@@ -121,7 +121,6 @@ func find_note_skins() -> Dictionary[String, String]:
 					if file.ends_with(".tres"):
 						found_note_skins[skin_folder] = full_path + file
 						break
-	print(found_note_skins)
 	return found_note_skins
 
 func _format_song(json_path: String, song_name: String) -> Dictionary[String, Dictionary]:
