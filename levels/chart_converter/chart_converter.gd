@@ -19,18 +19,18 @@ func _start() -> void:
 	var meta_whyInTheFuckIsItAnArray: Array = metadata_data.get("timeChanges", {})
 	var meta_timechanges: Dictionary = meta_whyInTheFuckIsItAnArray[0]
 	
-	var songname = metadata_data.get("songName", "ExampleName")
-	var songartist = metadata_data.get("artist", "Unknown")
-	var songcharter = metadata_data.get("charter", "Unknown")
+	var songname: String = metadata_data.get("songName", "ExampleName")
+	var songartist: String = metadata_data.get("artist", "Unknown")
+	var songcharter: String = metadata_data.get("charter", "Unknown")
 	
-	var songstage = meta_playdata.get("stage", "mainStage")
-	var songbpm = meta_timechanges.get("bpm", 120)
-	var song_characters = meta_playdata.get("characters", {})
-	var song_character_id0 = song_characters.get("player", "bf")
-	var song_character_id1 = song_characters.get("opponent", "dad")
-	var song_gf = meta_playdata.get("girlfriend", "gf") 
+	var songstage: String = meta_playdata.get("stage", "main_stage")
+	songstage = songstage.to_snake_case()
+	var songbpm: int = meta_timechanges.get("bpm", 120)
+	var song_characters: Dictionary = meta_playdata.get("characters", {})
+	var song_character_id0: String = song_characters.get("player", "bf")
+	var song_character_id1: String = song_characters.get("opponent", "dad")
+	var song_gf: String = meta_playdata.get("girlfriend", "gf") 
 	
-	print(meta_playdata)
 	
 	var all_notes: Dictionary = chart_data.get("notes")
 	var all_scroll_speeds = chart_data.get("scrollSpeed")

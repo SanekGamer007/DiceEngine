@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bn245b4ifhtnq"]
+
+[ext_resource type="Script" uid="uid://dpiwawuxsslfu" path="res://objects/character_marker_2d/character_marker_2d.gd" id="1_qpytm"]
+
+[node name="CharacterMarker2D" type="Marker2D" unique_id=460892831]
+script = ExtResource("1_qpytm")

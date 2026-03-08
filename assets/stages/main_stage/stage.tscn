@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://bh7emyunkhjwl"]
+
+[ext_resource type="PackedScene" uid="uid://bn245b4ifhtnq" path="res://objects/character_marker_2d/character_marker_2d.tscn" id="1_3vnlr"]
+
+[node name="MainStage" type="Node2D" unique_id=1637277094]
+
+[node name="Markers" type="Node2D" parent="." unique_id=79275904]
+
+[node name="ID0" parent="Markers" unique_id=460892831 instance=ExtResource("1_3vnlr")]
+position = Vector2(420, 440)
+
+[node name="ID1" parent="Markers" unique_id=1465821611 instance=ExtResource("1_3vnlr")]
+position = Vector2(-420, 440)
+flip_h = true
+
+[node name="GF" parent="Markers" unique_id=248662459 instance=ExtResource("1_3vnlr")]
+position = Vector2(0, 440)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=472157303]
+zoom = Vector2(0.7, 0.7)

@@ -4,8 +4,6 @@ extends Control
 @export var notes: Array[Dictionary]
 @export var difficulty: Common.DIFFICULTY = Common.DIFFICULTY.HARD
 @export var difficulty_string: String
-
-var mus_time: float
 var BPM: int = 120
 
 signal notes_loaded
@@ -18,7 +16,7 @@ func _ready() -> void:
 	var voices: Dictionary[int, String] = {} # id -> filepath
 	var voice_file_names = DirAccess.get_files_at("res://assets/songs/" + song_name + "/song/")
 	for i: String in voice_file_names:
-		if i.ends_with(".ogg") and not i.contains(".import"):
+		if i.ends_with(".ogg") and not i.contains(".import") and not i.contains("Inst"):
 			var id = i.trim_prefix("Voices-id").trim_suffix(".ogg")
 			voices[int(id)] = "res://assets/songs/" + song_name + "/song/" + i
 	for i in voices.size():
@@ -75,8 +73,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if $AudioPlayers/AudioStreamPlayerInst.playing == false:
-		mus_time += delta
+		Game.mus_time += delta
 	else:
-		mus_time = $AudioPlayers/AudioStreamPlayerInst.get_playback_position()
-	for strumline: StrumLine in $StrumLines.get_children():
-		strumline.mus_time = mus_time
+		Game.mus_time = $AudioPlayers/AudioStreamPlayerInst.get_playback_position()

@@ -9,4 +9,10 @@ script = ExtResource("2_ngu17")
 
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=63994655]
 sprite_frames = ExtResource("3_irnw7")
-animation = &"left"
+animation = &"idle"
+
+[node name="ReferenceRect" parent="." index="2" unique_id=1762810265]
+offset_left = -210.0
+offset_top = -390.0
+offset_right = 213.0
+offset_bottom = 389.0

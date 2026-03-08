@@ -41,6 +41,7 @@
 [ext_resource type="Texture2D" uid="uid://d0nw8hbvrjf3k" path="res://assets/stages/google/shadow.png" id="39_qwkua"]
 [ext_resource type="Texture2D" uid="uid://cs3kpjypt27ao" path="res://assets/stages/google/light.png" id="40_rsekx"]
 [ext_resource type="Texture2D" uid="uid://i01ie0g3im38" path="res://assets/stages/google/googleUI.png" id="41_1533t"]
+[ext_resource type="PackedScene" uid="uid://bn245b4ifhtnq" path="res://objects/character_marker_2d/character_marker_2d.tscn" id="42_abgsp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d61a2"]
 animations = [{
@@ -182,3 +183,11 @@ texture = ExtResource("40_rsekx")
 position = Vector2(-17.999992, 3.0000076)
 scale = Vector2(1.6, 1.6)
 texture = ExtResource("41_1533t")
+
+[node name="Markers" type="Node2D" parent="." unique_id=1474826898]
+
+[node name="ID0" parent="Markers" unique_id=460892831 instance=ExtResource("42_abgsp")]
+position = Vector2(-1458, 801)
+
+[node name="ID1" parent="Markers" unique_id=1108284709 instance=ExtResource("42_abgsp")]
+position = Vector2(0, 330)

@@ -3,8 +3,8 @@ extends Label
 var org_text := "Score: %d"
 var score: int = 0
 
-func _ready() -> void:
-	get_node("../../../StrumLines/StrumLineBF").note_pressed.connect(_on_note_pressed)
+func _on_ui_init_done() -> void:
+	get_node("../../../StrumLines/StrumLine").note_pressed.connect(_on_note_pressed)
 	text = org_text % score
 
 func _on_note_pressed(id: int, accuracy: float) -> void:

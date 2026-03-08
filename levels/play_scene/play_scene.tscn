@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://5vv6valrucv1"]
+
+[ext_resource type="Script" uid="uid://dendrpj4lb81j" path="res://levels/play_scene/play_scene.gd" id="1_nqujv"]
+[ext_resource type="PackedScene" uid="uid://bia2sobsa06sb" path="res://objects/ui/ui.tscn" id="1_u3g30"]
+
+[node name="PlayScene" type="Node2D" unique_id=1338571594]
+script = ExtResource("1_nqujv")
+song_name = "sonic_kills_you_and_you_die"
+difficulty = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=582905084]
+zoom = Vector2(0.7, 0.7)
+
+[node name="StrumLines" type="CanvasLayer" parent="." unique_id=1364011712]
+follow_viewport_enabled = true
+
+[node name="ID0" type="Marker2D" parent="StrumLines" unique_id=1632866975]
+position = Vector2(512, -385)
+
+[node name="ID1" type="Marker2D" parent="StrumLines" unique_id=1454143535]
+position = Vector2(-540, -385)
+
+[node name="Characters" type="Node2D" parent="." unique_id=1858545125]
+metadata/_edit_lock_ = true
+
+[node name="AudioPlayers" type="Node" parent="." unique_id=76206768]
+
+[node name="AudioStreamPlayerInst" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=252583936]
+autoplay = true
+
+[node name="ui" parent="." unique_id=1119694987 instance=ExtResource("1_u3g30")]

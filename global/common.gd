@@ -19,6 +19,13 @@ enum DIFFICULTY {
 	NIGHTMARE,
 }
 
+static var judge_ranks: Dictionary[String, Array] = { # NAME, SCORE, TIME, ACCURACY AWARD
+	"SICK": [350, 0.037, 1.0],
+	"GOOD": [200, 0.075, 0.75],
+	"BAD": [100, 0.115, 0.45],
+	"SHIT": [50, 0.180, 0.25],
+	"MISS": [0, 999, 0.0],
+}
 
 static func id_to_input(dir: ARROW_DIR) -> String:
 	return ARROW_DIR.keys()[dir].to_lower()
@@ -31,3 +38,16 @@ static func difficulty_to_string(diff: DIFFICULTY) -> String:
 
 static func string_to_difficulty(diff: String) -> DIFFICULTY:
 	return DIFFICULTY.get(diff.to_upper())
+
+static func secs_to_rank(secs: float) -> String:
+	var abs_secs: float = abs(secs)
+	for rank in judge_ranks.keys():
+		if abs_secs <= judge_ranks[rank][1]:
+			return rank
+	return "MISS"
+
+static func rank_to_accr(rank: String) -> float:
+	var rankarray = judge_ranks.get(rank, [])
+	if not rankarray:
+		return 0.0
+	return rankarray[2]

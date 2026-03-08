@@ -8,3 +8,9 @@
 [node name="AnimatedSprite2D" parent="." index="0" unique_id=63994655]
 sprite_frames = ExtResource("2_y8jnl")
 animation = &"idle"
+
+[node name="ReferenceRect" parent="." index="2" unique_id=1762810265]
+offset_left = -127.0
+offset_top = -137.0
+offset_right = 144.0
+offset_bottom = 228.0

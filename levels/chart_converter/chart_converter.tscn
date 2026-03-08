@@ -10,5 +10,5 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_oxr2b")
-chart = "res://assets/songs/sonic_kills_you_and_you_die/sonic_kills_you_and_you_die-chart.json"
-metadata = "res://assets/songs/sonic_kills_you_and_you_die/sonic_kills_you_and_you_die-metadata.json"
+chart = "res://dadbattle-chart.json"
+metadata = "res://dadbattle-metadata.json"

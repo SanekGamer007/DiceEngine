@@ -5,7 +5,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dk7qnhqu3wrtj" path="res://assets/base/strumline/notes/normal/res/splash.tres" id="3_a4tlu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4pgd"]
-size = Vector2(128, 226)
+size = Vector2(128, 426)
 
 [node name="Strum" type="Control" unique_id=1263375101]
 layout_mode = 3
@@ -28,6 +28,8 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1954240034]
+collision_layer = 65
+collision_mask = 65
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1948741563]
 shape = SubResource("RectangleShape2D_r4pgd")

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="fnf_practice"
-run/main_scene="uid://bcwrtjx4nj3j3"
+run/main_scene="uid://5vv6valrucv1"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Game="*uid://n8rcjcrd6nhy"
 
 [display]
 
@@ -55,7 +59,8 @@ right={
 
 [layer_names]
 
-2d_physics/layer_8="note_cleaner"
+2d_physics/layer_7="sustain_notes"
+2d_physics/layer_8="Слой 8"
 
 [physics]
 
