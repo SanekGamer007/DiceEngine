@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="NoteSkinResource" format=3 uid="uid://qawr206cmku"]
 
 [ext_resource type="SpriteFrames" uid="uid://bet8wlntgt0ni" path="res://assets/base/strumline/notes/normal/res/spriteframes/frames/left.tres" id="1_ed117"]
-[ext_resource type="Script" uid="uid://dclikqljysges" path="res://assets/base/strumline/notes/base/res/noteskin.gd" id="1_k2mjk"]
+[ext_resource type="Script" uid="uid://dclikqljysges" path="res://internal/assets/base/strumline/notes/base/res/noteskin.gd" id="1_k2mjk"]
 [ext_resource type="SpriteFrames" uid="uid://cr2qk1x5s7b6j" path="res://assets/base/strumline/notes/normal/res/spriteframes/frames/down.tres" id="2_4tsiq"]
 [ext_resource type="SpriteFrames" uid="uid://bqlghwemfawmi" path="res://assets/base/strumline/notes/normal/res/spriteframes/frames/up.tres" id="3_pksn5"]
 [ext_resource type="SpriteFrames" uid="uid://c0vgcg8egqemm" path="res://assets/base/strumline/notes/normal/res/spriteframes/frames/right.tres" id="4_tfkl6"]

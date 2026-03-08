@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cqyyp5d7eoj21"]
 
-[ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://assets/characters/base/base_character.tscn" id="1_5ddw2"]
+[ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_5ddw2"]
 [ext_resource type="Texture2D" uid="uid://m7jqnd6kn8on" path="res://assets/characters/bf_pixel/bf_pixel_down_1.png" id="2_3hf7h"]
 [ext_resource type="Texture2D" uid="uid://dmqenx2770ubo" path="res://assets/characters/bf_pixel/bf_pixel_down_2.png" id="3_dmj1q"]
 [ext_resource type="Texture2D" uid="uid://c1ikell02sajs" path="res://assets/characters/bf_pixel/bf_pixel_down_3.png" id="4_n72lh"]

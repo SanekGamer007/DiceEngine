@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://blhrdca83vt38"]
 
-[ext_resource type="Script" uid="uid://bs4j5kc4k3mry" path="res://assets/stages/google/stage.gd" id="1_q7f1f"]
+[ext_resource type="Script" uid="uid://bs4j5kc4k3mry" path="res://assets/stages/google/google.gd" id="1_q7f1f"]
 [ext_resource type="Texture2D" uid="uid://boyw27i4ckq66" path="res://assets/stages/google/bg/bg_0.png" id="2_gce2x"]
 [ext_resource type="Texture2D" uid="uid://crpr6b7hmpp64" path="res://assets/stages/google/bg/bg_1.png" id="3_naqap"]
 [ext_resource type="Texture2D" uid="uid://7crfw6ttjhm7" path="res://assets/stages/google/bg/bg_2.png" id="4_odcws"]

@@ -95,7 +95,7 @@ func _process(delta: float) -> void:
 	if player.playing:
 		var current_audio_pos = player.get_playback_position()
 		
-		if current_audio_pos != last_audio_pos:
+		if true: #current_audio_pos != last_audio_pos:
 			Game.mus_time = current_audio_pos + AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency()
 			last_audio_pos = current_audio_pos
 		else:
@@ -110,10 +110,10 @@ func load_chart_file(location: String) -> Dictionary:
 	return JSON.parse_string(chart_file)
 
 func load_stage(stage_name: String) -> void:
-	if not FileAccess.file_exists("res://assets/stages/" + stage_name + "/stage.tscn"):
+	if not FileAccess.file_exists("res://assets/stages/" + stage_name + "/" + stage_name + ".tscn"):
 		push_error("ERROR: Stage file not found.\nDefaulting to main_stage.")
 		stage_name = "main_stage"
-	var stagepacked: PackedScene = load("res://assets/stages/" + stage_name + "/stage.tscn")
+	var stagepacked: PackedScene = load("res://assets/stages/" + stage_name + "/" + stage_name + ".tscn")
 	stage = stagepacked.instantiate()
 	add_child(stage)
 	move_child(stage, 0)

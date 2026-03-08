@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cjln1e1icrq55"]
 
-[ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://assets/characters/base/base_character.tscn" id="1_44taj"]
+[ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_44taj"]
 
 [node name="PicoGoogle" unique_id=151574328 instance=ExtResource("1_44taj")]
 

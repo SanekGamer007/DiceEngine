@@ -18,6 +18,7 @@ config/icon="res://icon.svg"
 [autoload]
 
 Game="*uid://n8rcjcrd6nhy"
+Registry="*uid://bgm7egxfkvl0t"
 
 [display]
 

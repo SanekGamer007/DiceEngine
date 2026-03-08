@@ -81,7 +81,6 @@ func _process(delta: float) -> void:
 					current_notes[0].queue_free()
 					current_notes.remove_at(0)
 					owner_strumline.note_pressed.emit(direction, 1.0)
-					owner_strumline.note_released.emit(direction) 
 	if active_sustain:
 		var note_end_time = active_sustain.time + active_sustain.length
 		if not owner_strumline.bot_play and not Input.is_action_pressed(action_name):

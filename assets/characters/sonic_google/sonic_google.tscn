@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://3pwfho64pcex"]
 
-[ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://assets/characters/base/base_character.tscn" id="1_g3q5a"]
+[ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_g3q5a"]
 [ext_resource type="SpriteFrames" uid="uid://cgc0r27pibra0" path="res://assets/characters/sonic_google/frames.tres" id="2_y8jnl"]
 
 [node name="SonicGoogle" unique_id=151574328 instance=ExtResource("1_g3q5a")]

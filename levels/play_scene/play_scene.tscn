@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://dendrpj4lb81j" path="res://levels/play_scene/play_scene.gd" id="1_nqujv"]
 [ext_resource type="PackedScene" uid="uid://bia2sobsa06sb" path="res://objects/ui/ui.tscn" id="1_u3g30"]
-[ext_resource type="Resource" uid="uid://ofq746e6b56n" path="res://assets/base/strumline/notes/pixel/res/pixel.tres" id="2_nqujv"]
+[ext_resource type="Resource" uid="uid://qawr206cmku" path="res://assets/base/strumline/notes/normal/res/normal.tres" id="2_nqujv"]
 
 [node name="PlayScene" type="Node2D" unique_id=1338571594]
 script = ExtResource("1_nqujv")
-song_name = "thorns_erect"
-difficulty = 4
+song_name = "sonic_kills_you_and_you_die"
+difficulty = 1
 note_skin = ExtResource("2_nqujv")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=582905084]

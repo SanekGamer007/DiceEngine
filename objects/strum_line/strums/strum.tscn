@@ -5,7 +5,7 @@
 [ext_resource type="SpriteFrames" uid="uid://dk7qnhqu3wrtj" path="res://assets/base/strumline/notes/normal/res/spriteframes/splash/splash.tres" id="3_a4tlu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r4pgd"]
-size = Vector2(128, 426)
+size = Vector2(128, 300)
 
 [node name="Strum" type="Control" unique_id=1263375101]
 layout_mode = 3
