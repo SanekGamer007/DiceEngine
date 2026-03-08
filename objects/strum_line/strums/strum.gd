@@ -3,20 +3,10 @@ class_name Strum
 
 
 @export var direction: Common.ARROW_DIR = Common.ARROW_DIR.LEFT
-@export var sprite: SpriteFrames :
-	set(spr):
-		sprite = spr
-		if is_inside_tree():
-			$NoteAnimatedSprite2D.sprite_frames = spr
-@export var sprite_splash: SpriteFrames :
-	set(spr):
-		sprite_splash = spr
-		var names = spr.get_animation_names()
-		for s: String in names:
-			splash_nums.append(int(s[s.length() - 1]))
-		splash_nums.sort()
-		if is_inside_tree():
-			$SplashAnimatedSprite2D.sprite_frames = spr
+@export var note_skin: NoteSkinResource :
+	set(skin):
+		note_skin = skin
+		set_note_skin(skin)
 @export var owner_strumline: StrumLine
 var action_name: String
 var current_notes: Array[Note]
@@ -36,8 +26,7 @@ enum ANIM_STATES {
 
 func _ready() -> void:
 	action_name = Common.id_to_input(direction)
-	$NoteAnimatedSprite2D.sprite_frames = sprite
-	$NoteAnimatedSprite2D.play("default")
+	set_note_skin(note_skin)
 
 func _input(event: InputEvent) -> void:
 	if owner_strumline.bot_play:
@@ -173,3 +162,24 @@ func _show_splash() -> void:
 func calc_accr(diff: float) -> float:
 	var rank_name = Common.secs_to_rank(diff)
 	return Common.rank_to_accr(rank_name)
+
+func set_note_skin(skin: NoteSkinResource) -> void:
+	if not is_inside_tree():
+		return
+	if not skin:
+		return
+	var names = skin.splsh_frames.get_animation_names()
+	for s: String in names:
+		splash_nums.append(int(s[s.length() - 1]))
+	splash_nums.sort()
+	$NoteAnimatedSprite2D.sprite_frames = skin.note_frames[direction]
+	$NoteAnimatedSprite2D.scale = skin.note_scale
+	$SplashAnimatedSprite2D.sprite_frames = skin.splsh_frames
+	$SplashAnimatedSprite2D.scale = skin.splsh_scale
+	if skin.g_is_pixel:
+		$NoteAnimatedSprite2D.texture_filter = TextureFilter.TEXTURE_FILTER_NEAREST
+		$SplashAnimatedSprite2D.texture_filter = TextureFilter.TEXTURE_FILTER_NEAREST
+	else:
+		$NoteAnimatedSprite2D.texture_filter = TextureFilter.TEXTURE_FILTER_PARENT_NODE
+		$SplashAnimatedSprite2D.texture_filter = TextureFilter.TEXTURE_FILTER_PARENT_NODE
+	

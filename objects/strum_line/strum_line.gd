@@ -3,7 +3,10 @@ class_name StrumLine
 
 var note_preload = preload("res://objects/note/note.tscn")
 
-@export var note_skins: Array[Texture2D]
+@export var note_skin: NoteSkinResource :
+	set(skin):
+		note_skin = skin
+		set_note_skin(skin)
 
 @export var bot_play: bool = false
 @export var ghost_tapping: bool = false
@@ -26,6 +29,7 @@ signal note_sustained(direction: Common.ARROW_DIR)
 
 func _ready() -> void:
 	Input.set_use_accumulated_input(false)
+	set_note_skin(note_skin)
 	set_process(false)
 
 func _process(delta: float) -> void:
@@ -43,7 +47,7 @@ func _process(delta: float) -> void:
 		note.length = current_note.get("l", 0.0)
 		note.scroll_speed = scroll_speed
 		note.position.y = (current_note.t - Game.mus_time) * (scroll_speed * Common.magic_scroll_speed_value)
-		note.sprite = note_skins[note.direction]
+		note.note_skin = note_skin
 		note.clean_pos = cleaner_pos
 		spawn_location.add_child(note)
 		next_note_index += 1
@@ -53,6 +57,7 @@ func _on_notes_loaded() -> void:
 	for strum: Strum in $Strums.get_children():
 		strums.append(strum)
 		strum.owner_strumline = self
+		strum.note_skin = note_skin
 	if character:
 		note_pressed.connect(character._on_note_pressed)
 		note_released.connect(character._on_note_released)
@@ -63,3 +68,10 @@ func _on_notes_loaded() -> void:
 		character.bot_play = bot_play
 	set_process(true)
 	init_done.emit()
+
+func set_note_skin(skin: NoteSkinResource) -> void:
+	if not is_inside_tree():
+		return
+	if not skin:
+		return
+	$Strums["theme_override_constants/separation"] = skin.g_separation

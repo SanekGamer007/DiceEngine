@@ -2,6 +2,7 @@ extends Node2D
 
 @export var song_name: String
 @export var difficulty: Common.DIFFICULTY = Common.DIFFICULTY.HARD
+@export var note_skin: NoteSkinResource
 var notes: Array[Dictionary]
 var difficulty_string: String
 
@@ -37,8 +38,8 @@ func _ready() -> void:
 		push_error("FATAL: Chart file is invalid.\nINFO: Chart section not found.")
 		return
 	
-	var diff_chart: Dictionary = all_diffs.get(difficulty_string)
-	scroll_speed = diff_chart.get("scrollspeed")
+	var diff_chart: Dictionary = all_diffs.get(difficulty_string, {})
+	scroll_speed = diff_chart.get("scrollspeed", 0.0)
 	if not diff_chart:
 		push_error("FATAL: Chart file is invalid.\nINFO: Chart for selected difficulty wasn't found.")
 		return
@@ -109,6 +110,9 @@ func load_chart_file(location: String) -> Dictionary:
 	return JSON.parse_string(chart_file)
 
 func load_stage(stage_name: String) -> void:
+	if not FileAccess.file_exists("res://assets/stages/" + stage_name + "/stage.tscn"):
+		push_error("ERROR: Stage file not found.\nDefaulting to main_stage.")
+		stage_name = "main_stage"
 	var stagepacked: PackedScene = load("res://assets/stages/" + stage_name + "/stage.tscn")
 	stage = stagepacked.instantiate()
 	add_child(stage)
@@ -127,6 +131,7 @@ func spawn_strumlines(amount: int) -> void:
 			strumline.bot_play = true
 		strumline.ghost_tapping = true # temporary.
 		strumline.scroll_speed = scroll_speed
+		strumline.note_skin = note_skin
 		notes_loaded.connect(strumline._on_notes_loaded)
 		for note: Dictionary in notes:
 				if note.s == strumline.id:

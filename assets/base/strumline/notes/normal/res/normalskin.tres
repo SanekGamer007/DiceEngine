@@ -1,0 +1,29 @@
+[gd_resource type="Resource" script_class="NoteSkinResource" format=3 uid="uid://qawr206cmku"]
+
+[ext_resource type="SpriteFrames" uid="uid://bet8wlntgt0ni" path="res://assets/base/strumline/notes/normal/res/spriteframes/frames/left.tres" id="1_ed117"]
+[ext_resource type="Script" uid="uid://dclikqljysges" path="res://assets/base/strumline/notes/base/res/noteskin.gd" id="1_k2mjk"]
+[ext_resource type="SpriteFrames" uid="uid://cr2qk1x5s7b6j" path="res://assets/base/strumline/notes/normal/res/spriteframes/frames/down.tres" id="2_4tsiq"]
+[ext_resource type="SpriteFrames" uid="uid://bqlghwemfawmi" path="res://assets/base/strumline/notes/normal/res/spriteframes/frames/up.tres" id="3_pksn5"]
+[ext_resource type="SpriteFrames" uid="uid://c0vgcg8egqemm" path="res://assets/base/strumline/notes/normal/res/spriteframes/frames/right.tres" id="4_tfkl6"]
+[ext_resource type="Texture2D" uid="uid://cfwrsu66fnk82" path="res://assets/base/strumline/notes/normal/left_note.png" id="5_snk2c"]
+[ext_resource type="Texture2D" uid="uid://jub51vgj3c4p" path="res://assets/base/strumline/notes/normal/down_note.png" id="6_e5sf4"]
+[ext_resource type="Texture2D" uid="uid://00bsht6bw1rh" path="res://assets/base/strumline/notes/normal/left_holder_1.png" id="7_4tsiq"]
+[ext_resource type="Texture2D" uid="uid://bh8phessr3vmb" path="res://assets/base/strumline/notes/normal/up_note.png" id="7_ndl8x"]
+[ext_resource type="Texture2D" uid="uid://binoc6ntqod5i" path="res://assets/base/strumline/notes/normal/down_holder_1.png" id="8_pksn5"]
+[ext_resource type="Texture2D" uid="uid://basaooy2w0bco" path="res://assets/base/strumline/notes/normal/right_note.png" id="8_uhwvd"]
+[ext_resource type="Texture2D" uid="uid://dnm4oskpvpxyc" path="res://assets/base/strumline/notes/normal/up_holder_1.png" id="9_tfkl6"]
+[ext_resource type="SpriteFrames" uid="uid://dk7qnhqu3wrtj" path="res://assets/base/strumline/notes/normal/res/spriteframes/splash/splash.tres" id="10_3njkk"]
+[ext_resource type="Texture2D" uid="uid://j42p50hbxclk" path="res://assets/base/strumline/notes/normal/right_holder_1.png" id="10_snk2c"]
+[ext_resource type="Texture2D" uid="uid://dv50l6hofgchd" path="res://assets/base/strumline/notes/normal/left_holder_0.png" id="11_e5sf4"]
+[ext_resource type="Texture2D" uid="uid://t5at12bl43vg" path="res://assets/base/strumline/notes/normal/down_holder_0.png" id="12_ndl8x"]
+[ext_resource type="Texture2D" uid="uid://dg2riry2fieb6" path="res://assets/base/strumline/notes/normal/up_holder_0.png" id="13_uhwvd"]
+[ext_resource type="Texture2D" uid="uid://w2un0i7h7w0q" path="res://assets/base/strumline/notes/normal/right_holder_0.png" id="14_3njkk"]
+
+[resource]
+script = ExtResource("1_k2mjk")
+note_frames = Array[SpriteFrames]([ExtResource("1_ed117"), ExtResource("2_4tsiq"), ExtResource("3_pksn5"), ExtResource("4_tfkl6")])
+note_skins = Array[Texture2D]([ExtResource("5_snk2c"), ExtResource("6_e5sf4"), ExtResource("7_ndl8x"), ExtResource("8_uhwvd")])
+sust_body = Array[Texture2D]([ExtResource("7_4tsiq"), ExtResource("8_pksn5"), ExtResource("9_tfkl6"), ExtResource("10_snk2c")])
+sust_end = Array[Texture2D]([ExtResource("11_e5sf4"), ExtResource("12_ndl8x"), ExtResource("13_uhwvd"), ExtResource("14_3njkk")])
+splsh_frames = ExtResource("10_3njkk")
+metadata/_custom_type_script = "uid://dclikqljysges"

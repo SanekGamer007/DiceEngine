@@ -15,6 +15,6 @@ frame_progress = 1.0
 
 [node name="ReferenceRect" parent="." index="2" unique_id=1762810265]
 offset_left = -220.0
-offset_top = -232.0
+offset_top = -252.0
 offset_right = 189.0
-offset_bottom = 148.0
+offset_bottom = 165.0
