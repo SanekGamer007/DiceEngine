@@ -2,7 +2,51 @@
 
 [ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_44taj"]
 
+[sub_resource type="Animation" id="Animation_44taj"]
+resource_local_to_scene = true
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_lndu8"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ksi8i"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_qs0hj"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_xcgbg"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_bn7gs"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ph2kq"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_5h1re"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ojai4"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yn2ex"]
+_data = {
+&"down": SubResource("Animation_44taj"),
+&"down_miss": SubResource("Animation_lndu8"),
+&"idle": SubResource("Animation_ksi8i"),
+&"left": SubResource("Animation_qs0hj"),
+&"left_miss": SubResource("Animation_xcgbg"),
+&"right": SubResource("Animation_bn7gs"),
+&"right_miss": SubResource("Animation_ph2kq"),
+&"up": SubResource("Animation_5h1re"),
+&"up_miss": SubResource("Animation_ojai4")
+}
+
 [node name="PicoGoogle" unique_id=151574328 instance=ExtResource("1_44taj")]
 
-[node name="AnimatedSprite2D" parent="." index="0" unique_id=63994655]
-animation = &"up"
+[node name="AnimationPlayer" parent="." index="0" unique_id=1164546831]
+libraries/ = SubResource("AnimationLibrary_yn2ex")
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=63994655]
+animation = &"up_miss"
