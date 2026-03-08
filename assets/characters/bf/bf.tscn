@@ -3,7 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_hnp6k"]
 [ext_resource type="Script" uid="uid://c6y0alu0psj3a" path="res://assets/characters/bf/bf.gd" id="2_dme70"]
 [ext_resource type="Texture2D" uid="uid://cao3hqak6hu2" path="res://assets/characters/bf/images/bf-2.png" id="3_4kwj6"]
+[ext_resource type="Texture2D" uid="uid://bwn2fmpxp3xyg" path="res://assets/characters/bf/icon_1.png" id="3_wsjcv"]
 [ext_resource type="Texture2D" uid="uid://ckrqxrw2wqdwp" path="res://assets/characters/bf/images/bf-3.png" id="4_dme70"]
+[ext_resource type="Texture2D" uid="uid://c4i67awwoccmy" path="res://assets/characters/bf/icon_0.png" id="4_ymfep"]
 [ext_resource type="Texture2D" uid="uid://bdt6rce2mu7p4" path="res://assets/characters/bf/images/bf-4.png" id="5_wsjcv"]
 [ext_resource type="Texture2D" uid="uid://ulw53gqxi32c" path="res://assets/characters/bf/images/bf-5.png" id="6_ymfep"]
 
@@ -2196,6 +2198,8 @@ animations = [{
 
 [node name="BF" unique_id=151574328 instance=ExtResource("1_hnp6k")]
 script = ExtResource("2_dme70")
+icon = Array[Texture2D]([ExtResource("3_wsjcv"), ExtResource("4_ymfep"), ExtResource("4_ymfep")])
+hp_color = Color(0.19215687, 0.6901961, 0.81960785, 1)
 
 [node name="AnimationPlayer" parent="." index="0" unique_id=1164546831]
 libraries/ = SubResource("AnimationLibrary_ulmin")

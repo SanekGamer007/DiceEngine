@@ -2,7 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_5ddw2"]
 [ext_resource type="Texture2D" uid="uid://m7jqnd6kn8on" path="res://assets/characters/bf_pixel/images/bf_pixel_down_1.png" id="2_3hf7h"]
+[ext_resource type="Texture2D" uid="uid://blye0wjnbar0w" path="res://assets/characters/bf_pixel/icon_1.png" id="2_dmj1q"]
 [ext_resource type="Texture2D" uid="uid://dmqenx2770ubo" path="res://assets/characters/bf_pixel/images/bf_pixel_down_2.png" id="3_dmj1q"]
+[ext_resource type="Texture2D" uid="uid://dyiipu76c3xd0" path="res://assets/characters/bf_pixel/icon_0.png" id="3_n72lh"]
 [ext_resource type="Texture2D" uid="uid://c1ikell02sajs" path="res://assets/characters/bf_pixel/images/bf_pixel_down_3.png" id="4_n72lh"]
 [ext_resource type="Texture2D" uid="uid://cprkxxd1nleej" path="res://assets/characters/bf_pixel/images/bf_pixel_down_4.png" id="5_r5axo"]
 [ext_resource type="Texture2D" uid="uid://dos2uxc5hobqv" path="res://assets/characters/bf_pixel/images/bf_pixel_down_5.png" id="6_0hsav"]
@@ -812,6 +814,9 @@ animations = [{
 }]
 
 [node name="BFPixel" unique_id=151574328 instance=ExtResource("1_5ddw2")]
+icon = Array[Texture2D]([ExtResource("2_dmj1q"), ExtResource("3_n72lh"), ExtResource("3_n72lh")])
+filtering = 1
+hp_color = Color(0.48235294, 0.8392157, 0.9647059, 1)
 
 [node name="AnimationPlayer" parent="." index="0" unique_id=1164546831]
 libraries/ = SubResource("AnimationLibrary_lrjln")
@@ -820,7 +825,6 @@ libraries/ = SubResource("AnimationLibrary_lrjln")
 texture_filter = 1
 scale = Vector2(6, 6)
 sprite_frames = SubResource("SpriteFrames_oallv")
-animation = &"down"
 
 [node name="ReferenceRect" parent="." index="3" unique_id=1762810265]
 offset_left = -197.0

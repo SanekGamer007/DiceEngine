@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://cwidido8h7iqc"]
 
 [ext_resource type="Script" uid="uid://4otmtv4dr2c4" path="res://internal/assets/characters/base/base_character.gd" id="1_e73kw"]
+[ext_resource type="Texture2D" uid="uid://dpoqiaxq6j7nj" path="res://internal/assets/characters/base/icon_1.png" id="2_eadeh"]
+[ext_resource type="Texture2D" uid="uid://fred3htsqscw" path="res://internal/assets/characters/base/icon_0.png" id="3_oix3l"]
 
 [sub_resource type="Animation" id="Animation_gqru1"]
 resource_local_to_scene = true
@@ -310,13 +312,15 @@ animations = [{
 
 [node name="BaseCharacter" type="Node2D" unique_id=151574328]
 script = ExtResource("1_e73kw")
+icon = Array[Texture2D]([ExtResource("2_eadeh"), ExtResource("3_oix3l"), ExtResource("3_oix3l")])
+hp_color = Color(0.6313726, 0.6313726, 0.6313726, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1164546831]
 libraries/ = SubResource("AnimationLibrary_32vpy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=63994655]
 sprite_frames = SubResource("SpriteFrames_lr30v")
-animation = &"idle"
+animation = &"down"
 
 [node name="IdleTimer" type="Timer" parent="." unique_id=2011351476]
 wait_time = 0.66

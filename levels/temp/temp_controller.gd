@@ -6,7 +6,7 @@ extends Control
 @export var difficulty_string: String
 var BPM: int = 120
 
-signal notes_loaded
+signal loading_complete
 
 func _ready() -> void:
 	difficulty_string = Common.difficulty_to_string(difficulty)
@@ -29,7 +29,7 @@ func _ready() -> void:
 	
 	for strumline_idx: int in $StrumLines.get_child_count():
 		var strumline: StrumLine = $StrumLines.get_child(strumline_idx)
-		notes_loaded.connect(strumline._on_notes_loaded)
+		loading_complete.connect(strumline._on_loading_complete)
 		for character: Character in $Characters.get_children():
 			if strumline.character:
 				break
@@ -69,7 +69,7 @@ func _ready() -> void:
 			for note: Dictionary in notes:
 				if note.s == strumline.id:
 					strumline.notes.append(note)
-	notes_loaded.emit()
+	loading_complete.emit()
 
 func _process(delta: float) -> void:
 	if $AudioPlayers/AudioStreamPlayerInst.playing == false:

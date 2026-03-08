@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 		spawn_location.add_child(note)
 		next_note_index += 1
 
-func _on_notes_loaded() -> void:
+func _on_loading_complete() -> void:
 	notes.sort_custom(func(a, b): return a.t < b.t)
 	for strum: Strum in $Strums.get_children():
 		strums.append(strum)

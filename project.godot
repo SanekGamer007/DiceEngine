@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="fnf_practice"
+config/name="Dice Engine"
 run/main_scene="uid://5vv6valrucv1"
 config/features=PackedStringArray("4.6", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://b2j7fyvg53jg2"
 
 [autoload]
 

@@ -6,9 +6,14 @@ class_name Character
 @export var flip_v: bool = false
 @export var bot_play: bool = false
 @export var id: int = -1 ## if -1 its set automatically
+@export_category("Character Preferences")
 @export var loop_time_start: float = 0.0
 @export var loop_time_end: float = 0.2
 @export var loop_speed: float = 1.5
+@export var icon: Array[Texture2D] ## First one is losing, second one is normal, third one is dominating
+@export var icon_progress: Array[float] = [20.0, 80.0] ## First one is losing, Second one is dominating
+@export var filtering: TextureFilter = TextureFilter.TEXTURE_FILTER_PARENT_NODE
+@export_color_no_alpha var hp_color: Color = Color.WHITE
 var crotchet
 var step_crotchet
 var current_beat
@@ -30,9 +35,8 @@ func _on_init_done() -> void:
 	set_process(true)
 
 func _process(delta: float) -> void:
-	if current_beat != floor(Game.mus_time / crotchet) and $AnimationPlayer.current_animation == "idle":
+	if Game.current_beat != floor(Game.mus_time / Game.crotchet) and $AnimationPlayer.current_animation == "idle":
 		$AnimationPlayer.play("idle")
-	current_beat = floor(Game.mus_time / crotchet)
 
 func _on_note_pressed(direction: Common.ARROW_DIR, _accuracy: float) -> void:
 	$IdleTimer.stop()

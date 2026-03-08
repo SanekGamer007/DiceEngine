@@ -1,4 +1,5 @@
 extends Node2D
+class_name PlayScene
 
 @export var song_name: String
 @export var difficulty: Common.DIFFICULTY = Common.DIFFICULTY.HARD
@@ -14,8 +15,26 @@ var last_note: Dictionary = {}
 var stage: Node2D
 var strumlines: Array[StrumLine]
 var characters: Array[Character]
+var hpbar: HPBar
 var scroll_speed: float = 0.0
 var last_audio_pos: float = 0.0
+
+var min_hp: float = 0.0
+var hp: float = 50.0 :
+	set(amount):
+		amount = clampf(amount, min_hp, max_hp)
+		hp = amount
+		_update_hp()
+var max_hp: float = 100.0
+
+var hp_gain_player_hit: float = 2
+var hp_gain_player_sustain: float = 0.5
+var hp_loss_player_miss: float = 5
+var hp_gain_opponent_hit: float = 0
+var hp_gain_opponent_sustain: float = 0
+var hp_loss_opponent_hit: float = 0
+var hp_loss_opponent_sustain: float = 0
+var hp_loss_opponent_cap: float = 10
 
 enum STATES {
 	LOADING,
@@ -23,15 +42,21 @@ enum STATES {
 	PLAYING,
 	PAUSED,
 	ENDING,
+	DEAD,
 }
 
 var state: STATES = STATES.LOADING
 
-signal notes_loaded
+signal loading_complete
 
 func _ready() -> void:
 	state = STATES.LOADING
-	notes_loaded.connect($ui._init_done)
+	hpbar = $ui.hpbar
+	$ui.play_scene = self
+	loading_complete.connect($ui._init_done)
+	if not Registry.songs.has(song_name):
+		push_error("FATAL: Song not found.")
+		return
 	var song_all_info: Dictionary = Registry.songs.get(song_name)
 	var difficulty_string = Common.difficulty_to_string(difficulty)
 	
@@ -42,7 +67,6 @@ func _ready() -> void:
 	else:
 		push_error("FATAL: Chart file not found.")
 		return
-	
 	song_metadata = chart.get("metadata", {})
 	var all_diffs: Dictionary = chart.get("chart")
 	if not song_metadata:
@@ -94,9 +118,27 @@ func _ready() -> void:
 				print("Line ", strumline.id, " Found ", character.id, " / ", character.get_index())
 				strumline.character = character
 				continue
+		if not strumline.bot_play:
+			strumline.note_pressed.connect(_on_player_note_hit)
+			strumline.note_missed.connect(_on_player_note_miss)
+		else:
+			strumline.note_pressed.connect(_on_opponent_note_hit)
+	for i in characters.size():
+		if i == 0:
+			hpbar.player_icons = characters[i].icon
+			hpbar.player_thresholds = characters[i].icon_progress
+			hpbar.player_color = characters[i].hp_color
+			hpbar.player_filter = characters[i].filtering
+			continue
+		elif i == 1:
+			hpbar.opponent_icons = characters[i].icon
+			hpbar.opponent_thresholds = characters[i].icon_progress
+			hpbar.opponent_color = characters[i].hp_color
+			hpbar.opponent_filter = characters[i].filtering
+			break
 	last_note = notes[notes.size() - 1]
 	spawn_music()
-	notes_loaded.emit()
+	loading_complete.emit()
 	Game.mus_time = -3
 	set_state(STATES.COUNTDOWN)
 
@@ -112,7 +154,31 @@ func _process(delta: float) -> void:
 			_handle_paused_state()
 		STATES.ENDING:
 			_handle_ending_state()
+		STATES.DEAD:
+			_handle_dead_state()
+	Game.current_beat = floor(Game.mus_time / Game.crotchet)
 
+func _update_hp() -> void:
+	hpbar.hp = hp
+
+func _on_player_note_hit(_direction: Common.ARROW_DIR, _accuracy: float) -> void:
+	hp += hp_gain_player_hit
+
+func _on_player_note_miss(_direction: Common.ARROW_DIR) -> void:
+	hp -= hp_loss_player_miss
+
+func _on_player_note_sustain(_direction: Common.ARROW_DIR) -> void:
+	hp += hp_gain_player_sustain
+	
+func _on_opponent_note_hit(_direction: Common.ARROW_DIR, _accuracy: float) -> void:
+	hp += hp_gain_opponent_hit
+	if hp >= hp_loss_opponent_cap:
+		hp -= hp_loss_opponent_hit
+
+func _on_opponent_note_sustain(_direction: Common.ARROW_DIR) -> void:
+	hp += hp_gain_opponent_sustain
+	if hp >= hp_loss_opponent_cap:
+		hp -= hp_loss_opponent_sustain
 
 func _handle_loading_state() -> void:
 	pass
@@ -142,6 +208,9 @@ func _handle_paused_state() -> void:
 	pass
 
 func _handle_ending_state() -> void:
+	pass
+
+func _handle_dead_state() -> void:
 	pass
 
 func set_state(new_state: STATES) -> void:
@@ -219,7 +288,7 @@ func spawn_strumlines() -> void:
 			strumline.rotation_degrees = 0
 		
 		strumline.scroll_speed = scroll_speed
-		notes_loaded.connect(strumline._on_notes_loaded)
+		loading_complete.connect(strumline._on_loading_complete)
 		for note: Dictionary in notes:
 				if note.s == strumline.id:
 					strumline.notes.append(note)

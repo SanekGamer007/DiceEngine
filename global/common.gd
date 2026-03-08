@@ -46,6 +46,13 @@ static func secs_to_rank(secs: float) -> String:
 			return rank
 	return "MISS"
 
+static func accr_to_rank(accuraccy: float) -> String:
+	var abs_accuraccy: float = abs(accuraccy)
+	for rank in judge_ranks.keys():
+		if abs_accuraccy >= judge_ranks[rank][2]:
+			return rank
+	return "MISS"
+
 static func rank_to_accr(rank: String) -> float:
 	var rankarray = judge_ranks.get(rank, [])
 	if not rankarray:
