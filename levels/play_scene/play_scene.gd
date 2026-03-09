@@ -130,13 +130,13 @@ func _ready() -> void:
 			hpbar.player_icons = characters[i].icon
 			hpbar.player_thresholds = characters[i].icon_progress
 			hpbar.player_color = characters[i].hp_color
-			hpbar.player_filter = characters[i].filtering
+			hpbar.player_filter = characters[i].icon_filtering
 			continue
 		elif i == 1:
 			hpbar.opponent_icons = characters[i].icon
 			hpbar.opponent_thresholds = characters[i].icon_progress
 			hpbar.opponent_color = characters[i].hp_color
-			hpbar.opponent_filter = characters[i].filtering
+			hpbar.opponent_filter = characters[i].icon_filtering
 			break
 	spawn_music()
 	loading_complete.emit()

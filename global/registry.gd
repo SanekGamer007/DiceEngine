@@ -38,7 +38,7 @@ var _chart_diff_prefix_priority: Array[String] = [
 # last entries override the first ones
 var song_paths: Array[String] = ["res://assets/songs/"]
 var chars_paths: Array[String] = ["res://assets/characters/"]
-var note_skin_paths: Array[String] = ["res://assets/base/strumline/notes/"]
+var note_skin_paths: Array[String] = ["res://assets/noteskins/"]
 var stage_paths: Array[String] = ["res://assets/stages/"]
 
 func _ready() -> void:

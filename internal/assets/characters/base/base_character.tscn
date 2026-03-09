@@ -1,252 +1,36 @@
 [gd_scene format=3 uid="uid://cwidido8h7iqc"]
 
-[ext_resource type="Script" uid="uid://4otmtv4dr2c4" path="res://internal/assets/characters/base/base_character.gd" id="1_e73kw"]
+[ext_resource type="Script" uid="uid://bwsboqefwfalo" path="res://internal/assets/characters/base/base_character.gd" id="1_e73kw"]
 [ext_resource type="Texture2D" uid="uid://dpoqiaxq6j7nj" path="res://internal/assets/characters/base/icon_1.png" id="2_eadeh"]
 [ext_resource type="Texture2D" uid="uid://fred3htsqscw" path="res://internal/assets/characters/base/icon_0.png" id="3_oix3l"]
 
 [sub_resource type="Animation" id="Animation_gqru1"]
 resource_local_to_scene = true
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["down"]
-}
 
 [sub_resource type="Animation" id="Animation_5skpr"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["down_miss"]
-}
 
 [sub_resource type="Animation" id="Animation_eadeh"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["idle"]
-}
 
 [sub_resource type="Animation" id="Animation_oix3l"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["left"]
-}
 
 [sub_resource type="Animation" id="Animation_sg560"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["left_miss"]
-}
 
 [sub_resource type="Animation" id="Animation_ka0gq"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["right"]
-}
 
 [sub_resource type="Animation" id="Animation_1qd5o"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["right_miss"]
-}
 
 [sub_resource type="Animation" id="Animation_31x6i"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["up"]
-}
 
 [sub_resource type="Animation" id="Animation_30w0m"]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:animation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": ["up_miss"]
-}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_32vpy"]
 resource_local_to_scene = true
@@ -312,18 +96,31 @@ animations = [{
 
 [node name="BaseCharacter" type="Node2D" unique_id=151574328]
 script = ExtResource("1_e73kw")
+export_anim_map = Dictionary[String, String]({
+"down": "down",
+"down_miss": "down_miss",
+"idle": "idle",
+"left": "left",
+"left_miss": "left_miss",
+"right": "right",
+"right_miss": "right_miss",
+"up": "up",
+"up_miss": "up_miss"
+})
 icon = Array[Texture2D]([ExtResource("2_eadeh"), ExtResource("3_oix3l"), ExtResource("3_oix3l")])
 hp_color = Color(0.6313726, 0.6313726, 0.6313726, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1164546831]
 libraries/ = SubResource("AnimationLibrary_32vpy")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=63994655]
+[node name="Sprites" type="Node2D" parent="." unique_id=765921245]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Sprites" unique_id=63994655]
 sprite_frames = SubResource("SpriteFrames_lr30v")
-animation = &"down"
+animation = &"up_miss"
 
 [node name="IdleTimer" type="Timer" parent="." unique_id=2011351476]
-wait_time = 0.66
+wait_time = 0.5
 one_shot = true
 
 [node name="ReferenceRect" type="ReferenceRect" parent="." unique_id=1762810265]
@@ -332,5 +129,4 @@ offset_bottom = 40.0
 border_color = Color(1, 1, 1, 1)
 border_width = 4.0
 
-[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]

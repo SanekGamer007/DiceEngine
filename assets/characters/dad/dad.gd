@@ -1,6 +1,4 @@
 extends Character
 
-func _ready() -> void:
-	super._ready()
-	$AnimatedSprite2D.flip_h = !flip_h
-	$AnimatedSprite2D.flip_v = flip_v
+func _set_flip_h():
+	$Sprites.scale.x = abs($Sprites.scale.x) * (1 if flip_h else -1)

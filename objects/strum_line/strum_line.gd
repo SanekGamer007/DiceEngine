@@ -65,8 +65,6 @@ func _on_loading_complete() -> void:
 		note_sustained.connect(character._on_note_sustained)
 		note_missed.connect(character._on_note_missed)
 		init_done.connect(character._on_init_done)
-		character.bpm = bpm
-		character.bot_play = bot_play
 	set_process(true)
 	init_done.emit()
 
