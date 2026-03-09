@@ -54,9 +54,6 @@ var hp: float = 50 :
 		opponent_filter = filter
 		if is_inside_tree():
 			$Icon_Opponent.texture_filter = filter
-
-var old_beat: int = 0
-
 func _ready() -> void:
 	$Icon_Player.texture = player_icons[1]
 	$Icon_Player.texture_filter = player_filter
@@ -64,11 +61,9 @@ func _ready() -> void:
 	$Icon_Opponent.texture_filter = opponent_filter
 	$Bar_Player.color = player_color
 	$Bar_Opponent.color = opponent_color
+	Game.beat.connect(beat_hit)
 
 func _process(delta: float) -> void:
-	if old_beat != Game.current_beat:
-		beat_hit()
-		old_beat = Game.current_beat
 	left_icon.scale = left_icon.scale.lerp(Vector2.ONE, delta * Game.bpm / 12)
 	left_icon.pivot_offset.y = left_icon.size.y / 2
 	left_icon.pivot_offset.x = left_icon.size.x
@@ -105,6 +100,6 @@ func _update_bar() -> void:
 	else:
 		right_icon.texture = player_icons[1]
 
-func beat_hit():
+func beat_hit(_count: int):
 	left_icon.scale = Vector2(1.2, 1.2)
 	right_icon.scale = Vector2(1.2, 1.2)

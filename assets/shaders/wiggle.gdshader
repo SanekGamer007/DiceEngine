@@ -1,5 +1,8 @@
 shader_type canvas_item;
 
+// Original shader made by Funkin' Team
+// Translated to GDShader by snk07.
+
 const int EFFECT_TYPE_DREAMY = 0;
 const int EFFECT_TYPE_WAVY = 1;
 const int EFFECT_TYPE_HEAT_WAVE_HORIZONTAL = 2;

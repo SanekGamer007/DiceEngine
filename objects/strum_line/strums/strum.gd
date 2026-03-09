@@ -74,8 +74,6 @@ func _input(event: InputEvent) -> void:
 func _process(delta: float) -> void:
 	if not current_notes.is_empty():
 		var note = current_notes[0]
-		if not note:
-			return
 		if Game.mus_time > note.time + Common.judge_ranks["SHIT"][1]:
 			current_notes.remove_at(0)
 			if not note.was_pressed:
@@ -89,13 +87,13 @@ func _process(delta: float) -> void:
 					active_sustain.was_pressed = true
 					active_sustain.hold_hit()
 					state = ANIM_STATES.HOLD
-					#current_notes.remove_at(0)
 					owner_strumline.note_pressed.emit(direction, 1.0)
 				else:
 					state = ANIM_STATES.PRESSED
 					current_notes[0].queue_free()
 					current_notes.remove_at(0)
 					owner_strumline.note_pressed.emit(direction, 1.0)
+
 	if active_sustain:
 		var note_end_time = active_sustain.time + active_sustain.length
 		if not owner_strumline.bot_play and not Input.is_action_pressed(action_name):

@@ -57,7 +57,6 @@ label_settings = SubResource("LabelSettings_neaw5")
 script = ExtResource("6_3wryp")
 
 [node name="Debug" type="RichTextLabel" parent="." unique_id=1879763462]
-anchors_preset = -1
 offset_left = 8.0
 offset_top = 4.0
 offset_right = 116.0

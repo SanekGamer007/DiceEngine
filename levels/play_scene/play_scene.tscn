@@ -6,8 +6,7 @@
 
 [node name="PlayScene" type="Node2D" unique_id=1338571594]
 script = ExtResource("1_nqujv")
-song_name = "sonic_kills_you_and_you_die"
-difficulty = 1
+song_name = "darnell"
 note_skin = ExtResource("2_nqujv")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=582905084]

@@ -25,7 +25,7 @@ func _ready() -> void:
 	else:
 		$SustainsMid.visible = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	var time_diff = time - Game.mus_time
 	var distance = time_diff * scroll_speed * Common.magic_scroll_speed_value
 	position = distance * (move_direction * -1)
@@ -60,7 +60,7 @@ func _set_note_skin(skin: NoteSkinResource) -> void:
 	$Sprite2D.texture = skin.note_skins[direction]
 	$SustainsMid.texture = skin.sust_body[direction]
 	$SustainsMid.region_rect = Rect2(0,0,skin.sust_body[0].get_width(), skin.sust_body[0].get_height())
-	$SustainsMid.position.x = ((skin.sust_body[0].get_width() / 2) * skin.note_scale.x) * -1
+	$SustainsMid.position.x = ((skin.sust_body[0].get_width() / 2.0) * skin.note_scale.x) * -1.0
 	$SustainsMid/Sprite2D.texture = skin.sust_end[direction]
 	$SustainsMid/Sprite2D.region_rect = Rect2(0,0,skin.sust_end[0].get_width(), skin.sust_end[0].get_height())
 	$Sprite2D.scale = skin.note_scale
