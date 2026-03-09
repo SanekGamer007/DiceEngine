@@ -317,16 +317,16 @@ tracks/0/path = NodePath(".")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(9.966666, 20, 30),
+"times": PackedFloat32Array(3, 15, 18),
 "transitions": PackedFloat32Array(1, 1, 1),
 "values": [{
+"args": [&"green", 1.0, false],
+"method": &"play"
+}, {
 "args": [&"yellow", 1.0, false],
 "method": &"play"
 }, {
 "args": [&"red", 1.0, false],
-"method": &"play"
-}, {
-"args": [&"green", 1.0, false],
 "method": &"play"
 }]
 }
@@ -383,18 +383,15 @@ metadata/_edit_lock_ = true
 position = Vector2(-413, -151)
 texture = ExtResource("6_s57as")
 
-[node name="Parallax2D" type="Parallax2D" parent="BG" unique_id=1493788466]
-repeat_size = Vector2(2760, 0)
-autoscroll = Vector2(100, 0)
-repeat_times = 3
-
-[node name="PhillySmog" type="Sprite2D" parent="BG/Parallax2D" unique_id=1574188634]
+[node name="PhillySmog" type="Sprite2D" parent="BG" unique_id=1574188634]
 texture = ExtResource("7_vjj1y")
 
 [node name="PhillyTraffic" type="AnimatedSprite2D" parent="BG" unique_id=1944084335]
 position = Vector2(734, 139)
 sprite_frames = SubResource("SpriteFrames_1bk10")
-animation = &"yellow"
+animation = &"red"
+frame = 14
+frame_progress = 1.0
 
 [node name="Loop" type="AnimationPlayer" parent="BG/PhillyTraffic" unique_id=662555920]
 libraries/ = SubResource("AnimationLibrary_o8gxf")

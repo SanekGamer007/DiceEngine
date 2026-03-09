@@ -49,6 +49,7 @@ func _process(delta: float) -> void:
 		note.position.y = (current_note.t - Game.mus_time) * (scroll_speed * Common.magic_scroll_speed_value)
 		note.note_skin = note_skin
 		note.clean_pos = cleaner_pos
+		strum.current_notes.append(note)
 		spawn_location.add_child(note)
 		next_note_index += 1
 

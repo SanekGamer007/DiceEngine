@@ -1,6 +1,8 @@
 extends Control
 class_name Strum
 
+## This is a mess mostly because huge chunks of the code persisted through major architecture changes.
+## Example: Note detection fully on collition to Hybrid of collision and time to fully time based.
 
 @export var direction: Common.ARROW_DIR = Common.ARROW_DIR.LEFT
 @export var note_skin: NoteSkinResource :
@@ -31,32 +33,38 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if owner_strumline.bot_play:
 		return
-	if event.is_action_pressed(action_name):
+	if event.is_action_pressed(action_name) and not event.is_echo():
 		if not current_notes.is_empty():
-			var diff = abs(Game.mus_time - current_notes[0].time)
-			var accr = calc_accr(diff)
-			accr = clampf(accr, 0.0, 1.0)
-			if accr <= Common.judge_ranks["MISS"][2]:
-				owner_strumline.note_missed.emit(direction)
-				current_notes[0].queue_free()
-				current_notes.remove_at(0)
-				return
-			if diff <= Common.judge_ranks["SICK"][1]:
-				_show_splash()
-			if current_notes[0].length != 0.0:
-				state = ANIM_STATES.HOLD
-				active_sustain = current_notes[0]
-				if not active_sustain.was_pressed:
-					active_sustain.was_pressed = true
+			var note = current_notes[0]
+			var diff = abs(Game.mus_time - note.time)
+			if diff <= Common.judge_ranks["SHIT"][1]:
+				var accr = calc_accr(diff)
+				accr = clampf(accr, 0.0, 1.0)
+				if diff <= Common.judge_ranks["SICK"][1]:
+					_show_splash()
+				
+				if note.length != 0.0:
+					state = ANIM_STATES.HOLD
+					active_sustain = note
+					if not active_sustain.was_pressed:
+						active_sustain.was_pressed = true
+						owner_strumline.note_pressed.emit(direction, accr)
+					active_sustain.hold_hit()
+					current_notes.remove_at(0)
+				else:
+					state = ANIM_STATES.PRESSED
+					current_notes.remove_at(0)
+					note.queue_free()
 					owner_strumline.note_pressed.emit(direction, accr)
-				active_sustain.hold_hit()
 			else:
-				state = ANIM_STATES.PRESSED
-				current_notes[0].queue_free()
-				current_notes.remove_at(0)
-				owner_strumline.note_pressed.emit(direction, accr)
+				state = ANIM_STATES.NOTHIN
+				if not owner_strumline.ghost_tapping:
+					owner_strumline.note_missed.emit(direction)
+				return
 		else:
 			state = ANIM_STATES.NOTHIN
+			if not owner_strumline.ghost_tapping:
+				owner_strumline.note_missed.emit(direction)
 			return
 	if event.is_action_released(action_name):
 		if not current_notes.is_empty() or ANIM_STATES.IDLE:
@@ -64,8 +72,14 @@ func _input(event: InputEvent) -> void:
 
 
 func _process(delta: float) -> void:
-	if not owner_strumline:
-		return
+	if not current_notes.is_empty():
+		var note = current_notes[0]
+		if not note:
+			return
+		if Game.mus_time > note.time + Common.judge_ranks["SHIT"][1]:
+			current_notes.remove_at(0)
+			if not note.was_pressed:
+				owner_strumline.note_missed.emit(direction)
 	if owner_strumline.bot_play:
 		if not current_notes.is_empty() and not active_sustain:
 			var note = current_notes[0]
@@ -121,35 +135,6 @@ func _on_note_animated_sprite_2d_animation_finished() -> void:
 
 func _on_splash_animated_sprite_2d_animation_finished() -> void:
 	$SplashAnimatedSprite2D.visible = false
-
-func _on_area_2d_area_entered(area: Area2D) -> void:
-	var areanote: Note
-	if area is Note:
-		areanote = area
-	elif area.get_parent() is Note:
-		areanote = area.get_parent()
-	
-	current_notes.append(areanote)
-
-func _on_area_2d_area_exited(area: Area2D) -> void:
-	var areanote: Note
-	
-	if area is Note:
-		areanote = area
-	elif area.get_parent() is Note:
-		areanote = area.get_parent()
-	
-	if not current_notes.has(areanote):
-		return
-	if current_notes.is_empty():
-		return
-	var remove_id = current_notes.find(areanote)
-	if remove_id != -1:
-		current_notes.remove_at(remove_id)
-		if not areanote.was_pressed:
-			owner_strumline.note_missed.emit(direction)
-	else:
-		push_error("damn idk what to tell you.")
 
 func _show_splash() -> void:
 	var max_rand = splash_nums[0]

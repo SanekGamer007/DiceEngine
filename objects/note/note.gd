@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 class_name Note
 
 @export var direction: Common.ARROW_DIR = Common.ARROW_DIR.LEFT
@@ -13,21 +13,16 @@ class_name Note
 	set(skin):
 		note_skin = skin
 		_set_note_skin(skin)
-@onready var org_size_scs2d: Vector2 = $SustainArea2D/SustainCollisionShape2D.shape.size
 
 var sustain_size = 0.0
 
 func _ready() -> void:
 	if length != 0.0:
-		$SustainArea2D/SustainCollisionShape2D.disabled = false
 		$SustainsMid.visible = true
 		sustain_size = length * (scroll_speed * Common.magic_scroll_speed_value)
 		$SustainsMid.region_rect.size.y = (sustain_size - 64) / $SustainsMid.scale.y
 		$SustainsMid/Sprite2D.position.y = (sustain_size - 64) / $SustainsMid.scale.y
-		$SustainArea2D/SustainCollisionShape2D.shape.size.y = org_size_scs2d.y + sustain_size
-		$SustainArea2D/SustainCollisionShape2D.position.y = (sustain_size) / 2
 	else:
-		$SustainArea2D/SustainCollisionShape2D.disabled = true
 		$SustainsMid.visible = false
 
 func _process(delta: float) -> void:
@@ -51,7 +46,7 @@ func hold_hit() -> void:
 func update_clip() -> void:
 	var time_passed = Game.mus_time - time
 	var cut_pixels = time_passed * (scroll_speed * Common.magic_scroll_speed_value)
-	var sustain_size = length * (scroll_speed * Common.magic_scroll_speed_value)
+	sustain_size = length * (scroll_speed * Common.magic_scroll_speed_value)
 	
 	#$SustainsMid.region_rect.position.y = cut_pixels
 	$SustainsMid.region_rect.size.y = (sustain_size - cut_pixels) / $SustainsMid.scale.y

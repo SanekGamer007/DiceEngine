@@ -5,17 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://00bsht6bw1rh" path="res://assets/base/strumline/notes/normal/left_holder_1.png" id="3_e3vqp"]
 [ext_resource type="Texture2D" uid="uid://dv50l6hofgchd" path="res://assets/base/strumline/notes/normal/left_holder_0.png" id="4_ot5tf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_bqua6"]
-resource_local_to_scene = true
-size = Vector2(20, 155)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ot5tf"]
-resource_local_to_scene = true
-size = Vector2(20, 155)
-
-[node name="Note" type="Area2D" unique_id=1373464889]
-collision_layer = 129
-collision_mask = 129
+[node name="Note" type="Node2D" unique_id=763534833]
 script = ExtResource("1_bqua6")
 
 [node name="SustainsMid" type="Sprite2D" parent="." unique_id=1440266106]
@@ -36,15 +26,3 @@ region_rect = Rect2(0, 0, 50, 64)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1082918648]
 texture = ExtResource("2_e3vqp")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2073790182]
-shape = SubResource("RectangleShape2D_bqua6")
-
-[node name="SustainArea2D" type="Area2D" parent="." unique_id=1916115893]
-collision_layer = 64
-collision_mask = 64
-
-[node name="SustainCollisionShape2D" type="CollisionShape2D" parent="SustainArea2D" unique_id=1116984673]
-shape = SubResource("RectangleShape2D_ot5tf")
-disabled = true
-debug_color = Color(0.03554918, 0.52718157, 0.9999997, 0.41960785)

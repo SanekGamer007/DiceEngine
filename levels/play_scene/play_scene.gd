@@ -11,7 +11,6 @@ var song_chart: Dictionary = {}
 var song_metadata: Dictionary = {}
 
 var notes: Array[Dictionary]
-var last_note: Dictionary = {}
 var stage: Node2D
 var strumlines: Array[StrumLine]
 var characters: Array[Character]
@@ -139,7 +138,6 @@ func _ready() -> void:
 			hpbar.opponent_color = characters[i].hp_color
 			hpbar.opponent_filter = characters[i].filtering
 			break
-	last_note = notes[notes.size() - 1]
 	spawn_music()
 	loading_complete.emit()
 	Game.mus_time = -3
@@ -205,7 +203,7 @@ func _handle_playing_state(delta: float) -> void:
 			Game.mus_time += delta
 	else:
 		Game.mus_time += delta
-	if Game.mus_time >= last_note.t + 3:
+	if Game.mus_time >= notes[notes.size() - 1].t + 3:
 		set_state(STATES.ENDING)
 
 func _handle_paused_state() -> void:
