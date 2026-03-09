@@ -1,7 +1,10 @@
-extends Label
-var org_text = "%s v%s\nFPS: %d\nMemory: %.2fMB\nVideo Memory: %.2fMB"
+extends RichTextLabel
+var org_text = "[b]%s v%s[/b]\n  FPS:  %d\n  Memory:  %.2fMB\n  Video Memory:  %.2fMB"
 
-func _process(delta: float) -> void:
+func _ready() -> void:
+	_on_update_timeout()
+
+func _on_update_timeout() -> void:
 	var fps = Performance.get_monitor(Performance.TIME_FPS)
 	var memory_bytes = Performance.get_monitor(Performance.MEMORY_STATIC)
 	var memory_mib = memory_bytes / 1024.0 / 1024.0
