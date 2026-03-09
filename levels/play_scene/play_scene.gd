@@ -27,14 +27,14 @@ var hp: float = 50.0 :
 		_update_hp()
 var max_hp: float = 100.0
 
-var hp_gain_player_hit: float = 2
-var hp_gain_player_sustain: float = 0.5
+var hp_gain_player_hit: float = 2.5
+var hp_gain_player_sustain: float = 0.25
 var hp_loss_player_miss: float = 5
 var hp_gain_opponent_hit: float = 0
 var hp_gain_opponent_sustain: float = 0
-var hp_loss_opponent_hit: float = 0
-var hp_loss_opponent_sustain: float = 0
-var hp_loss_opponent_cap: float = 10
+var hp_loss_opponent_hit: float = 2
+var hp_loss_opponent_sustain: float = 0.2
+var hp_loss_opponent_cap: float = 20
 
 enum STATES {
 	LOADING,
@@ -120,9 +120,12 @@ func _ready() -> void:
 				continue
 		if not strumline.bot_play:
 			strumline.note_pressed.connect(_on_player_note_hit)
+			strumline.note_sustained.connect(_on_player_note_sustain)
 			strumline.note_missed.connect(_on_player_note_miss)
 		else:
+			strumline.note_sustained.connect(_on_opponent_note_sustain)
 			strumline.note_pressed.connect(_on_opponent_note_hit)
+			
 	for i in characters.size():
 		if i == 0:
 			hpbar.player_icons = characters[i].icon
@@ -143,6 +146,7 @@ func _ready() -> void:
 	set_state(STATES.COUNTDOWN)
 
 func _process(delta: float) -> void:
+	Input.set_use_accumulated_input(false)
 	match state:
 		STATES.LOADING:
 			_handle_loading_state()
@@ -168,7 +172,7 @@ func _on_player_note_miss(_direction: Common.ARROW_DIR) -> void:
 	hp -= hp_loss_player_miss
 
 func _on_player_note_sustain(_direction: Common.ARROW_DIR) -> void:
-	hp += hp_gain_player_sustain
+	hp += (hp_gain_player_sustain * 60.0) * get_process_delta_time()
 	
 func _on_opponent_note_hit(_direction: Common.ARROW_DIR, _accuracy: float) -> void:
 	hp += hp_gain_opponent_hit
@@ -178,7 +182,7 @@ func _on_opponent_note_hit(_direction: Common.ARROW_DIR, _accuracy: float) -> vo
 func _on_opponent_note_sustain(_direction: Common.ARROW_DIR) -> void:
 	hp += hp_gain_opponent_sustain
 	if hp >= hp_loss_opponent_cap:
-		hp -= hp_loss_opponent_sustain
+		hp -= (hp_loss_opponent_sustain * 60.0) * get_process_delta_time()
 
 func _handle_loading_state() -> void:
 	pass

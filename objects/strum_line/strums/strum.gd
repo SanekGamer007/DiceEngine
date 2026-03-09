@@ -34,6 +34,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed(action_name):
 		if not current_notes.is_empty():
 			var diff = abs(Game.mus_time - current_notes[0].time)
+			print(diff)
 			var accr = calc_accr(diff)
 			accr = clampf(accr, 0.0, 1.0)
 			if accr <= Common.judge_ranks["MISS"][2]:

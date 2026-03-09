@@ -9,3 +9,10 @@ var bpm: float = 120 :
 var current_beat: int = 0 
 var crotchet = 60.0 / bpm
 var step_crotchet = crotchet / 4.0
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("fullscreen"):
+		if DisplayServer.window_get_mode() == DisplayServer.WINDOW_MODE_WINDOWED:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN)
+		else:
+			DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)

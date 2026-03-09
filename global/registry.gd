@@ -108,7 +108,7 @@ func find_songs() -> Dictionary[String, Dictionary]:
 	return found_songs
 
 func find_note_skins() -> Dictionary[String, String]:
-	var found_note_skins: Dictionary[String, String]
+	var found_note_skins: Dictionary[String, String] = {}
 	for path in note_skin_paths:
 		if not DirAccess.dir_exists_absolute(path):
 			continue
