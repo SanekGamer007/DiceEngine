@@ -68,7 +68,7 @@ func _start() -> void:
 			"name": songname,
 			"artist": songartist,
 			"charter": songcharter,
-			"version": Common.engine_version,
+			"version": Common.get_version(),
 		},
 		"metadata": {
 			"stage": songstage,
@@ -78,7 +78,8 @@ func _start() -> void:
 			},
 			"girlfriend": song_gf,
 			"note_skin": new_note_skin,
-			"strum_lines": new_strum_lines
+			"strum_lines": new_strum_lines,
+			"generated_by": Common.engine_name + " " + Common.get_version() + " On " + Time.get_datetime_string_from_system(true) + " UTC",
 		},
 		"chart": diffs,
 	}

@@ -1,5 +1,5 @@
 extends Label
-var org_text = "Dice Engine v%s\nFPS: %d\nMemory: %.2fMB\nVideo Memory: %.2fMB"
+var org_text = "%s v%s\nFPS: %d\nMemory: %.2fMB\nVideo Memory: %.2fMB"
 
 func _process(delta: float) -> void:
 	var fps = Performance.get_monitor(Performance.TIME_FPS)
@@ -7,4 +7,4 @@ func _process(delta: float) -> void:
 	var memory_mib = memory_bytes / 1024.0 / 1024.0
 	var vram_bytes = Performance.get_monitor(Performance.RENDER_VIDEO_MEM_USED)
 	var vram_mib = vram_bytes / 1024.0 / 1024.0
-	text = org_text % [Common.engine_version, fps, memory_mib, vram_mib]
+	text = org_text % [Common.engine_name, Common.get_version(), fps, memory_mib, vram_mib]

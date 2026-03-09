@@ -218,8 +218,6 @@ func _handle_dead_state() -> void:
 	pass
 
 func set_state(new_state: STATES) -> void:
-	if new_state == STATES.COUNTDOWN:
-		$AudioPlayers/AudioStreamPlayerInst.play() # temporary so it isnt so awkward.
 	if new_state == STATES.PLAYING:
 		for player: AudioStreamPlayer in $AudioPlayers.get_children():
 			player.play(0.0)

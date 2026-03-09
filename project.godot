@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Dice Engine"
+config/name="Friday Night Funkin': Dice Engine"
 run/main_scene="uid://5vv6valrucv1"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://b2j7fyvg53jg2"

@@ -2,7 +2,11 @@ extends Node
 class_name Common
 
 static var magic_scroll_speed_value := 600.0
-const engine_version := "0.1"
+const engine_name := "Dice Engine"
+const engine_major := "0"
+const engine_minor := "1"
+const engine_hotfix := "0"
+
 
 enum ARROW_DIR {
 	LEFT,
@@ -19,7 +23,7 @@ enum DIFFICULTY {
 	NIGHTMARE,
 }
 
-static var judge_ranks: Dictionary[String, Array] = { # NAME, SCORE, TIME, ACCURACY AWARD
+static var judge_ranks: Dictionary[String, Array] = { # NAME: SCORE, TIME, ACCURACY AWARD
 	"SICK": [350, 0.037, 1.0],
 	"GOOD": [200, 0.075, 0.75],
 	"BAD": [100, 0.115, 0.45],
@@ -58,3 +62,6 @@ static func rank_to_accr(rank: String) -> float:
 	if not rankarray:
 		return 0.0
 	return rankarray[2]
+
+static func get_version() -> String:
+	return engine_major + "." + engine_minor + "." + engine_hotfix

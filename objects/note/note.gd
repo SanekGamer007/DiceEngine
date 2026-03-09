@@ -43,7 +43,6 @@ func _process(delta: float) -> void:
 	
 	if bottom_y < -viewport_size.y or top_y > viewport_size.y:
 		queue_free()
-	#position += move_direction * (scroll_speed * Common.magic_scroll_speed_value) * delta
 	
 
 func hold_hit() -> void:
