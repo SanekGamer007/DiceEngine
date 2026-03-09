@@ -4,7 +4,7 @@ class_name Common
 const magic_scroll_speed_value := 600.0
 const engine_name := "Dice Engine"
 const engine_major := "0"
-const engine_minor := "2"
+const engine_minor := "3"
 const engine_hotfix := "0"
 
 

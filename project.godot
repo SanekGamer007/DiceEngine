@@ -30,7 +30,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/gdanimate-rewrite-main/plugin.cfg")
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/AnimateSymbol2P/plugin.cfg", "res://addons/gdanimate-rewrite-main/plugin.cfg")
 
 [gui]
 

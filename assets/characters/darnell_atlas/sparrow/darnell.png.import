@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbctfhl0cw1vj"
-path="res://.godot/imported/spritemap1.png-6e2d7e0a9e3e445c432237b20d075c61.ctex"
+uid="uid://b8fr7a8xmevdn"
+path="res://.godot/imported/darnell.png-b0798b86a02352d37131c0fa6db61531.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/darnell/atlas/spritemap1.png"
-dest_files=["res://.godot/imported/spritemap1.png-6e2d7e0a9e3e445c432237b20d075c61.ctex"]
+source_file="res://assets/characters/darnell_atlas/sparrow/darnell.png"
+dest_files=["res://.godot/imported/darnell.png-b0798b86a02352d37131c0fa6db61531.ctex"]
 
 [params]
 

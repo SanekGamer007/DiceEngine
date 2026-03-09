@@ -14,9 +14,6 @@ class_name Character
 @export var icon_progress: Array[float] = [20.0, 80.0] ## First one is losing, Second one is dominating
 @export var filtering: TextureFilter = TextureFilter.TEXTURE_FILTER_PARENT_NODE
 @export_color_no_alpha var hp_color: Color = Color.WHITE
-var crotchet
-var step_crotchet
-var current_beat
 var can_loop: bool = true
 
 const anims = ["left", "down", "up", "right"]
@@ -29,9 +26,6 @@ func _ready() -> void:
 	set_process(false)
 
 func _on_init_done() -> void:
-	crotchet = 60.0 / bpm
-	step_crotchet = crotchet / 4.0
-	$IdleTimer.wait_time = crotchet
 	set_process(true)
 
 func _process(delta: float) -> void:

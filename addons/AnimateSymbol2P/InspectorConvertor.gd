@@ -20,11 +20,11 @@ func _can_handle(object):
 
 ## Create UI here
 func _parse_end(object: Object):
-	var header = CustomEditorInspectorCategory.new("Import AnimatedSprite2D/3D")
+	var header = CustomEditorInspectorCategory.new("Import AnimateSymbol")
 
-	# AnimatedSprite2D Node selector
+	# AnimateSymbol Node selector
 	node_selector = NodeSelectorProperty.new(anim_player)
-	node_selector.label = "AnimatedSprite2D/3D Node"
+	node_selector.label = "AnimateSymbol"
 
 	node_selector.animation_updated.connect(
 		_on_animation_updated,
@@ -36,7 +36,7 @@ func _parse_end(object: Object):
 	var button := Button.new()
 	button.text = "Import"
 	button.get_minimum_size().y = 26
-	button.button_down.connect(node_selector.convert_sprites)
+	button.button_down.connect(node_selector.convert_symbols)
 
 	var buttonstyle = StyleBoxFlat.new()
 	buttonstyle.bg_color = Color8(32, 37, 49)
@@ -65,7 +65,7 @@ class CustomEditorInspectorCategory extends Control:
 		title = p_title
 		icon = p_icon
 
-		tooltip_text = "AnimatedSprite to AnimationPlayer Plugin"
+		tooltip_text = "AnimateSymbol to AnimationPlayer Plugin"
 
 	func _get_minimum_size() -> Vector2:
 		var font := get_theme_font(&"bold", &"EditorFonts");
