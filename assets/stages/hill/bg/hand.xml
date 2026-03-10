@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="hand.png" width="1834" height="1971">
+	<SubTexture name="idle0000" x="1" y="1777" width="371" height="193" frameX="-339" frameY="-724" frameWidth="1100" frameHeight="1100"/>
+	<SubTexture name="idle0001" x="1183" y="1358" width="435" height="301" frameX="-306" frameY="-609" frameWidth="1100" frameHeight="1100"/>
+	<SubTexture name="idle0002" x="1256" y="899" width="571" height="456" frameX="-244" frameY="-469" frameWidth="1100" frameHeight="1100"/>
+	<SubTexture name="idle0003" x="657" y="1" width="596" height="908" frameX="-252" frameY="-69" frameWidth="1100" frameHeight="1100"/>
+	<SubTexture name="idle0004" x="1" y="886" width="591" height="888" frameX="-255" frameY="-89" frameWidth="1100" frameHeight="1100"/>
+	<SubTexture name="idle0005" x="1" y="886" width="591" height="888" frameX="-255" frameY="-89" frameWidth="1100" frameHeight="1100"/>
+	<SubTexture name="idle0006" x="1" y="886" width="591" height="888" frameX="-255" frameY="-89" frameWidth="1100" frameHeight="1100"/>
+	<SubTexture name="idle0007" x="1" y="886" width="591" height="888" frameX="-255" frameY="-89" frameWidth="1100" frameHeight="1100"/>
+	<SubTexture name="idle0008" x="1" y="886" width="591" height="888" frameX="-255" frameY="-89" frameWidth="1100" frameHeight="1100"/>
+	<SubTexture name="idle0009" x="1" y="1" width="653" height="882" frameX="-257" frameY="-91" frameWidth="1100" frameHeight="1100"/>
+	<SubTexture name="idle0010" x="595" y="912" width="585" height="870" frameX="-256" frameY="-102" frameWidth="1100" frameHeight="1100"/>
+	<SubTexture name="idle0011" x="1256" y="1" width="577" height="895" frameX="-261" frameY="-76" frameWidth="1100" frameHeight="1100"/>
+	<SubTexture name="idle0012" x="1256" y="1" width="577" height="895" frameX="-261" frameY="-76" frameWidth="1100" frameHeight="1100"/>
+	<SubTexture name="idle0013" x="1256" y="1" width="577" height="895" frameX="-261" frameY="-76" frameWidth="1100" frameHeight="1100"/>
+	<SubTexture name="idle0014" x="1256" y="1" width="577" height="895" frameX="-261" frameY="-76" frameWidth="1100" frameHeight="1100"/>
+	<SubTexture name="idle0015" x="1256" y="1" width="577" height="895" frameX="-261" frameY="-76" frameWidth="1100" frameHeight="1100"/>
+</TextureAtlas>

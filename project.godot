@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Friday Night Funkin': Dice Engine"
-run/main_scene="uid://5vv6valrucv1"
+run/main_scene="uid://ca3ii42n2ua14"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://b2j7fyvg53jg2"
 
@@ -19,6 +19,7 @@ config/icon="uid://b2j7fyvg53jg2"
 
 Game="*uid://n8rcjcrd6nhy"
 Registry="*uid://bgm7egxfkvl0t"
+Debug="*uid://b0jkq4af1yehx"
 
 [display]
 

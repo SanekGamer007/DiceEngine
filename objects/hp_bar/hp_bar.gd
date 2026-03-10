@@ -76,8 +76,10 @@ func _update_bar() -> void:
 		return
 	var percentage = 1.0 - (hp / 100.0)
 	var middle = total_px * percentage
-	left_bar.size.x = middle + 2.5
-	right_bar.size.x = (total_px - middle) - 2.5
+	left_bar.size.x = middle + 1.0
+	if left_bar.size.x - 1.0 >= $Panel.size.x:
+		left_bar.size.x = middle - 1.0
+	right_bar.size.x = (total_px - middle) - 1.0
 	right_bar.position.x = middle
 	
 	left_icon.position.x = left_bar.size.x - 95
@@ -99,6 +101,7 @@ func _update_bar() -> void:
 		right_icon.texture = player_icons[0]
 	else:
 		right_icon.texture = player_icons[1]
+	
 
 func beat_hit(_count: int):
 	left_icon.scale = Vector2(1.2, 1.2)

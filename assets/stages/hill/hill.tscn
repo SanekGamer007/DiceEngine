@@ -1,0 +1,506 @@
+[gd_scene format=3 uid="uid://dqyokgi5wjksb"]
+
+[ext_resource type="PackedScene" uid="uid://bn245b4ifhtnq" path="res://objects/character_marker_2d/character_marker_2d.tscn" id="1_5v8q8"]
+[ext_resource type="Texture2D" uid="uid://dln5akpnm188v" path="res://assets/stages/hill/bg/3bg.png" id="1_ucru7"]
+[ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate-rewrite-main/animate_symbol.gd" id="2_d4k8t"]
+[ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate-rewrite-main/animate_atlas.gd" id="3_4p83a"]
+[ext_resource type="Script" uid="uid://s4mrcnjetwud" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_frame.gd" id="4_uul36"]
+[ext_resource type="Script" uid="uid://nqbs7y41i566" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_atlas.gd" id="5_2vyks"]
+[ext_resource type="Texture2D" uid="uid://1ab5jp5uslnw" path="res://assets/stages/hill/bg/fire_bg.png" id="6_tx2im"]
+[ext_resource type="Texture2D" uid="uid://wm0jwy5djvt5" path="res://assets/stages/hill/bg/backFireBG.png" id="7_r0jau"]
+[ext_resource type="Texture2D" uid="uid://c5yqi020gx65h" path="res://assets/stages/hill/bg/skyVignette.png" id="9_d4k8t"]
+[ext_resource type="Texture2D" uid="uid://c0mdq7gj4w7v1" path="res://assets/stages/hill/bg/fire_left.png" id="9_yekca"]
+[ext_resource type="Texture2D" uid="uid://bgds7uxjde7ut" path="res://assets/stages/hill/bg/critters/ricky.png" id="10_apcad"]
+[ext_resource type="Texture2D" uid="uid://d1kjvu7hmnxh5" path="res://assets/stages/hill/bg/2bg.png" id="11_adfkh"]
+[ext_resource type="Texture2D" uid="uid://d0dug3wv0isfa" path="res://assets/stages/hill/bg/fire_right.png" id="12_kv1iq"]
+[ext_resource type="Texture2D" uid="uid://bx74ghdvp5i0x" path="res://assets/stages/hill/bg/fireBG.png" id="13_5wic4"]
+[ext_resource type="Texture2D" uid="uid://dh7vimvliq4ms" path="res://assets/stages/hill/bg/critters/flicky.png" id="14_ynogm"]
+[ext_resource type="Texture2D" uid="uid://bkc4m5ml4vait" path="res://assets/stages/hill/bg/flickyCover.png" id="15_m43dg"]
+[ext_resource type="Texture2D" uid="uid://bsx0n8h4yhoow" path="res://assets/stages/hill/bg/critters/picky.png" id="16_vjyk8"]
+[ext_resource type="Texture2D" uid="uid://blk58y8vfbtj7" path="res://assets/stages/hill/bg/theheads.png" id="17_w5api"]
+
+[sub_resource type="Resource" id="Resource_bocd0"]
+script = ExtResource("4_uul36")
+name = &"fire0000"
+region = Rect2i(1, 1, 1968, 1025)
+offset = Rect2i(-311, -120, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_lioso"]
+script = ExtResource("4_uul36")
+name = &"fire0001"
+region = Rect2i(1, 5022, 1968, 990)
+offset = Rect2i(-311, -155, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_nai1n"]
+script = ExtResource("4_uul36")
+name = &"fire0002"
+region = Rect2i(1, 6013, 1968, 986)
+offset = Rect2i(-311, -159, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_yekca"]
+script = ExtResource("4_uul36")
+name = &"fire0003"
+region = Rect2i(1, 2033, 1968, 1001)
+offset = Rect2i(-311, -144, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_apcad"]
+script = ExtResource("4_uul36")
+name = &"fire0004"
+region = Rect2i(1, 4029, 1968, 992)
+offset = Rect2i(-311, -153, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_adfkh"]
+script = ExtResource("4_uul36")
+name = &"fire0005"
+region = Rect2i(1, 3035, 1968, 993)
+offset = Rect2i(-311, -152, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_kv1iq"]
+script = ExtResource("4_uul36")
+name = &"fire0006"
+region = Rect2i(1, 7000, 1968, 946)
+offset = Rect2i(-311, -199, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_5wic4"]
+script = ExtResource("4_uul36")
+name = &"fire0007"
+region = Rect2i(1, 1027, 1968, 1005)
+offset = Rect2i(-311, -140, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_ynogm"]
+script = ExtResource("5_2vyks")
+texture = ExtResource("6_tx2im")
+sparrow_path = "res://assets/stages/hill/bg/fire_bg.xml"
+framerate = 10.0
+frames = Array[ExtResource("4_uul36")]([SubResource("Resource_bocd0"), SubResource("Resource_lioso"), SubResource("Resource_nai1n"), SubResource("Resource_yekca"), SubResource("Resource_apcad"), SubResource("Resource_adfkh"), SubResource("Resource_kv1iq"), SubResource("Resource_5wic4")])
+symbols = PackedStringArray("fire")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[sub_resource type="Resource" id="Resource_f0jf5"]
+script = ExtResource("4_uul36")
+name = &"fire0000"
+region = Rect2i(663, 919, 367, 451)
+offset = Rect2i(-126, -511, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_nfujn"]
+script = ExtResource("4_uul36")
+name = &"fire0001"
+region = Rect2i(1, 1, 1178, 459)
+offset = Rect2i(-123, -502, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_2yddf"]
+script = ExtResource("4_uul36")
+name = &"fire0002"
+region = Rect2i(1180, 411, 576, 507)
+offset = Rect2i(-123, -480, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_4dypm"]
+script = ExtResource("4_uul36")
+name = &"fire0003"
+region = Rect2i(1, 461, 661, 513)
+offset = Rect2i(-123, -480, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_s1ldw"]
+script = ExtResource("4_uul36")
+name = &"fire0004"
+region = Rect2i(1, 975, 643, 403)
+offset = Rect2i(-127, -589, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_wc5ho"]
+script = ExtResource("4_uul36")
+name = &"fire0005"
+region = Rect2i(1180, 1, 584, 409)
+offset = Rect2i(-127, -575, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_wpij5"]
+script = ExtResource("4_uul36")
+name = &"fire0006"
+region = Rect2i(663, 461, 450, 421)
+offset = Rect2i(-127, -557, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_vrxcc"]
+script = ExtResource("4_uul36")
+name = &"fire0007"
+region = Rect2i(1031, 919, 390, 448)
+offset = Rect2i(-127, -526, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_et6a0"]
+script = ExtResource("5_2vyks")
+texture = ExtResource("9_yekca")
+sparrow_path = "res://assets/stages/hill/bg/fire_left.xml"
+framerate = 10.0
+frames = Array[ExtResource("4_uul36")]([SubResource("Resource_f0jf5"), SubResource("Resource_nfujn"), SubResource("Resource_2yddf"), SubResource("Resource_4dypm"), SubResource("Resource_s1ldw"), SubResource("Resource_wc5ho"), SubResource("Resource_wpij5"), SubResource("Resource_vrxcc")])
+symbols = PackedStringArray("fire")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[sub_resource type="Resource" id="Resource_ibwgg"]
+script = ExtResource("4_uul36")
+name = &"idle0000"
+region = Rect2i(0, 443, 380, 411)
+offset = Rect2i(-51, -55, 550, 600)
+
+[sub_resource type="Resource" id="Resource_2g037"]
+script = ExtResource("4_uul36")
+name = &"idle0001"
+region = Rect2i(0, 883, 380, 411)
+offset = Rect2i(-51, -55, 550, 600)
+
+[sub_resource type="Resource" id="Resource_bq5cl"]
+script = ExtResource("4_uul36")
+name = &"idle0002"
+region = Rect2i(381, 0, 371, 442)
+offset = Rect2i(-45, -23, 550, 600)
+
+[sub_resource type="Resource" id="Resource_mtw4u"]
+script = ExtResource("4_uul36")
+name = &"idle0003"
+region = Rect2i(381, 442, 371, 441)
+offset = Rect2i(-45, -24, 550, 600)
+
+[sub_resource type="Resource" id="Resource_vawep"]
+script = ExtResource("4_uul36")
+name = &"idle0004"
+region = Rect2i(0, 0, 381, 443)
+offset = Rect2i(-41, -23, 550, 600)
+
+[sub_resource type="Resource" id="Resource_o7107"]
+script = ExtResource("4_uul36")
+name = &"idle0005"
+region = Rect2i(753, 0, 392, 425)
+offset = Rect2i(-40, -43, 550, 600)
+
+[sub_resource type="Resource" id="Resource_tinl4"]
+script = ExtResource("4_uul36")
+name = &"idle0006"
+region = Rect2i(753, 425, 392, 425)
+offset = Rect2i(-40, -42, 550, 600)
+
+[sub_resource type="Resource" id="Resource_u56px"]
+script = ExtResource("4_uul36")
+name = &"idle0007"
+region = Rect2i(753, 851, 389, 394)
+offset = Rect2i(-53, -83, 550, 600)
+
+[sub_resource type="Resource" id="Resource_70ym6"]
+script = ExtResource("5_2vyks")
+texture = ExtResource("10_apcad")
+sparrow_path = "res://assets/stages/hill/bg/critters/ricky.xml"
+framerate = 19.0
+frames = Array[ExtResource("4_uul36")]([SubResource("Resource_ibwgg"), SubResource("Resource_2g037"), SubResource("Resource_bq5cl"), SubResource("Resource_mtw4u"), SubResource("Resource_vawep"), SubResource("Resource_o7107"), SubResource("Resource_tinl4"), SubResource("Resource_u56px")])
+symbols = PackedStringArray("idle")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[sub_resource type="Resource" id="Resource_qr0m1"]
+script = ExtResource("4_uul36")
+name = &"fire0000"
+region = Rect2i(1, 364, 549, 420)
+offset = Rect2i(-1771, -596, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_uxifo"]
+script = ExtResource("4_uul36")
+name = &"fire0001"
+region = Rect2i(551, 713, 524, 411)
+offset = Rect2i(-1796, -605, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_8yvit"]
+script = ExtResource("4_uul36")
+name = &"fire0002"
+region = Rect2i(1, 1, 668, 362)
+offset = Rect2i(-1652, -653, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_ic8or"]
+script = ExtResource("4_uul36")
+name = &"fire0003"
+region = Rect2i(670, 1, 594, 346)
+offset = Rect2i(-1726, -670, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_vu0nr"]
+script = ExtResource("4_uul36")
+name = &"fire0004"
+region = Rect2i(1, 785, 536, 318)
+offset = Rect2i(-1784, -698, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_lj1l1"]
+script = ExtResource("4_uul36")
+name = &"fire0005"
+region = Rect2i(551, 364, 625, 348)
+offset = Rect2i(-1695, -668, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_cn2rw"]
+script = ExtResource("4_uul36")
+name = &"fire0006"
+region = Rect2i(562, 1125, 636, 278)
+offset = Rect2i(-1681, -738, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_2bs6h"]
+script = ExtResource("4_uul36")
+name = &"fire0007"
+region = Rect2i(1, 1125, 560, 353)
+offset = Rect2i(-1760, -663, 2500, 1500)
+
+[sub_resource type="Resource" id="Resource_8xopw"]
+script = ExtResource("5_2vyks")
+texture = ExtResource("12_kv1iq")
+sparrow_path = "res://assets/stages/hill/bg/fire_right.xml"
+framerate = 10.0
+frames = Array[ExtResource("4_uul36")]([SubResource("Resource_qr0m1"), SubResource("Resource_uxifo"), SubResource("Resource_8yvit"), SubResource("Resource_ic8or"), SubResource("Resource_vu0nr"), SubResource("Resource_lj1l1"), SubResource("Resource_cn2rw"), SubResource("Resource_2bs6h")])
+symbols = PackedStringArray("fire")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[sub_resource type="Resource" id="Resource_17qme"]
+script = ExtResource("4_uul36")
+name = &"idle0000"
+region = Rect2i(0, 1175, 363, 328)
+offset = Rect2i(-142, -98, 640, 640)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_y2hy2"]
+script = ExtResource("4_uul36")
+name = &"idle0001"
+region = Rect2i(363, 1175, 363, 328)
+offset = Rect2i(-142, -98, 640, 640)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_a6qrn"]
+script = ExtResource("4_uul36")
+name = &"idle0002"
+region = Rect2i(0, 795, 395, 380)
+offset = Rect2i(-97, -83, 640, 640)
+
+[sub_resource type="Resource" id="Resource_pnhf8"]
+script = ExtResource("4_uul36")
+name = &"idle0003"
+region = Rect2i(0, 0, 346, 397)
+offset = Rect2i(-93, -140, 640, 640)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_crkun"]
+script = ExtResource("4_uul36")
+name = &"idle0004"
+region = Rect2i(0, 397, 346, 397)
+offset = Rect2i(-93, -140, 640, 640)
+rotated = true
+
+[sub_resource type="Resource" id="Resource_xnx5n"]
+script = ExtResource("4_uul36")
+name = &"idle0005"
+region = Rect2i(395, 650, 362, 316)
+offset = Rect2i(-138, -200, 640, 640)
+
+[sub_resource type="Resource" id="Resource_wcvfa"]
+script = ExtResource("4_uul36")
+name = &"idle0006"
+region = Rect2i(346, 0, 388, 325)
+offset = Rect2i(-124, -155, 640, 640)
+
+[sub_resource type="Resource" id="Resource_hsix4"]
+script = ExtResource("4_uul36")
+name = &"idle0007"
+region = Rect2i(346, 325, 387, 325)
+offset = Rect2i(-125, -155, 640, 640)
+
+[sub_resource type="Resource" id="Resource_i54fq"]
+script = ExtResource("5_2vyks")
+texture = ExtResource("14_ynogm")
+sparrow_path = "res://assets/stages/hill/bg/critters/flicky.xml"
+framerate = 16.0
+frames = Array[ExtResource("4_uul36")]([SubResource("Resource_17qme"), SubResource("Resource_y2hy2"), SubResource("Resource_a6qrn"), SubResource("Resource_pnhf8"), SubResource("Resource_crkun"), SubResource("Resource_xnx5n"), SubResource("Resource_wcvfa"), SubResource("Resource_hsix4")])
+symbols = PackedStringArray("idle")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[sub_resource type="Resource" id="Resource_bucis"]
+script = ExtResource("4_uul36")
+name = &"idle0000"
+region = Rect2i(1, 665, 302, 793)
+offset = Rect2i(-377, -97, 1000, 1000)
+
+[sub_resource type="Resource" id="Resource_axcfn"]
+script = ExtResource("4_uul36")
+name = &"idle0001"
+region = Rect2i(1160, 639, 303, 603)
+offset = Rect2i(-278, -83, 1000, 1000)
+
+[sub_resource type="Resource" id="Resource_6ir6t"]
+script = ExtResource("4_uul36")
+name = &"idle0002"
+region = Rect2i(1168, 1, 293, 510)
+offset = Rect2i(-269, -88, 1000, 1000)
+
+[sub_resource type="Resource" id="Resource_hllef"]
+script = ExtResource("4_uul36")
+name = &"idle0003"
+region = Rect2i(751, 1, 414, 635)
+offset = Rect2i(-151, -79, 1000, 1000)
+
+[sub_resource type="Resource" id="Resource_qckcn"]
+script = ExtResource("4_uul36")
+name = &"idle0004"
+region = Rect2i(1466, 1, 222, 819)
+offset = Rect2i(-341, -83, 1000, 1000)
+
+[sub_resource type="Resource" id="Resource_0u476"]
+script = ExtResource("4_uul36")
+name = &"idle0005"
+region = Rect2i(422, 1, 326, 819)
+offset = Rect2i(-397, -75, 1000, 1000)
+
+[sub_resource type="Resource" id="Resource_oyp88"]
+script = ExtResource("4_uul36")
+name = &"idle0006"
+region = Rect2i(306, 823, 369, 547)
+offset = Rect2i(-395, -71, 1000, 1000)
+
+[sub_resource type="Resource" id="Resource_1ujh6"]
+script = ExtResource("4_uul36")
+name = &"idle0007"
+region = Rect2i(751, 639, 406, 525)
+offset = Rect2i(-391, -68, 1000, 1000)
+
+[sub_resource type="Resource" id="Resource_feaih"]
+script = ExtResource("4_uul36")
+name = &"idle0008"
+region = Rect2i(1, 1, 418, 661)
+offset = Rect2i(-385, -71, 1000, 1000)
+
+[sub_resource type="Resource" id="Resource_bpdsf"]
+script = ExtResource("5_2vyks")
+texture = ExtResource("16_vjyk8")
+sparrow_path = "res://assets/stages/hill/bg/critters/picky.xml"
+framerate = 7.0
+frames = Array[ExtResource("4_uul36")]([SubResource("Resource_bucis"), SubResource("Resource_axcfn"), SubResource("Resource_6ir6t"), SubResource("Resource_hllef"), SubResource("Resource_qckcn"), SubResource("Resource_0u476"), SubResource("Resource_oyp88"), SubResource("Resource_1ujh6"), SubResource("Resource_feaih")])
+symbols = PackedStringArray("idle")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[node name="Hill" type="Node2D" unique_id=1637277094]
+
+[node name="bg" type="Node2D" parent="." unique_id=1864348787]
+
+[node name="3Bg" type="Sprite2D" parent="bg" unique_id=904127190]
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("1_ucru7")
+
+[node name="AnimateSymbol" type="Node2D" parent="bg" unique_id=924723189]
+position = Vector2(-22, 149)
+script = ExtResource("2_d4k8t")
+symbol = "fire"
+frame = 4
+autoplay = true
+playing = true
+loop = true
+atlases = Array[ExtResource("3_4p83a")]([SubResource("Resource_ynogm")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="BackFireBg" type="Sprite2D" parent="bg" unique_id=639178703]
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("7_r0jau")
+metadata/_edit_lock_ = true
+
+[node name="SkyVignette" type="Sprite2D" parent="bg" unique_id=81234321]
+position = Vector2(80, 200)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_d4k8t")
+
+[node name="AnimateSymbolFireLeft" type="Node2D" parent="bg" unique_id=1596827071]
+position = Vector2(186, -63)
+script = ExtResource("2_d4k8t")
+symbol = "fire"
+frame = 5
+autoplay = true
+playing = true
+loop = true
+atlases = Array[ExtResource("3_4p83a")]([SubResource("Resource_et6a0")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="AnimateSymbolRicky" type="Node2D" parent="bg" unique_id=987663822]
+position = Vector2(176, -23.000002)
+scale = Vector2(-0.4, 0.4)
+script = ExtResource("2_d4k8t")
+symbol = "idle"
+frame = 4
+autoplay = true
+playing = true
+loop = true
+atlases = Array[ExtResource("3_4p83a")]([SubResource("Resource_70ym6")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="2Bg" type="Sprite2D" parent="bg" unique_id=1071778987]
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("11_adfkh")
+metadata/_edit_lock_ = true
+
+[node name="AnimateSymbolFireRight" type="Node2D" parent="bg" unique_id=1003304842]
+position = Vector2(-170, -91)
+script = ExtResource("2_d4k8t")
+symbol = "fire"
+frame = 7
+autoplay = true
+playing = true
+loop = true
+atlases = Array[ExtResource("3_4p83a")]([SubResource("Resource_8xopw")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="FireBg" type="Sprite2D" parent="bg" unique_id=467845551]
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("13_5wic4")
+metadata/_edit_lock_ = true
+
+[node name="AnimateSymbolFlicky" type="Node2D" parent="bg" unique_id=517164428]
+position = Vector2(-231, 58)
+scale = Vector2(-0.4, 0.4)
+script = ExtResource("2_d4k8t")
+symbol = "idle"
+frame = 2
+autoplay = true
+playing = true
+loop = true
+atlases = Array[ExtResource("3_4p83a")]([SubResource("Resource_i54fq")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="FlickyCover" type="Sprite2D" parent="bg" unique_id=1863396573]
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("15_m43dg")
+
+[node name="AnimateSymbolPicky" type="Node2D" parent="bg" unique_id=687743065]
+position = Vector2(776, -58)
+scale = Vector2(0.5, 0.5)
+script = ExtResource("2_d4k8t")
+symbol = "idle"
+frame = 1
+autoplay = true
+playing = true
+loop = true
+atlases = Array[ExtResource("3_4p83a")]([SubResource("Resource_bpdsf")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="Theheads" type="Sprite2D" parent="bg" unique_id=1067348622]
+scale = Vector2(0.225, 0.225)
+texture = ExtResource("17_w5api")
+
+[node name="Markers" type="Node2D" parent="." unique_id=79275904]
+metadata/_edit_lock_ = true
+
+[node name="ID0" parent="Markers" unique_id=460892831 instance=ExtResource("1_5v8q8")]
+position = Vector2(288, 288)
+
+[node name="ID1" parent="Markers" unique_id=1465821611 instance=ExtResource("1_5v8q8")]
+position = Vector2(-275, 285)
+flip_h = true
+
+[node name="GF" parent="Markers" unique_id=248662459 instance=ExtResource("1_5v8q8")]
+position = Vector2(0, 440)
+
+[node name="ReferenceRect" type="ReferenceRect" parent="." unique_id=1029152060]
+offset_left = -914.0
+offset_top = -512.0
+offset_right = 366.0
+offset_bottom = 208.0
+scale = Vector2(1.425, 1.425)
+border_color = Color(0.91011494, 0.9101149, 0.9101149, 1)
+border_width = 5.0
+metadata/_edit_lock_ = true

@@ -20,8 +20,8 @@ func _ready() -> void:
 	if length != 0.0:
 		$SustainsMid.visible = true
 		sustain_size = length * (scroll_speed * Common.magic_scroll_speed_value)
-		$SustainsMid.region_rect.size.y = (sustain_size - 64) / $SustainsMid.scale.y
-		$SustainsMid/Sprite2D.position.y = (sustain_size - 64) / $SustainsMid.scale.y
+		$SustainsMid.region_rect.size.y = (sustain_size) / $SustainsMid.scale.y
+		$SustainsMid/Sprite2D.position.y = (sustain_size) / $SustainsMid.scale.y
 	else:
 		$SustainsMid.visible = false
 
@@ -48,7 +48,6 @@ func update_clip() -> void:
 	var cut_pixels = time_passed * (scroll_speed * Common.magic_scroll_speed_value)
 	sustain_size = length * (scroll_speed * Common.magic_scroll_speed_value)
 	
-	#$SustainsMid.region_rect.position.y = cut_pixels
 	$SustainsMid.region_rect.size.y = (sustain_size - cut_pixels) / $SustainsMid.scale.y
 	$SustainsMid.position.y = cut_pixels
 	$SustainsMid/Sprite2D.position.y = (sustain_size - cut_pixels) / $SustainsMid.scale.y
@@ -73,4 +72,3 @@ func _set_note_skin(skin: NoteSkinResource) -> void:
 		$SustainsMid.texture_filter = TextureFilter.TEXTURE_FILTER_PARENT_NODE
 		$SustainsMid/Sprite2D.texture_filter = TextureFilter.TEXTURE_FILTER_PARENT_NODE
 	$SustainsMid.scale = skin.note_scale
-	#$SustainsMid/Sprite2D.scale = skin.g_scale

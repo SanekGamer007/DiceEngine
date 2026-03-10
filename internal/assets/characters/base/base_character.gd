@@ -95,8 +95,9 @@ func _set_state(new_state: STATES) -> void:
 	var anim_name = Common.id_to_input(note_direction)
 	match state: # state exit
 		STATES.HOLD:
-			$AnimationPlayer.speed_scale = 1.0
-			$AnimationPlayer.play(anim_map[anim_name])
+			if new_state != STATES.HOLD:
+				$AnimationPlayer.speed_scale = 1.0
+				$AnimationPlayer.play(anim_map[anim_name])
 	match new_state: # state enter
 		STATES.IDLE:
 			pass
@@ -111,6 +112,7 @@ func _set_state(new_state: STATES) -> void:
 			$AnimationPlayer.seek(0.0, true)
 			$IdleTimer.start()
 		STATES.HOLD:
+			$AnimationPlayer.stop()
 			$IdleTimer.start()
 	state = new_state
 

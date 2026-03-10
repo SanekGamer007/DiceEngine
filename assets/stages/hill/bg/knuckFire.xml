@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="knuckFire.png" width="2397" height="3122">
+	<SubTexture name="idle0000" x="1" y="1" width="834" height="781" frameX="-73" frameY="-135" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="idle0001" x="1551" y="1589" width="780" height="782" frameX="-164" frameY="-128" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="idle0002" x="776" y="1581" width="772" height="795" frameX="-144" frameY="-116" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="idle0003" x="847" y="773" width="778" height="805" frameX="-110" frameY="-102" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="idle0004" x="1551" y="2374" width="814" height="737" frameX="-84" frameY="-167" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="idle0005" x="838" y="1" width="827" height="769" frameX="-76" frameY="-132" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="idle0006" x="1" y="785" width="843" height="771" frameX="-87" frameY="-134" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="idle0007" x="1" y="1559" width="772" height="796" frameX="-168" frameY="-108" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="idle0008" x="1628" y="773" width="768" height="813" frameX="-132" frameY="-85" frameWidth="1000" frameHeight="1000"/>
+	<SubTexture name="idle0009" x="1" y="2379" width="789" height="742" frameX="-110" frameY="-167" frameWidth="1000" frameHeight="1000"/>
+</TextureAtlas>

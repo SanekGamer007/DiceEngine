@@ -78,6 +78,7 @@ func _process(delta: float) -> void:
 			if Game.mus_time > note.time + Common.judge_ranks["SHIT"][1]:
 				current_notes.remove_at(0)
 				if not note.was_pressed:
+					note.modulate.a = 0.3
 					owner_strumline.note_missed.emit(direction)
 		else:
 			current_notes.remove_at(0)
@@ -99,8 +100,10 @@ func _process(delta: float) -> void:
 	if active_sustain:
 		var note_end_time = active_sustain.time + active_sustain.length
 		if not owner_strumline.bot_play and not Input.is_action_pressed(action_name):
+			active_sustain.modulate.a = 0.3
 			active_sustain = null
 			state = ANIM_STATES.IDLE
+			owner_strumline.note_missed.emit(direction)
 			return
 		if Game.mus_time >= note_end_time:
 			owner_strumline.note_released.emit(direction) 

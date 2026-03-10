@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://ds3rej5lhi534"]
+
+[node name="HpBarIcon" type="Control" unique_id=12921492]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=637708092]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+stretch_mode = 5

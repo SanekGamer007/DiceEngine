@@ -863,14 +863,14 @@ animations = [{
 }]
 
 [node name="SonicGoogle" unique_id=151574328 instance=ExtResource("1_g3q5a")]
+hp_color = Color(0.12941177, 0.24705882, 0.5764706, 1)
 
 [node name="AnimationPlayer" parent="." index="0" unique_id=1164546831]
 libraries/ = SubResource("AnimationLibrary_ksltb")
 
 [node name="AnimatedSprite2D" parent="Sprites" parent_id_path=PackedInt32Array(765921245) index="0" unique_id=63994655]
 sprite_frames = SubResource("SpriteFrames_t5lkx")
-animation = &"idle"
-frame = 6
+animation = &"down"
 
 [node name="ReferenceRect" parent="." index="3" unique_id=1762810265]
 offset_left = -127.0

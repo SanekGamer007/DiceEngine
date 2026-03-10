@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b0jkq4af1yehx"]
+
+[ext_resource type="FontFile" uid="uid://c7e8ittf82kg1" path="res://assets/fonts/Quantico-Regular.ttf" id="1_cq1br"]
+[ext_resource type="Script" uid="uid://b2usbi0dyekoi" path="res://objects/ui/debug.gd" id="2_r4ag3"]
+
+[node name="Debug" type="CanvasLayer" unique_id=1874241488]
+layer = 9999
+
+[node name="RichTextLabel" type="RichTextLabel" parent="." unique_id=98289471]
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 116.0
+offset_bottom = 58.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -3
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("1_cq1br")
+theme_override_fonts/bold_font = ExtResource("1_cq1br")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 16
+bbcode_enabled = true
+text = "[b]%s v%s[/b]
+  FPS:  %d
+  Memory:  %.2f
+  Video Memory:  %.2f"
+fit_content = true
+autowrap_mode = 0
+shortcut_keys_enabled = false
+script = ExtResource("2_r4ag3")
+
+[node name="Update" type="Timer" parent="RichTextLabel" unique_id=5722962]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="RichTextLabel/Update" to="RichTextLabel" method="_on_update_timeout"]

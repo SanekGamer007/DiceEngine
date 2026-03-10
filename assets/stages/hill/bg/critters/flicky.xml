@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TextureAtlas imagePath="flicky.png" width="758" height="1504">
+	<SubTexture name="idle0000" x="0" y="1175.25" width="363.25" height="328.25" rotated="true" frameX="-142.75" frameY="-98.5" frameWidth="640" frameHeight="640"/>
+	<SubTexture name="idle0001" x="363.25" y="1175.25" width="363" height="328.25" rotated="true" frameX="-142.75" frameY="-98.5" frameWidth="640" frameHeight="640"/>
+	<SubTexture name="idle0002" x="0" y="795" width="395.5" height="380.25" frameX="-97.25" frameY="-83" frameWidth="640" frameHeight="640"/>
+	<SubTexture name="idle0003" x="0" y="0" width="346.25" height="397.5" rotated="true" frameX="-93.25" frameY="-140.75" frameWidth="640" frameHeight="640"/>
+	<SubTexture name="idle0004" x="0" y="397.5" width="346.25" height="397.5" rotated="true" frameX="-93.25" frameY="-140.75" frameWidth="640" frameHeight="640"/>
+	<SubTexture name="idle0005" x="395.5" y="650.25" width="362.25" height="316.5" frameX="-138.25" frameY="-200.25" frameWidth="640" frameHeight="640"/>
+	<SubTexture name="idle0006" x="346.25" y="0" width="388" height="325.25" frameX="-124.75" frameY="-155" frameWidth="640" frameHeight="640"/>
+	<SubTexture name="idle0007" x="346.25" y="325.25" width="387.75" height="325" frameX="-125" frameY="-155" frameWidth="640" frameHeight="640"/>
+</TextureAtlas>

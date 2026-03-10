@@ -397,7 +397,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(-22, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_jrc1p"]
@@ -1786,7 +1786,7 @@ tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(0, 0)]
+"values": [Vector2(-5, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_hdfwp"]
@@ -2745,7 +2745,7 @@ animations = [{
 
 [sub_resource type="Resource" id="Resource_qymph"]
 script = ExtResource("6_ano75")
-folder_path = "res://assets/characters/darnell/images//"
+folder_path = "res://assets/characters/darnell/images///"
 format = "adobe"
 metadata/_custom_type_script = "uid://dkyyuwqo0dy7q"
 
@@ -2781,8 +2781,7 @@ animation = &"idle"
 [node name="AnimateSymbol" type="Node2D" parent="Sprites" parent_id_path=PackedInt32Array(765921245) index="1" unique_id=481394481]
 position = Vector2(-276, -272)
 script = ExtResource("4_2hti0")
-symbol = "Darnell Pose Down"
-offset = Vector2(0, 20)
+symbol = "Darnell Idle"
 atlases = Array[ExtResource("5_m4g8q")]([SubResource("Resource_qymph")])
 metadata/_custom_type_script = "uid://c5ju3u657fyae"
 

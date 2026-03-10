@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Created with Funkin Packer v0.1.3 https://neeeoo.github.io/funkin-packer/
+-->
+<TextureAtlas imagePath="fire_left.png" width="1765" height="1379">
+	<SubTexture name="fire0000" x="663" y="919" width="367" height="451" frameX="-126" frameY="-511" frameWidth="2500" frameHeight="1500"/>
+	<SubTexture name="fire0001" x="1" y="1" width="1178" height="459" frameX="-123" frameY="-502" frameWidth="2500" frameHeight="1500"/>
+	<SubTexture name="fire0002" x="1180" y="411" width="576" height="507" frameX="-123" frameY="-480" frameWidth="2500" frameHeight="1500"/>
+	<SubTexture name="fire0003" x="1" y="461" width="661" height="513" frameX="-123" frameY="-480" frameWidth="2500" frameHeight="1500"/>
+	<SubTexture name="fire0004" x="1" y="975" width="643" height="403" frameX="-127" frameY="-589" frameWidth="2500" frameHeight="1500"/>
+	<SubTexture name="fire0005" x="1180" y="1" width="584" height="409" frameX="-127" frameY="-575" frameWidth="2500" frameHeight="1500"/>
+	<SubTexture name="fire0006" x="663" y="461" width="450" height="421" frameX="-127" frameY="-557" frameWidth="2500" frameHeight="1500"/>
+	<SubTexture name="fire0007" x="1031" y="919" width="390" height="448" frameX="-127" frameY="-526" frameWidth="2500" frameHeight="1500"/>
+</TextureAtlas>

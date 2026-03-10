@@ -159,6 +159,11 @@ func _process(delta: float) -> void:
 		STATES.DEAD:
 			_handle_dead_state()
 	Game.current_beat = floor(Game.mus_time / Game.crotchet)
+	var new_measure = floori(Game.current_beat / Game.numerator)
+	if new_measure != Game.current_measure:
+		Game.current_measure = new_measure
+	if hp == min_hp:
+		set_state(STATES.DEAD)
 
 func _update_hp() -> void:
 	hpbar.hp = hp
@@ -219,6 +224,15 @@ func set_state(new_state: STATES) -> void:
 	if new_state == STATES.PLAYING:
 		for player: AudioStreamPlayer in $AudioPlayers.get_children():
 			player.play(0.0)
+	elif new_state == STATES.DEAD:
+		for player: AudioStreamPlayer in $AudioPlayers.get_children():
+			player.stop()
+		OS.alert("You died!", "You died!")
+		get_tree().change_scene_to_file("res://assets/menus/freeplay/control.tscn")
+		return
+	elif new_state == STATES.ENDING:
+		get_tree().change_scene_to_file("res://assets/menus/freeplay/control.tscn")
+		return
 	state = new_state
 
 func load_chart_file(location: String) -> Dictionary:
