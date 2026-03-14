@@ -17,6 +17,7 @@ region = Rect2(0, 0, 106, 99)
 
 [node name="DarnellIcon" unique_id=12921492 instance=ExtResource("1_dfyg1")]
 icon = Array[Texture2D]([SubResource("AtlasTexture_vmevy"), SubResource("AtlasTexture_x01xq"), SubResource("AtlasTexture_x01xq")])
+icon_color = Color(0.4509804, 0.36862746, 0.6901961, 1)
 
 [node name="TextureRect" parent="." index="0" unique_id=637708092]
 offset_left = -16.0

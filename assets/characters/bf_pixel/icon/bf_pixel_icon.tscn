@@ -6,6 +6,7 @@
 
 [node name="BFPixelIcon" unique_id=12921492 instance=ExtResource("1_fy3vj")]
 icon = Array[Texture2D]([ExtResource("2_52jcm"), ExtResource("3_0vs6a"), ExtResource("3_0vs6a")])
+icon_color = Color(0.48235294, 0.8392157, 0.9647059, 1)
 
 [node name="TextureRect" parent="." index="0" unique_id=637708092]
 texture_filter = 1

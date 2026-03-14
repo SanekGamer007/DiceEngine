@@ -6,6 +6,7 @@
 
 [node name="BFIcon" unique_id=12921492 instance=ExtResource("1_ol21r")]
 icon = Array[Texture2D]([ExtResource("2_a8wkj"), ExtResource("3_q2j53"), ExtResource("3_q2j53")])
+icon_color = Color(0.19215687, 0.6901961, 0.81960785, 1)
 
 [node name="TextureRect" parent="." index="0" unique_id=637708092]
 texture = ExtResource("3_q2j53")

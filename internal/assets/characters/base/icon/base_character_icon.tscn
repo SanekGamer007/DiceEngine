@@ -9,6 +9,7 @@ layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_p3wph")
 icon = Array[Texture2D]([ExtResource("2_dmteb"), ExtResource("3_7fgv1"), ExtResource("3_7fgv1")])
+icon_color = Color(0.6313726, 0.6313726, 0.6313726, 1)
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=637708092]
 layout_mode = 0

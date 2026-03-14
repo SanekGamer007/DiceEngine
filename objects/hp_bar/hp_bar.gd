@@ -15,6 +15,7 @@ var hp: float = 50 :
 		left_icon = icon
 		if is_inside_tree() and left_icon:
 			$Icons.add_child(left_icon)
+			left_bar.color = icon.icon_color
 @export var right_icon: CharacterIcon :
 	set(icon):
 		if is_inside_tree() and right_icon:
@@ -22,6 +23,7 @@ var hp: float = 50 :
 		right_icon = icon
 		if is_inside_tree() and right_icon:
 			$Icons.add_child(right_icon)
+			right_bar.color = icon.icon_color
 @export var flip_bar: bool
 
 func _ready() -> void:
@@ -29,6 +31,8 @@ func _ready() -> void:
 		$Icons.add_child(left_icon)
 	if right_icon and not left_icon.is_inside_tree():
 		$Icons.add_child(right_icon)
+	left_bar.color = left_icon.icon_color
+	right_bar.color = right_icon.icon_color
 	Game.beat.connect(beat_hit)
 	_update_bar.call_deferred()
 

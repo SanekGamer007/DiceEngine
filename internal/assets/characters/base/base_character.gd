@@ -9,7 +9,6 @@ class_name Character
 @export var loop_time_end: float = 0.2 ## from end
 @export var loop_speed: float = 1.5
 @export var icon: PackedScene
-@export_color_no_alpha var hp_color: Color = Color.WHITE
 
 ## Required for any character to implement in any way.
 const anims = ["idle", "left", "down", "up", "right", "left_miss", "down_miss", "up_miss", "right_miss"]

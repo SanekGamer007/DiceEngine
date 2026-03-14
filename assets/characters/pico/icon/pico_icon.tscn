@@ -13,6 +13,7 @@ region = Rect2(0, 0, 119, 109)
 
 [node name="PicoIcon" unique_id=12921492 instance=ExtResource("1_n7pq3")]
 icon = Array[Texture2D]([SubResource("AtlasTexture_xe6v0"), SubResource("AtlasTexture_hat8m"), SubResource("AtlasTexture_hat8m")])
+icon_color = Color(0.7176471, 0.84705883, 0.33333334, 1)
 
 [node name="TextureRect" parent="." index="0" unique_id=637708092]
 texture = SubResource("AtlasTexture_hat8m")

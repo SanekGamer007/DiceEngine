@@ -13,6 +13,7 @@ region = Rect2(0, 0, 125, 103)
 
 [node name="BF_Rerun_Icon" unique_id=12921492 instance=ExtResource("1_ttuqh")]
 icon = Array[Texture2D]([SubResource("AtlasTexture_1dira"), SubResource("AtlasTexture_fq6pn"), SubResource("AtlasTexture_fq6pn")])
+icon_color = Color(0.65882355, 0.05490196, 0.24313726, 1)
 
 [node name="TextureRect" parent="." index="0" unique_id=637708092]
 texture = SubResource("AtlasTexture_fq6pn")

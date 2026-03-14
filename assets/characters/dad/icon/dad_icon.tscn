@@ -13,6 +13,7 @@ region = Rect2(0, 0, 110, 129)
 
 [node name="DadIcon" unique_id=12921492 instance=ExtResource("1_cad0e")]
 icon = Array[Texture2D]([SubResource("AtlasTexture_gqfjx"), SubResource("AtlasTexture_gqfjx"), SubResource("AtlasTexture_gqfjx")])
+icon_color = Color(0.6862745, 0.4, 0.80784315, 1)
 
 [node name="TextureRect" parent="." index="0" unique_id=637708092]
 offset_top = -32.0

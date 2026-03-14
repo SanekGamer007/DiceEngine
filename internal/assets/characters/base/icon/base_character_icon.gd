@@ -3,6 +3,7 @@ class_name CharacterIcon
 
 @export var icon: Array[Texture2D] ## First one is losing, second one is normal, third one is dominating
 @export var icon_progress: Array[float] = [20.0, 80.0] ## First one is losing, Second one is dominating
+@export_color_no_alpha var icon_color: Color
 @export var flip_h: bool = false :
 	set(b):
 		flip_h = b

@@ -45,6 +45,7 @@ var state: STATES = STATES.LOADING
 
 signal loading_complete
 
+
 func _ready() -> void:
 	state = STATES.LOADING
 	
@@ -140,6 +141,7 @@ func _ready() -> void:
 	Game.mus_time = -3
 	set_state(STATES.COUNTDOWN)
 
+
 func _process(delta: float) -> void:
 	Input.set_use_accumulated_input(false)
 	match state:
@@ -162,36 +164,45 @@ func _process(delta: float) -> void:
 	if hp <= min_hp:
 		set_state(STATES.DEAD)
 
+
 func _update_hp() -> void:
 	hpbar.hp = hp
+
 
 func _on_player_note_hit(_direction: Common.ARROW_DIR, _accuracy: float) -> void:
 	hp += hp_gain_player_hit
 
+
 func _on_player_note_miss(_direction: Common.ARROW_DIR) -> void:
 	hp -= hp_loss_player_miss
 
+
 func _on_player_note_sustain(_direction: Common.ARROW_DIR) -> void:
 	hp += (hp_gain_player_sustain * 60.0) * get_process_delta_time()
+	
 	
 func _on_opponent_note_hit(_direction: Common.ARROW_DIR, _accuracy: float) -> void:
 	hp += hp_gain_opponent_hit
 	if hp >= hp_loss_opponent_cap:
 		hp -= hp_loss_opponent_hit
 
+
 func _on_opponent_note_sustain(_direction: Common.ARROW_DIR) -> void:
 	hp += hp_gain_opponent_sustain
 	if hp >= hp_loss_opponent_cap:
 		hp -= (hp_loss_opponent_sustain * 60.0) * get_process_delta_time()
 
+
 func _handle_loading_state() -> void:
 	pass
+
 
 func _handle_countdown_state(delta: float) -> void:
 	if Game.mus_time >= 0:
 		set_state(STATES.PLAYING)
 		return
 	Game.mus_time += delta
+
 
 func _handle_playing_state(delta: float) -> void:
 	var player: AudioStreamPlayer = $AudioPlayers/AudioStreamPlayerInst
@@ -208,14 +219,18 @@ func _handle_playing_state(delta: float) -> void:
 	if Game.mus_time >= notes[notes.size() - 1].t + 3:
 		set_state(STATES.ENDING)
 
+
 func _handle_paused_state() -> void:
 	pass
+
 
 func _handle_ending_state() -> void:
 	pass
 
+
 func _handle_dead_state() -> void:
 	pass
+
 
 func set_state(new_state: STATES) -> void:
 	if new_state == STATES.PLAYING:
@@ -234,10 +249,12 @@ func set_state(new_state: STATES) -> void:
 		return
 	state = new_state
 
+
 func load_chart_file(location: String) -> Dictionary:
 	var file = FileAccess.open(location, FileAccess.READ)
 	var chart_file = file.get_as_text()
 	return JSON.parse_string(chart_file)
+
 
 func load_stage(stage_name: String) -> void:
 	if not Registry.stages.has(stage_name):
@@ -247,6 +264,7 @@ func load_stage(stage_name: String) -> void:
 	Refs.stage = stagepacked.instantiate()
 	add_child(Refs.stage)
 	move_child(Refs.stage, 0)
+
 
 func spawn_strumlines() -> void:
 	var markers = $StrumLines.get_children()
@@ -310,6 +328,7 @@ func spawn_strumlines() -> void:
 	for marker: Marker2D in markers:
 		marker.queue_free()
 
+
 func spawn_music() -> void:
 	var voices: Array = []
 	var inst: String
@@ -326,6 +345,7 @@ func spawn_music() -> void:
 		player.name = "AudioStreamPlayerID" + str(i)
 		player.stream = load(voices[i])
 		$AudioPlayers.add_child(player)
+
 
 func spawn_chars(chars: Dictionary) -> void:
 	for i in chars.size():

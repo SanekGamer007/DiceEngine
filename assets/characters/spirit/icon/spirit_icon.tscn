@@ -7,6 +7,7 @@
 
 [node name="SpiritIcon" unique_id=12921492 instance=ExtResource("1_4d0gj")]
 icon = Array[Texture2D]([ExtResource("2_gr81f"), ExtResource("3_2xpwu"), ExtResource("4_esy8a")])
+icon_color = Color(1, 0.23529412, 0.43137255, 1)
 
 [node name="TextureRect" parent="." index="0" unique_id=637708092]
 texture_filter = 1

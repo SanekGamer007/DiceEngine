@@ -107,7 +107,6 @@ export_anim_map = Dictionary[String, String]({
 "up_miss": "up_miss"
 })
 icon = ExtResource("2_5skpr")
-hp_color = Color(0.6313726, 0.6313726, 0.6313726, 1)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1164546831]
 libraries/ = SubResource("AnimationLibrary_32vpy")
