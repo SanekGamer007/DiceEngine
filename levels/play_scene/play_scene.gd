@@ -11,9 +11,6 @@ var song_chart: Dictionary = {}
 var song_metadata: Dictionary = {}
 
 var notes: Array[Dictionary]
-var stage: Node2D
-var strumlines: Array[StrumLine]
-var characters: Array[Character]
 var hpbar: HPBar
 var scroll_speed: float = 0.0
 var last_audio_pos: float = 0.0
@@ -50,9 +47,14 @@ signal loading_complete
 
 func _ready() -> void:
 	state = STATES.LOADING
+	
+	Refs.clear()
+	
 	hpbar = $ui.hpbar
 	$ui.play_scene = self
 	loading_complete.connect($ui._init_done)
+	Refs.controller = self
+	Refs.hud = $ui
 	if not Registry.songs.has(song_name):
 		push_error("FATAL: Song not found.")
 		return
@@ -104,9 +106,9 @@ func _ready() -> void:
 		var chars: Dictionary = song_metadata.get("chars", {})
 		spawn_chars(chars)
 	
-	for strumline_idx in strumlines.size():
-		var strumline: StrumLine = strumlines[strumline_idx]
-		for character: Character in characters:
+	for strumline_idx in Refs.strumlines.size():
+		var strumline: StrumLine = Refs.strumlines[strumline_idx]
+		for character: Character in Refs.characters:
 			if strumline.character:
 				continue
 			if character.id == strumline.id:
@@ -125,18 +127,13 @@ func _ready() -> void:
 			strumline.note_sustained.connect(_on_opponent_note_sustain)
 			strumline.note_pressed.connect(_on_opponent_note_hit)
 			
-	for i in characters.size():
+	for i in Refs.characters.size():
 		if i == 0:
-			hpbar.player_icons = characters[i].icon
-			hpbar.player_thresholds = characters[i].icon_progress
-			hpbar.player_color = characters[i].hp_color
-			hpbar.player_filter = characters[i].icon_filtering
+			hpbar.right_icon = Refs.characters[i].icon.instantiate()
 			continue
 		elif i == 1:
-			hpbar.opponent_icons = characters[i].icon
-			hpbar.opponent_thresholds = characters[i].icon_progress
-			hpbar.opponent_color = characters[i].hp_color
-			hpbar.opponent_filter = characters[i].icon_filtering
+			hpbar.left_icon = Refs.characters[i].icon.instantiate()
+			hpbar.right_icon.flip_h = true
 			break
 	spawn_music()
 	loading_complete.emit()
@@ -162,7 +159,7 @@ func _process(delta: float) -> void:
 	var new_measure = floori(Game.current_beat / Game.numerator)
 	if new_measure != Game.current_measure:
 		Game.current_measure = new_measure
-	if hp == min_hp:
+	if hp <= min_hp:
 		set_state(STATES.DEAD)
 
 func _update_hp() -> void:
@@ -228,9 +225,11 @@ func set_state(new_state: STATES) -> void:
 		for player: AudioStreamPlayer in $AudioPlayers.get_children():
 			player.stop()
 		OS.alert("You died!", "You died!")
+		Refs.clear()
 		get_tree().change_scene_to_file("res://assets/menus/freeplay/control.tscn")
 		return
 	elif new_state == STATES.ENDING:
+		Refs.clear()
 		get_tree().change_scene_to_file("res://assets/menus/freeplay/control.tscn")
 		return
 	state = new_state
@@ -245,9 +244,9 @@ func load_stage(stage_name: String) -> void:
 		push_error("ERROR: Stage ", stage_name, " not found.\nDefaulting to main_stage.")
 		stage_name = "main_stage"
 	var stagepacked: PackedScene = load(Registry.stages.get(stage_name))
-	stage = stagepacked.instantiate()
-	add_child(stage)
-	move_child(stage, 0)
+	Refs.stage = stagepacked.instantiate()
+	add_child(Refs.stage)
+	move_child(Refs.stage, 0)
 
 func spawn_strumlines() -> void:
 	var markers = $StrumLines.get_children()
@@ -307,7 +306,7 @@ func spawn_strumlines() -> void:
 				if note.s == strumline.id:
 					strumline.notes.append(note)
 		$StrumLines.add_child(strumline, true)
-		strumlines.append(strumline)
+		Refs.strumlines.append(strumline)
 	for marker: Marker2D in markers:
 		marker.queue_free()
 
@@ -319,9 +318,9 @@ func spawn_music() -> void:
 	if inst:
 		$AudioPlayers/AudioStreamPlayerInst.stream = load(inst)
 	else:
-		push_error("ERROR: Instumentals not found for song", song_name, ".")
+		push_error("ERROR: Instumentals not found for song ", song_name, ".")
 	if voices.size() <= 0:
-		push_warning("WARN: No vocals found for song", song_name, ".")
+		push_warning("WARN: No vocals found for song ", song_name, ".")
 	for i in voices.size():
 		var player: AudioStreamPlayer = AudioStreamPlayer.new()
 		player.name = "AudioStreamPlayerID" + str(i)
@@ -331,7 +330,7 @@ func spawn_music() -> void:
 func spawn_chars(chars: Dictionary) -> void:
 	for i in chars.size():
 		var char_name = chars.get(str(i))
-		var markers: Array = stage.get_node("Markers").get_children()
+		var markers: Array = Refs.stage.get_node("Markers").get_children()
 		var marker: CharacterMarker2D
 		for child: CharacterMarker2D in markers:
 			if child.name.contains(str(i)):
@@ -350,4 +349,4 @@ func spawn_chars(chars: Dictionary) -> void:
 		character.flip_h = marker.flip_h
 		character.flip_v = marker.flip_v
 		$Characters.add_child(character, true)
-		characters.append(character)
+		Refs.characters.append(character)

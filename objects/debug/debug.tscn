@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b0jkq4af1yehx"]
 
 [ext_resource type="FontFile" uid="uid://c7e8ittf82kg1" path="res://assets/fonts/Quantico-Regular.ttf" id="1_cq1br"]
-[ext_resource type="Script" uid="uid://b2usbi0dyekoi" path="res://objects/ui/debug.gd" id="2_r4ag3"]
+[ext_resource type="Script" uid="uid://b2usbi0dyekoi" path="res://objects/debug/debug.gd" id="2_r4ag3"]
 
 [node name="Debug" type="CanvasLayer" unique_id=1874241488]
 layer = 9999

@@ -3,7 +3,7 @@ extends Control
 var selected_song: String = ""
 var selected_diff: String = ""
 
-var play_packed: PackedScene = preload("res://levels/play_scene/play_scene.tscn")
+var play_packed: PackedScene = load("res://levels/play_scene/play_scene.tscn")
 
 func _ready() -> void:
 	$VBoxContainer/HBoxContainer/Label.text = Common.engine_name + " v" + Common.get_version() + "\nFreeplay\nWIP"

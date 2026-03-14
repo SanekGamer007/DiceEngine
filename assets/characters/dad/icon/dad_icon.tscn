@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://kainoakav6pn"]
+
+[ext_resource type="PackedScene" uid="uid://ds3rej5lhi534" path="res://internal/assets/characters/base/icon/base_character_icon.tscn" id="1_cad0e"]
+[ext_resource type="Texture2D" uid="uid://b6bbc8bkva1en" path="res://assets/characters/dad/icon/dad_icon.png" id="2_uunl2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqfjx"]
+atlas = ExtResource("2_uunl2")
+region = Rect2(0, 0, 111, 129)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3xue"]
+atlas = ExtResource("2_uunl2")
+region = Rect2(0, 0, 110, 129)
+
+[node name="DadIcon" unique_id=12921492 instance=ExtResource("1_cad0e")]
+icon = Array[Texture2D]([SubResource("AtlasTexture_gqfjx"), SubResource("AtlasTexture_gqfjx"), SubResource("AtlasTexture_gqfjx")])
+
+[node name="TextureRect" parent="." index="0" unique_id=637708092]
+offset_top = -32.0
+offset_right = 110.0
+offset_bottom = 97.0
+texture = SubResource("AtlasTexture_w3xue")

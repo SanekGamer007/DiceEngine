@@ -8,9 +8,7 @@ class_name Character
 @export var loop_time_start: float = 0.0 ## from end
 @export var loop_time_end: float = 0.2 ## from end
 @export var loop_speed: float = 1.5
-@export var icon: Array[Texture2D] ## First one is losing, second one is normal, third one is dominating
-@export var icon_progress: Array[float] = [20.0, 80.0] ## First one is losing, Second one is dominating
-@export var icon_filtering: TextureFilter = TextureFilter.TEXTURE_FILTER_PARENT_NODE
+@export var icon: PackedScene
 @export_color_no_alpha var hp_color: Color = Color.WHITE
 
 ## Required for any character to implement in any way.
@@ -59,7 +57,7 @@ func _ready() -> void:
 func _on_init_done() -> void:
 	set_process(true)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	match state:
 		STATES.IDLE:
 			_handle_idle_state()
@@ -113,11 +111,10 @@ func _set_state(new_state: STATES) -> void:
 			$IdleTimer.start()
 		STATES.HOLD:
 			$AnimationPlayer.stop()
-			$IdleTimer.start()
 	state = new_state
 
 
-func _on_note_pressed(direction: Common.ARROW_DIR, accr: float) -> void:
+func _on_note_pressed(direction: Common.ARROW_DIR, _accr: float) -> void:
 	note_direction = direction
 	_set_state(STATES.NOTE)
 
@@ -136,7 +133,7 @@ func _on_note_sustained(direction: Common.ARROW_DIR) -> void:
 		$AnimationPlayer.play_section_backwards(anim_map[anim_name], loop_time_start, loop_time_end)
 		can_loop = false
 
-func _on_note_released(direction: Common.ARROW_DIR) -> void:
+func _on_note_released(_direction: Common.ARROW_DIR) -> void:
 	if state == STATES.HOLD:
 		$IdleTimer.start()
 	elif $IdleTimer.is_stopped() and state != STATES.IDLE:
@@ -145,7 +142,7 @@ func _on_note_released(direction: Common.ARROW_DIR) -> void:
 func _on_idle_timer_timeout() -> void:
 	_set_state(STATES.IDLE)
 
-func _on_game_beat(beat: int) -> void:
+func _on_game_beat(_beat: int) -> void:
 	if state == STATES.IDLE:
 		$AnimationPlayer.play(anim_map["idle"])
 

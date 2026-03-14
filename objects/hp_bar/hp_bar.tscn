@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://1a3sdme1ed2n"]
 
-[ext_resource type="Texture2D" uid="uid://fred3htsqscw" path="res://internal/assets/characters/base/icon_0.png" id="1_cwxxr"]
 [ext_resource type="Script" uid="uid://frj4tiatnkl8" path="res://objects/hp_bar/hp_bar.gd" id="1_djs64"]
-[ext_resource type="Texture2D" uid="uid://dpoqiaxq6j7nj" path="res://internal/assets/characters/base/icon_1.png" id="2_4xkh1"]
+[ext_resource type="PackedScene" uid="uid://ds3rej5lhi534" path="res://internal/assets/characters/base/icon/base_character_icon.tscn" id="2_djs64"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djs64"]
 bg_color = Color(1, 1, 1, 0)
@@ -12,13 +11,13 @@ border_width_right = 4
 border_width_bottom = 4
 border_color = Color(0, 0, 0, 1)
 
-[node name="HPBar" type="Node2D" unique_id=504599034]
+[node name="HPBar" type="Node2D" unique_id=504599034 node_paths=PackedStringArray("left_icon", "right_icon")]
 script = ExtResource("1_djs64")
-player_icons = Array[Texture2D]([ExtResource("2_4xkh1"), ExtResource("1_cwxxr"), ExtResource("1_cwxxr")])
-opponent_icons = Array[Texture2D]([ExtResource("2_4xkh1"), ExtResource("1_cwxxr"), ExtResource("1_cwxxr")])
+left_icon = NodePath("Icons/Icon_Opponent")
+right_icon = NodePath("Icons/Icon_Player")
 
 [node name="Bar_Opponent" type="ColorRect" parent="." unique_id=1210655372]
-offset_right = 305.0
+offset_right = 610.0
 offset_bottom = 19.0
 color = Color(1, 0, 0, 1)
 
@@ -35,20 +34,16 @@ offset_bottom = 19.0
 size_flags_horizontal = 3
 theme_override_styles/panel = SubResource("StyleBoxFlat_djs64")
 
-[node name="Icon_Opponent" type="TextureRect" parent="." unique_id=1899107400]
-offset_left = 210.0
-offset_top = -32.0
-offset_right = 300.0
-offset_bottom = 58.0
-texture = ExtResource("1_cwxxr")
-expand_mode = 1
-stretch_mode = 5
+[node name="Icons" type="Node2D" parent="." unique_id=708009269]
+position = Vector2(0, -32)
 
-[node name="Icon_Player" type="TextureRect" parent="." unique_id=1000048969]
+[node name="Icon_Opponent" parent="Icons" unique_id=12921492 instance=ExtResource("2_djs64")]
+anchors_preset = -1
+offset_left = 210.0
+offset_right = 210.0
+
+[node name="Icon_Player" parent="Icons" unique_id=316901602 instance=ExtResource("2_djs64")]
+anchors_preset = -1
 offset_left = 310.0
-offset_top = -32.0
-offset_right = 400.0
-offset_bottom = 58.0
-texture = ExtResource("1_cwxxr")
-stretch_mode = 5
+offset_right = 310.0
 flip_h = true

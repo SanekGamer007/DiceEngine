@@ -2,8 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_hnp6k"]
 [ext_resource type="Script" uid="uid://c6y0alu0psj3a" path="res://assets/characters/bf/bf.gd" id="2_4kwj6"]
-[ext_resource type="Texture2D" uid="uid://bwn2fmpxp3xyg" path="res://assets/characters/bf/icon_1.png" id="3_wsjcv"]
-[ext_resource type="Texture2D" uid="uid://c4i67awwoccmy" path="res://assets/characters/bf/icon_0.png" id="4_ymfep"]
+[ext_resource type="PackedScene" uid="uid://c4e8xwmxswmyk" path="res://assets/characters/bf/icon/bf_icon.tscn" id="3_4kwj6"]
 [ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate-rewrite-main/animate_symbol.gd" id="5_dme70"]
 [ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate-rewrite-main/animate_atlas.gd" id="6_wsjcv"]
 [ext_resource type="Script" uid="uid://dkyyuwqo0dy7q" path="res://addons/gdanimate-rewrite-main/adobe/adobe_atlas.gd" id="7_ymfep"]
@@ -1201,7 +1200,7 @@ animations = [{
 
 [sub_resource type="Resource" id="Resource_5bn4n"]
 script = ExtResource("7_ymfep")
-folder_path = "res://assets/characters/bf/images///"
+folder_path = "res://assets/characters/bf/images/////"
 format = "adobe"
 metadata/_custom_type_script = "uid://dkyyuwqo0dy7q"
 
@@ -1221,7 +1220,7 @@ export_anim_map = Dictionary[String, String]({
 "up_miss": "BF NOTE UP MISS",
 "yeah": "Boyfriend YEAH cheer"
 })
-icon = Array[Texture2D]([ExtResource("3_wsjcv"), ExtResource("4_ymfep"), ExtResource("4_ymfep")])
+icon = ExtResource("3_4kwj6")
 hp_color = Color(0.19215687, 0.6901961, 0.81960785, 1)
 
 [node name="AnimationPlayer" parent="." index="0" unique_id=1164546831]

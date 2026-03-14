@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dfiekc0kos2ok"]
+
+[ext_resource type="PackedScene" uid="uid://ds3rej5lhi534" path="res://internal/assets/characters/base/icon/base_character_icon.tscn" id="1_ttuqh"]
+[ext_resource type="Texture2D" uid="uid://coi0ltrj1w8ot" path="res://assets/characters/bf_rerun/icon/bf_rerun_icon.png" id="2_vbqj6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1dira"]
+atlas = ExtResource("2_vbqj6")
+region = Rect2(152, 0, 131, 103)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq6pn"]
+atlas = ExtResource("2_vbqj6")
+region = Rect2(0, 0, 125, 103)
+
+[node name="BF_Rerun_Icon" unique_id=12921492 instance=ExtResource("1_ttuqh")]
+icon = Array[Texture2D]([SubResource("AtlasTexture_1dira"), SubResource("AtlasTexture_fq6pn"), SubResource("AtlasTexture_fq6pn")])
+
+[node name="TextureRect" parent="." index="0" unique_id=637708092]
+texture = SubResource("AtlasTexture_fq6pn")

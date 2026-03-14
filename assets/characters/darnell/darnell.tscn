@@ -2,22 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_0poca"]
 [ext_resource type="Script" uid="uid://dehw3jppeu8us" path="res://assets/characters/darnell/darnell.gd" id="2_5sehl"]
-[ext_resource type="Texture2D" uid="uid://y2y51dgh80k5" path="res://assets/characters/darnell/images/icon-darnell.png" id="3_qh3tn"]
+[ext_resource type="PackedScene" uid="uid://bgnir85nj0pvy" path="res://assets/characters/darnell/icon/darnell_icon.tscn" id="3_qh3tn"]
 [ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate-rewrite-main/animate_symbol.gd" id="4_2hti0"]
 [ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate-rewrite-main/animate_atlas.gd" id="5_m4g8q"]
 [ext_resource type="Script" uid="uid://dkyyuwqo0dy7q" path="res://addons/gdanimate-rewrite-main/adobe/adobe_atlas.gd" id="6_ano75"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_375pn"]
-atlas = ExtResource("3_qh3tn")
-region = Rect2(150, 0, 106, 99)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3ibyj"]
-atlas = ExtResource("3_qh3tn")
-region = Rect2(0, 0, 106, 99)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_035um"]
-atlas = ExtResource("3_qh3tn")
-region = Rect2(0, 0, 106, 99)
 
 [sub_resource type="Animation" id="Animation_fi5e8"]
 length = 6.3333335
@@ -2745,7 +2733,7 @@ animations = [{
 
 [sub_resource type="Resource" id="Resource_qymph"]
 script = ExtResource("6_ano75")
-folder_path = "res://assets/characters/darnell/images///"
+folder_path = "res://assets/characters/darnell/images/////"
 format = "adobe"
 metadata/_custom_type_script = "uid://dkyyuwqo0dy7q"
 
@@ -2767,7 +2755,7 @@ export_anim_map = Dictionary[String, String]({
 "up": "Darnell pose up",
 "up_miss": "Darnell pose up"
 })
-icon = Array[Texture2D]([SubResource("AtlasTexture_375pn"), SubResource("AtlasTexture_3ibyj"), SubResource("AtlasTexture_035um")])
+icon = ExtResource("3_qh3tn")
 hp_color = Color(0.4509804, 0.36862746, 0.6901961, 1)
 
 [node name="AnimationPlayer" parent="." index="0" unique_id=1164546831]
@@ -2781,7 +2769,7 @@ animation = &"idle"
 [node name="AnimateSymbol" type="Node2D" parent="Sprites" parent_id_path=PackedInt32Array(765921245) index="1" unique_id=481394481]
 position = Vector2(-276, -272)
 script = ExtResource("4_2hti0")
-symbol = "Darnell Idle"
+symbol = " "
 atlases = Array[ExtResource("5_m4g8q")]([SubResource("Resource_qymph")])
 metadata/_custom_type_script = "uid://c5ju3u657fyae"
 

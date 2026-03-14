@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://cqyyp5d7eoj21"]
 
 [ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_5ddw2"]
-[ext_resource type="Texture2D" uid="uid://blye0wjnbar0w" path="res://assets/characters/bf_pixel/icon_1.png" id="2_dmj1q"]
-[ext_resource type="Texture2D" uid="uid://dyiipu76c3xd0" path="res://assets/characters/bf_pixel/icon_0.png" id="3_n72lh"]
+[ext_resource type="PackedScene" uid="uid://bd843x4obomx0" path="res://assets/characters/bf_pixel/icon/bf_pixel_icon.tscn" id="2_d7kg8"]
 [ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate-rewrite-main/animate_symbol.gd" id="4_ysjka"]
 [ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate-rewrite-main/animate_atlas.gd" id="5_awr8h"]
 [ext_resource type="Script" uid="uid://s4mrcnjetwud" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_frame.gd" id="6_wi183"]
@@ -1072,8 +1071,7 @@ export_anim_map = Dictionary[String, String]({
 "up": "BF UP NOTE instance 1",
 "up_miss": "BF UP MISS instance 1"
 })
-icon = Array[Texture2D]([ExtResource("2_dmj1q"), ExtResource("3_n72lh"), ExtResource("3_n72lh")])
-icon_filtering = 1
+icon = ExtResource("2_d7kg8")
 hp_color = Color(0.48235294, 0.8392157, 0.9647059, 1)
 
 [node name="AnimationPlayer" parent="." index="0" unique_id=1164546831]

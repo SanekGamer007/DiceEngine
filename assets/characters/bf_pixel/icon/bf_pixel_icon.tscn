@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bd843x4obomx0"]
+
+[ext_resource type="PackedScene" uid="uid://ds3rej5lhi534" path="res://internal/assets/characters/base/icon/base_character_icon.tscn" id="1_fy3vj"]
+[ext_resource type="Texture2D" uid="uid://blye0wjnbar0w" path="res://assets/characters/bf_pixel/icon/bf_pixel_icon_1.png" id="2_52jcm"]
+[ext_resource type="Texture2D" uid="uid://dyiipu76c3xd0" path="res://assets/characters/bf_pixel/icon/bf_pixel_icon_0.png" id="3_0vs6a"]
+
+[node name="BFPixelIcon" unique_id=12921492 instance=ExtResource("1_fy3vj")]
+icon = Array[Texture2D]([ExtResource("2_52jcm"), ExtResource("3_0vs6a"), ExtResource("3_0vs6a")])
+
+[node name="TextureRect" parent="." index="0" unique_id=637708092]
+texture_filter = 1
+offset_top = -16.0
+offset_bottom = 24.0
+scale = Vector2(3, 3)
+texture = ExtResource("3_0vs6a")

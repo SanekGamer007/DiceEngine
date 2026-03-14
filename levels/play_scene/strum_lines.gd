@@ -6,5 +6,5 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	scale = scale.lerp(Vector2.ONE, delta * Game.bpm / 64)
 
-func _on_game_measure(measure: int) -> void:
+func _on_game_measure(_measure: int) -> void:
 	scale = Vector2(1.03, 1.03)

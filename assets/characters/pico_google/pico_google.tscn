@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cjln1e1icrq55"]
 
 [ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_44taj"]
-[ext_resource type="Texture2D" uid="uid://c8nbk5gwctr0a" path="res://assets/characters/pico/icon-pico.png" id="2_lndu8"]
+[ext_resource type="Texture2D" uid="uid://c8nbk5gwctr0a" path="res://assets/characters/pico/icon/pico_icon.png" id="2_lndu8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rusgh"]
 atlas = ExtResource("2_lndu8")

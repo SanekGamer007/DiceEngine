@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://cfyjc1y3kfod" path="res://objects/ui/ui.gd" id="1_3wryp"]
 [ext_resource type="PackedScene" uid="uid://1a3sdme1ed2n" path="res://objects/hp_bar/hp_bar.tscn" id="2_3t4f5"]
-[ext_resource type="Script" uid="uid://cnonu42t8coa2" path="res://objects/ui/misses.gd" id="2_c04xg"]
+[ext_resource type="Script" uid="uid://cnonu42t8coa2" path="res://objects/ui/info/misses.gd" id="2_c04xg"]
 [ext_resource type="FontFile" uid="uid://c7e8ittf82kg1" path="res://assets/fonts/Quantico-Regular.ttf" id="3_mahaa"]
-[ext_resource type="Script" uid="uid://ulvxruwtxrdp" path="res://objects/ui/score.gd" id="4_neaw5"]
-[ext_resource type="Script" uid="uid://c0wlutp8n20i" path="res://objects/ui/accuracy.gd" id="6_3wryp"]
+[ext_resource type="Script" uid="uid://ulvxruwtxrdp" path="res://objects/ui/info/score.gd" id="4_neaw5"]
+[ext_resource type="Script" uid="uid://c0wlutp8n20i" path="res://objects/ui/info/accuracy.gd" id="6_3wryp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_neaw5"]
 font = ExtResource("3_mahaa")
@@ -60,6 +60,6 @@ script = ExtResource("2_c04xg")
 
 [node name="Accuracy" type="Label" parent="Control/VBoxContainer/HBoxContainer" unique_id=1415376139]
 layout_mode = 2
-text = "Accuracy: %.2f"
+text = "Accuracy: -%"
 label_settings = SubResource("LabelSettings_neaw5")
 script = ExtResource("6_3wryp")

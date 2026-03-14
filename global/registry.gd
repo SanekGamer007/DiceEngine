@@ -61,12 +61,13 @@ func find_chars() -> Dictionary[String, String]:
 			continue
 		var folders = DirAccess.get_directories_at(path)
 		for char_name in folders:
-			var full_path = path + char_name + "/" + char_name + ".tscn"
-			if FileAccess.file_exists(full_path):
-				found_characters[char_name] = full_path
+			var full_path = path + char_name + "/" + char_name
+			if ResourceLoader.exists(full_path + ".tscn"):
+				found_characters[char_name] = full_path + ".tscn"
 			else:
 				var all_files = DirAccess.get_files_at(path + char_name)
 				for file in all_files:
+					file = file.replace(".remap", "")
 					if file.ends_with(".tscn"):
 						found_characters[char_name] = (path + char_name + "/" + file)
 						break
@@ -79,14 +80,13 @@ func find_stages() -> Dictionary[String, String]:
 			continue
 		var folders = DirAccess.get_directories_at(path)
 		for stage_name in folders:
-			var full_path = path + stage_name + "/"
-			if FileAccess.file_exists(full_path + stage_name + ".tscn"):
-				found_stages[stage_name] = full_path + stage_name + ".tscn"
-			elif FileAccess.file_exists(full_path + "stage" + ".tscn"):
-				found_stages[stage_name] = full_path + "stage" + ".tscn"
+			var full_path = path + stage_name + "/" + stage_name
+			if ResourceLoader.exists(full_path + ".tscn"):
+				found_stages[stage_name] = full_path + ".tscn"
 			else:
 				var all_files = DirAccess.get_files_at(path + stage_name)
 				for file in all_files:
+					file = file.replace(".remap", "")
 					if file.ends_with(".tscn"):
 						found_stages[stage_name] = (path + stage_name + "/" + file)
 						break
@@ -103,7 +103,7 @@ func find_songs() -> Dictionary[String, Dictionary]:
 			for prefix in _chart_diff_prefix_priority:
 				var full_prefix: String = "_" + prefix if prefix else ""
 				var full_path: String = pre_path + full_prefix + ".json"
-				if FileAccess.file_exists(full_path):
+				if ResourceLoader.exists(full_path):
 					found_songs.merge(_format_song(full_path, song_name), true)
 	return found_songs
 
@@ -118,6 +118,7 @@ func find_note_skins() -> Dictionary[String, String]:
 			if DirAccess.dir_exists_absolute(full_path):
 				var files = DirAccess.get_files_at(full_path)
 				for file in files:
+					file = file.replace(".remap", "")
 					if file.ends_with(".tres"):
 						found_note_skins[skin_folder] = full_path + file
 						break
@@ -151,11 +152,12 @@ func _get_music(song_name: String) -> Dictionary:
 		return {"inst": "", "voices": []}
 	
 	for file in DirAccess.get_files_at(music_path):
-		if not file.contains(".import"):
-			if file.to_lower().contains("inst"):
-				inst = music_path + "/" + file
-			else:
-				if file.to_lower().begins_with("voices"):
+		file = file.replace(".import", "")
+		if file.to_lower().contains("inst"):
+			inst = music_path + "/" + file
+		else:
+			if file.to_lower().begins_with("voices"):
+				if not voices.has(music_path + "/" + file):
 					voices.append(music_path + "/" + file)
 	
 	voices.sort()

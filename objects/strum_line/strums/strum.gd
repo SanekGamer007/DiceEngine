@@ -71,7 +71,7 @@ func _input(event: InputEvent) -> void:
 			owner_strumline.note_released.emit(direction)
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not current_notes.is_empty():
 		var note = current_notes[0]
 		if note:

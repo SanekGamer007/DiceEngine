@@ -12,7 +12,12 @@ var note_preload = preload("res://objects/note/note.tscn")
 @export var ghost_tapping: bool = false
 @export var scroll_speed: float = 1.0
 @export var strums: Array[Strum]
-@export var character: Character
+@export var character: Character :
+	set(c):
+		_disconnect_signals(c)
+		character = c
+		if is_inside_tree():
+			_connect_signals()
 @export var notes: Array[Dictionary]
 @export var id: int
 @export var bpm: int = 120
@@ -24,7 +29,7 @@ signal init_done
 signal note_pressed(direction: Common.ARROW_DIR, accuracy: float)
 signal note_released(direction: Common.ARROW_DIR)
 signal note_missed(direction: Common.ARROW_DIR)
-signal note_ghosted(direction: Common.ARROW_DIR)
+#signal note_ghosted(direction: Common.ARROW_DIR)
 signal note_sustained(direction: Common.ARROW_DIR)
 
 func _ready() -> void:
@@ -32,7 +37,7 @@ func _ready() -> void:
 	set_note_skin(note_skin)
 	set_process(false)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	cleaner_pos = global_position.y - 120
 	var dist = get_viewport_rect().size.y / get_viewport().get_camera_2d().zoom.y / scale.y
 	var spawn_time_ahead = dist / (scroll_speed * Common.magic_scroll_speed_value)
@@ -60,13 +65,33 @@ func _on_loading_complete() -> void:
 		strum.owner_strumline = self
 		strum.note_skin = note_skin
 	if character:
-		note_pressed.connect(character._on_note_pressed)
-		note_released.connect(character._on_note_released)
-		note_sustained.connect(character._on_note_sustained)
-		note_missed.connect(character._on_note_missed)
-		init_done.connect(character._on_init_done)
+		_connect_signals()
 	set_process(true)
 	init_done.emit()
+
+func _disconnect_signals(old_character: Character) -> void:
+	if note_pressed.is_connected(old_character._on_note_pressed):
+		note_pressed.disconnect(old_character._on_note_pressed)
+	if note_released.is_connected(old_character._on_note_released):
+		note_released.disconnect(old_character._on_note_released)
+	if note_sustained.is_connected(old_character._on_note_sustained):
+		note_sustained.disconnect(old_character._on_note_sustained)
+	if note_missed.is_connected(old_character._on_note_missed):
+		note_missed.disconnect(old_character._on_note_missed)
+	if init_done.is_connected(old_character._on_init_done):
+		init_done.disconnect(old_character._on_init_done)
+
+func _connect_signals() -> void:
+	if not note_pressed.is_connected(character._on_note_pressed):
+		note_pressed.connect(character._on_note_pressed)
+	if not note_released.is_connected(character._on_note_released):
+		note_released.connect(character._on_note_released)
+	if not note_sustained.is_connected(character._on_note_sustained):
+		note_sustained.connect(character._on_note_sustained)
+	if not note_missed.is_connected(character._on_note_missed):
+		note_missed.connect(character._on_note_missed)
+	if not init_done.is_connected(character._on_init_done):
+		init_done.connect(character._on_init_done)
 
 func set_note_skin(skin: NoteSkinResource) -> void:
 	if not is_inside_tree():

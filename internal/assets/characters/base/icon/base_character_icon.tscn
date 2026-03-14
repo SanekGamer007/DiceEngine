@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ds3rej5lhi534"]
+
+[ext_resource type="Script" uid="uid://b5ee52hujy78t" path="res://internal/assets/characters/base/icon/base_character_icon.gd" id="1_p3wph"]
+[ext_resource type="Texture2D" uid="uid://dpoqiaxq6j7nj" path="res://internal/assets/characters/base/icon_1.png" id="2_dmteb"]
+[ext_resource type="Texture2D" uid="uid://fred3htsqscw" path="res://internal/assets/characters/base/icon_0.png" id="3_7fgv1"]
+
+[node name="CharacterIcon" type="Control" unique_id=12921492]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_p3wph")
+icon = Array[Texture2D]([ExtResource("2_dmteb"), ExtResource("3_7fgv1"), ExtResource("3_7fgv1")])
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=637708092]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_7fgv1")
+stretch_mode = 5

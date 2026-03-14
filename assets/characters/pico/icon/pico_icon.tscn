@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://3dn3ta5ovtyh"]
+
+[ext_resource type="PackedScene" uid="uid://ds3rej5lhi534" path="res://internal/assets/characters/base/icon/base_character_icon.tscn" id="1_n7pq3"]
+[ext_resource type="Texture2D" uid="uid://c8nbk5gwctr0a" path="res://assets/characters/pico/icon/pico_icon.png" id="2_6c268"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xe6v0"]
+atlas = ExtResource("2_6c268")
+region = Rect2(154, 0, 119, 109)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hat8m"]
+atlas = ExtResource("2_6c268")
+region = Rect2(0, 0, 119, 109)
+
+[node name="PicoIcon" unique_id=12921492 instance=ExtResource("1_n7pq3")]
+icon = Array[Texture2D]([SubResource("AtlasTexture_xe6v0"), SubResource("AtlasTexture_hat8m"), SubResource("AtlasTexture_hat8m")])
+
+[node name="TextureRect" parent="." index="0" unique_id=637708092]
+texture = SubResource("AtlasTexture_hat8m")

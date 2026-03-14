@@ -3,21 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_a5uyw"]
 [ext_resource type="Script" uid="uid://bbvxquuj1encm" path="res://assets/characters/dad/dad.gd" id="2_ngu17"]
 [ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate-rewrite-main/animate_symbol.gd" id="3_631jf"]
-[ext_resource type="Texture2D" uid="uid://b6bbc8bkva1en" path="res://assets/characters/dad/icon-dad.png" id="3_xn7b2"]
+[ext_resource type="PackedScene" uid="uid://kainoakav6pn" path="res://assets/characters/dad/icon/dad_icon.tscn" id="3_xn7b2"]
 [ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate-rewrite-main/animate_atlas.gd" id="4_xn7b2"]
 [ext_resource type="Script" uid="uid://dkyyuwqo0dy7q" path="res://addons/gdanimate-rewrite-main/adobe/adobe_atlas.gd" id="5_p2lu6"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p2lu6"]
-atlas = ExtResource("3_xn7b2")
-region = Rect2(0, 0, 111, 250)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wvblq"]
-atlas = ExtResource("3_xn7b2")
-region = Rect2(152, 0, 111, 250)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4si61"]
-atlas = ExtResource("3_xn7b2")
-region = Rect2(152, 0, 111, 250)
 
 [sub_resource type="Animation" id="Animation_wvblq"]
 length = 4.9583335
@@ -653,7 +641,7 @@ animations = [{
 
 [sub_resource type="Resource" id="Resource_t14hs"]
 script = ExtResource("5_p2lu6")
-folder_path = "res://assets/characters/dad/images//"
+folder_path = "res://assets/characters/dad/images////"
 format = "adobe"
 metadata/_custom_type_script = "uid://dkyyuwqo0dy7q"
 
@@ -663,14 +651,14 @@ export_anim_map = Dictionary[String, String]({
 "down": "Dad Sing Note DOWN",
 "down_miss": "Dad Sing Note DOWN",
 "idle": "Dad idle dance",
-"left": "Dad Sing Note LEFT",
-"left_miss": "Dad Sing Note LEFT",
-"right": "dad sing note right",
-"right_miss": "dad sing note right",
+"left": "dad sing note right",
+"left_miss": "dad sing note right",
+"right": "Dad Sing Note LEFT",
+"right_miss": "Dad Sing Note LEFT",
 "up": "Dad Sing note UP",
 "up_miss": "Dad Sing note UP"
 })
-icon = Array[Texture2D]([SubResource("AtlasTexture_p2lu6"), SubResource("AtlasTexture_wvblq"), SubResource("AtlasTexture_4si61")])
+icon = ExtResource("3_xn7b2")
 hp_color = Color(0.6862745, 0.4, 0.80784315, 1)
 
 [node name="AnimationPlayer" parent="." index="0" unique_id=1164546831]

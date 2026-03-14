@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_odq1j"]
 [ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate-rewrite-main/animate_symbol.gd" id="2_q535i"]
-[ext_resource type="Texture2D" uid="uid://c8nbk5gwctr0a" path="res://assets/characters/pico/icon-pico.png" id="2_sfv3t"]
+[ext_resource type="PackedScene" uid="uid://3dn3ta5ovtyh" path="res://assets/characters/pico/icon/pico_icon.tscn" id="2_sfv3t"]
 [ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate-rewrite-main/animate_atlas.gd" id="3_ra0hx"]
 [ext_resource type="Script" uid="uid://s4mrcnjetwud" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_frame.gd" id="4_puqy8"]
 [ext_resource type="Script" uid="uid://nqbs7y41i566" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_atlas.gd" id="5_ayd13"]
@@ -14,18 +14,6 @@
 [ext_resource type="Texture2D" uid="uid://1s4torcrpmwe" path="res://assets/characters/pico/images/Pico_Censored.png" id="11_vob8u"]
 [ext_resource type="Texture2D" uid="uid://46b2iug0ahmd" path="res://assets/characters/pico/images/Pico_Intro.png" id="12_lq5mw"]
 [ext_resource type="Texture2D" uid="uid://duonwi77rbthp" path="res://assets/characters/pico/images/Pico_Shooting.png" id="13_emenq"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rusgh"]
-atlas = ExtResource("2_sfv3t")
-region = Rect2(154, 0, 119, 109)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vob8u"]
-atlas = ExtResource("2_sfv3t")
-region = Rect2(0, 0, 119, 109)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lq5mw"]
-atlas = ExtResource("2_sfv3t")
-region = Rect2(0, 0, 119, 109)
 
 [sub_resource type="Animation" id="Animation_r1keo"]
 length = 0.45833334
@@ -4892,7 +4880,7 @@ export_anim_map = Dictionary[String, String]({
 "up_swear": "pico swear up",
 "yeah": "Pico YEAH cheer"
 })
-icon = Array[Texture2D]([SubResource("AtlasTexture_rusgh"), SubResource("AtlasTexture_vob8u"), SubResource("AtlasTexture_lq5mw")])
+icon = ExtResource("2_sfv3t")
 hp_color = Color(0.7176471, 0.84705883, 0.33333334, 1)
 
 [node name="AnimationPlayer" parent="." index="0" unique_id=1164546831]
@@ -4906,7 +4894,8 @@ animation = &"down_miss"
 
 [node name="AnimateSymbol" type="Node2D" parent="Sprites" parent_id_path=PackedInt32Array(765921245) index="1" unique_id=920651584]
 script = ExtResource("2_q535i")
-symbol = "Pico Note Right"
+symbol = "Pico Idle Dance"
+frame = 13
 atlases = Array[ExtResource("3_ra0hx")]([SubResource("Resource_nse15"), SubResource("Resource_iq685"), SubResource("Resource_o5mmi"), SubResource("Resource_2qkqv"), SubResource("Resource_y2dv5"), SubResource("Resource_c2082"), SubResource("Resource_28g3g"), SubResource("Resource_c1hm7")])
 metadata/_custom_type_script = "uid://c5ju3u657fyae"
 
