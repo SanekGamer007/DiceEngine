@@ -3,8 +3,8 @@
 [ext_resource type="PackedScene" uid="uid://ny7r3d7vcv5" path="res://objects/strum_line/strum_line.tscn" id="1_eilx2"]
 [ext_resource type="Script" uid="uid://d3glooql74tni" path="res://levels/temp/temp_controller.gd" id="1_wy8op"]
 [ext_resource type="AudioStream" uid="uid://dt3c6r3jwcn0r" path="res://assets/songs/dadbattle/song/Inst.ogg" id="3_6wiuc"]
-[ext_resource type="PackedScene" uid="uid://xw76ao1q5rmg" path="res://assets/characters/bf/bf.tscn" id="3_qer1h"]
-[ext_resource type="PackedScene" uid="uid://ycg4vajhcl06" path="res://assets/characters/dad/dad.tscn" id="4_2py05"]
+[ext_resource type="PackedScene" uid="uid://xw76ao1q5rmg" path="res://internal/assets/characters/bf/bf.tscn" id="3_qer1h"]
+[ext_resource type="PackedScene" uid="uid://ycg4vajhcl06" path="res://internal/assets/characters/dad/dad.tscn" id="4_2py05"]
 [ext_resource type="PackedScene" uid="uid://bia2sobsa06sb" path="res://objects/ui/ui.tscn" id="6_qer1h"]
 
 [node name="temp_controller" type="Control" unique_id=471623247]
@@ -16,7 +16,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wy8op")
 song_name = "dadbattle"
-difficulty = 1
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=949230589]
 zoom = Vector2(0.7, 0.7)
@@ -53,7 +52,6 @@ position = Vector2(571, 297)
 
 [node name="Dad" parent="Characters" unique_id=1883695631 instance=ExtResource("4_2py05")]
 position = Vector2(-581, 49)
-flip_h = true
 
 [node name="AudioPlayers" type="Node" parent="." unique_id=1956025026]
 

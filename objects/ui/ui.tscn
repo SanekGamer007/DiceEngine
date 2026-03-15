@@ -1,17 +1,8 @@
 [gd_scene format=3 uid="uid://bia2sobsa06sb"]
 
 [ext_resource type="Script" uid="uid://cfyjc1y3kfod" path="res://objects/ui/ui.gd" id="1_3wryp"]
-[ext_resource type="PackedScene" uid="uid://1a3sdme1ed2n" path="res://objects/hp_bar/hp_bar.tscn" id="2_3t4f5"]
-[ext_resource type="Script" uid="uid://cnonu42t8coa2" path="res://objects/ui/info/misses.gd" id="2_c04xg"]
-[ext_resource type="FontFile" uid="uid://c7e8ittf82kg1" path="res://assets/fonts/Quantico-Regular.ttf" id="3_mahaa"]
-[ext_resource type="Script" uid="uid://ulvxruwtxrdp" path="res://objects/ui/info/score.gd" id="4_neaw5"]
-[ext_resource type="Script" uid="uid://c0wlutp8n20i" path="res://objects/ui/info/accuracy.gd" id="6_3wryp"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_neaw5"]
-font = ExtResource("3_mahaa")
-font_size = 20
-outline_size = 8
-outline_color = Color(0, 0, 0, 1)
+[ext_resource type="PackedScene" uid="uid://1a3sdme1ed2n" path="res://internal/assets/ui/hp_bar/normal/hp_bar.tscn" id="2_3t4f5"]
+[ext_resource type="PackedScene" uid="uid://gvhsvtg0qhj7" path="res://internal/assets/ui/info_bar/normal/info_bar.tscn" id="3_c04xg"]
 
 [node name="ui" type="CanvasLayer" unique_id=1119694987]
 script = ExtResource("1_3wryp")
@@ -41,25 +32,5 @@ size_flags_horizontal = 4
 
 [node name="HPBar" parent="Control/VBoxContainer/HBoxContainer2" unique_id=504599034 instance=ExtResource("2_3t4f5")]
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=1240793822]
+[node name="Info" parent="Control/VBoxContainer" unique_id=1849635213 instance=ExtResource("3_c04xg")]
 layout_mode = 2
-theme_override_constants/separation = 64
-alignment = 1
-
-[node name="Score" type="Label" parent="Control/VBoxContainer/HBoxContainer" unique_id=901900327]
-layout_mode = 2
-text = "Score: %d"
-label_settings = SubResource("LabelSettings_neaw5")
-script = ExtResource("4_neaw5")
-
-[node name="Misses" type="Label" parent="Control/VBoxContainer/HBoxContainer" unique_id=783175463]
-layout_mode = 2
-text = "Misses: %d"
-label_settings = SubResource("LabelSettings_neaw5")
-script = ExtResource("2_c04xg")
-
-[node name="Accuracy" type="Label" parent="Control/VBoxContainer/HBoxContainer" unique_id=1415376139]
-layout_mode = 2
-text = "Accuracy: -%"
-label_settings = SubResource("LabelSettings_neaw5")
-script = ExtResource("6_3wryp")

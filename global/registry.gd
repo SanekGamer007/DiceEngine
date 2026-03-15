@@ -5,16 +5,16 @@ extends Node
 
 # Name: Path
 var stages: Dictionary[String, String] = {
-	"main_stage": "res://assets/stages/main_stage/main_stage.tscn",
+	"main_stage": "res://internal/assets/stages/main_stage/",
 }
 
 var characters: Dictionary[String, String] = {
-	"bf": "res://assets/characters/bf/bf.tscn",
-	"dad": "res://assets/characters/dad/dad.tscn"
+	"bf": "res://internal/assets/characters/bf/bf.tscn",
+	"dad": "res://internal/assets/characters/dad/dad.tscn",
 }
 
 var note_skins: Dictionary[String, String] = {
-	"normal": "res://assets/base/strumline/notes/normal/res/normalskin.tres"
+	"normal": "res://internal/assets/ui/noteskins/normal/res/normal.tres",
 }
 
 # SongName, {Diff, {Path, Array[Inst, Voices]}}
@@ -28,6 +28,14 @@ var songs: Dictionary[String, Dictionary] = {
 		}
 }
 
+var hp_bars: Dictionary[String, String] = {
+	"normal": "res://internal/assets/ui/hp_bar/normal/hp_bar.tscn",
+}
+
+var info_bars: Dictionary[String, String] = {
+	"normal": "res://internal/assets/ui/info_bar/normal/info_bar.tscn",
+}
+
 var _chart_diff_prefix_priority: Array[String] = [
 	"",
 	"erect",
@@ -37,9 +45,11 @@ var _chart_diff_prefix_priority: Array[String] = [
 
 # last entries override the first ones
 var song_paths: Array[String] = ["res://assets/songs/"]
-var chars_paths: Array[String] = ["res://assets/characters/"]
-var note_skin_paths: Array[String] = ["res://assets/noteskins/"]
-var stage_paths: Array[String] = ["res://assets/stages/"]
+var chars_paths: Array[String] = ["res://internal/assets/characters/", "res://assets/characters/"]
+var stage_paths: Array[String] = ["res://internal/assets/stages/", "res://assets/stages/"]
+var note_skin_paths: Array[String] = ["res://internal/assets/ui/noteskins/", "res://assets/ui/noteskins/"]
+var info_bars_path: Array[String] = ["res://internal/assets/ui/info_bar/", "res://assets/ui/info_bar/"]
+var hp_bar_paths: Array[String] = ["res://internal/assets/ui/hp_bar/", "res://assets/ui/hp_bar/"]
 
 func _ready() -> void:
 	re_init_database()
@@ -53,6 +63,8 @@ func re_init_database() -> void:
 	stages.assign(find_stages())
 	songs.assign(find_songs())
 	note_skins.assign(find_note_skins())
+	hp_bars.assign(find_hp_bars())
+	info_bars.assign(find_info_bars())
 
 func find_chars() -> Dictionary[String, String]:
 	var found_characters: Dictionary[String, String] = {}
@@ -69,6 +81,8 @@ func find_chars() -> Dictionary[String, String]:
 				for file in all_files:
 					file = file.replace(".remap", "")
 					if file.ends_with(".tscn"):
+						if char_name == "base":
+							break
 						found_characters[char_name] = (path + char_name + "/" + file)
 						break
 	return found_characters
@@ -123,6 +137,46 @@ func find_note_skins() -> Dictionary[String, String]:
 						found_note_skins[skin_folder] = full_path + file
 						break
 	return found_note_skins
+
+func find_hp_bars() -> Dictionary[String, String]:
+	var found_hp_bars: Dictionary[String, String] = {}
+	for path in hp_bar_paths:
+		if not DirAccess.dir_exists_absolute(path):
+			continue
+		var folders = DirAccess.get_directories_at(path)
+		for hp_bar_folder in folders:
+			var full_path = path + hp_bar_folder
+			if ResourceLoader.exists(full_path + "/" + hp_bar_folder + ".tscn"):
+				found_hp_bars[hp_bar_folder] = full_path + "/" + hp_bar_folder + ".tscn"
+			else:
+				if DirAccess.dir_exists_absolute(full_path):
+					var files = DirAccess.get_files_at(full_path)
+					for file in files:
+						file = file.replace(".remap", "")
+						if file.ends_with(".tscn"):
+							found_hp_bars[hp_bar_folder] = full_path + "/" + file
+							break
+	return found_hp_bars
+
+func find_info_bars() -> Dictionary[String, String]:
+	var found_info_bars: Dictionary[String, String] = {}
+	for path in info_bars_path:
+		if not DirAccess.dir_exists_absolute(path):
+			continue
+		var folders = DirAccess.get_directories_at(path)
+		for info_bar_folder in folders:
+			var full_path = path + info_bar_folder
+			if ResourceLoader.exists(full_path + "/" + info_bar_folder + ".tscn"):
+				found_info_bars[info_bar_folder] = full_path + "/" + info_bar_folder + ".tscn"
+			else:
+				if DirAccess.dir_exists_absolute(full_path):
+					var files = DirAccess.get_files_at(full_path)
+					for file in files:
+						file = file.replace(".remap", "")
+						if file.ends_with(".tscn"):
+							found_info_bars[info_bar_folder] = full_path + "/" + file
+							break
+	return found_info_bars
 
 func _format_song(json_path: String, song_name: String) -> Dictionary[String, Dictionary]:
 	var formatted_song: Dictionary[String, Dictionary] = {}

@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://ny7r3d7vcv5"]
 
 [ext_resource type="Script" uid="uid://xypcm18mw4m" path="res://objects/strum_line/strum_line.gd" id="1_r4pgd"]
-[ext_resource type="Resource" uid="uid://qawr206cmku" path="res://assets/noteskins/normal/res/normal.tres" id="2_3jvdu"]
+[ext_resource type="Resource" uid="uid://qawr206cmku" path="res://internal/assets/ui/noteskins/normal/res/normal.tres" id="2_3jvdu"]
 [ext_resource type="PackedScene" uid="uid://dhkd50mpkitxa" path="res://objects/strum_line/strums/strum.tscn" id="2_5bl5q"]
 
 [node name="StrumLine" type="Control" unique_id=1166438541]

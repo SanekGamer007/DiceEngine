@@ -1,0 +1,681 @@
+[gd_scene format=3 uid="uid://ycg4vajhcl06"]
+
+[ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_a5uyw"]
+[ext_resource type="Script" uid="uid://bbvxquuj1encm" path="res://internal/assets/characters/dad/dad.gd" id="2_ngu17"]
+[ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate-rewrite-main/animate_symbol.gd" id="3_631jf"]
+[ext_resource type="PackedScene" uid="uid://kainoakav6pn" path="res://internal/assets/characters/dad/icon/dad_icon.tscn" id="3_xn7b2"]
+[ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate-rewrite-main/animate_atlas.gd" id="4_xn7b2"]
+[ext_resource type="Script" uid="uid://dkyyuwqo0dy7q" path="res://addons/gdanimate-rewrite-main/adobe/adobe_atlas.gd" id="5_p2lu6"]
+
+[sub_resource type="Animation" id="Animation_wvblq"]
+length = 4.9583335
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667, 0.5833333, 0.625, 0.6666667, 0.7083333, 0.75, 0.7916667, 0.8333333, 0.875, 0.9166667, 0.9583333, 1, 1.0416666, 1.0833334, 1.125, 1.1666666, 1.2083334, 1.25, 1.2916666, 1.3333334, 1.375, 1.4166666, 1.4583334, 1.5, 1.5416666, 1.5833334, 1.625, 1.6666666, 1.7083334, 1.75, 1.7916666, 1.8333334, 1.875, 1.9166666, 1.9583334, 2, 2.0416667, 2.0833333, 2.125, 2.1666667, 2.2083333, 2.25, 2.2916667, 2.3333333, 2.375, 2.4166667, 2.4583333, 2.5, 2.5416667, 2.5833333, 2.625, 2.6666667, 2.7083333, 2.75, 2.7916667, 2.8333333, 2.875, 2.9166667, 2.9583333, 3, 3.0416667, 3.0833333, 3.125, 3.1666667, 3.2083333, 3.25, 3.2916667, 3.3333333, 3.375, 3.4166667, 3.4583333, 3.5, 3.5416667, 3.5833333, 3.625, 3.6666667, 3.7083333, 3.75, 3.7916667, 3.8333333, 3.875, 3.9166667, 3.9583333, 4, 4.0416665, 4.0833335, 4.125, 4.1666665, 4.2083335, 4.25, 4.2916665, 4.3333335, 4.375, 4.4166665, 4.4583335, 4.5, 4.5416665, 4.5833335, 4.625, 4.6666665, 4.7083335, 4.75, 4.7916665, 4.8333335, 4.875, 4.9166665),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [" "]
+}
+
+[sub_resource type="Animation" id="Animation_4si61"]
+length = 0.041666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Dad Chest"]
+}
+
+[sub_resource type="Animation" id="Animation_6wi2h"]
+length = 0.75
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667, 0.5833333, 0.625, 0.6666667, 0.7083333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Dad Head DOWN NOTE"]
+}
+
+[sub_resource type="Animation" id="Animation_0dvuo"]
+length = 2.2916667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667, 0.5833333, 0.625, 0.6666667, 0.7083333, 0.75, 0.7916667, 0.8333333, 0.875, 0.9166667, 0.9583333, 1, 1.0416666, 1.0833334, 1.125, 1.1666666, 1.2083334, 1.25, 1.2916666, 1.3333334, 1.375, 1.4166666, 1.4583334, 1.5, 1.5416666, 1.5833334, 1.625, 1.6666666, 1.7083334, 1.75, 1.7916666, 1.8333334, 1.875, 1.9166666, 1.9583334, 2, 2.0416667, 2.0833333, 2.125, 2.1666667, 2.2083333, 2.25),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Dad Head RIGHT NOTE"]
+}
+
+[sub_resource type="Animation" id="Animation_t8jky"]
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667, 0.5833333, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Dad Sing Note DOWN"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-190, -280)]
+}
+
+[sub_resource type="Animation" id="Animation_1mru6"]
+length = 0.7916667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667, 0.5833333, 0.625, 0.6666667, 0.7083333, 0.75),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Dad Sing Note LEFT"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-190, -295)]
+}
+
+[sub_resource type="Animation" id="Animation_ewruw"]
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667, 0.5833333, 0.625, 0.6666667, 0.7083333, 0.75, 0.7916667, 0.8333333, 0.875, 0.9166667, 0.9583333, 1, 1.0416666, 1.0833334, 1.125, 1.1666666, 1.2083334, 1.25, 1.2916666, 1.3333334, 1.375, 1.4166666, 1.4583334, 1.5, 1.5416666, 1.5833334, 1.625, 1.6666666, 1.7083334, 1.75, 1.7916666, 1.8333334, 1.875, 1.9166666, 1.9583334, 2, 2.0416667, 2.0833333, 2.125, 2.1666667, 2.2083333, 2.25, 2.2916667, 2.3333333, 2.375, 2.4166667, 2.4583333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Dad Sing note UP"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(170, 170)]
+}
+
+[sub_resource type="Animation" id="Animation_l5nwd"]
+length = 0.041666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Dad chest sing"]
+}
+
+[sub_resource type="Animation" id="Animation_lxg2j"]
+length = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Dad default head"]
+}
+
+[sub_resource type="Animation" id="Animation_b7t7j"]
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667, 0.5833333, 0.625, 0.6666667, 0.7083333, 0.75, 0.7916667, 0.8333333, 0.875, 0.9166667, 0.9583333, 1, 1.0416666, 1.0833334, 1.125, 1.1666666, 1.2083334, 1.25, 1.2916666, 1.3333334, 1.375, 1.4166666, 1.4583334, 1.5, 1.5416666, 1.5833334, 1.625, 1.6666666, 1.7083334, 1.75, 1.7916666, 1.8333334, 1.875, 1.9166666, 1.9583334, 2, 2.0416667, 2.0833333, 2.125, 2.1666667, 2.2083333, 2.25, 2.2916667, 2.3333333, 2.375, 2.4166667, 2.4583333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Dad head UP + LEFT NOTE"]
+}
+
+[sub_resource type="Animation" id="Animation_c56k5"]
+length = 0.5416667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Dad idle dance"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(170, 170)]
+}
+
+[sub_resource type="Animation" id="Animation_7hn16"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_g0rxq"]
+length = 4.9583335
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667, 0.5833333, 0.625, 0.6666667, 0.7083333, 0.75, 0.7916667, 0.8333333, 0.875, 0.9166667, 0.9583333, 1, 1.0416666, 1.0833334, 1.125, 1.1666666, 1.2083334, 1.25, 1.2916666, 1.3333334, 1.375, 1.4166666, 1.4583334, 1.5, 1.5416666, 1.5833334, 1.625, 1.6666666, 1.7083334, 1.75, 1.7916666, 1.8333334, 1.875, 1.9166666, 1.9583334, 2, 2.0416667, 2.0833333, 2.125, 2.1666667, 2.2083333, 2.25, 2.2916667, 2.3333333, 2.375, 2.4166667, 2.4583333, 2.5, 2.5416667, 2.5833333, 2.625, 2.6666667, 2.7083333, 2.75, 2.7916667, 2.8333333, 2.875, 2.9166667, 2.9583333, 3, 3.0416667, 3.0833333, 3.125, 3.1666667, 3.2083333, 3.25, 3.2916667, 3.3333333, 3.375, 3.4166667, 3.4583333, 3.5, 3.5416667, 3.5833333, 3.625, 3.6666667, 3.7083333, 3.75, 3.7916667, 3.8333333, 3.875, 3.9166667, 3.9583333, 4, 4.0416665, 4.0833335, 4.125, 4.1666665, 4.2083335, 4.25, 4.2916665, 4.3333335, 4.375, 4.4166665, 4.4583335, 4.5, 4.5416665, 4.5833335, 4.625, 4.6666665, 4.7083335, 4.75, 4.7916665, 4.8333335, 4.875, 4.9166665),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["__BTA_TEMP_SPRITEMAP_PACKED_SYMBOL"]
+}
+
+[sub_resource type="Animation" id="Animation_ylwu1"]
+length = 0.041666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["dad mic arm"]
+}
+
+[sub_resource type="Animation" id="Animation_ljs8w"]
+length = 0.041666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["dad mic hand sing"]
+}
+
+[sub_resource type="Animation" id="Animation_jjoi3"]
+length = 0.041666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["dad mic idle hand"]
+}
+
+[sub_resource type="Animation" id="Animation_48eun"]
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667, 0.5833333, 0.625),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["dad sing note right"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:offset")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-240, -310)]
+}
+
+[sub_resource type="Animation" id="Animation_6ch87"]
+length = 0.041666668
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["dad wasit"]
+}
+
+[sub_resource type="Animation" id="Animation_xebrh"]
+length = 0.16666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["evil red eyes"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7nuhk"]
+_data = {
+&" ": SubResource("Animation_wvblq"),
+&"Dad Chest": SubResource("Animation_4si61"),
+&"Dad Head DOWN NOTE": SubResource("Animation_6wi2h"),
+&"Dad Head RIGHT NOTE": SubResource("Animation_0dvuo"),
+&"Dad Sing Note DOWN": SubResource("Animation_t8jky"),
+&"Dad Sing Note LEFT": SubResource("Animation_1mru6"),
+&"Dad Sing note UP": SubResource("Animation_ewruw"),
+&"Dad chest sing": SubResource("Animation_l5nwd"),
+&"Dad default head": SubResource("Animation_lxg2j"),
+&"Dad head UP + LEFT NOTE": SubResource("Animation_b7t7j"),
+&"Dad idle dance": SubResource("Animation_c56k5"),
+&"RESET": SubResource("Animation_7hn16"),
+&"__BTA_TEMP_SPRITEMAP_PACKED_SYMBOL": SubResource("Animation_g0rxq"),
+&"dad mic arm": SubResource("Animation_ylwu1"),
+&"dad mic hand sing": SubResource("Animation_ljs8w"),
+&"dad mic idle hand": SubResource("Animation_jjoi3"),
+&"dad sing note right": SubResource("Animation_48eun"),
+&"dad wasit": SubResource("Animation_6ch87"),
+&"evil red eyes": SubResource("Animation_xebrh")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_powra"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"down",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"down_miss",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"idle",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"left",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"left_miss",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"right",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"right_miss",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"up",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"up_miss",
+"speed": 24.0
+}]
+
+[sub_resource type="Resource" id="Resource_t14hs"]
+script = ExtResource("5_p2lu6")
+folder_path = "res://internal/assets/characters/dad/images/"
+format = "adobe"
+metadata/_custom_type_script = "uid://dkyyuwqo0dy7q"
+
+[node name="Dad" unique_id=151574328 instance=ExtResource("1_a5uyw")]
+script = ExtResource("2_ngu17")
+export_anim_map = Dictionary[String, String]({
+"down": "Dad Sing Note DOWN",
+"down_miss": "Dad Sing Note DOWN",
+"idle": "Dad idle dance",
+"left": "dad sing note right",
+"left_miss": "dad sing note right",
+"right": "Dad Sing Note LEFT",
+"right_miss": "Dad Sing Note LEFT",
+"up": "Dad Sing note UP",
+"up_miss": "Dad Sing note UP"
+})
+icon = ExtResource("3_xn7b2")
+
+[node name="AnimationPlayer" parent="." index="0" unique_id=1164546831]
+libraries/ = SubResource("AnimationLibrary_7nuhk")
+
+[node name="AnimatedSprite2D" parent="Sprites" parent_id_path=PackedInt32Array(765921245) index="0" unique_id=63994655]
+visible = false
+sprite_frames = SubResource("SpriteFrames_powra")
+animation = &"down"
+
+[node name="AnimateSymbol" type="Node2D" parent="Sprites" parent_id_path=PackedInt32Array(765921245) index="1" unique_id=997517271]
+script = ExtResource("3_631jf")
+symbol = "Dad Sing note UP"
+atlases = Array[ExtResource("4_xn7b2")]([SubResource("Resource_t14hs")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="ReferenceRect" parent="." index="3" unique_id=1762810265]
+offset_left = -206.0
+offset_top = -379.0
+offset_right = 216.0
+offset_bottom = 389.0

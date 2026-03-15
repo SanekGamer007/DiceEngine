@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://1a3sdme1ed2n"]
+
+[ext_resource type="Script" uid="uid://frj4tiatnkl8" path="res://internal/assets/ui/hp_bar/normal/hp_bar.gd" id="1_djs64"]
+[ext_resource type="PackedScene" uid="uid://ds3rej5lhi534" path="res://internal/assets/characters/base/icon/base_character_icon.tscn" id="2_djs64"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djs64"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[node name="HPBar" type="Node2D" unique_id=504599034 node_paths=PackedStringArray("left_icon", "right_icon")]
+script = ExtResource("1_djs64")
+left_icon = NodePath("Icons/Icon_Opponent")
+right_icon = NodePath("Icons/Icon_Player")
+
+[node name="Bar_Opponent" type="ColorRect" parent="." unique_id=1210655372]
+offset_right = 610.0
+offset_bottom = 19.0
+color = Color(1, 0, 0, 1)
+
+[node name="Bar_Player" type="ColorRect" parent="." unique_id=680606117]
+offset_left = 305.0
+offset_right = 610.0
+offset_bottom = 19.0
+size_flags_horizontal = 8
+color = Color(0, 1, 0, 1)
+
+[node name="Panel" type="Panel" parent="." unique_id=1222755077]
+offset_right = 610.0
+offset_bottom = 19.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_djs64")
+
+[node name="Icons" type="Node2D" parent="." unique_id=708009269]
+position = Vector2(0, -32)
+
+[node name="Icon_Opponent" parent="Icons" unique_id=12921492 instance=ExtResource("2_djs64")]
+anchors_preset = -1
+offset_left = 210.0
+offset_right = 210.0
+
+[node name="Icon_Player" parent="Icons" unique_id=316901602 instance=ExtResource("2_djs64")]
+anchors_preset = -1
+offset_left = 310.0
+offset_right = 310.0
+flip_h = true

@@ -4,9 +4,10 @@ signal init_done
 var play_scene: PlayScene :
 	set(scene):
 		play_scene = scene
-		for label: Label in $Control/VBoxContainer/HBoxContainer.get_children():
-			if label.has_method("_on_loading_complete"):
-				play_scene.loading_complete.connect(label._on_loading_complete)
+		if $Control/VBoxContainer.has_node("Info"):
+			for label: Label in $Control/VBoxContainer/Info.get_children():
+				if label.has_method("_on_loading_complete"):
+					play_scene.loading_complete.connect(label._on_loading_complete)
 
 func _init_done() -> void:
 	init_done.emit()

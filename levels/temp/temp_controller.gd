@@ -58,7 +58,7 @@ func _ready() -> void:
 		BPM = diff_chart.get("bpm", 120)
 		
 		var stage_name = meta_data.get("stage", "mainStage")
-		var stagepacked: PackedScene = load("res://assets/stages/" + stage_name + "/stage.tscn")
+		var stagepacked: PackedScene = load(Registry.stages.get("main_stage"))
 		var stage: Node2D = stagepacked.instantiate()
 		add_child(stage)
 		move_child(stage, 0)
