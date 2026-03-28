@@ -11,7 +11,6 @@ var song_chart: Dictionary = {}
 var song_metadata: Dictionary = {}
 
 var notes: Array[Dictionary]
-var hpbar: HPBar
 var scroll_speed: float = 0.0
 var last_audio_pos: float = 0.0
 
@@ -48,14 +47,12 @@ signal loading_complete
 
 func _ready() -> void:
 	state = STATES.LOADING
-	
 	Refs.clear()
-	
-	hpbar = $ui.hpbar
-	$ui.play_scene = self
-	loading_complete.connect($ui._init_done)
-	Refs.controller = self
-	Refs.hud = $ui
+	loading_complete.connect($Hud._init_done)
+	Refs.play_scene = self
+	Refs.hud = $Hud
+	spawn_ui()
+	$Hud.play_scene = self
 	if not Registry.songs.has(song_name):
 		push_error("FATAL: Song not found.")
 		return
@@ -130,11 +127,11 @@ func _ready() -> void:
 			
 	for i in Refs.characters.size():
 		if i == 0:
-			hpbar.right_icon = Refs.characters[i].icon.instantiate()
+			Refs.hud.hp_bar.right_icon = Refs.characters[i].icon.instantiate()
 			continue
 		elif i == 1:
-			hpbar.left_icon = Refs.characters[i].icon.instantiate()
-			hpbar.right_icon.flip_h = true
+			Refs.hud.hp_bar.left_icon = Refs.characters[i].icon.instantiate()
+			Refs.hud.hp_bar.right_icon.flip_h = true
 			break
 	spawn_music()
 	loading_complete.emit()
@@ -166,7 +163,7 @@ func _process(delta: float) -> void:
 
 
 func _update_hp() -> void:
-	hpbar.hp = hp
+	Refs.hud.hp_bar.hp = hp
 
 
 func _on_player_note_hit(_direction: Common.ARROW_DIR, _accuracy: float) -> void:
@@ -370,3 +367,11 @@ func spawn_chars(chars: Dictionary) -> void:
 		character.flip_v = marker.flip_v
 		$Characters.add_child(character, true)
 		Refs.characters.append(character)
+
+func spawn_ui() -> void: # Placeholder as charts do not hold ui info right now.
+	var new_hpbar_file = Registry.hp_bars.get("normal")
+	var new_hpbar = load(new_hpbar_file).instantiate()
+	var new_infobar_file = Registry.info_bars.get("base")
+	var new_infobar = load(new_infobar_file).instantiate()
+	Refs.hud.hp_bar = new_hpbar
+	Refs.hud.info_bar = new_infobar

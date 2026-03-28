@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://1a3sdme1ed2n"]
 
-[ext_resource type="Script" uid="uid://frj4tiatnkl8" path="res://internal/assets/ui/hp_bar/normal/hp_bar.gd" id="1_djs64"]
+[ext_resource type="Script" uid="uid://frj4tiatnkl8" path="res://internal/assets/ui/hp_bar/base/hp_bar.gd" id="1_djs64"]
 [ext_resource type="PackedScene" uid="uid://ds3rej5lhi534" path="res://internal/assets/characters/base/icon/base_character_icon.tscn" id="2_djs64"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_djs64"]
@@ -12,6 +12,7 @@ border_width_bottom = 4
 border_color = Color(0, 0, 0, 1)
 
 [node name="HPBar" type="Node2D" unique_id=504599034 node_paths=PackedStringArray("left_icon", "right_icon")]
+position = Vector2(335, 639)
 script = ExtResource("1_djs64")
 left_icon = NodePath("Icons/Icon_Opponent")
 right_icon = NodePath("Icons/Icon_Player")

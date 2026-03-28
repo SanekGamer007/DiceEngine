@@ -1,14 +1,20 @@
 extends CanvasLayer
+class_name Hud
 signal init_done
-@onready var hpbar: HPBar = $Control/VBoxContainer/HBoxContainer2/HPBar
-var play_scene: PlayScene :
-	set(scene):
-		play_scene = scene
-		if $Control/VBoxContainer.has_node("Info"):
-			for label: Label in $Control/VBoxContainer/Info.get_children():
-				if label.has_method("_on_loading_complete"):
-					play_scene.loading_complete.connect(label._on_loading_complete)
-
+@onready var ui_location: Control = $Control
+var play_scene: PlayScene
+var info_bar: Node :
+	set(bar):
+		if info_bar:
+			info_bar.queue_free()
+		info_bar = bar
+		ui_location.add_child(bar)
+var hp_bar: Node :
+	set(bar):
+		if hp_bar:
+			hp_bar.queue_free()
+		hp_bar = bar
+		ui_location.add_child(bar)
 func _init_done() -> void:
 	init_done.emit()
 

@@ -34,4 +34,4 @@ metadata/_edit_lock_ = true
 [node name="AudioStreamPlayerInst" type="AudioStreamPlayer" parent="AudioPlayers" unique_id=252583936]
 autoplay = true
 
-[node name="ui" parent="." unique_id=1119694987 instance=ExtResource("1_u3g30")]
+[node name="Hud" parent="." unique_id=1119694987 instance=ExtResource("1_u3g30")]

@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://cqyyp5d7eoj21"]
 
 [ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_5ddw2"]
-[ext_resource type="PackedScene" uid="uid://bd843x4obomx0" path="res://internal/assets/characters/bf_pixel/icon/bf_pixel_icon.tscn" id="2_d7kg8"]
+[ext_resource type="PackedScene" uid="uid://bd843x4obomx0" path="res://assets/characters/bf_pixel/icon/bf_pixel_icon.tscn" id="2_d7kg8"]
 [ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate-rewrite-main/animate_symbol.gd" id="4_ysjka"]
 [ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate-rewrite-main/animate_atlas.gd" id="5_awr8h"]
 [ext_resource type="Script" uid="uid://s4mrcnjetwud" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_frame.gd" id="6_wi183"]
 [ext_resource type="Script" uid="uid://nqbs7y41i566" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_atlas.gd" id="7_xxllg"]
-[ext_resource type="Texture2D" uid="uid://cp8pcqm5ho326" path="res://internal/assets/characters/bf_pixel/images/bfPixel.png" id="8_g27f8"]
+[ext_resource type="Texture2D" uid="uid://cp8pcqm5ho326" path="res://assets/characters/bf_pixel/images/bfPixel.png" id="8_g27f8"]
 
 [sub_resource type="Animation" id="Animation_ysjka"]
 length = 0.5833333
@@ -1072,7 +1072,6 @@ export_anim_map = Dictionary[String, String]({
 "up_miss": "BF UP MISS instance 1"
 })
 icon = ExtResource("2_d7kg8")
-hp_color = Color(0.48235294, 0.8392157, 0.9647059, 1)
 
 [node name="AnimationPlayer" parent="." index="0" unique_id=1164546831]
 libraries/ = SubResource("AnimationLibrary_ner34")

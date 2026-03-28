@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blye0wjnbar0w"
-path="res://.godot/imported/bf_pixel_icon_1.png-004f5852070fb3cf6f53073517ba84a1.ctex"
+uid="uid://ccacr8xyn60il"
+path="res://.godot/imported/bfPixelsDEAD.png-ecf9091df369811569387892091a39e9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://internal/assets/characters/bf_pixel/icon/bf_pixel_icon_1.png"
-dest_files=["res://.godot/imported/bf_pixel_icon_1.png-004f5852070fb3cf6f53073517ba84a1.ctex"]
+source_file="res://assets/characters/bf_pixel/death/bfPixelsDEAD.png"
+dest_files=["res://.godot/imported/bfPixelsDEAD.png-ecf9091df369811569387892091a39e9.ctex"]
 
 [params]
 

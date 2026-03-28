@@ -25,6 +25,7 @@ var hp: float = 50 :
 			$Icons.add_child(right_icon)
 			right_bar.color = icon.icon_color
 @export var flip_bar: bool
+var middle: float = 0.0
 
 func _ready() -> void:
 	if left_icon and not left_icon.is_inside_tree():
@@ -50,7 +51,7 @@ func _update_bar() -> void:
 	if not left_bar or not right_bar or not right_icon or not left_icon:
 		return
 	var percentage = 1.0 - (hp / 100.0)
-	var middle = total_px * percentage
+	middle = total_px * percentage
 	left_bar.size.x = $Panel.size.x
 	right_bar.size.x = (total_px - middle)
 	right_bar.position.x = middle

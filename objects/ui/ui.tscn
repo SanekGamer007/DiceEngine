@@ -1,10 +1,8 @@
 [gd_scene format=3 uid="uid://bia2sobsa06sb"]
 
 [ext_resource type="Script" uid="uid://cfyjc1y3kfod" path="res://objects/ui/ui.gd" id="1_3wryp"]
-[ext_resource type="PackedScene" uid="uid://1a3sdme1ed2n" path="res://internal/assets/ui/hp_bar/normal/hp_bar.tscn" id="2_3t4f5"]
-[ext_resource type="PackedScene" uid="uid://gvhsvtg0qhj7" path="res://internal/assets/ui/info_bar/normal/info_bar.tscn" id="3_c04xg"]
 
-[node name="ui" type="CanvasLayer" unique_id=1119694987]
+[node name="Hud" type="CanvasLayer" unique_id=1119694987]
 script = ExtResource("1_3wryp")
 
 [node name="Control" type="Control" parent="." unique_id=857138178]
@@ -14,23 +12,3 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=277364119]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -81.0
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer" unique_id=200949068]
-custom_minimum_size = Vector2(610, 48)
-layout_mode = 2
-size_flags_horizontal = 4
-
-[node name="HPBar" parent="Control/VBoxContainer/HBoxContainer2" unique_id=504599034 instance=ExtResource("2_3t4f5")]
-
-[node name="Info" parent="Control/VBoxContainer" unique_id=1849635213 instance=ExtResource("3_c04xg")]
-layout_mode = 2
