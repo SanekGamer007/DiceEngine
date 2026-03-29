@@ -16,6 +16,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wy8op")
 song_name = "dadbattle"
+notes = null
+difficulty = null
+difficulty_string = null
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=949230589]
 zoom = Vector2(0.7, 0.7)

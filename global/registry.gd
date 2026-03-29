@@ -53,6 +53,10 @@ var sounds_paths: Array[String] = ["res://internal/assets/sounds/", "res://asset
 var transitions_paths: Array[String] = ["res://internal/assets/ui/transitions/", "res://assets/ui/transitions/"]
 
 
+func _ready() -> void:
+	Registry.re_init_database()
+
+
 func re_init_database() -> void:
 	characters.clear()
 	stages.clear()

@@ -57,11 +57,11 @@ func _ready() -> void:
 		
 		BPM = diff_chart.get("bpm", 120)
 		
-		var stage_name = meta_data.get("stage", "mainStage")
-		var stagepacked: PackedScene = load(Registry.stages.get("main_stage"))
-		var stage: Node2D = stagepacked.instantiate()
-		add_child(stage)
-		move_child(stage, 0)
+		#var stage_name = meta_data.get("stage", "mainStage")
+		#var stagepacked: PackedScene = load(Registry.stages.get("main_stage"))
+		#var stage: Node2D = stagepacked.instantiate()
+		#add_child(stage)
+		#move_child(stage, 0)
 		diff_notes.sort_custom(func(a, b): return a.t < b.t)
 		notes = diff_notes
 		for strumline: StrumLine in $StrumLines.get_children():

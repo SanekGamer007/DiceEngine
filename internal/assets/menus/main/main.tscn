@@ -1,0 +1,806 @@
+[gd_scene format=3 uid="uid://ny6jjbaea1so"]
+
+[ext_resource type="Script" uid="uid://bwxsy84frspn0" path="res://internal/assets/menus/main/main.gd" id="1_edflj"]
+[ext_resource type="Texture2D" uid="uid://j6l144vt73pp" path="res://internal/assets/shared/images/menus/menuBGMagenta.png" id="1_ouj3e"]
+[ext_resource type="Texture2D" uid="uid://buallmrfar3g4" path="res://internal/assets/shared/images/menus/menuBG.png" id="2_rl8se"]
+[ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate-rewrite-main/animate_symbol.gd" id="3_qeu24"]
+[ext_resource type="FontFile" uid="uid://c7e8ittf82kg1" path="res://fonts/Quantico-Regular.ttf" id="3_rl8se"]
+[ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate-rewrite-main/animate_atlas.gd" id="4_edflj"]
+[ext_resource type="Script" uid="uid://cl7eb7xnt847l" path="res://internal/assets/menus/main/info.gd" id="4_qeu24"]
+[ext_resource type="Script" uid="uid://s4mrcnjetwud" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_frame.gd" id="5_5xbsi"]
+[ext_resource type="Script" uid="uid://nqbs7y41i566" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_atlas.gd" id="6_ci0nv"]
+[ext_resource type="Texture2D" uid="uid://c3qij0xe1lrk8" path="res://internal/assets/menus/main/buttons/storymode.png" id="10_edflj"]
+[ext_resource type="Texture2D" uid="uid://b18i3dtb5lgrs" path="res://internal/assets/menus/main/buttons/credits.png" id="10_mh76i"]
+[ext_resource type="Texture2D" uid="uid://cr3607d5ursjt" path="res://internal/assets/menus/main/buttons/freeplay.png" id="11_5xbsi"]
+[ext_resource type="Texture2D" uid="uid://p5xkprp4wlbi" path="res://internal/assets/menus/main/buttons/options.png" id="12_edflj"]
+[ext_resource type="Script" uid="uid://cak84e8umw6tx" path="res://internal/assets/menus/main/confirm_sound.gd" id="14_5xbsi"]
+
+[sub_resource type="Animation" id="Animation_edflj"]
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StoryMode/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StoryMode/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["storymode idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StoryMode/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_5xbsi"]
+length = 0.125
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("StoryMode/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("StoryMode/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["storymode selected"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("StoryMode/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ci0nv"]
+_data = {
+&"storymode idle": SubResource("Animation_edflj"),
+&"storymode selected": SubResource("Animation_5xbsi")
+}
+
+[sub_resource type="Resource" id="Resource_edflj"]
+script = ExtResource("5_5xbsi")
+name = &"storymode idle0000"
+region = Rect2i(0, 540, 615, 122)
+
+[sub_resource type="Resource" id="Resource_5xbsi"]
+script = ExtResource("5_5xbsi")
+name = &"storymode selected0000"
+region = Rect2i(0, 363, 796, 173)
+offset = Rect2i(0, -3, 796, 181)
+
+[sub_resource type="Resource" id="Resource_ci0nv"]
+script = ExtResource("5_5xbsi")
+name = &"storymode idle0001"
+region = Rect2i(0, 540, 615, 122)
+
+[sub_resource type="Resource" id="Resource_ankn6"]
+script = ExtResource("5_5xbsi")
+name = &"storymode selected0001"
+region = Rect2i(0, 185, 794, 174)
+offset = Rect2i(-2, -2, 796, 181)
+
+[sub_resource type="Resource" id="Resource_7mtye"]
+script = ExtResource("5_5xbsi")
+name = &"storymode idle0002"
+region = Rect2i(0, 540, 615, 122)
+
+[sub_resource type="Resource" id="Resource_hnxy5"]
+script = ExtResource("5_5xbsi")
+name = &"storymode selected0002"
+region = Rect2i(0, 0, 794, 181)
+offset = Rect2i(0, 0, 796, 181)
+
+[sub_resource type="Resource" id="Resource_mh76i"]
+script = ExtResource("5_5xbsi")
+name = &"storymode idle0003"
+region = Rect2i(0, 666, 615, 122)
+
+[sub_resource type="Resource" id="Resource_cfts6"]
+script = ExtResource("5_5xbsi")
+name = &"storymode idle0004"
+region = Rect2i(0, 666, 615, 122)
+
+[sub_resource type="Resource" id="Resource_a0wyv"]
+script = ExtResource("5_5xbsi")
+name = &"storymode idle0005"
+region = Rect2i(0, 666, 615, 122)
+
+[sub_resource type="Resource" id="Resource_3mro1"]
+script = ExtResource("5_5xbsi")
+name = &"storymode idle0006"
+region = Rect2i(0, 792, 615, 122)
+
+[sub_resource type="Resource" id="Resource_pwxnw"]
+script = ExtResource("5_5xbsi")
+name = &"storymode idle0007"
+region = Rect2i(0, 792, 615, 122)
+
+[sub_resource type="Resource" id="Resource_46rl5"]
+script = ExtResource("5_5xbsi")
+name = &"storymode idle0008"
+region = Rect2i(0, 792, 615, 122)
+
+[sub_resource type="Resource" id="Resource_lh87t"]
+script = ExtResource("6_ci0nv")
+texture = ExtResource("10_edflj")
+sparrow_path = "res://internal/assets/menus/main/buttons/storymode.xml"
+frames = Array[ExtResource("5_5xbsi")]([SubResource("Resource_edflj"), SubResource("Resource_5xbsi"), SubResource("Resource_ci0nv"), SubResource("Resource_ankn6"), SubResource("Resource_7mtye"), SubResource("Resource_hnxy5"), SubResource("Resource_mh76i"), SubResource("Resource_cfts6"), SubResource("Resource_a0wyv"), SubResource("Resource_3mro1"), SubResource("Resource_pwxnw"), SubResource("Resource_46rl5")])
+symbols = PackedStringArray("storymode idle", "storymode selected")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[sub_resource type="Animation" id="Animation_ankn6"]
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Freeplay/Freeplay:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Freeplay/Freeplay:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["freeplay idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Freeplay/Freeplay:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7mtye"]
+length = 0.125
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Freeplay/Freeplay:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Freeplay/Freeplay:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["freeplay selected"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Freeplay/Freeplay:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hnxy5"]
+_data = {
+&"freeplay idle": SubResource("Animation_ankn6"),
+&"freeplay selected": SubResource("Animation_7mtye")
+}
+
+[sub_resource type="Resource" id="Resource_iejjn"]
+script = ExtResource("5_5xbsi")
+name = &"freeplay idle0000"
+region = Rect2i(0, 524, 484, 122)
+
+[sub_resource type="Resource" id="Resource_b2ket"]
+script = ExtResource("5_5xbsi")
+name = &"freeplay selected0000"
+region = Rect2i(0, 351, 627, 169)
+offset = Rect2i(0, 0, 635, 174)
+
+[sub_resource type="Resource" id="Resource_lp8ks"]
+script = ExtResource("5_5xbsi")
+name = &"freeplay idle0001"
+region = Rect2i(0, 524, 484, 122)
+
+[sub_resource type="Resource" id="Resource_0b4tk"]
+script = ExtResource("5_5xbsi")
+name = &"freeplay selected0001"
+region = Rect2i(0, 177, 632, 170)
+offset = Rect2i(-3, -1, 635, 174)
+
+[sub_resource type="Resource" id="Resource_kcuu7"]
+script = ExtResource("5_5xbsi")
+name = &"freeplay idle0002"
+region = Rect2i(0, 524, 484, 122)
+
+[sub_resource type="Resource" id="Resource_yw8wh"]
+script = ExtResource("5_5xbsi")
+name = &"freeplay selected0002"
+region = Rect2i(0, 0, 629, 173)
+offset = Rect2i(-4, -1, 635, 174)
+
+[sub_resource type="Resource" id="Resource_tyic3"]
+script = ExtResource("5_5xbsi")
+name = &"freeplay idle0003"
+region = Rect2i(0, 650, 484, 122)
+
+[sub_resource type="Resource" id="Resource_ssjqj"]
+script = ExtResource("5_5xbsi")
+name = &"freeplay idle0004"
+region = Rect2i(0, 650, 484, 122)
+
+[sub_resource type="Resource" id="Resource_y0cpl"]
+script = ExtResource("5_5xbsi")
+name = &"freeplay idle0005"
+region = Rect2i(0, 650, 484, 122)
+
+[sub_resource type="Resource" id="Resource_aqseq"]
+script = ExtResource("5_5xbsi")
+name = &"freeplay idle0006"
+region = Rect2i(0, 776, 484, 122)
+
+[sub_resource type="Resource" id="Resource_e7egj"]
+script = ExtResource("5_5xbsi")
+name = &"freeplay idle0007"
+region = Rect2i(0, 776, 484, 122)
+
+[sub_resource type="Resource" id="Resource_6dryo"]
+script = ExtResource("5_5xbsi")
+name = &"freeplay idle0008"
+region = Rect2i(0, 776, 484, 122)
+
+[sub_resource type="Resource" id="Resource_dher4"]
+script = ExtResource("6_ci0nv")
+texture = ExtResource("11_5xbsi")
+sparrow_path = "res://internal/assets/menus/main/buttons/freeplay.xml"
+frames = Array[ExtResource("5_5xbsi")]([SubResource("Resource_iejjn"), SubResource("Resource_b2ket"), SubResource("Resource_lp8ks"), SubResource("Resource_0b4tk"), SubResource("Resource_kcuu7"), SubResource("Resource_yw8wh"), SubResource("Resource_tyic3"), SubResource("Resource_ssjqj"), SubResource("Resource_y0cpl"), SubResource("Resource_aqseq"), SubResource("Resource_e7egj"), SubResource("Resource_6dryo")])
+symbols = PackedStringArray("freeplay idle", "freeplay selected")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[sub_resource type="Animation" id="Animation_mh76i"]
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Options/Options:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options/Options:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["options idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Options/Options:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_cfts6"]
+length = 0.125
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Options/Options:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Options/Options:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["options selected"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Options/Options:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a0wyv"]
+_data = {
+&"options idle": SubResource("Animation_mh76i"),
+&"options selected": SubResource("Animation_cfts6")
+}
+
+[sub_resource type="Resource" id="Resource_s065c"]
+script = ExtResource("5_5xbsi")
+name = &"options idle0000"
+region = Rect2i(0, 488, 487, 111)
+
+[sub_resource type="Resource" id="Resource_7j4t0"]
+script = ExtResource("5_5xbsi")
+name = &"options selected0000"
+region = Rect2i(0, 329, 606, 155)
+offset = Rect2i(-2, -1, 610, 163)
+
+[sub_resource type="Resource" id="Resource_og6pt"]
+script = ExtResource("5_5xbsi")
+name = &"options idle0001"
+region = Rect2i(0, 488, 487, 111)
+
+[sub_resource type="Resource" id="Resource_w2ajm"]
+script = ExtResource("5_5xbsi")
+name = &"options selected0001"
+region = Rect2i(0, 167, 607, 158)
+offset = Rect2i(-3, -1, 610, 163)
+
+[sub_resource type="Resource" id="Resource_1ghgj"]
+script = ExtResource("5_5xbsi")
+name = &"options idle0002"
+region = Rect2i(0, 488, 487, 111)
+
+[sub_resource type="Resource" id="Resource_lks2n"]
+script = ExtResource("5_5xbsi")
+name = &"options selected0002"
+region = Rect2i(0, 0, 610, 163)
+
+[sub_resource type="Resource" id="Resource_4n3sk"]
+script = ExtResource("5_5xbsi")
+name = &"options idle0003"
+region = Rect2i(0, 603, 487, 111)
+
+[sub_resource type="Resource" id="Resource_k0cjy"]
+script = ExtResource("5_5xbsi")
+name = &"options idle0004"
+region = Rect2i(0, 603, 487, 111)
+
+[sub_resource type="Resource" id="Resource_jpsrl"]
+script = ExtResource("5_5xbsi")
+name = &"options idle0005"
+region = Rect2i(0, 603, 487, 111)
+
+[sub_resource type="Resource" id="Resource_esh88"]
+script = ExtResource("5_5xbsi")
+name = &"options idle0006"
+region = Rect2i(0, 718, 487, 111)
+
+[sub_resource type="Resource" id="Resource_hy2ha"]
+script = ExtResource("5_5xbsi")
+name = &"options idle0007"
+region = Rect2i(0, 718, 487, 111)
+
+[sub_resource type="Resource" id="Resource_lkidx"]
+script = ExtResource("5_5xbsi")
+name = &"options idle0008"
+region = Rect2i(0, 718, 487, 111)
+
+[sub_resource type="Resource" id="Resource_7b28g"]
+script = ExtResource("6_ci0nv")
+texture = ExtResource("12_edflj")
+sparrow_path = "res://internal/assets/menus/main/buttons/options.xml"
+frames = Array[ExtResource("5_5xbsi")]([SubResource("Resource_s065c"), SubResource("Resource_7j4t0"), SubResource("Resource_og6pt"), SubResource("Resource_w2ajm"), SubResource("Resource_1ghgj"), SubResource("Resource_lks2n"), SubResource("Resource_4n3sk"), SubResource("Resource_k0cjy"), SubResource("Resource_jpsrl"), SubResource("Resource_esh88"), SubResource("Resource_hy2ha"), SubResource("Resource_lkidx")])
+symbols = PackedStringArray("options idle", "options selected")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[sub_resource type="Animation" id="Animation_3mro1"]
+length = 0.375
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Credits/Credits:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Credits/Credits:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["credits idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Credits/Credits:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pwxnw"]
+length = 0.125
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Credits/Credits:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 2]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Credits/Credits:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["credits selected"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Credits/Credits:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hy2ha"]
+_data = {
+&"credits idle": SubResource("Animation_3mro1"),
+&"credits selected": SubResource("Animation_pwxnw")
+}
+
+[sub_resource type="Resource" id="Resource_fss88"]
+script = ExtResource("5_5xbsi")
+name = &"credits selected0001"
+region = Rect2i(0, 0, 520, 172)
+offset = Rect2i(-2, 0, 522, 172)
+
+[sub_resource type="Resource" id="Resource_x3x5r"]
+script = ExtResource("5_5xbsi")
+name = &"credits idle0001"
+region = Rect2i(0, 516, 439, 124)
+offset = Rect2i(0, 0, 439, 124)
+
+[sub_resource type="Resource" id="Resource_o0qm2"]
+script = ExtResource("5_5xbsi")
+name = &"credits selected0002"
+region = Rect2i(0, 172, 520, 172)
+offset = Rect2i(0, 0, 522, 172)
+
+[sub_resource type="Resource" id="Resource_xaand"]
+script = ExtResource("5_5xbsi")
+name = &"credits idle0002"
+region = Rect2i(0, 516, 439, 124)
+offset = Rect2i(0, 0, 439, 124)
+
+[sub_resource type="Resource" id="Resource_dfmw8"]
+script = ExtResource("5_5xbsi")
+name = &"credits selected0003"
+region = Rect2i(0, 344, 519, 172)
+offset = Rect2i(-2, 0, 522, 172)
+
+[sub_resource type="Resource" id="Resource_b5r7l"]
+script = ExtResource("5_5xbsi")
+name = &"credits idle0003"
+region = Rect2i(0, 516, 439, 124)
+offset = Rect2i(0, 0, 439, 124)
+
+[sub_resource type="Resource" id="Resource_lvjg8"]
+script = ExtResource("5_5xbsi")
+name = &"credits idle0004"
+region = Rect2i(0, 640, 439, 124)
+offset = Rect2i(0, 0, 439, 124)
+
+[sub_resource type="Resource" id="Resource_xc4t8"]
+script = ExtResource("5_5xbsi")
+name = &"credits idle0005"
+region = Rect2i(0, 640, 439, 124)
+offset = Rect2i(0, 0, 439, 124)
+
+[sub_resource type="Resource" id="Resource_v8qvo"]
+script = ExtResource("5_5xbsi")
+name = &"credits idle0006"
+region = Rect2i(0, 640, 439, 124)
+offset = Rect2i(0, 0, 439, 124)
+
+[sub_resource type="Resource" id="Resource_6ua2p"]
+script = ExtResource("5_5xbsi")
+name = &"credits idle0007"
+region = Rect2i(0, 764, 439, 124)
+offset = Rect2i(0, 0, 439, 124)
+
+[sub_resource type="Resource" id="Resource_kqjiq"]
+script = ExtResource("5_5xbsi")
+name = &"credits idle0008"
+region = Rect2i(0, 764, 439, 124)
+offset = Rect2i(0, 0, 439, 124)
+
+[sub_resource type="Resource" id="Resource_1og8r"]
+script = ExtResource("5_5xbsi")
+name = &"credits idle0009"
+region = Rect2i(0, 764, 439, 124)
+offset = Rect2i(0, 0, 439, 124)
+
+[sub_resource type="Resource" id="Resource_qeu24"]
+script = ExtResource("6_ci0nv")
+texture = ExtResource("10_mh76i")
+sparrow_path = "res://internal/assets/menus/main/buttons/credits.xml"
+frames = Array[ExtResource("5_5xbsi")]([SubResource("Resource_fss88"), SubResource("Resource_x3x5r"), SubResource("Resource_o0qm2"), SubResource("Resource_xaand"), SubResource("Resource_dfmw8"), SubResource("Resource_b5r7l"), SubResource("Resource_lvjg8"), SubResource("Resource_xc4t8"), SubResource("Resource_v8qvo"), SubResource("Resource_6ua2p"), SubResource("Resource_kqjiq"), SubResource("Resource_1og8r")])
+symbols = PackedStringArray("credits idle", "credits selected")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[sub_resource type="LabelSettings" id="LabelSettings_qeu24"]
+line_spacing = -3.0
+font = ExtResource("3_rl8se")
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="MainMenu" type="Control" unique_id=1651608675]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_edflj")
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=357256233]
+scroll_scale = Vector2(1.5, 1.5)
+
+[node name="BGSelected" type="TextureRect" parent="Parallax2D" unique_id=1273687463]
+offset_left = -48.0
+offset_right = 1315.16
+offset_bottom = 773.8
+texture = ExtResource("1_ouj3e")
+stretch_mode = 4
+
+[node name="BG" type="TextureRect" parent="Parallax2D" unique_id=898220114]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_right = 1315.16
+offset_bottom = 773.8
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_rl8se")
+stretch_mode = 4
+
+[node name="Buttons" type="Control" parent="." unique_id=2082926497]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 84.0
+offset_bottom = 84.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="StoryMode" type="Control" parent="Buttons" unique_id=1382689549]
+anchors_preset = 0
+offset_left = 640.0
+offset_top = 100.0
+offset_right = 680.0
+offset_bottom = 140.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/StoryMode" unique_id=1429720702]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_ci0nv")
+
+[node name="AnimateSymbol" type="Node2D" parent="Buttons/StoryMode" unique_id=1355485726]
+script = ExtResource("3_qeu24")
+symbol = "storymode selected"
+frame = 1
+playing = true
+loop = true
+atlases = Array[ExtResource("4_edflj")]([SubResource("Resource_lh87t")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="Freeplay" type="Control" parent="Buttons" unique_id=924316044]
+anchors_preset = 0
+offset_left = 640.0
+offset_top = 240.0
+offset_right = 680.0
+offset_bottom = 280.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/Freeplay" unique_id=1609263863]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_hnxy5")
+
+[node name="Freeplay" type="Node2D" parent="Buttons/Freeplay" unique_id=2077310861]
+script = ExtResource("3_qeu24")
+symbol = "freeplay idle"
+frame = 5
+playing = true
+loop = true
+atlases = Array[ExtResource("4_edflj")]([SubResource("Resource_dher4")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="Options" type="Control" parent="Buttons" unique_id=1354892430]
+anchors_preset = 0
+offset_left = 640.0
+offset_top = 380.0
+offset_right = 680.0
+offset_bottom = 420.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/Options" unique_id=761782543]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_a0wyv")
+
+[node name="Options" type="Node2D" parent="Buttons/Options" unique_id=1398235758]
+script = ExtResource("3_qeu24")
+symbol = "options idle"
+playing = true
+loop = true
+atlases = Array[ExtResource("4_edflj")]([SubResource("Resource_7b28g")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="Credits" type="Control" parent="Buttons" unique_id=1766455792]
+anchors_preset = 0
+offset_left = 640.0
+offset_top = 520.0
+offset_right = 680.0
+offset_bottom = 560.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/Credits" unique_id=729190089]
+root_node = NodePath("../..")
+libraries/ = SubResource("AnimationLibrary_hy2ha")
+
+[node name="Credits" type="Node2D" parent="Buttons/Credits" unique_id=56454464]
+script = ExtResource("3_qeu24")
+symbol = "credits idle"
+frame = 2
+playing = true
+loop = true
+atlases = Array[ExtResource("4_edflj")]([SubResource("Resource_qeu24")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=312879984]
+anchor_mode = 0
+limit_left = 0
+limit_top = 0
+limit_right = 1280
+limit_bottom = 797
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1964459681]
+
+[node name="Info" type="Label" parent="CanvasLayer" unique_id=600614107]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -43.666687
+offset_right = 183.0
+grow_vertical = 0
+text = "{enginename} v{version}
+[TAB] Open mods menu"
+label_settings = SubResource("LabelSettings_qeu24")
+script = ExtResource("4_qeu24")
+
+[node name="ConfirmSound" type="AudioStreamPlayer" parent="." unique_id=1417984925]
+script = ExtResource("14_5xbsi")

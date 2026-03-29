@@ -30,6 +30,7 @@ extends Control
 @export var richtextlabel: RichTextLabel
 var last_audio_pos: float = 0.0
 
+var tween: Tween
 var strings: Array[String]
 
 
@@ -62,8 +63,13 @@ func _process(delta: float) -> void:
 			set_process(false)
 			$TitleScreen/Start/Start.play("ENTER PRESSED")
 			$TitleScreen/Start/ConfirmSound.play()
+			if tween:
+				tween.kill()
+			tween = create_tween()
+			$TitleScreen/ColorRect.modulate = Color.WHITE
+			tween.tween_property($TitleScreen/ColorRect, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1)
 			await $TitleScreen/Start/ConfirmSound.finished
-			TransitionManager.change_scene_to_file(Registry.menus.get("freeplay_proto"), "fade", 1.0)
+			TransitionManager.change_scene_to_file(Registry.menus.get("main"), "fade", 1.0)
 
 
 func _on_beat(beat: int) -> void:
@@ -121,7 +127,9 @@ func _on_beat(beat: int) -> void:
 func skip_intro() -> void:
 	if not Game.seen_intro:
 		$TitleScreen/ColorRect.visible = true
-		var tween: Tween = create_tween()
+		if tween:
+			tween.kill()
+		tween = create_tween()
 		tween.tween_property($TitleScreen/ColorRect, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1)
 	Game.seen_intro = true
 	$Intro.visible = false
