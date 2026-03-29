@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://jp6h6c0pnqsj"]
 
-[ext_resource type="Shader" uid="uid://diqpnmri2b7lm" path="res://assets/shaders/wiggle.gdshader" id="1_o8ak8"]
+[ext_resource type="Shader" uid="uid://diqpnmri2b7lm" path="res://internal/assets/shaders/wiggle.gdshader" id="1_o8ak8"]
 [ext_resource type="Texture2D" uid="uid://byb3i4h02u4eq" path="res://assets/stages/school_evil_erect/bg/weebBackSpikes.png" id="2_0tach"]
 [ext_resource type="Texture2D" uid="uid://nhydbqsc5qe4" path="res://assets/stages/school_evil_erect/bg/weebSchool.png" id="3_g5nbr"]
 [ext_resource type="Texture2D" uid="uid://cout8h6iwy0q3" path="res://assets/stages/school_evil_erect/bg/weebStreet.png" id="4_eicf4"]

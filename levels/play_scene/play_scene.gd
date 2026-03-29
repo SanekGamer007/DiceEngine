@@ -54,7 +54,7 @@ func _ready() -> void:
 	spawn_ui()
 	$Hud.play_scene = self
 	if not Registry.songs.has(song_name):
-		push_error("FATAL: Song not found.")
+		push_error("Song not found.")
 		return
 	var song_all_info: Dictionary = Registry.songs.get(song_name)
 	var difficulty_string = Common.difficulty_to_string(difficulty)
@@ -64,24 +64,24 @@ func _ready() -> void:
 	if FileAccess.file_exists(song_chart.get("chart", "")):
 		chart = load_chart_file(song_chart.get("chart"))
 	else:
-		push_error("FATAL: Chart file not found.")
+		push_error("Chart file not found.")
 		return
 	song_metadata = chart.get("metadata", {})
 	var all_diffs: Dictionary = chart.get("chart")
 	if not song_metadata:
-		push_error("FATAL: Chart file is invalid.\nINFO: Metadata section not found.")
+		push_error("Chart file is invalid, metadata section not found.")
 		return
 	if not all_diffs:
-		push_error("FATAL: Chart file is invalid.\nINFO: Chart section not found.")
+		push_error("Chart file is invalid, chart section not found.")
 		return
 	
 	var diff_chart: Dictionary = all_diffs.get(difficulty_string, {})
 	scroll_speed = diff_chart.get("scrollspeed", 0.0)
 	if not diff_chart:
-		push_error("FATAL: Chart file is invalid.\nINFO: Chart for selected difficulty wasn't found.")
+		push_error("Chart file is invalid, chart for selected difficulty wasn't found.")
 		return
 	if not scroll_speed:
-		push_error("FATAL: Chart file is invalid.\nINFO: Scroll speed for selected difficulty wasn't found.")
+		push_error("Chart file is invalid, scroll speed for selected difficulty wasn't found.")
 		return
 	var diff_notes: Array[Dictionary]
 	diff_notes.assign(diff_chart.get("notes", [])) # ew json sucks.
@@ -90,16 +90,16 @@ func _ready() -> void:
 	spawn_strumlines()
 	
 	if not song_metadata.has("stage"):
-		push_warning('WARN: Stage not found in chart\nINFO: Using the default "main_stage" stage.')
+		push_warning('Stage not found in chart, using the default "main_stage" stage.')
 	var stage_name = song_metadata.get("stage", "main_stage")
 	load_stage(stage_name)
 	
 	Game.bpm = diff_chart.get("bpm", 120)
 	if not diff_chart.has("bpm"):
-		push_warning("WARN: BPM Not found in chart.\nINFO: Using the default of 120.")
+		push_warning("BPM Not found in chart, using the default of 120.")
 	
 	if not song_metadata.has("chars"):
-		push_error("ERROR: Character information not found in chart.\nINFO: Spawning no characters.")
+		push_error("Character information not found in chart, spawning no characters.")
 	else:
 		var chars: Dictionary = song_metadata.get("chars", {})
 		spawn_chars(chars)
@@ -205,7 +205,6 @@ func _handle_playing_state(delta: float) -> void:
 	var player: AudioStreamPlayer = $AudioPlayers/AudioStreamPlayerInst
 	if player.playing:
 		var current_audio_pos = player.get_playback_position()
-		
 		if current_audio_pos != last_audio_pos:
 			Game.mus_time = current_audio_pos + AudioServer.get_time_since_last_mix() - AudioServer.get_output_latency()
 			last_audio_pos = current_audio_pos
@@ -255,7 +254,7 @@ func load_chart_file(location: String) -> Dictionary:
 
 func load_stage(stage_name: String) -> void:
 	if not Registry.stages.has(stage_name):
-		push_error("ERROR: Stage ", stage_name, " not found.\nDefaulting to main_stage.")
+		push_error("Stage ", stage_name, " not found.\nDefaulting to main_stage.")
 		stage_name = "main_stage"
 	var stagepacked: PackedScene = load(Registry.stages.get(stage_name))
 	Refs.stage = stagepacked.instantiate()
@@ -334,9 +333,9 @@ func spawn_music() -> void:
 	if inst:
 		$AudioPlayers/AudioStreamPlayerInst.stream = load(inst)
 	else:
-		push_error("ERROR: Instumentals not found for song ", song_name, ".")
+		push_error("Instumentals not found for song ", song_name, ".")
 	if voices.size() <= 0:
-		push_warning("WARN: No vocals found for song ", song_name, ".")
+		push_warning("No vocals found for song ", song_name, ".")
 	for i in voices.size():
 		var player: AudioStreamPlayer = AudioStreamPlayer.new()
 		player.name = "AudioStreamPlayerID" + str(i)
@@ -356,7 +355,7 @@ func spawn_chars(chars: Dictionary) -> void:
 			else:
 				continue
 		if not Registry.characters.has(char_name):
-			push_error("FATAL: ", char_name, " Character not found.")
+			push_error('Character: "', char_name, '" not found.')
 			continue
 		var char_packed: PackedScene = load(Registry.characters.get(char_name))
 		var character: Character = char_packed.instantiate()

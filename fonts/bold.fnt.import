@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://clv0563o60ibd"
+path="res://.godot/imported/bold.fnt-b16cfbc0a14192018c5a0f5d3263af7b.fontdata"
+
+[deps]
+
+source_file="res://fonts/bold.fnt"
+dest_files=["res://.godot/imported/bold.fnt-b16cfbc0a14192018c5a0f5d3263af7b.fontdata"]
+
+[params]
+
+fallbacks=[Resource("uid://cy2pt8bepgaub", "res://fonts/PhantomMuff Full Letters 1.1.5.ttf")]
+compress=true
+scaling_mode=2

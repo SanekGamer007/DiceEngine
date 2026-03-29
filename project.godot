@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Friday Night Funkin': Dice Engine"
-run/main_scene="uid://ca3ii42n2ua14"
+run/main_scene="uid://bv2fyhxfed3wk"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://b2j7fyvg53jg2"
 
@@ -32,7 +32,7 @@ window/vsync/vsync_mode=0
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/AnimateSymbol2P/plugin.cfg", "res://addons/gdanimate-rewrite-main/plugin.cfg")
+enabled=PackedStringArray("res://addons/AS2P/plugin.cfg", "res://addons/AnimateSymbol2P/plugin.cfg", "res://addons/GDQuest_GDScript_formatter/plugin.cfg", "res://addons/gdanimate-rewrite-main/plugin.cfg")
 
 [gui]
 
@@ -99,6 +99,11 @@ fullscreen={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":true,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194342,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
+confirm={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
 

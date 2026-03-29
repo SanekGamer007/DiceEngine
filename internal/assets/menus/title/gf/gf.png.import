@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvey0f0xmnv33"
-path="res://.godot/imported/menuDesat.png-c96494304d7a6a783e93d5d7cae87bbf.ctex"
+uid="uid://d58g5v0itxgp"
+path="res://.godot/imported/gf.png-9edd3a5e5bf2ce986176287dc4e85e6b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menus/freeplay/menuDesat.png"
-dest_files=["res://.godot/imported/menuDesat.png-c96494304d7a6a783e93d5d7cae87bbf.ctex"]
+source_file="res://internal/assets/menus/title/gf/gf.png"
+dest_files=["res://.godot/imported/gf.png-9edd3a5e5bf2ce986176287dc4e85e6b.ctex"]
 
 [params]
 

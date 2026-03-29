@@ -6,12 +6,11 @@ const engine_major := "0"
 const engine_minor := "4"
 const engine_hotfix := "0"
 
-
 enum ARROW_DIR {
 	LEFT,
 	DOWN,
 	UP,
-	RIGHT
+	RIGHT,
 }
 
 enum DIFFICULTY {
@@ -22,7 +21,8 @@ enum DIFFICULTY {
 	NIGHTMARE,
 }
 
-static var judge_ranks: Dictionary[String, Array] = { # NAME: SCORE, TIME, ACCURACY AWARD
+static var judge_ranks: Dictionary[String, Array] = {
+	# NAME: SCORE, TIME, ACCURACY AWARD
 	"SICK": [350, 0.037, 1.0],
 	"GOOD": [200, 0.075, 0.75],
 	"BAD": [100, 0.115, 0.45],
@@ -30,17 +30,22 @@ static var judge_ranks: Dictionary[String, Array] = { # NAME: SCORE, TIME, ACCUR
 	"MISS": [0, 999, 0.0],
 }
 
+
 static func id_to_input(dir: ARROW_DIR) -> String:
 	return ARROW_DIR.keys()[dir].to_lower()
+
 
 static func input_to_id(dir: String) -> ARROW_DIR:
 	return ARROW_DIR.get(dir.to_upper())
 
+
 static func difficulty_to_string(diff: DIFFICULTY) -> String:
 	return DIFFICULTY.keys()[diff].to_lower()
 
+
 static func string_to_difficulty(diff: String) -> DIFFICULTY:
 	return DIFFICULTY.get(diff.to_upper())
+
 
 static func secs_to_rank(secs: float) -> String:
 	var abs_secs: float = abs(secs)
@@ -49,6 +54,7 @@ static func secs_to_rank(secs: float) -> String:
 			return rank
 	return "MISS"
 
+
 static func accr_to_rank(accuraccy: float) -> String:
 	var abs_accuraccy: float = abs(accuraccy)
 	for rank in judge_ranks.keys():
@@ -56,11 +62,13 @@ static func accr_to_rank(accuraccy: float) -> String:
 			return rank
 	return "MISS"
 
+
 static func rank_to_accr(rank: String) -> float:
 	var rankarray = judge_ranks.get(rank, [])
 	if not rankarray:
 		return 0.0
 	return rankarray[2]
+
 
 static func get_version() -> String:
 	return engine_major + "." + engine_minor + "." + engine_hotfix

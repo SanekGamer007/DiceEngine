@@ -38,7 +38,6 @@ func _process(_delta: float) -> void:
 	
 	if bottom_y < -viewport_size.y or top_y > viewport_size.y:
 		queue_free()
-	
 
 func hold_hit() -> void:
 	$Sprite2D.visible = false

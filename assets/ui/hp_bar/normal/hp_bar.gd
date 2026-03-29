@@ -1,14 +1,17 @@
 extends HPBar
 
+func _ready() -> void:
+	super()
+
 func _process(delta: float) -> void:
 	right_bar.size.x = lerp(right_bar.size.x, total_px - middle, delta * 8)
 	right_bar.position.x = lerp(right_bar.position.x, middle, delta * 8)
 	if flip_bar:
-		left_icon.position.x = right_bar.position.x + 5
-		right_icon.position.x = right_bar.position.x - 95
+		left_icon.position.x = lerp(left_icon.position.x, right_bar.position.x + 5, delta * 12)
+		right_icon.position.x = lerp(right_icon.position.x, right_bar.position.x - 95, delta * 12)
 	else:
-		left_icon.position.x = right_bar.position.x - 95
-		right_icon.position.x = right_bar.position.x + 5
+		left_icon.position.x = lerp(left_icon.position.x, right_bar.position.x - 95, delta * 12)
+		right_icon.position.x = lerp(right_icon.position.x, right_bar.position.x + 5, delta * 12)
 	super(delta)
 
 func _update_bar() -> void:

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://gvhsvtg0qhj7"]
 
-[ext_resource type="FontFile" uid="uid://c7e8ittf82kg1" path="res://assets/fonts/Quantico-Regular.ttf" id="1_1bg7l"]
+[ext_resource type="FontFile" uid="uid://c7e8ittf82kg1" path="res://fonts/Quantico-Regular.ttf" id="1_1bg7l"]
 [ext_resource type="Script" uid="uid://bnokcqpmimt0g" path="res://internal/assets/ui/info_bar/base/info_bar.gd" id="1_x6aom"]
 [ext_resource type="Script" uid="uid://ulvxruwtxrdp" path="res://internal/assets/ui/info_bar/base/score.gd" id="2_x6aom"]
 [ext_resource type="Script" uid="uid://cnonu42t8coa2" path="res://internal/assets/ui/info_bar/base/misses.gd" id="3_ekn2r"]

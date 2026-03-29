@@ -4,37 +4,34 @@ extends Node
 # These are placeholders.
 
 # Name: Path
-var stages: Dictionary[String, String] = {
-	"main_stage": "res://internal/assets/stages/main_stage/",
-}
+var stages: Dictionary[String, String] = { }
 
 var characters: Dictionary[String, String] = {
 	"bf": "res://internal/assets/characters/bf/bf.tscn",
 	"dad": "res://internal/assets/characters/dad/dad.tscn",
 }
 
-var note_skins: Dictionary[String, String] = {
-	"normal": "res://internal/assets/ui/noteskins/normal/res/normal.tres",
-}
+var note_skins: Dictionary[String, String] = { }
 
 # SongName, {Diff, {Path, Array[Inst, Voices]}}
 var songs: Dictionary[String, Dictionary] = {
-	"thorns": {"erect": 
-			{
-				"chart": "res://assets/songs/thorns/thorns_erect.json",
-				"inst": "res://assets/songs/thorns/song/Inst.ogg",
-				"voices": ["res://assets/songs/thorns/song/Voices-id0.ogg", "res://assets/songs/thorns/song/Voices-id1.ogg"],
-			}
-		}
+	"thorns": {
+		"erect": {
+			"chart": "res://assets/songs/thorns/thorns_erect.json",
+			"inst": "res://assets/songs/thorns/song/Inst.ogg",
+			"voices": ["res://assets/songs/thorns/song/Voices-id0.ogg", "res://assets/songs/thorns/song/Voices-id1.ogg"],
+		},
+	},
 }
 
-var hp_bars: Dictionary[String, String] = {
-	"normal": "res://internal/assets/ui/hp_bar/normal/hp_bar.tscn",
-}
+var hp_bars: Dictionary[String, String] = { }
 
-var info_bars: Dictionary[String, String] = {
-	"normal": "res://internal/assets/ui/info_bar/normal/info_bar.tscn",
-}
+var info_bars: Dictionary[String, String] = { }
+
+var menus: Dictionary[String, String] = { }
+var music: Dictionary[String, String] = { }
+var sounds: Dictionary[String, String] = { }
+var transition: Dictionary[String, String] = { }
 
 var _chart_diff_prefix_priority: Array[String] = [
 	"",
@@ -48,26 +45,36 @@ var song_paths: Array[String] = ["res://assets/songs/"]
 var chars_paths: Array[String] = ["res://internal/assets/characters/", "res://assets/characters/"]
 var stage_paths: Array[String] = ["res://internal/assets/stages/", "res://assets/stages/"]
 var note_skin_paths: Array[String] = ["res://internal/assets/ui/noteskins/", "res://assets/ui/noteskins/"]
-var info_bars_path: Array[String] = ["res://internal/assets/ui/info_bar/", "res://assets/ui/info_bar/"]
+var info_bars_paths: Array[String] = ["res://internal/assets/ui/info_bar/", "res://assets/ui/info_bar/"]
 var hp_bar_paths: Array[String] = ["res://internal/assets/ui/hp_bar/", "res://assets/ui/hp_bar/"]
+var menus_paths: Array[String] = ["res://internal/assets/menus/", "res://assets/menus/"]
+var music_paths: Array[String] = ["res://internal/assets/music/", "res://assets/music/"]
+var sounds_paths: Array[String] = ["res://internal/assets/sounds/", "res://assets/sounds/"]
+var transition_paths: Array[String] = []
 
-func _ready() -> void:
-	re_init_database()
 
 func re_init_database() -> void:
 	characters.clear()
 	stages.clear()
 	songs.clear()
 	note_skins.clear()
+	menus.clear()
+	music.clear()
+	sounds.clear()
+
 	characters.assign(find_chars())
 	stages.assign(find_stages())
 	songs.assign(find_songs())
 	note_skins.assign(find_note_skins())
 	hp_bars.assign(find_hp_bars())
 	info_bars.assign(find_info_bars())
+	menus.assign(find_menus())
+	music.assign(find_music())
+	sounds.assign(find_sounds())
+
 
 func find_chars() -> Dictionary[String, String]:
-	var found_characters: Dictionary[String, String] = {}
+	var found_characters: Dictionary[String, String] = { }
 	for path in chars_paths:
 		if not DirAccess.dir_exists_absolute(path):
 			continue
@@ -87,8 +94,9 @@ func find_chars() -> Dictionary[String, String]:
 						break
 	return found_characters
 
+
 func find_stages() -> Dictionary[String, String]:
-	var found_stages: Dictionary[String, String] = {}
+	var found_stages: Dictionary[String, String] = { }
 	for path in stage_paths:
 		if not DirAccess.dir_exists_absolute(path):
 			continue
@@ -106,8 +114,9 @@ func find_stages() -> Dictionary[String, String]:
 						break
 	return found_stages
 
+
 func find_songs() -> Dictionary[String, Dictionary]:
-	var found_songs: Dictionary[String, Dictionary] = {}
+	var found_songs: Dictionary[String, Dictionary] = { }
 	for path in song_paths:
 		if not DirAccess.dir_exists_absolute(path):
 			continue
@@ -121,8 +130,9 @@ func find_songs() -> Dictionary[String, Dictionary]:
 					found_songs.merge(_format_song(full_path, song_name), true)
 	return found_songs
 
+
 func find_note_skins() -> Dictionary[String, String]:
-	var found_note_skins: Dictionary[String, String] = {}
+	var found_note_skins: Dictionary[String, String] = { }
 	for path in note_skin_paths:
 		if not DirAccess.dir_exists_absolute(path):
 			continue
@@ -138,8 +148,9 @@ func find_note_skins() -> Dictionary[String, String]:
 						break
 	return found_note_skins
 
+
 func find_hp_bars() -> Dictionary[String, String]:
-	var found_hp_bars: Dictionary[String, String] = {}
+	var found_hp_bars: Dictionary[String, String] = { }
 	for path in hp_bar_paths:
 		if not DirAccess.dir_exists_absolute(path):
 			continue
@@ -158,9 +169,10 @@ func find_hp_bars() -> Dictionary[String, String]:
 							break
 	return found_hp_bars
 
+
 func find_info_bars() -> Dictionary[String, String]:
-	var found_info_bars: Dictionary[String, String] = {}
-	for path in info_bars_path:
+	var found_info_bars: Dictionary[String, String] = { }
+	for path in info_bars_paths:
 		if not DirAccess.dir_exists_absolute(path):
 			continue
 		var folders = DirAccess.get_directories_at(path)
@@ -178,24 +190,75 @@ func find_info_bars() -> Dictionary[String, String]:
 							break
 	return found_info_bars
 
+
+func find_menus() -> Dictionary[String, String]:
+	var found_menus: Dictionary[String, String] = { }
+	for path in menus_paths:
+		if not DirAccess.dir_exists_absolute(path):
+			continue
+		var folders = DirAccess.get_directories_at(path)
+		for menu_folder in folders:
+			var full_path = path + menu_folder
+			if ResourceLoader.exists(full_path + "/" + menu_folder + ".tscn"):
+				found_menus[menu_folder] = full_path + "/" + menu_folder + ".tscn"
+			else:
+				if DirAccess.dir_exists_absolute(full_path):
+					var files = DirAccess.get_files_at(full_path)
+					for file in files:
+						file = file.replace(".remap", "")
+						if file.ends_with(".tscn"):
+							found_menus[menu_folder] = full_path + "/" + file
+							break
+	return found_menus
+
+
+func find_music() -> Dictionary[String, String]:
+	var found_music: Dictionary[String, String] = { }
+	for path in music_paths:
+		if not DirAccess.dir_exists_absolute(path):
+			continue
+		var files = DirAccess.get_files_at(path)
+		for file in files:
+			file = file.replace(".remap", "")
+			if file.ends_with(".ogg"):
+				found_music[file.replace(".ogg", "")] = path + file
+				continue
+	return found_music
+
+
+func find_sounds() -> Dictionary[String, String]:
+	var found_sounds: Dictionary[String, String] = { }
+	for path in sounds_paths:
+		if not DirAccess.dir_exists_absolute(path):
+			continue
+		var files = DirAccess.get_files_at(path)
+		for file in files:
+			file = file.replace(".remap", "")
+			if file.ends_with(".ogg"):
+				found_sounds[file.replace(".ogg", "")] = path + file
+				continue
+	return found_sounds
+
+
 func _format_song(json_path: String, song_name: String) -> Dictionary[String, Dictionary]:
-	var formatted_song: Dictionary[String, Dictionary] = {}
+	var formatted_song: Dictionary[String, Dictionary] = { }
 	var file = FileAccess.open(json_path, FileAccess.READ)
 	var chart_file = file.get_as_text()
 	var chart: Dictionary = JSON.parse_string(chart_file)
-	var chart_charts: Dictionary = chart.get("chart", {})
+	var chart_charts: Dictionary = chart.get("chart", { })
 	var chart_diffs: Array[String]
 	chart_diffs.assign(chart_charts.keys())
 	var diffs: Dictionary
-	var music: Dictionary = _get_music(song_name)
+	var song: Dictionary = _get_music(song_name)
 	for diff in chart_diffs:
-		diffs[diff] = {"chart": json_path}
-		diffs[diff].merge(music)
+		diffs[diff] = { "chart": json_path }
+		diffs[diff].merge(song)
 	formatted_song[song_name] = diffs
 	return formatted_song
 
+
 func _get_music(song_name: String) -> Dictionary:
-	var found_music: Dictionary = {}
+	var found_music: Dictionary = { }
 	var inst: String
 	var voices: Array
 	var music_path: String
@@ -203,8 +266,8 @@ func _get_music(song_name: String) -> Dictionary:
 		if DirAccess.dir_exists_absolute(path + song_name + "/song"):
 			music_path = path + song_name + "/song"
 	if music_path == "":
-		return {"inst": "", "voices": []}
-	
+		return { "inst": "", "voices": [] }
+
 	for file in DirAccess.get_files_at(music_path):
 		file = file.replace(".import", "")
 		if file.to_lower().contains("inst"):
@@ -213,7 +276,7 @@ func _get_music(song_name: String) -> Dictionary:
 			if file.to_lower().begins_with("voices"):
 				if not voices.has(music_path + "/" + file):
 					voices.append(music_path + "/" + file)
-	
+
 	voices.sort()
-	found_music = {"inst": inst, "voices": voices}
+	found_music = { "inst": inst, "voices": voices }
 	return found_music

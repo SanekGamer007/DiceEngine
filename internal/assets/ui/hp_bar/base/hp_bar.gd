@@ -16,6 +16,10 @@ var hp: float = 50 :
 		if is_inside_tree() and left_icon:
 			$Icons.add_child(left_icon)
 			left_bar.color = icon.icon_color
+			if flip_bar:
+				left_icon.position.x = right_bar.position.x + 5
+			else:
+				left_icon.position.x = right_bar.position.x - 95
 @export var right_icon: CharacterIcon :
 	set(icon):
 		if is_inside_tree() and right_icon:
@@ -24,6 +28,10 @@ var hp: float = 50 :
 		if is_inside_tree() and right_icon:
 			$Icons.add_child(right_icon)
 			right_bar.color = icon.icon_color
+			if flip_bar:
+				right_icon.position.x = right_bar.position.x - 95
+			else:
+				right_icon.position.x = right_bar.position.x + 5
 @export var flip_bar: bool
 var middle: float = 0.0
 
@@ -62,11 +70,11 @@ func _update_bar() -> void:
 		left_hp_percent = hp
 		right_hp_percent = 100.0 - hp
 		left_icon.position.x = right_bar.position.x + 5
-		right_icon.position.x = middle - 95
+		right_icon.position.x = right_bar.position.x - 95
 	else:
 		right_hp_percent = 100.0 - hp
 		left_hp_percent = hp
-		left_icon.position.x = middle - 95
+		left_icon.position.x = right_bar.position.x - 95
 		right_icon.position.x = right_bar.position.x + 5
 	
 	left_icon.update_icon(left_hp_percent)
