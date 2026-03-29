@@ -35,6 +35,8 @@ var denominator: int = 4:
 
 var seen_intro: bool = false
 var last_played_song: String = ""
+var next_week_song: String = ""
+var selected_main_button: int = 0
 
 signal beat(count: int)
 signal measure(measure: int)

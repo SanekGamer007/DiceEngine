@@ -129,7 +129,7 @@ offset_left = 37.0
 offset_top = 184.0
 offset_right = 186.0
 offset_bottom = 215.0
-text = "GO BACK TO TITLE"
+text = "GO BACK TO MENU"
 script = ExtResource("4_d1jv2")
 
 [connection signal="item_selected" from="VBoxContainer/HBoxContainer2/VBoxContainer/ItemList" to="." method="_on_item_list_item_selected"]

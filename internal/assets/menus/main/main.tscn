@@ -703,11 +703,19 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="StoryMode" type="Control" parent="Buttons" unique_id=1382689549]
+modulate = Color(0.735357, 0.735357, 0.735357, 1)
 anchors_preset = 0
 offset_left = 640.0
 offset_top = 100.0
 offset_right = 680.0
 offset_bottom = 140.0
+
+[node name="MouseHitbox" type="Control" parent="Buttons/StoryMode" unique_id=1932950351]
+anchors_preset = 0
+offset_left = -307.0
+offset_top = -60.0
+offset_right = 308.0
+offset_bottom = 58.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/StoryMode" unique_id=1429720702]
 root_node = NodePath("../..")
@@ -715,8 +723,7 @@ libraries/ = SubResource("AnimationLibrary_ci0nv")
 
 [node name="AnimateSymbol" type="Node2D" parent="Buttons/StoryMode" unique_id=1355485726]
 script = ExtResource("3_qeu24")
-symbol = "storymode selected"
-frame = 1
+symbol = "storymode idle"
 playing = true
 loop = true
 atlases = Array[ExtResource("4_edflj")]([SubResource("Resource_lh87t")])
@@ -728,6 +735,13 @@ offset_left = 640.0
 offset_top = 240.0
 offset_right = 680.0
 offset_bottom = 280.0
+
+[node name="MouseHitbox" type="Control" parent="Buttons/Freeplay" unique_id=930519004]
+anchors_preset = 0
+offset_left = -243.0
+offset_top = -60.0
+offset_right = 243.0
+offset_bottom = 58.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/Freeplay" unique_id=1609263863]
 root_node = NodePath("../..")
@@ -743,11 +757,19 @@ atlases = Array[ExtResource("4_edflj")]([SubResource("Resource_dher4")])
 metadata/_custom_type_script = "uid://c5ju3u657fyae"
 
 [node name="Options" type="Control" parent="Buttons" unique_id=1354892430]
+modulate = Color(0.735357, 0.735357, 0.735357, 1)
 anchors_preset = 0
 offset_left = 640.0
 offset_top = 380.0
 offset_right = 680.0
 offset_bottom = 420.0
+
+[node name="MouseHitbox" type="Control" parent="Buttons/Options" unique_id=1586846264]
+anchors_preset = 0
+offset_left = -249.0
+offset_top = -60.0
+offset_right = 252.0
+offset_bottom = 58.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/Options" unique_id=761782543]
 root_node = NodePath("../..")
@@ -756,17 +778,26 @@ libraries/ = SubResource("AnimationLibrary_a0wyv")
 [node name="Options" type="Node2D" parent="Buttons/Options" unique_id=1398235758]
 script = ExtResource("3_qeu24")
 symbol = "options idle"
+frame = 7
 playing = true
 loop = true
 atlases = Array[ExtResource("4_edflj")]([SubResource("Resource_7b28g")])
 metadata/_custom_type_script = "uid://c5ju3u657fyae"
 
 [node name="Credits" type="Control" parent="Buttons" unique_id=1766455792]
+modulate = Color(0.735357, 0.735357, 0.735357, 1)
 anchors_preset = 0
 offset_left = 640.0
 offset_top = 520.0
 offset_right = 680.0
 offset_bottom = 560.0
+
+[node name="MouseHitbox" type="Control" parent="Buttons/Credits" unique_id=94475094]
+anchors_preset = 0
+offset_left = -222.0
+offset_top = -60.0
+offset_right = 221.0
+offset_bottom = 58.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Buttons/Credits" unique_id=729190089]
 root_node = NodePath("../..")
@@ -775,7 +806,7 @@ libraries/ = SubResource("AnimationLibrary_hy2ha")
 [node name="Credits" type="Node2D" parent="Buttons/Credits" unique_id=56454464]
 script = ExtResource("3_qeu24")
 symbol = "credits idle"
-frame = 2
+frame = 4
 playing = true
 loop = true
 atlases = Array[ExtResource("4_edflj")]([SubResource("Resource_qeu24")])
@@ -786,7 +817,7 @@ anchor_mode = 0
 limit_left = 0
 limit_top = 0
 limit_right = 1280
-limit_bottom = 797
+limit_bottom = 772
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1964459681]
 

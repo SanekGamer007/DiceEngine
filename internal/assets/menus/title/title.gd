@@ -63,14 +63,13 @@ func _process(delta: float) -> void:
 			set_process(false)
 			$TitleScreen/Start/Start.play("ENTER PRESSED")
 			$TitleScreen/Start/ConfirmSound.play()
-			if tween:
-				tween.kill()
-			tween = create_tween()
-			$TitleScreen/ColorRect.modulate = Color.WHITE
-			tween.tween_property($TitleScreen/ColorRect, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1)
+			white_flash()
 			await $TitleScreen/Start/ConfirmSound.finished
 			TransitionManager.change_scene_to_file(Registry.menus.get("main"), "fade", 1.0)
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_back"):
+		get_tree().quit()
 
 func _on_beat(beat: int) -> void:
 	if Game.seen_intro:
@@ -127,10 +126,15 @@ func _on_beat(beat: int) -> void:
 func skip_intro() -> void:
 	if not Game.seen_intro:
 		$TitleScreen/ColorRect.visible = true
-		if tween:
-			tween.kill()
-		tween = create_tween()
-		tween.tween_property($TitleScreen/ColorRect, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1)
+		white_flash()
 	Game.seen_intro = true
 	$Intro.visible = false
 	$TitleScreen.visible = true
+
+func white_flash() -> void:
+	if tween:
+		tween.kill()
+	tween = create_tween()
+	$TitleScreen/ColorRect.visible = true
+	$TitleScreen/ColorRect.modulate = Color.WHITE
+	tween.tween_property($TitleScreen/ColorRect, "modulate", Color(1.0, 1.0, 1.0, 0.0), 1)
