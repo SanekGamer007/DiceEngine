@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://gvhsvtg0qhj7"]
+
+[ext_resource type="FontFile" uid="uid://c7e8ittf82kg1" path="res://fonts/Quantico-Regular.ttf" id="1_1bg7l"]
+[ext_resource type="Script" uid="uid://bnokcqpmimt0g" path="res://internal/assets/ui/info_bars/base/info_bar.gd" id="1_x6aom"]
+[ext_resource type="Script" uid="uid://ulvxruwtxrdp" path="res://internal/assets/ui/info_bars/base/score.gd" id="2_x6aom"]
+[ext_resource type="Script" uid="uid://cnonu42t8coa2" path="res://internal/assets/ui/info_bars/base/misses.gd" id="3_ekn2r"]
+[ext_resource type="Script" uid="uid://c0wlutp8n20i" path="res://internal/assets/ui/info_bars/base/accuracy.gd" id="4_xqg7n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_neaw5"]
+font = ExtResource("1_1bg7l")
+font_size = 20
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="InfoBar" type="HBoxContainer" unique_id=1849635213]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -29.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 64
+alignment = 1
+script = ExtResource("1_x6aom")
+
+[node name="Score" type="Label" parent="." unique_id=2000558754]
+layout_mode = 2
+text = "Score: %d"
+label_settings = SubResource("LabelSettings_neaw5")
+script = ExtResource("2_x6aom")
+
+[node name="Misses" type="Label" parent="." unique_id=1728162135]
+layout_mode = 2
+text = "Misses: %d"
+label_settings = SubResource("LabelSettings_neaw5")
+script = ExtResource("3_ekn2r")
+
+[node name="Accuracy" type="Label" parent="." unique_id=523044219]
+layout_mode = 2
+text = "Accuracy: -%"
+label_settings = SubResource("LabelSettings_neaw5")
+script = ExtResource("4_xqg7n")

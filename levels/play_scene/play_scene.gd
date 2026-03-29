@@ -161,35 +161,6 @@ func _process(delta: float) -> void:
 	if hp <= min_hp:
 		set_state(STATES.DEAD)
 
-
-func _update_hp() -> void:
-	Refs.hud.hp_bar.hp = hp
-
-
-func _on_player_note_hit(_direction: Common.ARROW_DIR, _accuracy: float) -> void:
-	hp += hp_gain_player_hit
-
-
-func _on_player_note_miss(_direction: Common.ARROW_DIR) -> void:
-	hp -= hp_loss_player_miss
-
-
-func _on_player_note_sustain(_direction: Common.ARROW_DIR) -> void:
-	hp += (hp_gain_player_sustain * 60.0) * get_process_delta_time()
-	
-	
-func _on_opponent_note_hit(_direction: Common.ARROW_DIR, _accuracy: float) -> void:
-	hp += hp_gain_opponent_hit
-	if hp >= hp_loss_opponent_cap:
-		hp -= hp_loss_opponent_hit
-
-
-func _on_opponent_note_sustain(_direction: Common.ARROW_DIR) -> void:
-	hp += hp_gain_opponent_sustain
-	if hp >= hp_loss_opponent_cap:
-		hp -= (hp_loss_opponent_sustain * 60.0) * get_process_delta_time()
-
-
 func _handle_loading_state() -> void:
 	pass
 
@@ -235,15 +206,45 @@ func set_state(new_state: STATES) -> void:
 	elif new_state == STATES.DEAD:
 		for player: AudioStreamPlayer in $AudioPlayers.get_children():
 			player.stop()
-		OS.alert("You died!", "You died!")
 		Refs.clear()
-		get_tree().change_scene_to_file("res://assets/menus/freeplay/control.tscn")
+		set_process(false)
+		TransitionManager.change_scene_to_file(Registry.menus.get("freeplay_proto"), "fade", 1.0)
 		return
 	elif new_state == STATES.ENDING:
 		Refs.clear()
-		get_tree().change_scene_to_file("res://assets/menus/freeplay/control.tscn")
+		set_process(false)
+		TransitionManager.change_scene_to_file(Registry.menus.get("freeplay_proto"), "fade", 1.0)
 		return
 	state = new_state
+
+
+func _update_hp() -> void:
+	Refs.hud.hp_bar.hp = hp
+
+
+func _on_player_note_hit(_direction: Common.ARROW_DIR, _accuracy: float) -> void:
+	hp += hp_gain_player_hit
+
+
+func _on_player_note_miss(_direction: Common.ARROW_DIR) -> void:
+	hp -= hp_loss_player_miss
+
+
+func _on_player_note_sustain(_direction: Common.ARROW_DIR) -> void:
+	hp += (hp_gain_player_sustain * 60.0) * get_process_delta_time()
+	
+	
+func _on_opponent_note_hit(_direction: Common.ARROW_DIR, _accuracy: float) -> void:
+	hp += hp_gain_opponent_hit
+	if hp >= hp_loss_opponent_cap:
+		hp -= hp_loss_opponent_hit
+
+
+func _on_opponent_note_sustain(_direction: Common.ARROW_DIR) -> void:
+	hp += hp_gain_opponent_sustain
+	if hp >= hp_loss_opponent_cap:
+		hp -= (hp_loss_opponent_sustain * 60.0) * get_process_delta_time()
+
 
 
 func load_chart_file(location: String) -> Dictionary:

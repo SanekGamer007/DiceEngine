@@ -63,7 +63,7 @@ func _process(delta: float) -> void:
 			$TitleScreen/Start/Start.play("ENTER PRESSED")
 			$TitleScreen/Start/ConfirmSound.play()
 			await $TitleScreen/Start/ConfirmSound.finished
-			get_tree().change_scene_to_file(Registry.menus.get("freeplay_proto"))
+			TransitionManager.change_scene_to_file(Registry.menus.get("freeplay_proto"), "fade", 1.0)
 
 
 func _on_beat(beat: int) -> void:
@@ -73,7 +73,7 @@ func _on_beat(beat: int) -> void:
 		1:
 			var org_text: String = strings[0]
 			var text = org_text.split("--")[0]
-			richtextlabel.text += text
+			richtextlabel.text += text 
 		3:
 			var org_text: String = strings[0]
 			var text = org_text.split("--")[1]

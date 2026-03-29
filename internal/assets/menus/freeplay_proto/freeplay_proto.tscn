@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://ca3ii42n2ua14"]
+
+[ext_resource type="Texture2D" uid="uid://buallmrfar3g4" path="res://internal/assets/menus/freeplay_proto/menuBG.png" id="1_0qiek"]
+[ext_resource type="Script" uid="uid://ccbiigt5f5s81" path="res://internal/assets/menus/freeplay_proto/freeplay_proto.gd" id="1_mat43"]
+[ext_resource type="FontFile" uid="uid://bif3opoyxypl3" path="res://fonts/Inconsolata-Regular.ttf" id="2_l4fee"]
+[ext_resource type="Script" uid="uid://byp52f32ku8td" path="res://internal/assets/menus/freeplay_proto/button.gd" id="4_d1jv2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mat43"]
+
+[node name="FreeplayProto" type="Control" unique_id=147251387]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mat43")
+
+[node name="BGBoxContainer" type="BoxContainer" parent="." unique_id=394963145]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="BGBoxContainer" unique_id=206485635]
+layout_mode = 2
+texture = ExtResource("1_0qiek")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=120845444]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=166394429]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer" unique_id=1859688140]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_l4fee")
+theme_override_font_sizes/font_size = 32
+text = "Dice Engine
+Freeplay
+WIP"
+horizontal_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="VBoxContainer" unique_id=1483185132]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_mat43")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer" unique_id=1058150838]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2" unique_id=161063210]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1045891166]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_l4fee")
+theme_override_font_sizes/font_size = 16
+text = "Song:"
+horizontal_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="VBoxContainer/HBoxContainer2/VBoxContainer" unique_id=1585240905]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_l4fee")
+auto_width = true
+auto_height = true
+item_count = 1
+item_0/text = "dadbattle"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/HBoxContainer2" unique_id=124713081]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer2/VBoxContainer2" unique_id=2036529925]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_l4fee")
+theme_override_font_sizes/font_size = 16
+text = "Difficulty:"
+horizontal_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="VBoxContainer/HBoxContainer2/VBoxContainer2" unique_id=1499087595]
+clip_contents = false
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("2_l4fee")
+auto_width = true
+auto_height = true
+item_count = 3
+item_0/text = "easy"
+item_1/text = "normal"
+item_2/text = "hard"
+
+[node name="VSeparator" type="VSeparator" parent="VBoxContainer" unique_id=2111123536]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxEmpty_mat43")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer" unique_id=55485223]
+layout_mode = 2
+alignment = 1
+
+[node name="Button" type="Button" parent="VBoxContainer/HBoxContainer3" unique_id=1132904308]
+layout_mode = 2
+text = "start the banger"
+
+[node name="Button" type="Button" parent="." unique_id=786428886]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 184.0
+offset_right = 186.0
+offset_bottom = 215.0
+text = "GO BACK TO TITLE"
+script = ExtResource("4_d1jv2")
+
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer2/VBoxContainer/ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer2/VBoxContainer2/ItemList" to="." method="_on_item_list_diff_item_selected"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

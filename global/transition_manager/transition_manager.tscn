@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://b4qe6epc6ut0b"]
+
+[ext_resource type="Script" uid="uid://dq85wm5pnl4r4" path="res://global/transition_manager/transition_manager.gd" id="1_wmvyy"]
+
+[node name="TransitionManager" type="CanvasLayer" unique_id=1109680560]
+layer = 9990
+script = ExtResource("1_wmvyy")

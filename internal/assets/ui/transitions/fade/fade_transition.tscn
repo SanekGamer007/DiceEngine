@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://csvr1uaatnf3f"]
+
+[ext_resource type="PackedScene" uid="uid://4oxlr4h5kkfa" path="res://internal/assets/ui/transitions/base/base.tscn" id="1_gurrx"]
+[ext_resource type="Script" uid="uid://ywjr2xj2k8wp" path="res://internal/assets/ui/transitions/fade/fade_transition.gd" id="2_w1bio"]
+
+[sub_resource type="Gradient" id="Gradient_xw5xn"]
+offsets = PackedFloat32Array(0, 0.25, 0.75, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_acpjm"]
+gradient = SubResource("Gradient_xw5xn")
+width = 1280
+height = 1440
+fill_from = Vector2(0.5, 0)
+fill_to = Vector2(0.5, 1)
+
+[node name="FadeTransition" unique_id=1120426940 instance=ExtResource("1_gurrx")]
+script = ExtResource("2_w1bio")
+
+[node name="TextureRect" type="TextureRect" parent="." index="0" unique_id=1222748282]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1440.0
+offset_bottom = -720.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_acpjm")

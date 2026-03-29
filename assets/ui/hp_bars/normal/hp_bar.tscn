@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://drqnbkatcuipr"]
+
+[ext_resource type="PackedScene" uid="uid://1a3sdme1ed2n" path="res://internal/assets/ui/hp_bars/base/hp_bar.tscn" id="1_1wxf4"]
+[ext_resource type="Script" uid="uid://dkncw8we683cm" path="res://assets/ui/hp_bars/normal/hp_bar.gd" id="1_i4xb1"]
+
+[node name="HPBar" unique_id=504599034 instance=ExtResource("1_1wxf4")]
+script = ExtResource("1_i4xb1")

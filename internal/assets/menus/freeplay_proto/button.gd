@@ -1,4 +1,4 @@
 extends Button
 
 func _on_pressed() -> void:
-	get_tree().change_scene_to_file(Registry.menus.get("title"))
+	TransitionManager.change_scene_to_file(Registry.menus.get("title"), "fade", 1.0)

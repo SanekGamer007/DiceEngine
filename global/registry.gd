@@ -31,7 +31,7 @@ var info_bars: Dictionary[String, String] = { }
 var menus: Dictionary[String, String] = { }
 var music: Dictionary[String, String] = { }
 var sounds: Dictionary[String, String] = { }
-var transition: Dictionary[String, String] = { }
+var transitions: Dictionary[String, String] = { }
 
 var _chart_diff_prefix_priority: Array[String] = [
 	"",
@@ -44,13 +44,13 @@ var _chart_diff_prefix_priority: Array[String] = [
 var song_paths: Array[String] = ["res://assets/songs/"]
 var chars_paths: Array[String] = ["res://internal/assets/characters/", "res://assets/characters/"]
 var stage_paths: Array[String] = ["res://internal/assets/stages/", "res://assets/stages/"]
-var note_skin_paths: Array[String] = ["res://internal/assets/ui/noteskins/", "res://assets/ui/noteskins/"]
-var info_bars_paths: Array[String] = ["res://internal/assets/ui/info_bar/", "res://assets/ui/info_bar/"]
-var hp_bar_paths: Array[String] = ["res://internal/assets/ui/hp_bar/", "res://assets/ui/hp_bar/"]
+var noteskins_paths: Array[String] = ["res://internal/assets/ui/noteskins/", "res://assets/ui/noteskins/"]
+var info_bars_paths: Array[String] = ["res://internal/assets/ui/info_bars/", "res://assets/ui/info_bars/"]
+var hp_bars_paths: Array[String] = ["res://internal/assets/ui/hp_bars/", "res://assets/ui/hp_bars/"]
 var menus_paths: Array[String] = ["res://internal/assets/menus/", "res://assets/menus/"]
 var music_paths: Array[String] = ["res://internal/assets/music/", "res://assets/music/"]
 var sounds_paths: Array[String] = ["res://internal/assets/sounds/", "res://assets/sounds/"]
-var transition_paths: Array[String] = []
+var transitions_paths: Array[String] = ["res://internal/assets/ui/transitions/", "res://assets/ui/transitions/"]
 
 
 func re_init_database() -> void:
@@ -61,6 +61,7 @@ func re_init_database() -> void:
 	menus.clear()
 	music.clear()
 	sounds.clear()
+	transitions.clear()
 
 	characters.assign(find_chars())
 	stages.assign(find_stages())
@@ -71,6 +72,8 @@ func re_init_database() -> void:
 	menus.assign(find_menus())
 	music.assign(find_music())
 	sounds.assign(find_sounds())
+	transitions.assign(find_transitions())
+	TransitionManager.find_transitions()
 
 
 func find_chars() -> Dictionary[String, String]:
@@ -88,8 +91,6 @@ func find_chars() -> Dictionary[String, String]:
 				for file in all_files:
 					file = file.replace(".remap", "")
 					if file.ends_with(".tscn"):
-						if char_name == "base":
-							break
 						found_characters[char_name] = (path + char_name + "/" + file)
 						break
 	return found_characters
@@ -133,7 +134,7 @@ func find_songs() -> Dictionary[String, Dictionary]:
 
 func find_note_skins() -> Dictionary[String, String]:
 	var found_note_skins: Dictionary[String, String] = { }
-	for path in note_skin_paths:
+	for path in noteskins_paths:
 		if not DirAccess.dir_exists_absolute(path):
 			continue
 		var folders = DirAccess.get_directories_at(path)
@@ -151,7 +152,7 @@ func find_note_skins() -> Dictionary[String, String]:
 
 func find_hp_bars() -> Dictionary[String, String]:
 	var found_hp_bars: Dictionary[String, String] = { }
-	for path in hp_bar_paths:
+	for path in hp_bars_paths:
 		if not DirAccess.dir_exists_absolute(path):
 			continue
 		var folders = DirAccess.get_directories_at(path)
@@ -238,6 +239,27 @@ func find_sounds() -> Dictionary[String, String]:
 				found_sounds[file.replace(".ogg", "")] = path + file
 				continue
 	return found_sounds
+
+
+func find_transitions() -> Dictionary[String, String]:
+	var found_transitions: Dictionary[String, String] = { }
+	for path in transitions_paths:
+		if not DirAccess.dir_exists_absolute(path):
+			continue
+		var folders = DirAccess.get_directories_at(path)
+		for transition_folder in folders:
+			var full_path = path + transition_folder
+			if ResourceLoader.exists(full_path + "/" + transition_folder + ".tscn"):
+				found_transitions[transition_folder] = full_path + "/" + transition_folder + ".tscn"
+			else:
+				if DirAccess.dir_exists_absolute(full_path):
+					var files = DirAccess.get_files_at(full_path)
+					for file in files:
+						file = file.replace(".remap", "")
+						if file.ends_with(".tscn"):
+							found_transitions[transition_folder] = full_path + "/" + file
+							break
+	return found_transitions
 
 
 func _format_song(json_path: String, song_name: String) -> Dictionary[String, Dictionary]:
