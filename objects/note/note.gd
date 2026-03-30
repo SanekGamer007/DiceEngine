@@ -29,15 +29,37 @@ func _process(_delta: float) -> void:
 	var time_diff = time - Game.mus_time
 	var distance = time_diff * scroll_speed * Common.magic_scroll_speed_value
 	position = distance * (move_direction * -1)
+	
 	var head_pos = global_position
 	var tail_pos = head_pos - (move_direction * sustain_size)
 	var viewport_size = get_viewport_rect().size
 	
-	var top_y = min(head_pos.y, tail_pos.y)
-	var bottom_y = max(head_pos.y, tail_pos.y)
+	#var top_y = min(head_pos.y, tail_pos.y)
+	#var bottom_y = max(head_pos.y, tail_pos.y)
 	
-	if bottom_y < -viewport_size.y or top_y > viewport_size.y:
+	#if bottom_y < -viewport_size.y or top_y > viewport_size.y:
+	#	queue_free()
+	var min_pos = Vector2(min(head_pos.x, tail_pos.x), min(head_pos.y, tail_pos.y))
+	var max_pos = Vector2(max(head_pos.x, tail_pos.x), max(head_pos.y, tail_pos.y))
+	
+	var should_free = false
+	
+	if move_direction.x > 0:
+		if min_pos.x > viewport_size.x: 
+			should_free = true
+	elif move_direction.x < 0:
+		if max_pos.x < -viewport_size.x: 
+			should_free = true
+	if move_direction.y > 0:
+		if min_pos.y > viewport_size.y: 
+			should_free = true
+	elif move_direction.y < 0:
+		if max_pos.y < -viewport_size.y: 
+			should_free = true
+			
+	if should_free and Game.mus_time > (time + length + 1.0):
 		queue_free()
+
 
 func hold_hit() -> void:
 	$Sprite2D.visible = false

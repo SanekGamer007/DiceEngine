@@ -81,6 +81,7 @@ func press_button(idx: int) -> void:
 func _on_mouse_hitbox_mouse_entered(idx: int) -> void:
 	select_button(idx)
 
+
 func _on_mouse_hitbox_input(event: InputEvent, idx: int):
 	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
 		press_button(idx)

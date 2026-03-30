@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://b7x8tas6a2o7k"]
+
+[ext_resource type="PackedScene" uid="uid://bn245b4ifhtnq" path="res://objects/character_marker_2d/character_marker_2d.tscn" id="1_q8ec7"]
+[ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate-rewrite-main/animate_symbol.gd" id="2_3x2yw"]
+[ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate-rewrite-main/animate_atlas.gd" id="3_ssc4r"]
+[ext_resource type="Script" uid="uid://s4mrcnjetwud" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_frame.gd" id="4_c424c"]
+[ext_resource type="Script" uid="uid://nqbs7y41i566" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_atlas.gd" id="5_dqgst"]
+[ext_resource type="Texture2D" uid="uid://cn1my7ngkoo63" path="res://assets/stages/australia/images/water.png" id="6_vxtkq"]
+[ext_resource type="Texture2D" uid="uid://cycva5vym4uj6" path="res://assets/stages/australia/images/bg.png" id="7_c424c"]
+[ext_resource type="Texture2D" uid="uid://c4xi8prcjgg1r" path="res://assets/stages/australia/images/stage.png" id="8_dqgst"]
+[ext_resource type="Texture2D" uid="uid://ccplks28mk4kw" path="res://assets/stages/australia/images/fg.png" id="9_vxtkq"]
+[ext_resource type="Shader" uid="uid://b4r5wkt5aen8n" path="res://assets/shaders/temp.gdshader" id="11_vxtkq"]
+
+[sub_resource type="Resource" id="Resource_2jllf"]
+script = ExtResource("4_c424c")
+name = &"idle0000"
+region = Rect2i(0, 0, 431, 101)
+offset = Rect2i(-92, -421, 800, 512)
+
+[sub_resource type="Resource" id="Resource_exn1n"]
+script = ExtResource("4_c424c")
+name = &"idle0001"
+region = Rect2i(0, 101, 431, 101)
+offset = Rect2i(-92, -421, 800, 512)
+
+[sub_resource type="Resource" id="Resource_irr5q"]
+script = ExtResource("4_c424c")
+name = &"idle0002"
+region = Rect2i(0, 202, 431, 101)
+offset = Rect2i(-92, -421, 800, 512)
+
+[sub_resource type="Resource" id="Resource_qk71w"]
+script = ExtResource("4_c424c")
+name = &"idle0003"
+region = Rect2i(0, 303, 431, 101)
+offset = Rect2i(-92, -421, 800, 512)
+
+[sub_resource type="Resource" id="Resource_abogh"]
+script = ExtResource("4_c424c")
+name = &"idle0004"
+region = Rect2i(431, 0, 431, 101)
+offset = Rect2i(-92, -421, 800, 512)
+
+[sub_resource type="Resource" id="Resource_vvdv1"]
+script = ExtResource("4_c424c")
+name = &"idle0005"
+region = Rect2i(431, 101, 431, 101)
+offset = Rect2i(-92, -421, 800, 512)
+
+[sub_resource type="Resource" id="Resource_07xho"]
+script = ExtResource("4_c424c")
+name = &"idle0006"
+region = Rect2i(431, 202, 431, 101)
+offset = Rect2i(-92, -421, 800, 512)
+
+[sub_resource type="Resource" id="Resource_32xco"]
+script = ExtResource("5_dqgst")
+texture = ExtResource("6_vxtkq")
+sparrow_path = "res://assets/stages/australia/images/water.xml"
+framerate = 9.0
+frames = Array[ExtResource("4_c424c")]([SubResource("Resource_2jllf"), SubResource("Resource_exn1n"), SubResource("Resource_irr5q"), SubResource("Resource_qk71w"), SubResource("Resource_abogh"), SubResource("Resource_vvdv1"), SubResource("Resource_07xho")])
+symbols = PackedStringArray("idle")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2jllf"]
+shader = ExtResource("11_vxtkq")
+
+[node name="MainStage" type="Node2D" unique_id=1637277094]
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=925978398]
+offset_left = -969.0
+offset_top = -541.0
+offset_right = 977.0
+offset_bottom = 556.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+metadata/_edit_lock_ = true
+
+[node name="AnimateSymbol" type="Node2D" parent="." unique_id=531604434]
+texture_filter = 1
+position = Vector2(148, 303)
+scale = Vector2(4.031, 4.031)
+script = ExtResource("2_3x2yw")
+symbol = "idle"
+playing = true
+loop = true
+offset = Vector2(0, -200)
+atlases = Array[ExtResource("3_ssc4r")]([SubResource("Resource_32xco")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="Bg" type="Sprite2D" parent="." unique_id=765413546]
+texture_filter = 1
+position = Vector2(340, -6)
+scale = Vector2(4, 4)
+texture = ExtResource("7_c424c")
+
+[node name="Stage" type="Sprite2D" parent="." unique_id=1748689640]
+texture_filter = 1
+position = Vector2(201, 250)
+scale = Vector2(4, 4)
+texture = ExtResource("8_dqgst")
+
+[node name="Fg" type="Sprite2D" parent="." unique_id=871404195]
+texture_filter = 1
+position = Vector2(407, 302)
+scale = Vector2(4, 4)
+texture = ExtResource("9_vxtkq")
+
+[node name="Markers" type="Node2D" parent="." unique_id=79275904]
+
+[node name="ID0" parent="Markers" unique_id=460892831 instance=ExtResource("1_q8ec7")]
+position = Vector2(480, 292)
+
+[node name="ID1" parent="Markers" unique_id=1465821611 instance=ExtResource("1_q8ec7")]
+position = Vector2(-287, 292)
+flip_h = true
+
+[node name="GF" parent="Markers" unique_id=248662459 instance=ExtResource("1_q8ec7")]
+position = Vector2(0, 440)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=133509148]
+ignore_rotation = false
+zoom = Vector2(0.7, 0.7)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=10916396]
+layer = 9980
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=836724779]
+material = SubResource("ShaderMaterial_2jllf")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

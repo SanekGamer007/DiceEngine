@@ -32,6 +32,7 @@ var last_audio_pos: float = 0.0
 
 var tween: Tween
 var strings: Array[String]
+var transition_in_progress: bool = false
 
 
 func _ready() -> void:
@@ -56,20 +57,27 @@ func _process(delta: float) -> void:
 	var new_measure = floori(Game.current_beat / Game.numerator)
 	if new_measure != Game.current_measure:
 		Game.current_measure = new_measure
-	if Input.is_action_just_pressed("confirm"):
+
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_back"):
+		get_tree().quit()
+	if event.is_action_pressed("confirm") or \
+	(event is InputEventMouseButton and \
+		event.pressed and \
+		event.button_index == MOUSE_BUTTON_LEFT ):
+		if transition_in_progress:
+			return
 		if not Game.seen_intro:
 			skip_intro()
 		else:
-			set_process(false)
+			transition_in_progress = true
 			$TitleScreen/Start/Start.play("ENTER PRESSED")
 			$TitleScreen/Start/ConfirmSound.play()
 			white_flash()
 			await $TitleScreen/Start/ConfirmSound.finished
 			TransitionManager.change_scene_to_file(Registry.menus.get("main"), "fade", 1.0)
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("ui_back"):
-		get_tree().quit()
 
 func _on_beat(beat: int) -> void:
 	if Game.seen_intro:
@@ -78,7 +86,7 @@ func _on_beat(beat: int) -> void:
 		1:
 			var org_text: String = strings[0]
 			var text = org_text.split("--")[0]
-			richtextlabel.text += text 
+			richtextlabel.text += text
 		3:
 			var org_text: String = strings[0]
 			var text = org_text.split("--")[1]
@@ -130,6 +138,7 @@ func skip_intro() -> void:
 	Game.seen_intro = true
 	$Intro.visible = false
 	$TitleScreen.visible = true
+
 
 func white_flash() -> void:
 	if tween:

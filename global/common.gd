@@ -13,14 +13,6 @@ enum ARROW_DIR {
 	RIGHT,
 }
 
-enum DIFFICULTY {
-	EASY,
-	NORMAL,
-	HARD,
-	ERECT,
-	NIGHTMARE,
-}
-
 static var judge_ranks: Dictionary[String, Array] = {
 	# NAME: SCORE, TIME, ACCURACY AWARD
 	"SICK": [350, 0.037, 1.0],
@@ -37,14 +29,6 @@ static func id_to_input(dir: ARROW_DIR) -> String:
 
 static func input_to_id(dir: String) -> ARROW_DIR:
 	return ARROW_DIR.get(dir.to_upper())
-
-
-static func difficulty_to_string(diff: DIFFICULTY) -> String:
-	return DIFFICULTY.keys()[diff].to_lower()
-
-
-static func string_to_difficulty(diff: String) -> DIFFICULTY:
-	return DIFFICULTY.get(diff.to_upper())
 
 
 static func secs_to_rank(secs: float) -> String:

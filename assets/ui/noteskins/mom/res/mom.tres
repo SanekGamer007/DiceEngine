@@ -1,0 +1,30 @@
+[gd_resource type="Resource" script_class="NoteSkinResource" format=3 uid="uid://c1d5ynu6as3n5"]
+
+[ext_resource type="SpriteFrames" uid="uid://dklcaaihc2p0y" path="res://assets/ui/noteskins/mom/res/spriteframes/frames/left.tres" id="1_ksumb"]
+[ext_resource type="SpriteFrames" uid="uid://ywnhbkipcopt" path="res://assets/ui/noteskins/mom/res/spriteframes/frames/down.tres" id="2_vgjel"]
+[ext_resource type="SpriteFrames" uid="uid://c7dujr1fwq72v" path="res://assets/ui/noteskins/mom/res/spriteframes/frames/up.tres" id="3_gef3p"]
+[ext_resource type="SpriteFrames" uid="uid://dccewir0xiy2o" path="res://assets/ui/noteskins/mom/res/spriteframes/frames/right.tres" id="4_yw6a4"]
+[ext_resource type="Texture2D" uid="uid://dpi0afnvpvffl" path="res://assets/ui/noteskins/mom/left_note.png" id="5_ksumb"]
+[ext_resource type="Texture2D" uid="uid://c3p70jm1ldlma" path="res://assets/ui/noteskins/mom/down_note.png" id="6_vgjel"]
+[ext_resource type="Texture2D" uid="uid://cqsdiro7h4csm" path="res://assets/ui/noteskins/mom/up_note.png" id="7_gef3p"]
+[ext_resource type="Texture2D" uid="uid://cbo34qofwo4vj" path="res://assets/ui/noteskins/mom/right_note.png" id="8_yw6a4"]
+[ext_resource type="Script" uid="uid://dclikqljysges" path="res://internal/assets/ui/noteskins/base/res/noteskin.gd" id="9_64i2k"]
+[ext_resource type="SpriteFrames" uid="uid://bd8e8p2br2diu" path="res://assets/ui/noteskins/mom/res/spriteframes/splash/splash.tres" id="10_23kt1"]
+[ext_resource type="Texture2D" uid="uid://bfyomqqc808fr" path="res://assets/ui/noteskins/mom/left_holder_0.png" id="11_g6132"]
+[ext_resource type="Texture2D" uid="uid://d17n70vn37kcn" path="res://assets/ui/noteskins/mom/down_holder_0.png" id="12_x7msp"]
+[ext_resource type="Texture2D" uid="uid://ctbwit1f147ao" path="res://assets/ui/noteskins/mom/up_holder_0.png" id="13_nsm18"]
+[ext_resource type="Texture2D" uid="uid://dv2ah0rpv5wdo" path="res://assets/ui/noteskins/mom/right_holder_0.png" id="14_nqgoj"]
+[ext_resource type="Texture2D" uid="uid://d3jhf3ww4o041" path="res://assets/ui/noteskins/mom/left_holder_1.png" id="15_64i2k"]
+[ext_resource type="Texture2D" uid="uid://6l7tswmr00ua" path="res://assets/ui/noteskins/mom/down_holder_1.png" id="16_23kt1"]
+[ext_resource type="Texture2D" uid="uid://cp7ngjq6lqldk" path="res://assets/ui/noteskins/mom/up_holder_1.png" id="17_7827b"]
+[ext_resource type="Texture2D" uid="uid://322vxfxs8qjk" path="res://assets/ui/noteskins/mom/right_holder_1.png" id="18_tpfke"]
+
+[resource]
+script = ExtResource("9_64i2k")
+g_is_pixel = true
+note_frames = Array[SpriteFrames]([ExtResource("1_ksumb"), ExtResource("2_vgjel"), ExtResource("3_gef3p"), ExtResource("4_yw6a4")])
+note_skins = Array[Texture2D]([ExtResource("5_ksumb"), ExtResource("6_vgjel"), ExtResource("7_gef3p"), ExtResource("8_yw6a4")])
+sust_body = Array[Texture2D]([ExtResource("11_g6132"), ExtResource("12_x7msp"), ExtResource("13_nsm18"), ExtResource("14_nqgoj")])
+sust_end = Array[Texture2D]([ExtResource("15_64i2k"), ExtResource("16_23kt1"), ExtResource("17_7827b"), ExtResource("18_tpfke")])
+splsh_frames = ExtResource("10_23kt1")
+metadata/_custom_type_script = "uid://dclikqljysges"

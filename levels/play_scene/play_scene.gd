@@ -2,7 +2,7 @@ extends Node2D
 class_name PlayScene
 
 @export var song_name: String
-@export var difficulty: Common.DIFFICULTY = Common.DIFFICULTY.HARD
+@export var difficulty: String
 @export var note_skin: NoteSkinResource
 
 const STRUMLINE_PRELOAD: PackedScene = preload("res://objects/strum_line/strum_line.tscn")
@@ -57,9 +57,8 @@ func _ready() -> void:
 		push_error("Song not found.")
 		return
 	var song_all_info: Dictionary = Registry.songs.get(song_name)
-	var difficulty_string = Common.difficulty_to_string(difficulty)
 	
-	song_chart = song_all_info.get(difficulty_string, {})
+	song_chart = song_all_info.get(difficulty, {})
 	var chart: Dictionary
 	if FileAccess.file_exists(song_chart.get("chart", "")):
 		chart = load_chart_file(song_chart.get("chart"))
@@ -75,7 +74,7 @@ func _ready() -> void:
 		push_error("Chart file is invalid, chart section not found.")
 		return
 	
-	var diff_chart: Dictionary = all_diffs.get(difficulty_string, {})
+	var diff_chart: Dictionary = all_diffs.get(difficulty, {})
 	scroll_speed = diff_chart.get("scrollspeed", 0.0)
 	if not diff_chart:
 		push_error("Chart file is invalid, chart for selected difficulty wasn't found.")

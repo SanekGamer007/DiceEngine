@@ -76,10 +76,10 @@ func _process(_delta: float) -> void:
 		var note = current_notes[0]
 		if note:
 			if Game.mus_time > note.time + Common.judge_ranks["SHIT"][1]:
-				current_notes.remove_at(0)
 				if not note.was_pressed:
 					note.modulate.a = 0.3
 					owner_strumline.note_missed.emit(direction)
+				current_notes.remove_at(0)
 		else:
 			current_notes.remove_at(0)
 	if owner_strumline.bot_play:

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bl1fbqdhrlq8a"
+path="res://.godot/imported/Voices-id1.ogg-2ef9a16f5ca6a3c7d5f4e17bc0fa97cb.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/songs/Massive Nuclear Aggressors/song/Voices-id1.ogg"
+dest_files=["res://.godot/imported/Voices-id1.ogg-2ef9a16f5ca6a3c7d5f4e17bc0fa97cb.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

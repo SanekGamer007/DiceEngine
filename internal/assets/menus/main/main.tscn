@@ -724,6 +724,7 @@ libraries/ = SubResource("AnimationLibrary_ci0nv")
 [node name="AnimateSymbol" type="Node2D" parent="Buttons/StoryMode" unique_id=1355485726]
 script = ExtResource("3_qeu24")
 symbol = "storymode idle"
+frame = 4
 playing = true
 loop = true
 atlases = Array[ExtResource("4_edflj")]([SubResource("Resource_lh87t")])
@@ -750,7 +751,6 @@ libraries/ = SubResource("AnimationLibrary_hnxy5")
 [node name="Freeplay" type="Node2D" parent="Buttons/Freeplay" unique_id=2077310861]
 script = ExtResource("3_qeu24")
 symbol = "freeplay idle"
-frame = 5
 playing = true
 loop = true
 atlases = Array[ExtResource("4_edflj")]([SubResource("Resource_dher4")])
@@ -778,7 +778,7 @@ libraries/ = SubResource("AnimationLibrary_a0wyv")
 [node name="Options" type="Node2D" parent="Buttons/Options" unique_id=1398235758]
 script = ExtResource("3_qeu24")
 symbol = "options idle"
-frame = 7
+frame = 2
 playing = true
 loop = true
 atlases = Array[ExtResource("4_edflj")]([SubResource("Resource_7b28g")])
@@ -806,7 +806,7 @@ libraries/ = SubResource("AnimationLibrary_hy2ha")
 [node name="Credits" type="Node2D" parent="Buttons/Credits" unique_id=56454464]
 script = ExtResource("3_qeu24")
 symbol = "credits idle"
-frame = 4
+frame = 8
 playing = true
 loop = true
 atlases = Array[ExtResource("4_edflj")]([SubResource("Resource_qeu24")])

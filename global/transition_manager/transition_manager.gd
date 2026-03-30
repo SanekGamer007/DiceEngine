@@ -16,8 +16,8 @@ func show_transition(transition_name: String = "fade", duration: float = 1.0) ->
 
 func _show_transition(transition_name: String = "fade", duration: float = 1.0) -> void:
 	if current_transition:
-		push_warning("Only one transition can be started at a time")
-		return
+		push_warning("Only one transition can be started at a time, overwriting...")
+		current_transition.queue_free()
 	if not transitions.has(transition_name):
 		push_error("Transition not found, using fade by default...")
 		transition_name = "fade"
@@ -40,9 +40,8 @@ func _hide_transition(duration: float = 1.0) -> void:
 
 func change_scene_to_file(scene_path: String, transition_name: String = "fade", duration: float = 1.0) -> void:
 	if current_transition:
-		push_warning("Only one transition can be started at a time")
-		done.emit()
-		return
+		push_warning("Only one transition can be started at a time, overwriting...")
+		current_transition.queue_free()
 	await _show_transition(transition_name, duration / 2.0)
 	get_tree().change_scene_to_file(scene_path)
 	await get_tree().scene_changed
@@ -52,9 +51,8 @@ func change_scene_to_file(scene_path: String, transition_name: String = "fade", 
 
 func change_scene_to_packed(scene: PackedScene, transition_name: String = "fade", duration: float = 1.0) -> void:
 	if current_transition:
-		push_warning("Only one transition can be started at a time")
-		done.emit()
-		return
+		push_warning("Only one transition can be started at a time, overwriting...")
+		current_transition.queue_free()
 	await _show_transition(transition_name, duration / 2.0)
 	get_tree().change_scene_to_packed(scene)
 	await get_tree().scene_changed
@@ -63,9 +61,8 @@ func change_scene_to_packed(scene: PackedScene, transition_name: String = "fade"
 
 func change_scene_to_node(scene: Node, transition_name: String = "fade", duration: float = 1.0) -> void:
 	if current_transition:
-		push_warning("Only one transition can be started at a time")
-		done.emit()
-		return
+		push_warning("Only one transition can be started at a time, overwriting...")
+		current_transition.queue_free()
 	await _show_transition(transition_name, duration / 2.0)
 	get_tree().change_scene_to_node(scene)
 	await get_tree().scene_changed

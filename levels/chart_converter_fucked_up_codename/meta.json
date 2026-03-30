@@ -1,0 +1,20 @@
+{
+	"beatsPerMeasure": 4,
+	"opponentModeAllowed": true,
+	"coopAllowed": true,
+	"stepsPerBeat": 4,
+	"bpm": 190,
+	"difficulties": [
+		"normal"
+	],
+	"needsVoices": true,
+	"parsedColor": -1,
+	"displayName": "Massive Nuclear Aggressors",
+	"icon": "Icon",
+	"name": "Massive Nuclear Aggressors",
+	"color": "#FFFFFF",
+	"customValues": {
+		"deathscript": "gameoverscript",
+		"hudType": "mom"
+	}
+}

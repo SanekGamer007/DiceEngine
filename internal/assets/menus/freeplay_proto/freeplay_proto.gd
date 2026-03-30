@@ -29,8 +29,8 @@ func _on_item_list_diff_item_selected(index: int) -> void:
 func _on_button_pressed() -> void:
 	if not selected_song or not selected_diff:
 		return
-	print(selected_song, Common.string_to_difficulty(selected_diff))
+	print(selected_song, selected_diff)
 	var play_scene: PlayScene = play_packed.instantiate()
 	play_scene.song_name = selected_song
-	play_scene.difficulty = Common.string_to_difficulty(selected_diff)
+	play_scene.difficulty = selected_diff
 	TransitionManager.change_scene_to_node(play_scene, "fade", 1.0)
