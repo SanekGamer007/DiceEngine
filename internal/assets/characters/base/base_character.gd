@@ -31,7 +31,6 @@ var flip_v: bool = false:
 		flip_v = flip
 		if is_inside_tree():
 			_set_flip_v()
-var id: int = -1 ## if -1 its set automatically
 var can_loop: bool = true
 var note_direction: Common.ARROW_DIR
 var anim_map: Dictionary[String, String] # made on runtime
@@ -49,8 +48,8 @@ func _ready() -> void:
 			anim_map[anim] = anim
 		else:
 			push_warning("Required animation ", anim, " not found in the character ", name, ".")
-	flip_h = flip_h
-	flip_v = flip_v
+	_set_flip_h()
+	_set_flip_v()
 	Game.beat.connect(_on_game_beat)
 
 func _on_init_done() -> void:

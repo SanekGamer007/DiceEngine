@@ -19,7 +19,7 @@ static var judge_ranks: Dictionary[String, Array] = {
 	"GOOD": [200, 0.075, 0.75],
 	"BAD": [100, 0.115, 0.45],
 	"SHIT": [50, 0.180, 0.25],
-	"MISS": [0, 999, 0.0],
+	"MISS": [0, INF, 0.0],
 }
 
 

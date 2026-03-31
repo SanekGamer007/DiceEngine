@@ -14,10 +14,11 @@ var note_preload = preload("res://objects/note/note.tscn")
 @export var strums: Array[Strum]
 @export var character: Character :
 	set(c):
-		_disconnect_signals(c)
+		if character:
+			_disconnect_signals(character)
 		character = c
 		if is_inside_tree():
-			_connect_signals()
+			_connect_signals(c)
 @export var notes: Array[Dictionary]
 @export var id: int
 @export var bpm: int = 120
@@ -64,8 +65,6 @@ func _on_loading_complete() -> void:
 		strums.append(strum)
 		strum.owner_strumline = self
 		strum.note_skin = note_skin
-	if character:
-		_connect_signals()
 	set_process(true)
 	init_done.emit()
 
@@ -81,7 +80,7 @@ func _disconnect_signals(old_character: Character) -> void:
 	if init_done.is_connected(old_character._on_init_done):
 		init_done.disconnect(old_character._on_init_done)
 
-func _connect_signals() -> void:
+func _connect_signals(new_character: Character) -> void:
 	if not note_pressed.is_connected(character._on_note_pressed):
 		note_pressed.connect(character._on_note_pressed)
 	if not note_released.is_connected(character._on_note_released):

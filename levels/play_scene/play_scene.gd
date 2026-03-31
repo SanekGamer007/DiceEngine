@@ -108,12 +108,8 @@ func _ready() -> void:
 		for character: Character in Refs.characters:
 			if strumline.character:
 				continue
-			if character.id == strumline.id:
-				strumline.character = character
-				print("Line ", strumline.id, " Found ", character.id, " / ", character.get_index())
-				continue
 			if character.get_index() == strumline_idx:
-				print("Line ", strumline.id, " Found ", character.id, " / ", character.get_index())
+				print("Line ", strumline.id, " Found ", character.get_index())
 				strumline.character = character
 				continue
 		if not strumline.bot_play:
@@ -139,7 +135,6 @@ func _ready() -> void:
 
 
 func _process(delta: float) -> void:
-	Input.set_use_accumulated_input(false)
 	match state:
 		STATES.LOADING:
 			_handle_loading_state()
@@ -182,7 +177,10 @@ func _handle_playing_state(delta: float) -> void:
 			Game.mus_time += delta
 	else:
 		Game.mus_time += delta
-	if Game.mus_time >= notes[notes.size() - 1].t + 3:
+	if notes.is_empty():
+		if not player.playing:
+			set_state(STATES.ENDING)
+	if Game.mus_time >= notes[-1].t + 3:
 		set_state(STATES.ENDING)
 
 

@@ -1,4 +1,6 @@
 extends Control
+#The controller no longer works due to many reasons, but the newest one is
+#that i now use strings for difficulties instead of a enum.
 
 @export var song_name: String
 @export var notes: Array[Dictionary]

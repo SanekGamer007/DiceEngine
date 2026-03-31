@@ -9,13 +9,13 @@ class_name CharacterIcon
 		flip_h = b
 		if is_inside_tree():
 			$TextureRect.flip_h = b
-			$TextureRect.position.y = icon_position.y * (-1 if flip_v else 1)
+			$TextureRect.position.x = icon_position.x * (-1 if flip_h else 1)
 @export var flip_v: bool = false :
 	set(b):
 		flip_v = b
 		if is_inside_tree():
 			$TextureRect.flip_v = b
-			$TextureRect.position.x = icon_position.x * (-1 if flip_h else 1)
+			$TextureRect.position.y = icon_position.y * (-1 if flip_v else 1)
 @onready var icon_size: Vector2 = $TextureRect.size * $TextureRect.scale
 @onready var icon_position: Vector2 = $TextureRect.position
 

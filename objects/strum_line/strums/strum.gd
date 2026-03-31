@@ -67,7 +67,7 @@ func _input(event: InputEvent) -> void:
 				owner_strumline.note_missed.emit(direction)
 			return
 	if event.is_action_released(action_name):
-		if not current_notes.is_empty() or ANIM_STATES.IDLE:
+		if not current_notes.is_empty() or state == ANIM_STATES.IDLE:
 			owner_strumline.note_released.emit(direction)
 
 
@@ -92,6 +92,7 @@ func _process(_delta: float) -> void:
 					active_sustain.hold_hit()
 					state = ANIM_STATES.HOLD
 					owner_strumline.note_pressed.emit(direction, 1.0)
+					current_notes.remove_at(0)
 				else:
 					state = ANIM_STATES.PRESSED
 					current_notes.remove_at(0)
