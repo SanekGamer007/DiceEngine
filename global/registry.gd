@@ -32,6 +32,8 @@ var menus: Dictionary[String, String] = { }
 var music: Dictionary[String, String] = { }
 var sounds: Dictionary[String, String] = { }
 var transitions: Dictionary[String, String] = { }
+var found_mods: Dictionary[String, String]
+var enabled_mods: Dictionary[String, String]
 
 var _chart_diff_prefix_priority: Array[String] = [
 	"",
@@ -51,9 +53,11 @@ var menus_paths: Array[String] = ["res://internal/assets/menus/", "res://assets/
 var music_paths: Array[String] = ["res://internal/assets/music/", "res://assets/music/"]
 var sounds_paths: Array[String] = ["res://internal/assets/sounds/", "res://assets/sounds/"]
 var transitions_paths: Array[String] = ["res://internal/assets/ui/transitions/", "res://assets/ui/transitions/"]
-
+var mods_paths: Array[String] = ["user://mods/", OS.get_executable_path().get_base_dir() + "/mods/"]
 
 func _ready() -> void:
+	if OS.has_feature("editor"):
+		mods_paths.insert(0, "res://mods/")
 	Registry.re_init_database()
 
 
@@ -265,6 +269,8 @@ func find_transitions() -> Dictionary[String, String]:
 							break
 	return found_transitions
 
+func find_mods() -> Dictionary[String, String]:
+	return {}
 
 func _format_song(json_path: String, song_name: String) -> Dictionary[String, Dictionary]:
 	var formatted_song: Dictionary[String, Dictionary] = { }

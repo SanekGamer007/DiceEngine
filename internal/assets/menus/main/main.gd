@@ -46,6 +46,9 @@ func _input(event: InputEvent) -> void:
 
 func _process(delta: float) -> void:
 	$Camera2D.offset.y = lerp($Camera2D.offset.y, float(btn_selected) * 12, delta * 4)
+	if Input.is_key_pressed(KEY_TAB) and not transition_in_progress:
+		transition_in_progress = true
+		TransitionManager.change_scene_to_file(Registry.menus["mods_proto"])
 
 
 func select_button(idx: int) -> void:
