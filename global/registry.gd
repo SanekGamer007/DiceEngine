@@ -42,26 +42,41 @@ var _chart_diff_prefix_priority: Array[String] = [
 	"nightmare",
 ]
 
+const song_base_paths: Array[String] = ["res://assets/songs/"]
+const chars_base_paths: Array[String] = ["res://internal/assets/characters/", "res://assets/characters/"]
+const stage_base_paths: Array[String] = ["res://internal/assets/stages/", "res://assets/stages/"]
+const noteskins_base_paths: Array[String] = ["res://internal/assets/ui/noteskins/", "res://assets/ui/noteskins/"]
+const info_bars_base_paths: Array[String] = ["res://internal/assets/ui/info_bars/", "res://assets/ui/info_bars/"]
+const hp_bars_base_paths: Array[String] = ["res://internal/assets/ui/hp_bars/", "res://assets/ui/hp_bars/"]
+const menus_base_paths: Array[String] = ["res://internal/assets/menus/", "res://assets/menus/"]
+const music_base_paths: Array[String] = ["res://internal/assets/music/", "res://assets/music/"]
+const sounds_base_paths: Array[String] = ["res://internal/assets/sounds/", "res://assets/sounds/"]
+const transitions_base_paths: Array[String] = ["res://internal/assets/ui/transitions/", "res://assets/ui/transitions/"]
+const mods_base_paths: Array[String] = ["user://mods/"]
+
 # last entries override the first ones
-var song_paths: Array[String] = ["res://assets/songs/"]
-var chars_paths: Array[String] = ["res://internal/assets/characters/", "res://assets/characters/"]
-var stage_paths: Array[String] = ["res://internal/assets/stages/", "res://assets/stages/"]
-var noteskins_paths: Array[String] = ["res://internal/assets/ui/noteskins/", "res://assets/ui/noteskins/"]
-var info_bars_paths: Array[String] = ["res://internal/assets/ui/info_bars/", "res://assets/ui/info_bars/"]
-var hp_bars_paths: Array[String] = ["res://internal/assets/ui/hp_bars/", "res://assets/ui/hp_bars/"]
-var menus_paths: Array[String] = ["res://internal/assets/menus/", "res://assets/menus/"]
-var music_paths: Array[String] = ["res://internal/assets/music/", "res://assets/music/"]
-var sounds_paths: Array[String] = ["res://internal/assets/sounds/", "res://assets/sounds/"]
-var transitions_paths: Array[String] = ["res://internal/assets/ui/transitions/", "res://assets/ui/transitions/"]
-var mods_paths: Array[String] = ["user://mods/", OS.get_executable_path().get_base_dir() + "/mods/"]
+var song_paths: Array[String]
+var chars_paths: Array[String]
+var stage_paths: Array[String]
+var noteskins_paths: Array[String]
+var info_bars_paths: Array[String]
+var hp_bars_paths: Array[String]
+var menus_paths: Array[String]
+var music_paths: Array[String]
+var sounds_paths: Array[String]
+var transitions_paths: Array[String]
+var mods_paths: Array[String]
 
 func _ready() -> void:
+	mods_paths.append(OS.get_executable_path().get_base_dir() + "/mods/")
 	if OS.has_feature("editor"):
-		mods_paths.insert(0, "res://mods/")
+		mods_paths.append("res://mods/")
 	Registry.re_init_database()
 
 
 func re_init_database() -> void:
+	reset_paths()
+	
 	characters.clear()
 	stages.clear()
 	songs.clear()
@@ -70,6 +85,7 @@ func re_init_database() -> void:
 	music.clear()
 	sounds.clear()
 	transitions.clear()
+	found_mods.clear()
 
 	characters.assign(find_chars())
 	stages.assign(find_stages())
@@ -83,6 +99,19 @@ func re_init_database() -> void:
 	transitions.assign(find_transitions())
 	TransitionManager.find_transitions()
 
+
+func reset_paths() -> void:
+	song_paths = song_base_paths.duplicate()
+	chars_paths = chars_base_paths.duplicate()
+	stage_paths = stage_base_paths.duplicate()
+	noteskins_paths = noteskins_base_paths.duplicate()
+	info_bars_paths = info_bars_base_paths.duplicate()
+	hp_bars_paths = hp_bars_base_paths.duplicate()
+	menus_paths = menus_base_paths.duplicate()
+	music_paths = music_base_paths.duplicate()
+	sounds_paths = sounds_base_paths.duplicate()
+	transitions_paths = transitions_base_paths.duplicate()
+	mods_paths = mods_base_paths.duplicate()
 
 func find_chars() -> Dictionary[String, String]:
 	var found_characters: Dictionary[String, String] = { }
@@ -228,7 +257,7 @@ func find_music() -> Dictionary[String, String]:
 			continue
 		var files = DirAccess.get_files_at(path)
 		for file in files:
-			file = file.replace(".remap", "")
+			file = file.replace(".import", "")
 			if file.ends_with(".ogg"):
 				found_music[file.replace(".ogg", "")] = path + file
 				continue
@@ -242,7 +271,7 @@ func find_sounds() -> Dictionary[String, String]:
 			continue
 		var files = DirAccess.get_files_at(path)
 		for file in files:
-			file = file.replace(".remap", "")
+			file = file.replace(".import", "")
 			if file.ends_with(".ogg"):
 				found_sounds[file.replace(".ogg", "")] = path + file
 				continue
