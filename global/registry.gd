@@ -3,17 +3,12 @@ extends Node
 # DO NOT ADD STUFF MANUALLY, they are populated on boot.
 # These are placeholders.
 
-# Name: Path
 var stages: Dictionary[String, String] = { }
-
 var characters: Dictionary[String, String] = {
 	"bf": "res://internal/assets/characters/bf/bf.tscn",
 	"dad": "res://internal/assets/characters/dad/dad.tscn",
 }
-
 var note_skins: Dictionary[String, String] = { }
-
-# SongName, {Diff, {Path, Array[Inst, Voices]}}
 var songs: Dictionary[String, Dictionary] = {
 	"thorns": {
 		"erect": {
@@ -23,11 +18,8 @@ var songs: Dictionary[String, Dictionary] = {
 		},
 	},
 }
-
 var hp_bars: Dictionary[String, String] = { }
-
 var info_bars: Dictionary[String, String] = { }
-
 var menus: Dictionary[String, String] = { }
 var music: Dictionary[String, String] = { }
 var sounds: Dictionary[String, String] = { }
@@ -67,16 +59,20 @@ var sounds_paths: Array[String]
 var transitions_paths: Array[String]
 var mods_paths: Array[String]
 
+enum SEARCH_TYPE {
+	FOLDER,
+	FILE,
+}
+
 func _ready() -> void:
 	mods_paths.append(OS.get_executable_path().get_base_dir() + "/mods/")
 	if OS.has_feature("editor"):
 		mods_paths.append("res://mods/")
+	reset_paths()
 	Registry.re_init_database()
 
 
 func re_init_database() -> void:
-	reset_paths()
-	
 	characters.clear()
 	stages.clear()
 	songs.clear()
@@ -87,16 +83,18 @@ func re_init_database() -> void:
 	transitions.clear()
 	found_mods.clear()
 
-	characters.assign(find_chars())
-	stages.assign(find_stages())
+	characters.assign(_find_asset(chars_paths, [".tscn", ".scn"], SEARCH_TYPE.FOLDER))
+	stages.assign(_find_asset(stage_paths, [".tscn", ".scn"], SEARCH_TYPE.FOLDER))
 	songs.assign(find_songs())
-	note_skins.assign(find_note_skins())
-	hp_bars.assign(find_hp_bars())
-	info_bars.assign(find_info_bars())
-	menus.assign(find_menus())
-	music.assign(find_music())
-	sounds.assign(find_sounds())
-	transitions.assign(find_transitions())
+	note_skins.assign(_find_asset(noteskins_paths, [".tres", ".res"], SEARCH_TYPE.FOLDER))
+	hp_bars.assign(_find_asset(hp_bars_paths, [".tscn", ".scn"], SEARCH_TYPE.FOLDER))
+	info_bars.assign(_find_asset(info_bars_paths, [".tscn", ".scn"], SEARCH_TYPE.FOLDER))
+	menus.assign(_find_asset(menus_paths, [".tscn", ".scn"], SEARCH_TYPE.FOLDER))
+	music.assign(_find_asset(music_paths, [".ogg", ".mp3", ".wav"], SEARCH_TYPE.FILE))
+	sounds.assign(_find_asset(sounds_paths, [".ogg", ".mp3", ".wav"], SEARCH_TYPE.FILE))
+	transitions.assign(_find_asset(transitions_paths, [".tscn", ".scn"], SEARCH_TYPE.FOLDER))
+	found_mods.assign(find_mods())
+
 	TransitionManager.find_transitions()
 
 
@@ -112,45 +110,6 @@ func reset_paths() -> void:
 	sounds_paths = sounds_base_paths.duplicate()
 	transitions_paths = transitions_base_paths.duplicate()
 	mods_paths = mods_base_paths.duplicate()
-
-func find_chars() -> Dictionary[String, String]:
-	var found_characters: Dictionary[String, String] = { }
-	for path in chars_paths:
-		if not DirAccess.dir_exists_absolute(path):
-			continue
-		var folders = DirAccess.get_directories_at(path)
-		for char_name in folders:
-			var full_path = path + char_name + "/" + char_name
-			if ResourceLoader.exists(full_path + ".tscn"):
-				found_characters[char_name] = full_path + ".tscn"
-			else:
-				var all_files = DirAccess.get_files_at(path + char_name)
-				for file in all_files:
-					file = file.replace(".remap", "")
-					if file.ends_with(".tscn"):
-						found_characters[char_name] = (path + char_name + "/" + file)
-						break
-	return found_characters
-
-
-func find_stages() -> Dictionary[String, String]:
-	var found_stages: Dictionary[String, String] = { }
-	for path in stage_paths:
-		if not DirAccess.dir_exists_absolute(path):
-			continue
-		var folders = DirAccess.get_directories_at(path)
-		for stage_name in folders:
-			var full_path = path + stage_name + "/" + stage_name
-			if ResourceLoader.exists(full_path + ".tscn"):
-				found_stages[stage_name] = full_path + ".tscn"
-			else:
-				var all_files = DirAccess.get_files_at(path + stage_name)
-				for file in all_files:
-					file = file.replace(".remap", "")
-					if file.ends_with(".tscn"):
-						found_stages[stage_name] = (path + stage_name + "/" + file)
-						break
-	return found_stages
 
 
 func find_songs() -> Dictionary[String, Dictionary]:
@@ -169,137 +128,45 @@ func find_songs() -> Dictionary[String, Dictionary]:
 	return found_songs
 
 
-func find_note_skins() -> Dictionary[String, String]:
-	var found_note_skins: Dictionary[String, String] = { }
-	for path in noteskins_paths:
-		if not DirAccess.dir_exists_absolute(path):
-			continue
-		var folders = DirAccess.get_directories_at(path)
-		for skin_folder in folders:
-			var full_path = path + skin_folder + "/res/"
-			if DirAccess.dir_exists_absolute(full_path):
-				var files = DirAccess.get_files_at(full_path)
-				for file in files:
-					file = file.replace(".remap", "")
-					if file.ends_with(".tres"):
-						found_note_skins[skin_folder] = full_path + file
-						break
-	return found_note_skins
-
-
-func find_hp_bars() -> Dictionary[String, String]:
-	var found_hp_bars: Dictionary[String, String] = { }
-	for path in hp_bars_paths:
-		if not DirAccess.dir_exists_absolute(path):
-			continue
-		var folders = DirAccess.get_directories_at(path)
-		for hp_bar_folder in folders:
-			var full_path = path + hp_bar_folder
-			if ResourceLoader.exists(full_path + "/" + hp_bar_folder + ".tscn"):
-				found_hp_bars[hp_bar_folder] = full_path + "/" + hp_bar_folder + ".tscn"
-			else:
-				if DirAccess.dir_exists_absolute(full_path):
-					var files = DirAccess.get_files_at(full_path)
-					for file in files:
-						file = file.replace(".remap", "")
-						if file.ends_with(".tscn"):
-							found_hp_bars[hp_bar_folder] = full_path + "/" + file
+func _find_asset(paths: Array[String], extensions: Array[String], type: SEARCH_TYPE) -> Dictionary[String, String]:
+	var found_assets: Dictionary[String, String]
+	match type:
+		SEARCH_TYPE.FOLDER:
+			for path in paths:
+				if not DirAccess.dir_exists_absolute(path):
+					continue
+				var folders = DirAccess.get_directories_at(path)
+				for folder in folders:
+					var full_path = path + folder
+					if not DirAccess.dir_exists_absolute(full_path):
+						continue
+					for extension in extensions:
+						if ResourceLoader.exists(full_path + "/" + folder + extension):
+							found_assets[folder] = full_path + "/" + folder + extension
 							break
-	return found_hp_bars
+						else:
+							var files = DirAccess.get_files_at(full_path)
+							for file in files:
+								file = file.trim_suffix(".remap").trim_suffix(".import")
+								if file.ends_with(extension):
+									found_assets[folder] = full_path + "/" + file
+		SEARCH_TYPE.FILE:
+			for path in paths:
+				if not DirAccess.dir_exists_absolute(path):
+					continue
+				var files = DirAccess.get_files_at(path)
+				for file in files: 
+					file = file.trim_suffix(".remap").trim_suffix(".import")
+					for extension in extensions:
+						if file.ends_with(extension):
+							found_assets[file.replace(extension, "")] = path + file
+							continue
+	return found_assets
 
-
-func find_info_bars() -> Dictionary[String, String]:
-	var found_info_bars: Dictionary[String, String] = { }
-	for path in info_bars_paths:
-		if not DirAccess.dir_exists_absolute(path):
-			continue
-		var folders = DirAccess.get_directories_at(path)
-		for info_bar_folder in folders:
-			var full_path = path + info_bar_folder
-			if ResourceLoader.exists(full_path + "/" + info_bar_folder + ".tscn"):
-				found_info_bars[info_bar_folder] = full_path + "/" + info_bar_folder + ".tscn"
-			else:
-				if DirAccess.dir_exists_absolute(full_path):
-					var files = DirAccess.get_files_at(full_path)
-					for file in files:
-						file = file.replace(".remap", "")
-						if file.ends_with(".tscn"):
-							found_info_bars[info_bar_folder] = full_path + "/" + file
-							break
-	return found_info_bars
-
-
-func find_menus() -> Dictionary[String, String]:
-	var found_menus: Dictionary[String, String] = { }
-	for path in menus_paths:
-		if not DirAccess.dir_exists_absolute(path):
-			continue
-		var folders = DirAccess.get_directories_at(path)
-		for menu_folder in folders:
-			var full_path = path + menu_folder
-			if ResourceLoader.exists(full_path + "/" + menu_folder + ".tscn"):
-				found_menus[menu_folder] = full_path + "/" + menu_folder + ".tscn"
-			else:
-				if DirAccess.dir_exists_absolute(full_path):
-					var files = DirAccess.get_files_at(full_path)
-					for file in files:
-						file = file.replace(".remap", "")
-						if file.ends_with(".tscn"):
-							found_menus[menu_folder] = full_path + "/" + file
-							break
-	return found_menus
-
-
-func find_music() -> Dictionary[String, String]:
-	var found_music: Dictionary[String, String] = { }
-	for path in music_paths:
-		if not DirAccess.dir_exists_absolute(path):
-			continue
-		var files = DirAccess.get_files_at(path)
-		for file in files:
-			file = file.replace(".import", "")
-			if file.ends_with(".ogg"):
-				found_music[file.replace(".ogg", "")] = path + file
-				continue
-	return found_music
-
-
-func find_sounds() -> Dictionary[String, String]:
-	var found_sounds: Dictionary[String, String] = { }
-	for path in sounds_paths:
-		if not DirAccess.dir_exists_absolute(path):
-			continue
-		var files = DirAccess.get_files_at(path)
-		for file in files:
-			file = file.replace(".import", "")
-			if file.ends_with(".ogg"):
-				found_sounds[file.replace(".ogg", "")] = path + file
-				continue
-	return found_sounds
-
-
-func find_transitions() -> Dictionary[String, String]:
-	var found_transitions: Dictionary[String, String] = { }
-	for path in transitions_paths:
-		if not DirAccess.dir_exists_absolute(path):
-			continue
-		var folders = DirAccess.get_directories_at(path)
-		for transition_folder in folders:
-			var full_path = path + transition_folder
-			if ResourceLoader.exists(full_path + "/" + transition_folder + ".tscn"):
-				found_transitions[transition_folder] = full_path + "/" + transition_folder + ".tscn"
-			else:
-				if DirAccess.dir_exists_absolute(full_path):
-					var files = DirAccess.get_files_at(full_path)
-					for file in files:
-						file = file.replace(".remap", "")
-						if file.ends_with(".tscn"):
-							found_transitions[transition_folder] = full_path + "/" + file
-							break
-	return found_transitions
 
 func find_mods() -> Dictionary[String, String]:
-	return {}
+	return { }
+
 
 func _format_song(json_path: String, song_name: String) -> Dictionary[String, Dictionary]:
 	var formatted_song: Dictionary[String, Dictionary] = { }
