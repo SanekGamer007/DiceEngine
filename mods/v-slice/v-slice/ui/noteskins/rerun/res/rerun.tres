@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="NoteSkinResource" format=3 uid="uid://bfd5050rqp276"]
+
+[ext_resource type="SpriteFrames" uid="uid://otdcg7ssxnty" path="res://mods/v-slice/v-slice/ui/noteskins/rerun/res/spriteframes/frames/left.tres" id="1_w8b40"]
+[ext_resource type="SpriteFrames" uid="uid://bd8aiigmdgusc" path="res://mods/v-slice/v-slice/ui/noteskins/rerun/res/spriteframes/frames/down.tres" id="2_gcmsh"]
+[ext_resource type="SpriteFrames" uid="uid://blfu7h5rxy276" path="res://mods/v-slice/v-slice/ui/noteskins/rerun/res/spriteframes/frames/up.tres" id="3_7c7rv"]
+[ext_resource type="SpriteFrames" uid="uid://bylyd6q0rtjp2" path="res://mods/v-slice/v-slice/ui/noteskins/rerun/res/spriteframes/frames/right.tres" id="4_ayaio"]
+[ext_resource type="Texture2D" uid="uid://dr5hxkpgmy36m" path="res://mods/v-slice/v-slice/ui/noteskins/rerun/left_note.png" id="5_3gq1f"]
+[ext_resource type="Texture2D" uid="uid://lbu22pgs6c24" path="res://mods/v-slice/v-slice/ui/noteskins/rerun/down_note.png" id="6_u8cnc"]
+[ext_resource type="Texture2D" uid="uid://kv57ptgibp74" path="res://mods/v-slice/v-slice/ui/noteskins/rerun/up_note.png" id="7_bo88w"]
+[ext_resource type="Texture2D" uid="uid://bcgvneqwu3f4x" path="res://mods/v-slice/v-slice/ui/noteskins/rerun/right_note.png" id="8_xu1gr"]
+[ext_resource type="Script" uid="uid://dclikqljysges" path="res://internal/assets/ui/noteskins/base/noteskin.gd" id="9_ba73j"]
+[ext_resource type="SpriteFrames" uid="uid://debx0n0hpuk2j" path="res://mods/v-slice/v-slice/ui/noteskins/rerun/res/spriteframes/splash/splash.tres" id="10_r05gx"]
+[ext_resource type="Texture2D" uid="uid://bxlxcljft1j5j" path="res://mods/v-slice/v-slice/ui/noteskins/rerun/holder_1.png" id="11_0cqe5"]
+[ext_resource type="Texture2D" uid="uid://dtk6mtv53fpxe" path="res://mods/v-slice/v-slice/ui/noteskins/rerun/holder_0.png" id="12_r6br1"]
+
+[resource]
+script = ExtResource("9_ba73j")
+g_separation = 135
+note_frames = Array[SpriteFrames]([ExtResource("1_w8b40"), ExtResource("2_gcmsh"), ExtResource("3_7c7rv"), ExtResource("4_ayaio")])
+note_skins = Array[Texture2D]([ExtResource("5_3gq1f"), ExtResource("6_u8cnc"), ExtResource("7_bo88w"), ExtResource("8_xu1gr")])
+sust_body = Array[Texture2D]([ExtResource("11_0cqe5"), ExtResource("11_0cqe5"), ExtResource("11_0cqe5"), ExtResource("11_0cqe5")])
+sust_end = Array[Texture2D]([ExtResource("12_r6br1"), ExtResource("12_r6br1"), ExtResource("12_r6br1"), ExtResource("12_r6br1")])
+splsh_frames = ExtResource("10_r05gx")
+metadata/_custom_type_script = "uid://dclikqljysges"

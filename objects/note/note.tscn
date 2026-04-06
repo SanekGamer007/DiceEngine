@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://b7i3bp08dj4gv"]
 
 [ext_resource type="Script" uid="uid://bw6rpepxn1316" path="res://objects/note/note.gd" id="1_bqua6"]
-[ext_resource type="Texture2D" uid="uid://cfwrsu66fnk82" path="res://internal/assets/ui/noteskins/normal/left_note.png" id="2_e3vqp"]
-[ext_resource type="Texture2D" uid="uid://00bsht6bw1rh" path="res://internal/assets/ui/noteskins/normal/left_holder_1.png" id="3_e3vqp"]
-[ext_resource type="Texture2D" uid="uid://dv50l6hofgchd" path="res://internal/assets/ui/noteskins/normal/left_holder_0.png" id="4_ot5tf"]
+[ext_resource type="Texture2D" uid="uid://cfwrsu66fnk82" path="res://internal/assets/ui/noteskins/normal/images/left_note.png" id="2_e3vqp"]
+[ext_resource type="Texture2D" uid="uid://00bsht6bw1rh" path="res://internal/assets/ui/noteskins/normal/images/left_holder_1.png" id="3_e3vqp"]
+[ext_resource type="Texture2D" uid="uid://dv50l6hofgchd" path="res://internal/assets/ui/noteskins/normal/images/left_holder_0.png" id="4_ot5tf"]
 
 [node name="Note" type="Node2D" unique_id=763534833]
 script = ExtResource("1_bqua6")

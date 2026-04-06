@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://dhkd50mpkitxa"]
 
 [ext_resource type="Script" uid="uid://b8mnjrqk8rugm" path="res://objects/strum_line/strums/strum.gd" id="1_pv4ev"]
-[ext_resource type="SpriteFrames" uid="uid://bet8wlntgt0ni" path="res://internal/assets/ui/noteskins/normal/res/spriteframes/frames/left.tres" id="2_pv4ev"]
-[ext_resource type="SpriteFrames" uid="uid://dk7qnhqu3wrtj" path="res://internal/assets/ui/noteskins/normal/res/spriteframes/splash/splash.tres" id="3_a4tlu"]
+[ext_resource type="SpriteFrames" uid="uid://bet8wlntgt0ni" path="res://internal/assets/ui/noteskins/normal/spriteframes/frames/left.tres" id="2_pv4ev"]
+[ext_resource type="SpriteFrames" uid="uid://dk7qnhqu3wrtj" path="res://internal/assets/ui/noteskins/normal/spriteframes/splash/splash.tres" id="3_a4tlu"]
 
 [node name="Strum" type="Control" unique_id=1263375101]
 layout_mode = 3

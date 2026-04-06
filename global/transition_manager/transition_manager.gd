@@ -4,7 +4,10 @@ var transitions: Dictionary[String, PackedScene]
 var current_transition: Transition
 signal done
 
-func find_transitions() -> void:
+func _ready() -> void:
+	Registry.database_rebuilt.connect(_on_database_rebuilt)
+
+func _on_database_rebuilt() -> void:
 	transitions.clear()
 	for transition_name in Registry.transitions:
 		var transition = load(Registry.transitions[transition_name])

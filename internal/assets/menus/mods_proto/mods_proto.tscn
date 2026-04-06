@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bcd8twktxn2yx"]
 
 [ext_resource type="Texture2D" uid="uid://buallmrfar3g4" path="res://internal/assets/shared/images/menus/menuBG.png" id="1_aqhrp"]
+[ext_resource type="Script" uid="uid://crokfmjkejn5y" path="res://internal/assets/menus/mods_proto/mods_proto.gd" id="1_f3upj"]
 [ext_resource type="FontFile" uid="uid://bif3opoyxypl3" path="res://fonts/Inconsolata-Regular.ttf" id="2_svvq1"]
 [ext_resource type="Script" uid="uid://c4mtaac5xjxue" path="res://internal/assets/menus/mods_proto/button.gd" id="3_fr2v0"]
 
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_f3upj")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=262899802]
 layout_mode = 1
@@ -104,4 +106,5 @@ offset_bottom = 215.0
 text = "GO BACK TO MENU"
 script = ExtResource("3_fr2v0")
 
+[connection signal="pressed" from="VBoxContainer/HBoxContainer3/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

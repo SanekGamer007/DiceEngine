@@ -3,7 +3,7 @@ class_name Common
 const magic_scroll_speed_value := 600.0
 const engine_name := "Dice Engine"
 const engine_major := "0"
-const engine_minor := "4"
+const engine_minor := "5"
 const engine_hotfix := "0"
 
 enum ARROW_DIR {
@@ -11,6 +11,12 @@ enum ARROW_DIR {
 	DOWN,
 	UP,
 	RIGHT,
+}
+
+enum VERSION_TYPE {
+	LOWER,
+	MATCH,
+	HIGHER
 }
 
 static var judge_ranks: Dictionary[String, Array] = {
@@ -56,3 +62,13 @@ static func rank_to_accr(rank: String) -> float:
 
 static func get_version() -> String:
 	return engine_major + "." + engine_minor + "." + engine_hotfix
+
+static func validate_version(version: String) -> VERSION_TYPE:
+	var version_array: Array = Array(version.split(".")).map(func(s): return s.to_int())
+	var our_version: Array = Array(get_version().split(".")).map(func(s): return s.to_int())
+	
+	if our_version < version_array:
+		return VERSION_TYPE.LOWER
+	elif our_version == version_array:
+		return VERSION_TYPE.MATCH
+	return VERSION_TYPE.HIGHER

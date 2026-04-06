@@ -8,7 +8,7 @@ var characters: Dictionary[String, String] = {
 	"bf": "res://internal/assets/characters/bf/bf.tscn",
 	"dad": "res://internal/assets/characters/dad/dad.tscn",
 }
-var note_skins: Dictionary[String, String] = { }
+var noteskins: Dictionary[String, String] = { }
 var songs: Dictionary[String, Dictionary] = {
 	"thorns": {
 		"erect": {
@@ -24,8 +24,6 @@ var menus: Dictionary[String, String] = { }
 var music: Dictionary[String, String] = { }
 var sounds: Dictionary[String, String] = { }
 var transitions: Dictionary[String, String] = { }
-var found_mods: Dictionary[String, String]
-var enabled_mods: Dictionary[String, String]
 
 var _chart_diff_prefix_priority: Array[String] = [
 	"",
@@ -34,22 +32,21 @@ var _chart_diff_prefix_priority: Array[String] = [
 	"nightmare",
 ]
 
-const song_base_paths: Array[String] = ["res://assets/songs/"]
-const chars_base_paths: Array[String] = ["res://internal/assets/characters/", "res://assets/characters/"]
-const stage_base_paths: Array[String] = ["res://internal/assets/stages/", "res://assets/stages/"]
-const noteskins_base_paths: Array[String] = ["res://internal/assets/ui/noteskins/", "res://assets/ui/noteskins/"]
-const info_bars_base_paths: Array[String] = ["res://internal/assets/ui/info_bars/", "res://assets/ui/info_bars/"]
-const hp_bars_base_paths: Array[String] = ["res://internal/assets/ui/hp_bars/", "res://assets/ui/hp_bars/"]
-const menus_base_paths: Array[String] = ["res://internal/assets/menus/", "res://assets/menus/"]
-const music_base_paths: Array[String] = ["res://internal/assets/music/", "res://assets/music/"]
-const sounds_base_paths: Array[String] = ["res://internal/assets/sounds/", "res://assets/sounds/"]
-const transitions_base_paths: Array[String] = ["res://internal/assets/ui/transitions/", "res://assets/ui/transitions/"]
-const mods_base_paths: Array[String] = ["user://mods/"]
+const song_base_path: String = "songs/"
+const chars_base_path: String = "characters/"
+const stage_base_path: String = "stages/"
+const noteskins_base_path: String = "ui/noteskins/"
+const info_bars_base_path: String = "ui/info_bars/"
+const hp_bars_base_path: String = "ui/hp_bars/"
+const menus_base_path: String = "menus/"
+const music_base_path: String = "music/"
+const sounds_base_path: String = "sounds/"
+const transitions_base_path: String = "ui/transitions/"
 
 # last entries override the first ones
-var song_paths: Array[String]
-var chars_paths: Array[String]
-var stage_paths: Array[String]
+var songs_paths: Array[String]
+var characters_paths: Array[String]
+var stages_paths: Array[String]
 var noteskins_paths: Array[String]
 var info_bars_paths: Array[String]
 var hp_bars_paths: Array[String]
@@ -57,69 +54,47 @@ var menus_paths: Array[String]
 var music_paths: Array[String]
 var sounds_paths: Array[String]
 var transitions_paths: Array[String]
-var mods_paths: Array[String]
 
 enum SEARCH_TYPE {
 	FOLDER,
 	FILE,
 }
 
-func _ready() -> void:
-	mods_paths.append(OS.get_executable_path().get_base_dir() + "/mods/")
-	if OS.has_feature("editor"):
-		mods_paths.append("res://mods/")
-	reset_paths()
-	Registry.re_init_database()
+signal database_rebuilt
 
 
-func re_init_database() -> void:
+func rebuild_database() -> void:
 	characters.clear()
 	stages.clear()
 	songs.clear()
-	note_skins.clear()
+	noteskins.clear()
 	menus.clear()
 	music.clear()
 	sounds.clear()
 	transitions.clear()
-	found_mods.clear()
 
-	characters.assign(_find_asset(chars_paths, [".tscn", ".scn"], SEARCH_TYPE.FOLDER))
-	stages.assign(_find_asset(stage_paths, [".tscn", ".scn"], SEARCH_TYPE.FOLDER))
-	songs.assign(find_songs())
-	note_skins.assign(_find_asset(noteskins_paths, [".tres", ".res"], SEARCH_TYPE.FOLDER))
+	characters.assign(_find_asset(characters_paths, [".tscn", ".scn"], SEARCH_TYPE.FOLDER))
+	stages.assign(_find_asset(stages_paths, [".tscn", ".scn"], SEARCH_TYPE.FOLDER))
+	songs.assign(_find_songs())
+	noteskins.assign(_find_asset(noteskins_paths, [".tres", ".res"], SEARCH_TYPE.FOLDER))
 	hp_bars.assign(_find_asset(hp_bars_paths, [".tscn", ".scn"], SEARCH_TYPE.FOLDER))
 	info_bars.assign(_find_asset(info_bars_paths, [".tscn", ".scn"], SEARCH_TYPE.FOLDER))
 	menus.assign(_find_asset(menus_paths, [".tscn", ".scn"], SEARCH_TYPE.FOLDER))
 	music.assign(_find_asset(music_paths, [".ogg", ".mp3", ".wav"], SEARCH_TYPE.FILE))
 	sounds.assign(_find_asset(sounds_paths, [".ogg", ".mp3", ".wav"], SEARCH_TYPE.FILE))
 	transitions.assign(_find_asset(transitions_paths, [".tscn", ".scn"], SEARCH_TYPE.FOLDER))
-	found_mods.assign(find_mods())
 
-	TransitionManager.find_transitions()
-
-
-func reset_paths() -> void:
-	song_paths = song_base_paths.duplicate()
-	chars_paths = chars_base_paths.duplicate()
-	stage_paths = stage_base_paths.duplicate()
-	noteskins_paths = noteskins_base_paths.duplicate()
-	info_bars_paths = info_bars_base_paths.duplicate()
-	hp_bars_paths = hp_bars_base_paths.duplicate()
-	menus_paths = menus_base_paths.duplicate()
-	music_paths = music_base_paths.duplicate()
-	sounds_paths = sounds_base_paths.duplicate()
-	transitions_paths = transitions_base_paths.duplicate()
-	mods_paths = mods_base_paths.duplicate()
+	database_rebuilt.emit()
 
 
-func find_songs() -> Dictionary[String, Dictionary]:
+func _find_songs() -> Dictionary[String, Dictionary]:
 	var found_songs: Dictionary[String, Dictionary] = { }
-	for path in song_paths:
+	for path in songs_paths:
 		if not DirAccess.dir_exists_absolute(path):
 			continue
 		var folders = DirAccess.get_directories_at(path)
 		for song_name in folders:
-			var pre_path = path + song_name + "/" + song_name
+			var pre_path = path.path_join(song_name).path_join(song_name)
 			for prefix in _chart_diff_prefix_priority:
 				var full_prefix: String = "_" + prefix if prefix else ""
 				var full_path: String = pre_path + full_prefix + ".json"
@@ -137,26 +112,24 @@ func _find_asset(paths: Array[String], extensions: Array[String], type: SEARCH_T
 					continue
 				var folders = DirAccess.get_directories_at(path)
 				for folder in folders:
-					var full_path = path + folder
+					var full_path = path.path_join(folder)
 					if not DirAccess.dir_exists_absolute(full_path):
 						continue
 					for extension in extensions:
-						if ResourceLoader.exists(full_path + "/" + folder + extension):
-							found_assets[folder] = full_path + "/" + folder + extension
+						if ResourceLoader.exists(full_path.path_join(folder + extension)):
+							found_assets[folder] = full_path.path_join(folder + extension)
 							break
 						else:
-							var files = DirAccess.get_files_at(full_path)
+							var files = ResourceLoader.list_directory(full_path)
 							for file in files:
-								file = file.trim_suffix(".remap").trim_suffix(".import")
 								if file.ends_with(extension):
-									found_assets[folder] = full_path + "/" + file
+									found_assets[folder] = full_path.path_join(file)
 		SEARCH_TYPE.FILE:
 			for path in paths:
 				if not DirAccess.dir_exists_absolute(path):
 					continue
-				var files = DirAccess.get_files_at(path)
-				for file in files: 
-					file = file.trim_suffix(".remap").trim_suffix(".import")
+				var files = ResourceLoader.list_directory(path)
+				for file in files:
 					for extension in extensions:
 						if file.ends_with(extension):
 							found_assets[file.replace(extension, "")] = path + file
@@ -164,14 +137,27 @@ func _find_asset(paths: Array[String], extensions: Array[String], type: SEARCH_T
 	return found_assets
 
 
-func find_mods() -> Dictionary[String, String]:
-	return { }
+func _add_paths(paths: Dictionary[String, String]) -> void:
+	for key in paths:
+		var property_name: String = key + "_paths"
+		if property_name in self:
+			var property = get(property_name)
+			if property is Array and not property.has(paths[key]):
+				property.append(paths[key])
+
+
+func _remove_paths(paths: Dictionary[String, String]) -> void:
+	for key in paths:
+		var property_name: String = key + "_paths"
+		if property_name in self:
+			var property = get(property_name)
+			if property is Array:
+				property.erase(paths[key])
 
 
 func _format_song(json_path: String, song_name: String) -> Dictionary[String, Dictionary]:
 	var formatted_song: Dictionary[String, Dictionary] = { }
-	var file = FileAccess.open(json_path, FileAccess.READ)
-	var chart_file = file.get_as_text()
+	var chart_file = FileAccess.get_file_as_string(json_path)
 	var chart: Dictionary = JSON.parse_string(chart_file)
 	var chart_charts: Dictionary = chart.get("chart", { })
 	var chart_diffs: Array[String]
@@ -188,9 +174,9 @@ func _format_song(json_path: String, song_name: String) -> Dictionary[String, Di
 func _get_music(song_name: String) -> Dictionary:
 	var found_music: Dictionary = { }
 	var inst: String
-	var voices: Array
+	var voices: Array[String]
 	var music_path: String
-	for path in song_paths:
+	for path in songs_paths:
 		if DirAccess.dir_exists_absolute(path + song_name + "/song"):
 			music_path = path + song_name + "/song"
 	if music_path == "":

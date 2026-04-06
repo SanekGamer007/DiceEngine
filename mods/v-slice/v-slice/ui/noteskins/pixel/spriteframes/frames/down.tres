@@ -1,0 +1,51 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://dmb34ujf8oxx8"]
+
+[ext_resource type="Texture2D" uid="uid://cdymfsv7soky8" path="res://mods/v-slice/v-slice/ui/noteskins/pixel/images/down_normal.png" id="1_5dob0"]
+[ext_resource type="Texture2D" uid="uid://do6fyidqqfme" path="res://mods/v-slice/v-slice/ui/noteskins/pixel/images/down_nothin_press_0.png" id="2_1ak20"]
+[ext_resource type="Texture2D" uid="uid://chi4x7my40snr" path="res://mods/v-slice/v-slice/ui/noteskins/pixel/images/down_nothin_press_1.png" id="3_iii0n"]
+[ext_resource type="Texture2D" uid="uid://cp76c38b37e0r" path="res://mods/v-slice/v-slice/ui/noteskins/pixel/images/down_press_0.png" id="4_vffst"]
+[ext_resource type="Texture2D" uid="uid://bgoc55su2n7b3" path="res://mods/v-slice/v-slice/ui/noteskins/pixel/images/down_press_1.png" id="5_xbe7h"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_5dob0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_1ak20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_iii0n")
+}],
+"loop": false,
+"name": &"nothin",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vffst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xbe7h")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 24.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_vffst")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xbe7h")
+}],
+"loop": true,
+"name": &"pressed_hold",
+"speed": 12.0
+}]

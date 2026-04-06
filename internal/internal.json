@@ -1,0 +1,11 @@
+{
+	"id": "internal",
+	"name": "Internal Mod",
+	"pck": ["assets"],
+	"icon": "",
+	"type": 0,
+	"required": [],
+	"optional": [],
+	"version": "0.5.0",
+	"version_type": 2,
+}

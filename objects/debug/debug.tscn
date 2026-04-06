@@ -2,6 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://c7e8ittf82kg1" path="res://fonts/Quantico-Regular.ttf" id="1_cq1br"]
 [ext_resource type="Script" uid="uid://b2usbi0dyekoi" path="res://objects/debug/debug.gd" id="2_r4ag3"]
+[ext_resource type="Script" uid="uid://bmikcjnvr3pvx" path="res://objects/debug/info.gd" id="3_r4ag3"]
 
 [node name="Debug" type="CanvasLayer" unique_id=1874241488]
 layer = 9999
@@ -10,7 +11,7 @@ layer = 9999
 offset_left = 8.0
 offset_top = 4.0
 offset_right = 116.0
-offset_bottom = 58.0
+offset_bottom = 28.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_separation = -3
 theme_override_constants/outline_size = 8
@@ -19,17 +20,40 @@ theme_override_fonts/bold_font = ExtResource("1_cq1br")
 theme_override_font_sizes/normal_font_size = 12
 theme_override_font_sizes/bold_font_size = 16
 bbcode_enabled = true
-text = "[b]%s v%s[/b]
-  FPS:  %d
-  Memory:  %.2f
-  Video Memory:  %.2f"
+text = "[b]%s v%s[/b]"
 fit_content = true
 autowrap_mode = 0
 shortcut_keys_enabled = false
 script = ExtResource("2_r4ag3")
 
-[node name="Update" type="Timer" parent="RichTextLabel" unique_id=5722962]
+[node name="Info" type="RichTextLabel" parent="." unique_id=1083212174]
+anchors_preset = -1
+anchor_left = 0.01
+anchor_right = 0.01
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 134.0
+offset_bottom = 88.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = -3
+theme_override_constants/outline_size = 8
+theme_override_fonts/normal_font = ExtResource("1_cq1br")
+theme_override_fonts/bold_font = ExtResource("1_cq1br")
+theme_override_font_sizes/normal_font_size = 12
+theme_override_font_sizes/bold_font_size = 16
+bbcode_enabled = true
+text = "[b] [/b]
+FPS: {fps}
+Memory: {ram}MB
+Video Memory: {vram}MB
+Loaded Mods: {mods}"
+fit_content = true
+autowrap_mode = 0
+shortcut_keys_enabled = false
+script = ExtResource("3_r4ag3")
+
+[node name="Update" type="Timer" parent="Info" unique_id=5722962]
 wait_time = 0.5
 autostart = true
 
-[connection signal="timeout" from="RichTextLabel/Update" to="RichTextLabel" method="_on_update_timeout"]
+[connection signal="timeout" from="Info/Update" to="Info" method="_on_update_timeout"]

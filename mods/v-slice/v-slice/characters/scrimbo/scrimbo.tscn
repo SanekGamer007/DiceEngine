@@ -1,0 +1,363 @@
+[gd_scene format=3 uid="uid://cngad4xottxfk"]
+
+[ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_31npw"]
+[ext_resource type="Script" uid="uid://dgsqh3vt2acox" path="res://mods/v-slice/v-slice/characters/scrimbo/scrimbo.gd" id="2_4occ2"]
+[ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate-rewrite-main/animate_symbol.gd" id="2_g48vp"]
+[ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate-rewrite-main/animate_atlas.gd" id="3_4occ2"]
+[ext_resource type="Script" uid="uid://s4mrcnjetwud" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_frame.gd" id="4_lhidr"]
+[ext_resource type="Script" uid="uid://nqbs7y41i566" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_atlas.gd" id="5_4mrie"]
+[ext_resource type="Texture2D" uid="uid://cgf400gq0jusi" path="res://mods/v-slice/v-slice/characters/scrimbo/images/Scrimbo.png" id="6_31npw"]
+
+[sub_resource type="Animation" id="Animation_ycsed"]
+resource_local_to_scene = true
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["down"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_5skpr"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_eadeh"]
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_oix3l"]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["left"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_sg560"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_ka0gq"]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["right"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_1qd5o"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_31x6i"]
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["up"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_30w0m"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_g48vp"]
+resource_local_to_scene = true
+_data = {
+&"down": SubResource("Animation_ycsed"),
+&"down_miss": SubResource("Animation_5skpr"),
+&"idle": SubResource("Animation_eadeh"),
+&"left": SubResource("Animation_oix3l"),
+&"left_miss": SubResource("Animation_sg560"),
+&"right": SubResource("Animation_ka0gq"),
+&"right_miss": SubResource("Animation_1qd5o"),
+&"up": SubResource("Animation_31x6i"),
+&"up_miss": SubResource("Animation_30w0m")
+}
+
+[sub_resource type="Resource" id="Resource_4occ2"]
+script = ExtResource("4_lhidr")
+name = &"down0000"
+region = Rect2i(2030, 1500, 569, 691)
+offset = Rect2i(-270, -419, 1280, 1204)
+
+[sub_resource type="Resource" id="Resource_lhidr"]
+script = ExtResource("4_lhidr")
+name = &"idle0000"
+region = Rect2i(1376, 1, 525, 787)
+offset = Rect2i(-277, -320, 1280, 1204)
+
+[sub_resource type="Resource" id="Resource_4mrie"]
+script = ExtResource("4_lhidr")
+name = &"left0000"
+region = Rect2i(1, 1926, 525, 775)
+offset = Rect2i(-123, -341, 1280, 1204)
+
+[sub_resource type="Resource" id="Resource_ujmix"]
+script = ExtResource("4_lhidr")
+name = &"right0000"
+region = Rect2i(1, 1098, 763, 823)
+offset = Rect2i(-421, -288, 1280, 1204)
+
+[sub_resource type="Resource" id="Resource_ycsed"]
+script = ExtResource("4_lhidr")
+name = &"up0000"
+region = Rect2i(1, 1, 683, 1092)
+offset = Rect2i(-264, -18, 1280, 1204)
+
+[sub_resource type="Resource" id="Resource_rwxa2"]
+script = ExtResource("4_lhidr")
+name = &"down0001"
+region = Rect2i(2030, 785, 569, 710)
+offset = Rect2i(-263, -401, 1280, 1204)
+
+[sub_resource type="Resource" id="Resource_5q5aw"]
+script = ExtResource("4_lhidr")
+name = &"idle0001"
+region = Rect2i(2604, 778, 503, 764)
+offset = Rect2i(-305, -343, 1280, 1204)
+
+[sub_resource type="Resource" id="Resource_iw1ln"]
+script = ExtResource("4_lhidr")
+name = &"left0001"
+region = Rect2i(769, 1897, 519, 788)
+offset = Rect2i(-138, -328, 1280, 1204)
+
+[sub_resource type="Resource" id="Resource_iycme"]
+script = ExtResource("4_lhidr")
+name = &"right0001"
+region = Rect2i(769, 1080, 726, 812)
+offset = Rect2i(-419, -299, 1280, 1204)
+
+[sub_resource type="Resource" id="Resource_bnnmc"]
+script = ExtResource("4_lhidr")
+name = &"up0001"
+region = Rect2i(689, 1, 682, 1074)
+offset = Rect2i(-267, -36, 1280, 1204)
+
+[sub_resource type="Resource" id="Resource_fdhf6"]
+script = ExtResource("4_lhidr")
+name = &"idle0002"
+region = Rect2i(2430, 1, 505, 772)
+offset = Rect2i(-299, -335, 1280, 1204)
+
+[sub_resource type="Resource" id="Resource_6m55k"]
+script = ExtResource("4_lhidr")
+name = &"idle0003"
+region = Rect2i(1906, 1, 519, 779)
+offset = Rect2i(-283, -328, 1280, 1204)
+
+[sub_resource type="Resource" id="Resource_2oyws"]
+script = ExtResource("4_lhidr")
+name = &"idle0004"
+region = Rect2i(1500, 793, 525, 787)
+offset = Rect2i(-277, -320, 1280, 1204)
+
+[sub_resource type="Resource" id="Resource_o3mcf"]
+script = ExtResource("4_lhidr")
+name = &"idle0005"
+region = Rect2i(1500, 1585, 525, 787)
+offset = Rect2i(-277, -320, 1280, 1204)
+
+[sub_resource type="Resource" id="Resource_yaso4"]
+script = ExtResource("5_4mrie")
+texture = ExtResource("6_31npw")
+sparrow_path = "res://assets/characters/scrimbo/images/scrimbo.xml"
+framerate = 10.0
+frames = Array[ExtResource("4_lhidr")]([SubResource("Resource_4occ2"), SubResource("Resource_lhidr"), SubResource("Resource_4mrie"), SubResource("Resource_ujmix"), SubResource("Resource_ycsed"), SubResource("Resource_rwxa2"), SubResource("Resource_5q5aw"), SubResource("Resource_iw1ln"), SubResource("Resource_iycme"), SubResource("Resource_bnnmc"), SubResource("Resource_fdhf6"), SubResource("Resource_6m55k"), SubResource("Resource_2oyws"), SubResource("Resource_o3mcf")])
+symbols = PackedStringArray("down", "idle", "left", "right", "up")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[node name="Scrimbo" unique_id=151574328 instance=ExtResource("1_31npw")]
+script = ExtResource("2_4occ2")
+export_anim_map = Dictionary[String, String]({
+"down": "down",
+"down_miss": "down",
+"idle": "idle",
+"left": "left",
+"left_miss": "left",
+"right": "right",
+"right_miss": "right",
+"up": "up",
+"up_miss": "up"
+})
+hp_color = Color(0.18039216, 0.0627451, 0.80784315, 1)
+
+[node name="AnimationPlayer" parent="." index="0" unique_id=1164546831]
+libraries/ = SubResource("AnimationLibrary_g48vp")
+
+[node name="Sprites" parent="." index="1" unique_id=765921245]
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D" parent="Sprites" index="0" unique_id=63994655]
+visible = false
+animation = &"idle"
+
+[node name="AnimateSymbol" type="Node2D" parent="Sprites" index="1" unique_id=1845945590]
+script = ExtResource("2_g48vp")
+symbol = "idle"
+frame = 5
+atlases = Array[ExtResource("3_4occ2")]([SubResource("Resource_yaso4")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="ReferenceRect" parent="." index="3" unique_id=1762810265]
+offset_left = -181.0
+offset_top = -141.0
+offset_right = 84.0
+offset_bottom = 253.0

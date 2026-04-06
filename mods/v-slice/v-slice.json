@@ -1,0 +1,11 @@
+{
+	"id": "v-slice",
+	"name": "V-Slice Example Modpack",
+	"pck": ["v-slice"],
+	"icon": "icon.png",
+	"type": 1,
+	"required": ["internal"],
+	"optional": [],
+	"version": "0.5.0",
+	"version_type": 2
+}

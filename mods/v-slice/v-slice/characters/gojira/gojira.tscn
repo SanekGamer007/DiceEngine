@@ -1,0 +1,633 @@
+[gd_scene format=3 uid="uid://bvshfyv0542s2"]
+
+[ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_qs2kx"]
+[ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate-rewrite-main/animate_symbol.gd" id="2_xqwkj"]
+[ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate-rewrite-main/animate_atlas.gd" id="3_p0ahp"]
+[ext_resource type="Script" uid="uid://s4mrcnjetwud" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_frame.gd" id="4_bq0ku"]
+[ext_resource type="Script" uid="uid://nqbs7y41i566" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_atlas.gd" id="5_7svmy"]
+[ext_resource type="Texture2D" uid="uid://bnad636yuopvv" path="res://mods/v-slice/v-slice/characters/gojira/images/Gojira.png" id="6_dmq32"]
+
+[sub_resource type="Animation" id="Animation_xqwkj"]
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["HDzilla down"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_p0ahp"]
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["HDzilla downmiss"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_bq0ku"]
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["HDzilla idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_7svmy"]
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["HDzilla left"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_dmq32"]
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["HDzilla leftmiss"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_o2xu8"]
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["HDzilla right"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_gqnhh"]
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["HDzilla rightmiss"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_8wlj1"]
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["HDzilla up"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_n174w"]
+length = 0.6666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.16666667, 0.33333334, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["HDzilla upmiss"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_mbcy5"]
+_data = {
+&"HDzilla down": SubResource("Animation_xqwkj"),
+&"HDzilla downmiss": SubResource("Animation_p0ahp"),
+&"HDzilla idle": SubResource("Animation_bq0ku"),
+&"HDzilla left": SubResource("Animation_7svmy"),
+&"HDzilla leftmiss": SubResource("Animation_dmq32"),
+&"HDzilla right": SubResource("Animation_o2xu8"),
+&"HDzilla rightmiss": SubResource("Animation_gqnhh"),
+&"HDzilla up": SubResource("Animation_8wlj1"),
+&"HDzilla upmiss": SubResource("Animation_n174w")
+}
+
+[sub_resource type="Resource" id="Resource_dajjl"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla leftmiss0000"
+region = Rect2i(0, 468, 144, 111)
+offset = Rect2i(-72, -19, 200, 100)
+
+[sub_resource type="Resource" id="Resource_vsb4s"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla upmiss0000"
+region = Rect2i(194, 0, 98, 120)
+offset = Rect2i(-94, -9, 200, 100)
+
+[sub_resource type="Resource" id="Resource_s3nof"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla down0000"
+region = Rect2i(608, 422, 92, 101)
+offset = Rect2i(-92, -28, 200, 100)
+
+[sub_resource type="Resource" id="Resource_4mfe2"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla right0000"
+region = Rect2i(391, 224, 89, 112)
+offset = Rect2i(-103, -16, 200, 100)
+
+[sub_resource type="Resource" id="Resource_e71rl"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla rightmiss0000"
+region = Rect2i(276, 356, 89, 112)
+offset = Rect2i(-103, -16, 200, 100)
+
+[sub_resource type="Resource" id="Resource_p0l8l"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla up0000"
+region = Rect2i(96, 0, 98, 120)
+offset = Rect2i(-94, -9, 200, 100)
+
+[sub_resource type="Resource" id="Resource_al0x0"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla downmiss0000"
+region = Rect2i(700, 0, 92, 101)
+offset = Rect2i(-92, -28, 200, 100)
+
+[sub_resource type="Resource" id="Resource_80so7"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla left0000"
+region = Rect2i(94, 243, 140, 112)
+offset = Rect2i(-72, -19, 200, 100)
+
+[sub_resource type="Resource" id="Resource_w084g"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla idle0000"
+region = Rect2i(100, 579, 105, 107)
+offset = Rect2i(-95, -22, 200, 100)
+
+[sub_resource type="Resource" id="Resource_xb7ef"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla left0001"
+region = Rect2i(234, 243, 135, 112)
+offset = Rect2i(-77, -19, 200, 100)
+
+[sub_resource type="Resource" id="Resource_e1ort"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla up0001"
+region = Rect2i(0, 125, 98, 118)
+offset = Rect2i(-94, -11, 200, 100)
+
+[sub_resource type="Resource" id="Resource_38jp4"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla rightmiss0001"
+region = Rect2i(144, 468, 93, 111)
+offset = Rect2i(-102, -17, 200, 100)
+
+[sub_resource type="Resource" id="Resource_auju6"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla downmiss0001"
+region = Rect2i(547, 579, 99, 103)
+offset = Rect2i(-92, -26, 200, 100)
+
+[sub_resource type="Resource" id="Resource_wemfs"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla right0001"
+region = Rect2i(0, 356, 87, 112)
+offset = Rect2i(-102, -16, 200, 100)
+
+[sub_resource type="Resource" id="Resource_ual6s"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla upmiss0001"
+region = Rect2i(0, 0, 96, 125)
+offset = Rect2i(-94, -4, 200, 100)
+
+[sub_resource type="Resource" id="Resource_b2gy6"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla down0001"
+region = Rect2i(608, 319, 92, 103)
+offset = Rect2i(-93, -26, 200, 100)
+
+[sub_resource type="Resource" id="Resource_mrgb5"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla idle0001"
+region = Rect2i(0, 579, 100, 109)
+offset = Rect2i(-96, -20, 200, 100)
+
+[sub_resource type="Resource" id="Resource_jc78j"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla leftmiss0001"
+region = Rect2i(334, 468, 131, 110)
+offset = Rect2i(-64, -20, 200, 100)
+
+[sub_resource type="Resource" id="Resource_cbrq7"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla rightmiss0002"
+region = Rect2i(465, 468, 91, 110)
+offset = Rect2i(-102, -16, 200, 100)
+
+[sub_resource type="Resource" id="Resource_u8728"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla upmiss0002"
+region = Rect2i(292, 115, 99, 115)
+offset = Rect2i(-95, -14, 200, 100)
+
+[sub_resource type="Resource" id="Resource_w1rwa"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla downmiss0002"
+region = Rect2i(326, 579, 95, 106)
+offset = Rect2i(-94, -24, 200, 100)
+
+[sub_resource type="Resource" id="Resource_hqrg1"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla leftmiss0002"
+region = Rect2i(98, 125, 118, 116)
+offset = Rect2i(-82, -14, 200, 100)
+
+[sub_resource type="Resource" id="Resource_q5jbi"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla down0002"
+region = Rect2i(608, 215, 91, 104)
+offset = Rect2i(-95, -25, 200, 100)
+
+[sub_resource type="Resource" id="Resource_0rlha"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla right0002"
+region = Rect2i(87, 356, 86, 112)
+offset = Rect2i(-100, -16, 200, 100)
+
+[sub_resource type="Resource" id="Resource_mjkld"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla up0002"
+region = Rect2i(292, 0, 99, 115)
+offset = Rect2i(-95, -14, 200, 100)
+
+[sub_resource type="Resource" id="Resource_c420l"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla left0002"
+region = Rect2i(391, 0, 130, 112)
+offset = Rect2i(-82, -19, 200, 100)
+
+[sub_resource type="Resource" id="Resource_upv1d"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla idle0002"
+region = Rect2i(237, 468, 97, 110)
+offset = Rect2i(-97, -19, 200, 100)
+
+[sub_resource type="Resource" id="Resource_16lff"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla down0003"
+region = Rect2i(608, 110, 92, 105)
+offset = Rect2i(-95, -24, 200, 100)
+
+[sub_resource type="Resource" id="Resource_2qtv6"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla leftmiss0003"
+region = Rect2i(205, 579, 121, 107)
+offset = Rect2i(-84, -19, 200, 100)
+
+[sub_resource type="Resource" id="Resource_svmmm"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla right0003"
+region = Rect2i(521, 0, 87, 111)
+offset = Rect2i(-98, -17, 200, 100)
+
+[sub_resource type="Resource" id="Resource_50jxh"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla upmiss0003"
+region = Rect2i(173, 356, 103, 112)
+offset = Rect2i(-87, -17, 200, 100)
+
+[sub_resource type="Resource" id="Resource_aid80"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla up0003"
+region = Rect2i(0, 243, 94, 113)
+offset = Rect2i(-97, -16, 200, 100)
+
+[sub_resource type="Resource" id="Resource_3bv6q"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla left0003"
+region = Rect2i(391, 112, 128, 112)
+offset = Rect2i(-84, -19, 200, 100)
+
+[sub_resource type="Resource" id="Resource_sclns"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla rightmiss0003"
+region = Rect2i(608, 0, 92, 110)
+offset = Rect2i(-96, -18, 200, 100)
+
+[sub_resource type="Resource" id="Resource_2733m"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla idle0003"
+region = Rect2i(365, 356, 95, 111)
+offset = Rect2i(-98, -18, 200, 100)
+
+[sub_resource type="Resource" id="Resource_no0bg"]
+script = ExtResource("4_bq0ku")
+name = &"HDzilla downmiss0003"
+region = Rect2i(421, 579, 126, 104)
+offset = Rect2i(-76, -24, 200, 100)
+
+[sub_resource type="Resource" id="Resource_2hu8c"]
+script = ExtResource("5_7svmy")
+texture = ExtResource("6_dmq32")
+sparrow_path = "res://assets/characters/gojira/images/Gojira.xml"
+framerate = 6.0
+frames = Array[ExtResource("4_bq0ku")]([SubResource("Resource_dajjl"), SubResource("Resource_vsb4s"), SubResource("Resource_s3nof"), SubResource("Resource_4mfe2"), SubResource("Resource_e71rl"), SubResource("Resource_p0l8l"), SubResource("Resource_al0x0"), SubResource("Resource_80so7"), SubResource("Resource_w084g"), SubResource("Resource_xb7ef"), SubResource("Resource_e1ort"), SubResource("Resource_38jp4"), SubResource("Resource_auju6"), SubResource("Resource_wemfs"), SubResource("Resource_ual6s"), SubResource("Resource_b2gy6"), SubResource("Resource_mrgb5"), SubResource("Resource_jc78j"), SubResource("Resource_cbrq7"), SubResource("Resource_u8728"), SubResource("Resource_w1rwa"), SubResource("Resource_hqrg1"), SubResource("Resource_q5jbi"), SubResource("Resource_0rlha"), SubResource("Resource_mjkld"), SubResource("Resource_c420l"), SubResource("Resource_upv1d"), SubResource("Resource_16lff"), SubResource("Resource_2qtv6"), SubResource("Resource_svmmm"), SubResource("Resource_50jxh"), SubResource("Resource_aid80"), SubResource("Resource_3bv6q"), SubResource("Resource_sclns"), SubResource("Resource_2733m"), SubResource("Resource_no0bg")])
+symbols = PackedStringArray("HDzilla down", "HDzilla downmiss", "HDzilla idle", "HDzilla left", "HDzilla leftmiss", "HDzilla right", "HDzilla rightmiss", "HDzilla up", "HDzilla upmiss")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[node name="Gojira" unique_id=151574328 instance=ExtResource("1_qs2kx")]
+export_anim_map = Dictionary[String, String]({
+"down": "HDzilla down",
+"down_miss": "HDzilla downmiss",
+"idle": "HDzilla idle",
+"left": "HDzilla right",
+"left_miss": "HDzilla rightmiss",
+"right": "HDzilla left",
+"right_miss": "HDzilla leftmiss",
+"up": "HDzilla up",
+"up_miss": "HDzilla upmiss"
+})
+
+[node name="AnimationPlayer" parent="." index="0" unique_id=1164546831]
+libraries/ = SubResource("AnimationLibrary_mbcy5")
+
+[node name="AnimatedSprite2D" parent="Sprites" parent_id_path=PackedInt32Array(765921245) index="0" unique_id=63994655]
+visible = false
+
+[node name="AnimateSymbol" type="Node2D" parent="Sprites" parent_id_path=PackedInt32Array(765921245) index="1" unique_id=1546257355]
+texture_filter = 1
+scale = Vector2(4, 4)
+script = ExtResource("2_xqwkj")
+symbol = "HDzilla idle"
+frame = 3
+playing = true
+atlases = Array[ExtResource("3_p0ahp")]([SubResource("Resource_2hu8c")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="ReferenceRect" parent="." index="3" unique_id=1762810265]
+offset_left = -32.0
+offset_top = -130.0
+offset_right = 214.0
+offset_bottom = 157.0

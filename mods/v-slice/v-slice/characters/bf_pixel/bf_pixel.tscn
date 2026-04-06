@@ -1,0 +1,1100 @@
+[gd_scene format=3 uid="uid://cqyyp5d7eoj21"]
+
+[ext_resource type="PackedScene" uid="uid://cwidido8h7iqc" path="res://internal/assets/characters/base/base_character.tscn" id="1_5ddw2"]
+[ext_resource type="PackedScene" uid="uid://bd843x4obomx0" path="res://mods/v-slice/v-slice/characters/bf_pixel/icon/bf_pixel_icon.tscn" id="2_d7kg8"]
+[ext_resource type="Script" uid="uid://c5ju3u657fyae" path="res://addons/gdanimate-rewrite-main/animate_symbol.gd" id="4_ysjka"]
+[ext_resource type="Script" uid="uid://dy4vnmv4435ty" path="res://addons/gdanimate-rewrite-main/animate_atlas.gd" id="5_awr8h"]
+[ext_resource type="Script" uid="uid://s4mrcnjetwud" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_frame.gd" id="6_wi183"]
+[ext_resource type="Script" uid="uid://nqbs7y41i566" path="res://addons/gdanimate-rewrite-main/sparrow/sparrow_atlas.gd" id="7_xxllg"]
+[ext_resource type="Texture2D" uid="uid://cp8pcqm5ho326" path="res://mods/v-slice/v-slice/characters/bf_pixel/images/bfPixel.png" id="8_g27f8"]
+
+[sub_resource type="Animation" id="Animation_ysjka"]
+length = 0.5833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["BF DOWN MISS instance 1"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_awr8h"]
+length = 0.5833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["BF DOWN NOTE instance 1"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_wi183"]
+length = 0.5833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["BF IDLE instance 1"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_xxllg"]
+length = 0.5833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["BF LEFT MISS instance 1"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_g27f8"]
+length = 0.5833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["BF LEFT NOTE instance 1"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_wqn6o"]
+length = 0.5833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["BF RIGHT MISS instance 1"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_w0inj"]
+length = 0.5833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["BF RIGHT NOTE instance 1"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_x1tsi"]
+length = 0.5833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["BF UP MISS instance 1"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_gqioc"]
+length = 0.5833333
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites/AnimateSymbol:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.041666668, 0.083333336, 0.125, 0.16666667, 0.20833333, 0.25, 0.29166666, 0.33333334, 0.375, 0.41666666, 0.45833334, 0.5, 0.5416667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites/AnimateSymbol:symbol")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["BF UP NOTE instance 1"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprites/AnimateSymbol:atlas_index")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ner34"]
+_data = {
+&"BF DOWN MISS instance 1": SubResource("Animation_ysjka"),
+&"BF DOWN NOTE instance 1": SubResource("Animation_awr8h"),
+&"BF IDLE instance 1": SubResource("Animation_wi183"),
+&"BF LEFT MISS instance 1": SubResource("Animation_xxllg"),
+&"BF LEFT NOTE instance 1": SubResource("Animation_g27f8"),
+&"BF RIGHT MISS instance 1": SubResource("Animation_wqn6o"),
+&"BF RIGHT NOTE instance 1": SubResource("Animation_w0inj"),
+&"BF UP MISS instance 1": SubResource("Animation_x1tsi"),
+&"BF UP NOTE instance 1": SubResource("Animation_gqioc")
+}
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wqn6o"]
+animations = [{
+"frames": [],
+"loop": false,
+"name": &"down",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"down_miss",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"idle",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"left",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"left_miss",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"right",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"right_miss",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"up",
+"speed": 24.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"up_miss",
+"speed": 24.0
+}]
+
+[sub_resource type="Resource" id="Resource_w0inj"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT MISS instance 10000"
+region = Rect2i(249, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_x1tsi"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT NOTE instance 10000"
+region = Rect2i(415, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_gqioc"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT NOTE instance 10000"
+region = Rect2i(249, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_ner34"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT MISS instance 10000"
+region = Rect2i(415, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_hqmip"]
+script = ExtResource("6_wi183")
+name = &"BF UP MISS instance 10000"
+region = Rect2i(83, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_6ftdk"]
+script = ExtResource("6_wi183")
+name = &"BF IDLE instance 10000"
+region = Rect2i(332, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_mbve3"]
+script = ExtResource("6_wi183")
+name = &"BF UP NOTE instance 10000"
+region = Rect2i(83, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_nqdtf"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN NOTE instance 10000"
+region = Rect2i(166, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_gbkrt"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN MISS instance 10000"
+region = Rect2i(166, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_rjuw0"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN MISS instance 10001"
+region = Rect2i(0, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_14bdh"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT NOTE instance 10001"
+region = Rect2i(249, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_yq253"]
+script = ExtResource("6_wi183")
+name = &"BF IDLE instance 10001"
+region = Rect2i(332, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_5y3ac"]
+script = ExtResource("6_wi183")
+name = &"BF UP NOTE instance 10001"
+region = Rect2i(83, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_8swxl"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT MISS instance 10001"
+region = Rect2i(83, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_lbnys"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN NOTE instance 10001"
+region = Rect2i(166, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_18scl"]
+script = ExtResource("6_wi183")
+name = &"BF UP MISS instance 10001"
+region = Rect2i(415, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_ih8ja"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT NOTE instance 10001"
+region = Rect2i(415, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_05d4u"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT MISS instance 10001"
+region = Rect2i(249, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_xgrov"]
+script = ExtResource("6_wi183")
+name = &"BF IDLE instance 10002"
+region = Rect2i(415, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_n6e7r"]
+script = ExtResource("6_wi183")
+name = &"BF UP MISS instance 10002"
+region = Rect2i(415, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_kfeoy"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT NOTE instance 10002"
+region = Rect2i(0, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_t1wwv"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT MISS instance 10002"
+region = Rect2i(249, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_cyahi"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT MISS instance 10002"
+region = Rect2i(83, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_yxv4q"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT NOTE instance 10002"
+region = Rect2i(332, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_xuydl"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN NOTE instance 10002"
+region = Rect2i(249, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_dtncb"]
+script = ExtResource("6_wi183")
+name = &"BF UP NOTE instance 10002"
+region = Rect2i(166, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_au07b"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN MISS instance 10002"
+region = Rect2i(0, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_xnmlf"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN MISS instance 10003"
+region = Rect2i(83, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_i1pbd"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT NOTE instance 10003"
+region = Rect2i(332, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_v1ssg"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT MISS instance 10003"
+region = Rect2i(332, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_3qplr"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT NOTE instance 10003"
+region = Rect2i(0, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_oh7je"]
+script = ExtResource("6_wi183")
+name = &"BF IDLE instance 10003"
+region = Rect2i(415, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_gg5vq"]
+script = ExtResource("6_wi183")
+name = &"BF UP MISS instance 10003"
+region = Rect2i(0, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_2ga34"]
+script = ExtResource("6_wi183")
+name = &"BF UP NOTE instance 10003"
+region = Rect2i(166, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_gxxtb"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN NOTE instance 10003"
+region = Rect2i(249, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_6x65j"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT MISS instance 10003"
+region = Rect2i(166, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_wc2i1"]
+script = ExtResource("6_wi183")
+name = &"BF IDLE instance 10004"
+region = Rect2i(0, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_gqcis"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT NOTE instance 10004"
+region = Rect2i(0, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_tk1pk"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT MISS instance 10004"
+region = Rect2i(166, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_koowe"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN MISS instance 10004"
+region = Rect2i(83, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_2viys"]
+script = ExtResource("6_wi183")
+name = &"BF UP MISS instance 10004"
+region = Rect2i(0, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_8at4k"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT NOTE instance 10004"
+region = Rect2i(332, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_lc0k8"]
+script = ExtResource("6_wi183")
+name = &"BF UP NOTE instance 10004"
+region = Rect2i(166, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_qjebg"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN NOTE instance 10004"
+region = Rect2i(249, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_5chh5"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT MISS instance 10004"
+region = Rect2i(332, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_3xrhq"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT MISS instance 10005"
+region = Rect2i(166, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_a7jgv"]
+script = ExtResource("6_wi183")
+name = &"BF UP NOTE instance 10005"
+region = Rect2i(166, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_hgxpi"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT MISS instance 10005"
+region = Rect2i(332, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_b75tj"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN NOTE instance 10005"
+region = Rect2i(249, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_3av2p"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT NOTE instance 10005"
+region = Rect2i(0, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_ff08j"]
+script = ExtResource("6_wi183")
+name = &"BF UP MISS instance 10005"
+region = Rect2i(0, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_hcv8a"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT NOTE instance 10005"
+region = Rect2i(332, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_tyq8m"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN MISS instance 10005"
+region = Rect2i(83, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_5v73n"]
+script = ExtResource("6_wi183")
+name = &"BF IDLE instance 10005"
+region = Rect2i(0, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_rluy7"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT NOTE instance 10006"
+region = Rect2i(0, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_mfyds"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT MISS instance 10006"
+region = Rect2i(166, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_2pg6c"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT MISS instance 10006"
+region = Rect2i(332, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_ywsc0"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT NOTE instance 10006"
+region = Rect2i(332, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_e71dx"]
+script = ExtResource("6_wi183")
+name = &"BF IDLE instance 10006"
+region = Rect2i(83, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_xdsxk"]
+script = ExtResource("6_wi183")
+name = &"BF UP MISS instance 10006"
+region = Rect2i(0, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_ru77o"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN MISS instance 10006"
+region = Rect2i(83, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_chk73"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN NOTE instance 10006"
+region = Rect2i(249, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_cxqrw"]
+script = ExtResource("6_wi183")
+name = &"BF UP NOTE instance 10006"
+region = Rect2i(166, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_g15p5"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT MISS instance 10007"
+region = Rect2i(166, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_8j2ej"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT NOTE instance 10007"
+region = Rect2i(332, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_7lhdh"]
+script = ExtResource("6_wi183")
+name = &"BF UP MISS instance 10007"
+region = Rect2i(0, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_r2s14"]
+script = ExtResource("6_wi183")
+name = &"BF UP NOTE instance 10007"
+region = Rect2i(166, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_s0fvu"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN NOTE instance 10007"
+region = Rect2i(249, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_sgty3"]
+script = ExtResource("6_wi183")
+name = &"BF IDLE instance 10007"
+region = Rect2i(83, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_26174"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN MISS instance 10007"
+region = Rect2i(83, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_mk3ty"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT NOTE instance 10007"
+region = Rect2i(0, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_abbe7"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT MISS instance 10007"
+region = Rect2i(332, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_rssem"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT MISS instance 10008"
+region = Rect2i(332, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_8f3ry"]
+script = ExtResource("6_wi183")
+name = &"BF UP NOTE instance 10008"
+region = Rect2i(166, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_cvxs8"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN NOTE instance 10008"
+region = Rect2i(249, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_i5bhi"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN MISS instance 10008"
+region = Rect2i(83, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_k8gk4"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT MISS instance 10008"
+region = Rect2i(166, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_hyt87"]
+script = ExtResource("6_wi183")
+name = &"BF UP MISS instance 10008"
+region = Rect2i(0, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_b18jf"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT NOTE instance 10008"
+region = Rect2i(0, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_bmo26"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT NOTE instance 10008"
+region = Rect2i(332, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_wnavy"]
+script = ExtResource("6_wi183")
+name = &"BF IDLE instance 10008"
+region = Rect2i(166, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_i3ebx"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN MISS instance 10009"
+region = Rect2i(83, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_ijoy0"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN NOTE instance 10009"
+region = Rect2i(249, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_fp75b"]
+script = ExtResource("6_wi183")
+name = &"BF IDLE instance 10009"
+region = Rect2i(166, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_ield1"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT NOTE instance 10009"
+region = Rect2i(332, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_1pj7p"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT MISS instance 10009"
+region = Rect2i(332, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_subbx"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT MISS instance 10009"
+region = Rect2i(166, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_6uby8"]
+script = ExtResource("6_wi183")
+name = &"BF UP NOTE instance 10009"
+region = Rect2i(166, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_gtb56"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT NOTE instance 10009"
+region = Rect2i(0, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_ypo87"]
+script = ExtResource("6_wi183")
+name = &"BF UP MISS instance 10009"
+region = Rect2i(0, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_3ypj3"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT MISS instance 10010"
+region = Rect2i(166, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_yo2gl"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT MISS instance 10010"
+region = Rect2i(332, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_mydjm"]
+script = ExtResource("6_wi183")
+name = &"BF IDLE instance 10010"
+region = Rect2i(166, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_mpees"]
+script = ExtResource("6_wi183")
+name = &"BF UP NOTE instance 10010"
+region = Rect2i(166, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_eubvs"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT NOTE instance 10010"
+region = Rect2i(0, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_dl8la"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT NOTE instance 10010"
+region = Rect2i(332, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_lsdec"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN NOTE instance 10010"
+region = Rect2i(249, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_rrd42"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN MISS instance 10010"
+region = Rect2i(83, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_13xgu"]
+script = ExtResource("6_wi183")
+name = &"BF UP MISS instance 10010"
+region = Rect2i(0, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_jefvx"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN NOTE instance 10011"
+region = Rect2i(249, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_osdjo"]
+script = ExtResource("6_wi183")
+name = &"BF UP MISS instance 10011"
+region = Rect2i(0, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_iubpx"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN MISS instance 10011"
+region = Rect2i(83, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_tpk83"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT NOTE instance 10011"
+region = Rect2i(332, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_dj4e5"]
+script = ExtResource("6_wi183")
+name = &"BF IDLE instance 10011"
+region = Rect2i(166, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_tgncx"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT MISS instance 10011"
+region = Rect2i(166, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_k1ddc"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT MISS instance 10011"
+region = Rect2i(332, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_tcany"]
+script = ExtResource("6_wi183")
+name = &"BF UP NOTE instance 10011"
+region = Rect2i(166, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_b8adg"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT NOTE instance 10011"
+region = Rect2i(0, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_3yvib"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN MISS instance 10012"
+region = Rect2i(83, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_tcqx5"]
+script = ExtResource("6_wi183")
+name = &"BF UP NOTE instance 10012"
+region = Rect2i(166, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_48bjg"]
+script = ExtResource("6_wi183")
+name = &"BF UP MISS instance 10012"
+region = Rect2i(0, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_7hrmb"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN NOTE instance 10012"
+region = Rect2i(249, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_e4fqq"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT NOTE instance 10012"
+region = Rect2i(332, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_5ddw2"]
+script = ExtResource("6_wi183")
+name = &"BF IDLE instance 10012"
+region = Rect2i(166, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_3hf7h"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT MISS instance 10012"
+region = Rect2i(166, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_dmj1q"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT MISS instance 10012"
+region = Rect2i(332, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_n72lh"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT NOTE instance 10012"
+region = Rect2i(0, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_r5axo"]
+script = ExtResource("6_wi183")
+name = &"BF UP MISS instance 10013"
+region = Rect2i(0, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_0hsav"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN MISS instance 10013"
+region = Rect2i(83, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_q0x7v"]
+script = ExtResource("6_wi183")
+name = &"BF DOWN NOTE instance 10013"
+region = Rect2i(249, 0, 73, 73)
+
+[sub_resource type="Resource" id="Resource_a5fot"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT NOTE instance 10013"
+region = Rect2i(332, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_my2iv"]
+script = ExtResource("6_wi183")
+name = &"BF IDLE instance 10013"
+region = Rect2i(166, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_lrjln"]
+script = ExtResource("6_wi183")
+name = &"BF RIGHT MISS instance 10013"
+region = Rect2i(166, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_yryy0"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT MISS instance 10013"
+region = Rect2i(332, 83, 73, 73)
+
+[sub_resource type="Resource" id="Resource_swfl4"]
+script = ExtResource("6_wi183")
+name = &"BF LEFT NOTE instance 10013"
+region = Rect2i(0, 166, 73, 73)
+
+[sub_resource type="Resource" id="Resource_i0cul"]
+script = ExtResource("6_wi183")
+name = &"BF UP NOTE instance 10013"
+region = Rect2i(166, 249, 73, 73)
+
+[sub_resource type="Resource" id="Resource_krjlc"]
+script = ExtResource("7_xxllg")
+texture = ExtResource("8_g27f8")
+sparrow_path = "res://assets/characters/bf_pixel/images/bfPixel.xml"
+frames = Array[ExtResource("6_wi183")]([SubResource("Resource_w0inj"), SubResource("Resource_x1tsi"), SubResource("Resource_gqioc"), SubResource("Resource_ner34"), SubResource("Resource_hqmip"), SubResource("Resource_6ftdk"), SubResource("Resource_mbve3"), SubResource("Resource_nqdtf"), SubResource("Resource_gbkrt"), SubResource("Resource_rjuw0"), SubResource("Resource_14bdh"), SubResource("Resource_yq253"), SubResource("Resource_5y3ac"), SubResource("Resource_8swxl"), SubResource("Resource_lbnys"), SubResource("Resource_18scl"), SubResource("Resource_ih8ja"), SubResource("Resource_05d4u"), SubResource("Resource_xgrov"), SubResource("Resource_n6e7r"), SubResource("Resource_kfeoy"), SubResource("Resource_t1wwv"), SubResource("Resource_cyahi"), SubResource("Resource_yxv4q"), SubResource("Resource_xuydl"), SubResource("Resource_dtncb"), SubResource("Resource_au07b"), SubResource("Resource_xnmlf"), SubResource("Resource_i1pbd"), SubResource("Resource_v1ssg"), SubResource("Resource_3qplr"), SubResource("Resource_oh7je"), SubResource("Resource_gg5vq"), SubResource("Resource_2ga34"), SubResource("Resource_gxxtb"), SubResource("Resource_6x65j"), SubResource("Resource_wc2i1"), SubResource("Resource_gqcis"), SubResource("Resource_tk1pk"), SubResource("Resource_koowe"), SubResource("Resource_2viys"), SubResource("Resource_8at4k"), SubResource("Resource_lc0k8"), SubResource("Resource_qjebg"), SubResource("Resource_5chh5"), SubResource("Resource_3xrhq"), SubResource("Resource_a7jgv"), SubResource("Resource_hgxpi"), SubResource("Resource_b75tj"), SubResource("Resource_3av2p"), SubResource("Resource_ff08j"), SubResource("Resource_hcv8a"), SubResource("Resource_tyq8m"), SubResource("Resource_5v73n"), SubResource("Resource_rluy7"), SubResource("Resource_mfyds"), SubResource("Resource_2pg6c"), SubResource("Resource_ywsc0"), SubResource("Resource_e71dx"), SubResource("Resource_xdsxk"), SubResource("Resource_ru77o"), SubResource("Resource_chk73"), SubResource("Resource_cxqrw"), SubResource("Resource_g15p5"), SubResource("Resource_8j2ej"), SubResource("Resource_7lhdh"), SubResource("Resource_r2s14"), SubResource("Resource_s0fvu"), SubResource("Resource_sgty3"), SubResource("Resource_26174"), SubResource("Resource_mk3ty"), SubResource("Resource_abbe7"), SubResource("Resource_rssem"), SubResource("Resource_8f3ry"), SubResource("Resource_cvxs8"), SubResource("Resource_i5bhi"), SubResource("Resource_k8gk4"), SubResource("Resource_hyt87"), SubResource("Resource_b18jf"), SubResource("Resource_bmo26"), SubResource("Resource_wnavy"), SubResource("Resource_i3ebx"), SubResource("Resource_ijoy0"), SubResource("Resource_fp75b"), SubResource("Resource_ield1"), SubResource("Resource_1pj7p"), SubResource("Resource_subbx"), SubResource("Resource_6uby8"), SubResource("Resource_gtb56"), SubResource("Resource_ypo87"), SubResource("Resource_3ypj3"), SubResource("Resource_yo2gl"), SubResource("Resource_mydjm"), SubResource("Resource_mpees"), SubResource("Resource_eubvs"), SubResource("Resource_dl8la"), SubResource("Resource_lsdec"), SubResource("Resource_rrd42"), SubResource("Resource_13xgu"), SubResource("Resource_jefvx"), SubResource("Resource_osdjo"), SubResource("Resource_iubpx"), SubResource("Resource_tpk83"), SubResource("Resource_dj4e5"), SubResource("Resource_tgncx"), SubResource("Resource_k1ddc"), SubResource("Resource_tcany"), SubResource("Resource_b8adg"), SubResource("Resource_3yvib"), SubResource("Resource_tcqx5"), SubResource("Resource_48bjg"), SubResource("Resource_7hrmb"), SubResource("Resource_e4fqq"), SubResource("Resource_5ddw2"), SubResource("Resource_3hf7h"), SubResource("Resource_dmj1q"), SubResource("Resource_n72lh"), SubResource("Resource_r5axo"), SubResource("Resource_0hsav"), SubResource("Resource_q0x7v"), SubResource("Resource_a5fot"), SubResource("Resource_my2iv"), SubResource("Resource_lrjln"), SubResource("Resource_yryy0"), SubResource("Resource_swfl4"), SubResource("Resource_i0cul")])
+symbols = PackedStringArray("BF DOWN MISS instance 1", "BF DOWN NOTE instance 1", "BF IDLE instance 1", "BF LEFT MISS instance 1", "BF LEFT NOTE instance 1", "BF RIGHT MISS instance 1", "BF RIGHT NOTE instance 1", "BF UP MISS instance 1", "BF UP NOTE instance 1")
+format = "sparrow"
+metadata/_custom_type_script = "uid://nqbs7y41i566"
+
+[node name="BFPixel" unique_id=151574328 instance=ExtResource("1_5ddw2")]
+export_anim_map = Dictionary[String, String]({
+"down": "BF DOWN NOTE instance 1",
+"down_miss": "BF DOWN MISS instance 1",
+"idle": "BF IDLE instance 1",
+"left": "BF LEFT NOTE instance 1",
+"left_miss": "BF LEFT MISS instance 1",
+"right": "BF RIGHT NOTE instance 1",
+"right_miss": "BF RIGHT MISS instance 1",
+"up": "BF UP NOTE instance 1",
+"up_miss": "BF UP MISS instance 1"
+})
+icon = ExtResource("2_d7kg8")
+
+[node name="AnimationPlayer" parent="." index="0" unique_id=1164546831]
+libraries/ = SubResource("AnimationLibrary_ner34")
+
+[node name="Sprites" parent="." index="1" unique_id=765921245]
+texture_filter = 1
+
+[node name="AnimatedSprite2D" parent="Sprites" index="0" unique_id=63994655]
+visible = false
+texture_filter = 1
+scale = Vector2(6, 6)
+sprite_frames = SubResource("SpriteFrames_wqn6o")
+animation = &"down"
+
+[node name="AnimateSymbol" type="Node2D" parent="Sprites" index="1" unique_id=235486814]
+scale = Vector2(6, 6)
+script = ExtResource("4_ysjka")
+symbol = "BF UP MISS instance 1"
+atlases = Array[ExtResource("5_awr8h")]([SubResource("Resource_krjlc")])
+metadata/_custom_type_script = "uid://c5ju3u657fyae"
+
+[node name="ReferenceRect" parent="." index="3" unique_id=1762810265]
+offset_left = -197.0
+offset_top = -137.0
+offset_right = 155.0
+offset_bottom = 221.0
