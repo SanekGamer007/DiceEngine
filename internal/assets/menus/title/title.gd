@@ -26,7 +26,6 @@ extends Control
 @export var bpm: int = 102
 @export var numerator: int = 3
 @export var denominator: int = 3
-@export var player: AudioStreamPlayer
 @export var richtextlabel: RichTextLabel
 var last_audio_pos: float = 0.0
 
@@ -36,8 +35,7 @@ var transition_in_progress: bool = false
 
 
 func _ready() -> void:
-	player.stream = load(Registry.music.get("freaky_menu"))
-	player.play()
+	MusicManager.play("freaky_menu", 1.0, true, 3.0, false, 3.0)
 	$TitleScreen/Start/Start.play("Press Enter to Begin")
 	Game.bpm = bpm
 	Game.numerator = numerator

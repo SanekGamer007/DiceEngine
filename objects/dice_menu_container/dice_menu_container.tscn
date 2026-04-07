@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://x1q3olwtg0fu"]
+
+[ext_resource type="Script" uid="uid://b3bbr3aamng2i" path="res://objects/dice_menu_container/dice_menu_container.gd" id="1_e3lbj"]
+
+[node name="MenuContainer" type="Container" unique_id=1061468304]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_e3lbj")

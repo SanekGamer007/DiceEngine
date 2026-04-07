@@ -1,9 +1,10 @@
 extends RichTextLabel
-var org_text = "[b]{engine_name} v{engine_ver}[/b]"
+var org_text = text
 
 func _ready() -> void:
-	org_text = "[b]{engine_name} v{engine_ver}[/b]"
+	await get_tree().process_frame
 	text = org_text.format({
-		"engine_name": Common.engine_name, 
-		"engine_ver": Common.get_version(),
+		"engine": Common.engine_name, 
+		"version": Common.get_version(),
+		"commit": FileAccess.get_file_as_string("res://commit.txt"),
 	})

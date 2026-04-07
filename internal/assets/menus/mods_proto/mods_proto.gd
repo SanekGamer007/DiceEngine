@@ -1,6 +1,7 @@
 extends Control
 
 func _ready() -> void:
+	MusicManager.play("freaky_menu", 1.0, true, 3.0, false, 3.0)
 	$VBoxContainer/HBoxContainer/Label.text = Common.engine_name + " v" + Common.get_version() + "\nFreeplay\nWIP"
 	$VBoxContainer/HBoxContainer2/VBoxContainer/ItemList.clear()
 	for i in ModManager.found_mods.size():

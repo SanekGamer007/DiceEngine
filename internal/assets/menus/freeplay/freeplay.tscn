@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://rdlg6rcy8qg1"]
 
 [ext_resource type="Texture2D" uid="uid://bvey0f0xmnv33" path="res://internal/assets/shared/images/menus/menuDesat.png" id="1_54yqn"]
+[ext_resource type="Script" uid="uid://dmyfvjd536gvk" path="res://internal/assets/menus/freeplay/freeplay.gd" id="1_uoq1w"]
+[ext_resource type="Script" uid="uid://b3bbr3aamng2i" path="res://objects/dice_menu_container/dice_menu_container.gd" id="2_it86h"]
+[ext_resource type="PackedScene" uid="uid://da1bgtc84jgsj" path="res://objects/dice_menu_container/layouts/vertical/vertical_menu_layout.tscn" id="4_uoq1w"]
 
 [node name="Freeplay" type="Control" unique_id=1741907667]
 layout_mode = 3
@@ -9,9 +12,26 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_uoq1w")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=705786136]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("1_54yqn")
+
+[node name="DiceMenuContainer" type="Container" parent="." unique_id=667614922 node_paths=PackedStringArray("layout")]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.4
+anchor_right = 0.05
+anchor_bottom = 1.0
+grow_vertical = 2
+script = ExtResource("2_it86h")
+layout = NodePath("VerticalMenuLayout")
+metadata/_custom_type_script = "uid://b3bbr3aamng2i"
+
+[node name="VerticalMenuLayout" parent="DiceMenuContainer" unique_id=1243964834 instance=ExtResource("4_uoq1w")]
+separation = 64.0
+movement_x = 16.0

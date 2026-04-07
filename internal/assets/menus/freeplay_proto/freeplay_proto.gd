@@ -6,6 +6,7 @@ var selected_diff: String = ""
 var play_packed: PackedScene = load("res://levels/play_scene/play_scene.tscn")
 
 func _ready() -> void:
+	MusicManager.play("freaky_menu", 1.0, true, 3.0, false, 3.0)
 	$VBoxContainer/HBoxContainer/Label.text = Common.engine_name + " v" + Common.get_version() + "\nFreeplay\nWIP"
 	$VBoxContainer/HBoxContainer2/VBoxContainer/ItemList.clear()
 	for song in Registry.songs:
@@ -27,6 +28,7 @@ func _on_item_list_diff_item_selected(index: int) -> void:
 
 
 func _on_button_pressed() -> void:
+	MusicManager.stop(true, 1.0)
 	if not selected_song or not selected_diff:
 		return
 	print(selected_song, selected_diff)

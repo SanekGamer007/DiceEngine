@@ -18,6 +18,10 @@ config/custom_user_dir_name="DiceEngine"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="uid://b2j7fyvg53jg2"
 
+[audio]
+
+buses/default_bus_layout="uid://bfcuiwxcq57m2"
+
 [autoload]
 
 Game="*uid://n8rcjcrd6nhy"
@@ -26,6 +30,7 @@ Debug="*uid://b0jkq4af1yehx"
 Refs="*uid://dv6htp5hai1sr"
 TransitionManager="*uid://b4qe6epc6ut0b"
 ModManager="*uid://dxivb4f8mw7n1"
+MusicManager="*uid://dk1wecavdl6cp"
 
 [display]
 

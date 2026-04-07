@@ -20,7 +20,7 @@ theme_override_fonts/bold_font = ExtResource("1_cq1br")
 theme_override_font_sizes/normal_font_size = 12
 theme_override_font_sizes/bold_font_size = 16
 bbcode_enabled = true
-text = "[b]%s v%s[/b]"
+text = "[b]{engine} v{version} | {commit}[/b]"
 fit_content = true
 autowrap_mode = 0
 shortcut_keys_enabled = false
@@ -29,7 +29,9 @@ script = ExtResource("2_r4ag3")
 [node name="Info" type="RichTextLabel" parent="." unique_id=1083212174]
 anchors_preset = -1
 anchor_left = 0.01
+anchor_top = 0.03
 anchor_right = 0.01
+anchor_bottom = 0.03
 offset_left = 8.0
 offset_top = 4.0
 offset_right = 134.0
@@ -42,8 +44,7 @@ theme_override_fonts/bold_font = ExtResource("1_cq1br")
 theme_override_font_sizes/normal_font_size = 12
 theme_override_font_sizes/bold_font_size = 16
 bbcode_enabled = true
-text = "[b] [/b]
-FPS: {fps}
+text = "FPS: {fps}
 Memory: {ram}MB
 Video Memory: {vram}MB
 Loaded Mods: {mods}"

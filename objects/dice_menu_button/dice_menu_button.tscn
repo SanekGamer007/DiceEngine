@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://batheusum83eh"]
+
+[ext_resource type="FontFile" uid="uid://clv0563o60ibd" path="res://fonts/bold.fnt" id="1_wvu3d"]
+[ext_resource type="Script" uid="uid://nfqnrj5u5yd2" path="res://objects/dice_menu_button/dice_menu_button.gd" id="2_k6a0a"]
+[ext_resource type="PackedScene" uid="uid://c4e8xwmxswmyk" path="res://internal/assets/characters/bf/icon/bf_icon.tscn" id="3_wk88r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k6a0a"]
+
+[node name="MenuButton" type="HBoxContainer" unique_id=1260254406 node_paths=PackedStringArray("button")]
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("2_k6a0a")
+button = NodePath("Button")
+
+[node name="Button" type="Button" parent="." unique_id=1373145234]
+layout_mode = 2
+focus_mode = 0
+mouse_filter = 2
+theme_override_constants/icon_max_width = 80
+theme_override_fonts/font = ExtResource("1_wvu3d")
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxEmpty_k6a0a")
+text = "TESTBUTTON!"
+icon_alignment = 2
+
+[node name="BFIcon" parent="." unique_id=12921492 instance=ExtResource("3_wk88r")]
+layout_mode = 2

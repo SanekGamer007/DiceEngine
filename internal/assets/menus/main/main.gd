@@ -11,7 +11,7 @@ var anim_map: Dictionary[int, Array] = {
 
 var location_map: Dictionary[int, String] = {
 	0: "",
-	1: "res://internal/assets/menus/freeplay_proto/freeplay_proto.tscn",
+	1: "res://internal/assets/menus/freeplay/freeplay.tscn",
 	2: "",
 	3: "",
 }
@@ -20,6 +20,7 @@ var transition_location: String = ""
 
 
 func _ready() -> void:
+	MusicManager.play("freaky_menu", 1.0, true, 3.0, false, 3.0)
 	for child in $Buttons.get_children():
 		if child is Control:
 			buttons.append(child)

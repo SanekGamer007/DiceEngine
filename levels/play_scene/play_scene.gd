@@ -274,7 +274,7 @@ func spawn_strumlines() -> void:
 		amount = strum_info.size()
 	var note_skin_to_apply: NoteSkinResource
 	if song_metadata.has("note_skin"):
-		note_skin_to_apply = load(Registry.note_skins.get(song_metadata.get("note_skin")))
+		note_skin_to_apply = load(Registry.noteskins.get(song_metadata.get("note_skin")))
 	else:
 		note_skin_to_apply = note_skin
 	for i in range(amount):

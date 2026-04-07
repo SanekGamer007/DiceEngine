@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cm1g1ubh0bbic"]
+
+[ext_resource type="Script" uid="uid://bwqq4q48skq6q" path="res://objects/dice_menu_container/layouts/base/menu_layout.gd" id="1_ry5ki"]
+
+[node name="MenuLayout" type="Node" unique_id=2082376519]
+script = ExtResource("1_ry5ki")

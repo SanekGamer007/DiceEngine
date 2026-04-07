@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://da1bgtc84jgsj"]
+
+[ext_resource type="Script" uid="uid://pe2kngefoqj1" path="res://objects/dice_menu_container/layouts/vertical/vertical_menu_layout.gd" id="1_t3jy1"]
+
+[node name="VerticalMenuLayout" type="Node" unique_id=1243964834]
+script = ExtResource("1_t3jy1")
+metadata/_custom_type_script = "uid://bwqq4q48skq6q"
